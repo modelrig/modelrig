@@ -1,0 +1,58 @@
+{
+  "id": "cz-financial-handoff",
+  "class": "schema",
+  "source": "customer-zero",
+  "prompt": "You are a financial analyst. Extract the requested figures from the filing excerpt below into the required JSON structure. All monetary figures are in millions of USD.\n\nFILING EXCERPT (synthetic):\nNorthwind Logistics reported trailing twelve-month revenue of $4,521.7 million, up 18.3% year over year. Management guided to three scenarios for five-year revenue growth: a pessimistic case of 6.2% CAGR, a base case of 11.5% CAGR, and an optimistic case of 16.8% CAGR. The reporting currency is USD.",
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["revenue_summary", "scenarios"],
+    "properties": {
+      "revenue_summary": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["trailing_revenue", "yoy_growth_pct", "reporting_currency", "units"],
+        "properties": {
+          "trailing_revenue": { "type": "number" },
+          "yoy_growth_pct": { "type": "number" },
+          "reporting_currency": { "type": "string" },
+          "units": { "type": "string", "enum": ["millions"] }
+        }
+      },
+      "scenarios": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["pessimistic", "base", "optimistic"],
+        "properties": {
+          "pessimistic": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["cagr_pct"],
+            "properties": { "cagr_pct": { "type": "number" } }
+          },
+          "base": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["cagr_pct"],
+            "properties": { "cagr_pct": { "type": "number" } }
+          },
+          "optimistic": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["cagr_pct"],
+            "properties": { "cagr_pct": { "type": "number" } }
+          }
+        }
+      }
+    }
+  },
+  "expectedValues": {
+    "revenue_summary.trailing_revenue": 4521.7,
+    "revenue_summary.yoy_growth_pct": 18.3,
+    "revenue_summary.reporting_currency": "USD",
+    "revenue_summary.units": "millions",
+    "scenarios.pessimistic.cagr_pct": 6.2,
+    "scenarios.base.cagr_pct": 11.5,
+    "scenarios.optimistic.cagr_pct": 16.8
+  }
+}

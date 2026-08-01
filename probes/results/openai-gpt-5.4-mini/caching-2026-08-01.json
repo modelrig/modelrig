@@ -1,0 +1,90 @@
+{
+  "modelKey": "openai/gpt-5.4-mini",
+  "class": "caching",
+  "date": "2026-08-01T23:33:08.623Z",
+  "harnessVersion": "0.0.1",
+  "fixtureHashes": {
+    "long-prefix-repeat": "28595a700e587856"
+  },
+  "raw": {
+    "long-prefix-repeat": [
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2304,
+        "tokensIn": 2787,
+        "tokensOut": 33,
+        "costUsd": 0.0029223,
+        "latencyMs": 783,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2304,
+        "tokensIn": 2787,
+        "tokensOut": 33,
+        "costUsd": 0.0013716000000000002,
+        "latencyMs": 785,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2304,
+        "tokensIn": 2787,
+        "tokensOut": 34,
+        "costUsd": 0.0013716000000000002,
+        "latencyMs": 785,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2304,
+        "tokensIn": 2787,
+        "tokensOut": 34,
+        "costUsd": 0.0013761000000000001,
+        "latencyMs": 772,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2304,
+        "tokensIn": 2787,
+        "tokensOut": 33,
+        "costUsd": 0.0013671,
+        "latencyMs": 806,
+        "failureClass": null
+      }
+    ]
+  },
+  "stats": [
+    {
+      "fixtureId": "long-prefix-repeat",
+      "samples": 5,
+      "parseRate": 1,
+      "conformRate": null,
+      "valueAccuracyMean": null,
+      "conformCi95": null,
+      "meanCostUsd": 0.00168174
+    }
+  ],
+  "totalCostUsd": 0.0084087
+}

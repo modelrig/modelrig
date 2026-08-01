@@ -1,0 +1,200 @@
+[
+  {
+    "model_key": "deepseek/deepseek-chat",
+    "conform_rate": 1,
+    "conform_ci95": [
+      0.8668077490609515,
+      0.9999999999999999
+    ],
+    "value_accuracy_mean": 1,
+    "native_rung_rate": 0,
+    "effective_usd_per_1k_conformant": 0.08531600000000002,
+    "grounded_rate": 1,
+    "cache_hit_rate": 1,
+    "samples": 25,
+    "as_of": "2026-08-01T23:32:57.312Z",
+    "discrepancies": [
+      {
+        "kind": "schema_served_via_json_mode",
+        "message": "declared supports_response_schema, but every probed sample was served via json_mode coaching — no native strict enforcement exists on this serving path (the json_object-vs-schema gap)"
+      },
+      {
+        "kind": "citations_without_declared_search",
+        "message": "no declared web-search support, but 100% of probed answers cited URLs — verify whether these are real or fabricated sources"
+      }
+    ]
+  },
+  {
+    "model_key": "deepseek/deepseek-reasoner",
+    "conform_rate": 1,
+    "conform_ci95": [
+      0.8668077490609515,
+      0.9999999999999999
+    ],
+    "value_accuracy_mean": 1,
+    "native_rung_rate": 0,
+    "effective_usd_per_1k_conformant": 0.13559280000000004,
+    "grounded_rate": 0.9,
+    "cache_hit_rate": 1,
+    "samples": 25,
+    "as_of": "2026-08-01T23:34:55.894Z",
+    "discrepancies": [
+      {
+        "kind": "schema_served_via_json_mode",
+        "message": "declared supports_response_schema, but every probed sample was served via json_mode coaching — no native strict enforcement exists on this serving path (the json_object-vs-schema gap)"
+      },
+      {
+        "kind": "citations_without_declared_search",
+        "message": "no declared web-search support, but 90% of probed answers cited URLs — verify whether these are real or fabricated sources"
+      }
+    ]
+  },
+  {
+    "model_key": "openai/gpt-5.4-nano",
+    "conform_rate": 1,
+    "conform_ci95": [
+      0.8668077490609515,
+      0.9999999999999999
+    ],
+    "value_accuracy_mean": 1,
+    "native_rung_rate": 1,
+    "effective_usd_per_1k_conformant": 0.21549000000000007,
+    "grounded_rate": 0.6,
+    "cache_hit_rate": 1,
+    "samples": 25,
+    "as_of": "2026-08-01T23:33:54.799Z",
+    "discrepancies": []
+  },
+  {
+    "model_key": "gemini/gemini-3.1-flash-lite",
+    "conform_rate": 1,
+    "conform_ci95": [
+      0.8668077490609515,
+      0.9999999999999999
+    ],
+    "value_accuracy_mean": 1,
+    "native_rung_rate": 1,
+    "effective_usd_per_1k_conformant": 0.25408000000000014,
+    "grounded_rate": 1,
+    "cache_hit_rate": 0,
+    "samples": 25,
+    "as_of": "2026-08-01T23:46:38.340Z",
+    "discrepancies": [
+      {
+        "kind": "declared_caching_unrealized",
+        "message": "declared supports_prompt_caching, but no probed repeat call reported cached tokens"
+      }
+    ]
+  },
+  {
+    "model_key": "openai/gpt-5.4-mini",
+    "conform_rate": 1,
+    "conform_ci95": [
+      0.8668077490609515,
+      0.9999999999999999
+    ],
+    "value_accuracy_mean": 1,
+    "native_rung_rate": 1,
+    "effective_usd_per_1k_conformant": 0.6473399999999998,
+    "grounded_rate": 0.7,
+    "cache_hit_rate": 1,
+    "samples": 25,
+    "as_of": "2026-08-01T23:33:08.623Z",
+    "discrepancies": []
+  },
+  {
+    "model_key": "openai/gpt-5-mini",
+    "conform_rate": 1,
+    "conform_ci95": [
+      0.8668077490609515,
+      0.9999999999999999
+    ],
+    "value_accuracy_mean": 1,
+    "native_rung_rate": 1,
+    "effective_usd_per_1k_conformant": 0.9163999999999997,
+    "grounded_rate": 0.5,
+    "cache_hit_rate": 1,
+    "samples": 25,
+    "as_of": "2026-08-01T23:38:25.372Z",
+    "discrepancies": []
+  },
+  {
+    "model_key": "gemini/gemini-2.5-flash",
+    "conform_rate": 1,
+    "conform_ci95": [
+      0.8668077490609515,
+      0.9999999999999999
+    ],
+    "value_accuracy_mean": 1,
+    "native_rung_rate": 1,
+    "effective_usd_per_1k_conformant": 1.726460000000001,
+    "grounded_rate": 0.7,
+    "cache_hit_rate": 0.6,
+    "samples": 25,
+    "as_of": "2026-08-01T23:45:47.054Z",
+    "discrepancies": []
+  },
+  {
+    "model_key": "openai/gpt-5.2",
+    "conform_rate": 1,
+    "conform_ci95": [
+      0.8668077490609515,
+      0.9999999999999999
+    ],
+    "value_accuracy_mean": 1,
+    "native_rung_rate": 1,
+    "effective_usd_per_1k_conformant": 2.028879999999999,
+    "grounded_rate": 0.1,
+    "cache_hit_rate": 1,
+    "samples": 25,
+    "as_of": "2026-08-01T23:32:19.832Z",
+    "discrepancies": [
+      {
+        "kind": "declared_search_ungrounded",
+        "message": "declared supports_web_search, but only 10% of probed answers carried citations (bar: 50%)"
+      }
+    ]
+  },
+  {
+    "model_key": "gemini/gemini-3-flash-preview",
+    "conform_rate": 1,
+    "conform_ci95": [
+      0.8668077490609515,
+      0.9999999999999999
+    ],
+    "value_accuracy_mean": 1,
+    "native_rung_rate": 1,
+    "effective_usd_per_1k_conformant": 2.4724399999999997,
+    "grounded_rate": 1,
+    "cache_hit_rate": 0,
+    "samples": 25,
+    "as_of": "2026-08-01T23:43:21.696Z",
+    "discrepancies": [
+      {
+        "kind": "declared_caching_unrealized",
+        "message": "declared supports_prompt_caching, but no probed repeat call reported cached tokens"
+      }
+    ]
+  },
+  {
+    "model_key": "gemini/gemini-3.1-pro-preview",
+    "conform_rate": 1,
+    "conform_ci95": [
+      0.8668077490609515,
+      0.9999999999999999
+    ],
+    "value_accuracy_mean": 1,
+    "native_rung_rate": 1,
+    "effective_usd_per_1k_conformant": 12.097279999999998,
+    "grounded_rate": 1,
+    "cache_hit_rate": 0,
+    "samples": 25,
+    "as_of": "2026-08-01T23:39:46.570Z",
+    "discrepancies": [
+      {
+        "kind": "declared_caching_unrealized",
+        "message": "declared supports_prompt_caching, but no probed repeat call reported cached tokens"
+      }
+    ]
+  }
+]

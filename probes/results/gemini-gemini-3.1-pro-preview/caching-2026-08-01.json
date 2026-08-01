@@ -1,0 +1,90 @@
+{
+  "modelKey": "gemini/gemini-3.1-pro-preview",
+  "class": "caching",
+  "date": "2026-08-01T23:39:46.570Z",
+  "harnessVersion": "0.0.1",
+  "fixtureHashes": {
+    "long-prefix-repeat": "28595a700e587856"
+  },
+  "raw": {
+    "long-prefix-repeat": [
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 0,
+        "tokensIn": 2799,
+        "tokensOut": 349,
+        "costUsd": 0.019884,
+        "latencyMs": 3600,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 0,
+        "tokensIn": 2799,
+        "tokensOut": 347,
+        "costUsd": 0.01944,
+        "latencyMs": 3548,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 0,
+        "tokensIn": 2799,
+        "tokensOut": 345,
+        "costUsd": 0.019584,
+        "latencyMs": 3766,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 0,
+        "tokensIn": 2799,
+        "tokensOut": 323,
+        "costUsd": 0.019464,
+        "latencyMs": 3404,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 0,
+        "tokensIn": 2799,
+        "tokensOut": 349,
+        "costUsd": 0.019992,
+        "latencyMs": 3505,
+        "failureClass": null
+      }
+    ]
+  },
+  "stats": [
+    {
+      "fixtureId": "long-prefix-repeat",
+      "samples": 5,
+      "parseRate": 1,
+      "conformRate": null,
+      "valueAccuracyMean": null,
+      "conformCi95": null,
+      "meanCostUsd": 0.019672799999999997
+    }
+  ],
+  "totalCostUsd": 0.098364
+}

@@ -1,0 +1,17 @@
+{
+  "id": "your-fixture-id",
+  "class": "schema",
+  "source": "contributed:your-github-handle",
+  "prompt": "Task instructions with synthetic source data inline. State exactly what to extract or produce.",
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["example_field"],
+    "properties": {
+      "example_field": { "type": "number" }
+    }
+  },
+  "expectedValues": {
+    "example_field": 42
+  }
+}

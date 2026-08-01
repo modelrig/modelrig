@@ -1,0 +1,438 @@
+{
+  "modelKey": "gemini/gemini-3.1-pro-preview",
+  "class": "schema",
+  "date": "2026-08-01T23:34:16.152Z",
+  "harnessVersion": "0.0.1",
+  "fixtureHashes": {
+    "cz-financial-handoff": "dee40a8e0827da8b",
+    "cz-prose-floor": "c5ac56a875007172",
+    "deepseek-nested-required": "1eb62fd584559899",
+    "litellm-enum-adherence": "41264057a9b8c5c3",
+    "litellm-strict-no-extras": "a522250488e50193"
+  },
+  "raw": {
+    "cz-financial-handoff": [
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 138,
+        "tokensOut": 1064,
+        "costUsd": 0.013044,
+        "latencyMs": 8998,
+        "failureClass": null,
+        "rung": "native"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 138,
+        "tokensOut": 749,
+        "costUsd": 0.009264,
+        "latencyMs": 6064,
+        "failureClass": null,
+        "rung": "native"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 138,
+        "tokensOut": 852,
+        "costUsd": 0.0105,
+        "latencyMs": 6840,
+        "failureClass": null,
+        "rung": "native"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 138,
+        "tokensOut": 772,
+        "costUsd": 0.00954,
+        "latencyMs": 5844,
+        "failureClass": null,
+        "rung": "native"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 138,
+        "tokensOut": 710,
+        "costUsd": 0.008796,
+        "latencyMs": 5686,
+        "failureClass": null,
+        "rung": "native"
+      }
+    ],
+    "cz-prose-floor": [
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 171,
+        "tokensOut": 2147,
+        "costUsd": 0.026106,
+        "latencyMs": 14841,
+        "failureClass": null,
+        "rung": "native"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 171,
+        "tokensOut": 1790,
+        "costUsd": 0.021821999999999998,
+        "latencyMs": 13392,
+        "failureClass": null,
+        "rung": "native"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 171,
+        "tokensOut": 2033,
+        "costUsd": 0.024738,
+        "latencyMs": 14213,
+        "failureClass": null,
+        "rung": "native"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 171,
+        "tokensOut": 2465,
+        "costUsd": 0.029922,
+        "latencyMs": 16694,
+        "failureClass": null,
+        "rung": "native"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 171,
+        "tokensOut": 1923,
+        "costUsd": 0.023417999999999998,
+        "latencyMs": 14000,
+        "failureClass": null,
+        "rung": "native"
+      }
+    ],
+    "deepseek-nested-required": [
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 133,
+        "tokensOut": 731,
+        "costUsd": 0.009038000000000001,
+        "latencyMs": 5533,
+        "failureClass": null,
+        "rung": "native"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 133,
+        "tokensOut": 969,
+        "costUsd": 0.011894,
+        "latencyMs": 6864,
+        "failureClass": null,
+        "rung": "native"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 133,
+        "tokensOut": 814,
+        "costUsd": 0.010034000000000001,
+        "latencyMs": 6429,
+        "failureClass": null,
+        "rung": "native"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 133,
+        "tokensOut": 999,
+        "costUsd": 0.012254000000000001,
+        "latencyMs": 6987,
+        "failureClass": null,
+        "rung": "native"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 133,
+        "tokensOut": 1117,
+        "costUsd": 0.013670000000000002,
+        "latencyMs": 8033,
+        "failureClass": null,
+        "rung": "native"
+      }
+    ],
+    "litellm-enum-adherence": [
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 124,
+        "tokensOut": 682,
+        "costUsd": 0.008432,
+        "latencyMs": 5616,
+        "failureClass": null,
+        "rung": "native"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 124,
+        "tokensOut": 582,
+        "costUsd": 0.007232,
+        "latencyMs": 5376,
+        "failureClass": null,
+        "rung": "native"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 124,
+        "tokensOut": 597,
+        "costUsd": 0.007412,
+        "latencyMs": 5240,
+        "failureClass": null,
+        "rung": "native"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 124,
+        "tokensOut": 611,
+        "costUsd": 0.00758,
+        "latencyMs": 5040,
+        "failureClass": null,
+        "rung": "native"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 124,
+        "tokensOut": 518,
+        "costUsd": 0.006464,
+        "latencyMs": 4781,
+        "failureClass": null,
+        "rung": "native"
+      }
+    ],
+    "litellm-strict-no-extras": [
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 90,
+        "tokensOut": 425,
+        "costUsd": 0.00528,
+        "latencyMs": 4457,
+        "failureClass": null,
+        "rung": "native"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 90,
+        "tokensOut": 581,
+        "costUsd": 0.0071519999999999995,
+        "latencyMs": 5446,
+        "failureClass": null,
+        "rung": "native"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 90,
+        "tokensOut": 514,
+        "costUsd": 0.0063479999999999995,
+        "latencyMs": 4743,
+        "failureClass": null,
+        "rung": "native"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 90,
+        "tokensOut": 533,
+        "costUsd": 0.006575999999999999,
+        "latencyMs": 4496,
+        "failureClass": null,
+        "rung": "native"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 90,
+        "tokensOut": 478,
+        "costUsd": 0.005915999999999999,
+        "latencyMs": 4696,
+        "failureClass": null,
+        "rung": "native"
+      }
+    ]
+  },
+  "stats": [
+    {
+      "fixtureId": "cz-financial-handoff",
+      "samples": 5,
+      "parseRate": 1,
+      "conformRate": 1,
+      "valueAccuracyMean": 1,
+      "conformCi95": [
+        0.5655175352168251,
+        1
+      ],
+      "meanCostUsd": 0.0102288
+    },
+    {
+      "fixtureId": "cz-prose-floor",
+      "samples": 5,
+      "parseRate": 1,
+      "conformRate": 1,
+      "valueAccuracyMean": 1,
+      "conformCi95": [
+        0.5655175352168251,
+        1
+      ],
+      "meanCostUsd": 0.0252012
+    },
+    {
+      "fixtureId": "deepseek-nested-required",
+      "samples": 5,
+      "parseRate": 1,
+      "conformRate": 1,
+      "valueAccuracyMean": 1,
+      "conformCi95": [
+        0.5655175352168251,
+        1
+      ],
+      "meanCostUsd": 0.011378000000000001
+    },
+    {
+      "fixtureId": "litellm-enum-adherence",
+      "samples": 5,
+      "parseRate": 1,
+      "conformRate": 1,
+      "valueAccuracyMean": 1,
+      "conformCi95": [
+        0.5655175352168251,
+        1
+      ],
+      "meanCostUsd": 0.007424
+    },
+    {
+      "fixtureId": "litellm-strict-no-extras",
+      "samples": 5,
+      "parseRate": 1,
+      "conformRate": 1,
+      "valueAccuracyMean": 1,
+      "conformCi95": [
+        0.5655175352168251,
+        1
+      ],
+      "meanCostUsd": 0.0062543999999999985
+    }
+  ],
+  "totalCostUsd": 0.302432
+}

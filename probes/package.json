@@ -1,0 +1,23 @@
+{
+  "name": "modelrig-probes",
+  "version": "0.0.1",
+  "description": "ModelRig probe suite — empirical capability verification (schema conformance, grounding, caching). Destined for the public modelrig/modelrig repo (Apache-2.0).",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "modelrig-probes": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "type-check": "tsc --noEmit",
+    "test": "vitest run --exclude '**/*.live.test.ts'"
+  },
+  "dependencies": {
+    "ajv": "^8.17.0",
+    "modelrig": "^0.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.0",
+    "vitest": "^2.1.0"
+  }
+}

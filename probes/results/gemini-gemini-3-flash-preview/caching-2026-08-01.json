@@ -1,0 +1,90 @@
+{
+  "modelKey": "gemini/gemini-3-flash-preview",
+  "class": "caching",
+  "date": "2026-08-01T23:43:21.696Z",
+  "harnessVersion": "0.0.1",
+  "fixtureHashes": {
+    "long-prefix-repeat": "28595a700e587856"
+  },
+  "raw": {
+    "long-prefix-repeat": [
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 0,
+        "tokensIn": 2799,
+        "tokensOut": 193,
+        "costUsd": 0.0041069999999999995,
+        "latencyMs": 1564,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 0,
+        "tokensIn": 2799,
+        "tokensOut": 234,
+        "costUsd": 0.004104,
+        "latencyMs": 1757,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 0,
+        "tokensIn": 2799,
+        "tokensOut": 193,
+        "costUsd": 0.004011,
+        "latencyMs": 1647,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 0,
+        "tokensIn": 2799,
+        "tokensOut": 198,
+        "costUsd": 0.0039570000000000004,
+        "latencyMs": 1565,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 0,
+        "tokensIn": 2799,
+        "tokensOut": 196,
+        "costUsd": 0.0040409999999999995,
+        "latencyMs": 1584,
+        "failureClass": null
+      }
+    ]
+  },
+  "stats": [
+    {
+      "fixtureId": "long-prefix-repeat",
+      "samples": 5,
+      "parseRate": 1,
+      "conformRate": null,
+      "valueAccuracyMean": null,
+      "conformCi95": null,
+      "meanCostUsd": 0.004044
+    }
+  ],
+  "totalCostUsd": 0.02022
+}

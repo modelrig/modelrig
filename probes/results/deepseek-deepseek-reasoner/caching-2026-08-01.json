@@ -1,0 +1,90 @@
+{
+  "modelKey": "deepseek/deepseek-reasoner",
+  "class": "caching",
+  "date": "2026-08-01T23:34:55.894Z",
+  "harnessVersion": "0.0.1",
+  "fixtureHashes": {
+    "long-prefix-repeat": "28595a700e587856"
+  },
+  "raw": {
+    "long-prefix-repeat": [
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2816,
+        "tokensIn": 2888,
+        "tokensOut": 64,
+        "costUsd": 0.000981988,
+        "latencyMs": 1509,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2816,
+        "tokensIn": 2888,
+        "tokensOut": 95,
+        "costUsd": 0.000264376,
+        "latencyMs": 1736,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2816,
+        "tokensIn": 2888,
+        "tokensOut": 102,
+        "costUsd": 0.000281596,
+        "latencyMs": 1538,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2816,
+        "tokensIn": 2888,
+        "tokensOut": 109,
+        "costUsd": 0.00028033599999999995,
+        "latencyMs": 1535,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2816,
+        "tokensIn": 2888,
+        "tokensOut": 62,
+        "costUsd": 0.000260176,
+        "latencyMs": 1389,
+        "failureClass": null
+      }
+    ]
+  },
+  "stats": [
+    {
+      "fixtureId": "long-prefix-repeat",
+      "samples": 5,
+      "parseRate": 1,
+      "conformRate": null,
+      "valueAccuracyMean": null,
+      "conformCi95": null,
+      "meanCostUsd": 0.0004136944
+    }
+  ],
+  "totalCostUsd": 0.002068472
+}

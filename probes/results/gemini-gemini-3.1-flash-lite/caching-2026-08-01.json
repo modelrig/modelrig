@@ -1,0 +1,90 @@
+{
+  "modelKey": "gemini/gemini-3.1-flash-lite",
+  "class": "caching",
+  "date": "2026-08-01T23:46:38.340Z",
+  "harnessVersion": "0.0.1",
+  "fixtureHashes": {
+    "long-prefix-repeat": "28595a700e587856"
+  },
+  "raw": {
+    "long-prefix-repeat": [
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 0,
+        "tokensIn": 2799,
+        "tokensOut": 30,
+        "costUsd": 0.0014939999999999999,
+        "latencyMs": 439,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 0,
+        "tokensIn": 2799,
+        "tokensOut": 28,
+        "costUsd": 0.001488,
+        "latencyMs": 479,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 0,
+        "tokensIn": 2799,
+        "tokensOut": 30,
+        "costUsd": 0.001491,
+        "latencyMs": 492,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 0,
+        "tokensIn": 2799,
+        "tokensOut": 31,
+        "costUsd": 0.0014954999999999999,
+        "latencyMs": 438,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 0,
+        "tokensIn": 2799,
+        "tokensOut": 33,
+        "costUsd": 0.0014969999999999998,
+        "latencyMs": 461,
+        "failureClass": null
+      }
+    ]
+  },
+  "stats": [
+    {
+      "fixtureId": "long-prefix-repeat",
+      "samples": 5,
+      "parseRate": 1,
+      "conformRate": null,
+      "valueAccuracyMean": null,
+      "conformCi95": null,
+      "meanCostUsd": 0.0014931
+    }
+  ],
+  "totalCostUsd": 0.0074655
+}

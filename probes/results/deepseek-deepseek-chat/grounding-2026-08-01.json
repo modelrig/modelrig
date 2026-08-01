@@ -1,0 +1,167 @@
+{
+  "modelKey": "deepseek/deepseek-chat",
+  "class": "grounding",
+  "date": "2026-08-01T23:32:44.236Z",
+  "harnessVersion": "0.0.1",
+  "fixtureHashes": {
+    "recent-earnings-citations": "9f11967a9fac9b30",
+    "recent-policy-decision": "7022d3e00d277dc9"
+  },
+  "raw": {
+    "recent-earnings-citations": [
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": true,
+        "citationCount": 2,
+        "cachedTokens": null,
+        "tokensIn": 100,
+        "tokensOut": 145,
+        "costUsd": 0.0000889,
+        "latencyMs": 2233,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": true,
+        "citationCount": 2,
+        "cachedTokens": null,
+        "tokensIn": 100,
+        "tokensOut": 165,
+        "costUsd": 0.00009730000000000001,
+        "latencyMs": 2357,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": true,
+        "citationCount": 2,
+        "cachedTokens": null,
+        "tokensIn": 100,
+        "tokensOut": 216,
+        "costUsd": 0.00011872,
+        "latencyMs": 2906,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": true,
+        "citationCount": 2,
+        "cachedTokens": null,
+        "tokensIn": 100,
+        "tokensOut": 160,
+        "costUsd": 0.00009520000000000001,
+        "latencyMs": 2536,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": true,
+        "citationCount": 2,
+        "cachedTokens": null,
+        "tokensIn": 100,
+        "tokensOut": 108,
+        "costUsd": 0.00007336,
+        "latencyMs": 1873,
+        "failureClass": null
+      }
+    ],
+    "recent-policy-decision": [
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": true,
+        "citationCount": 2,
+        "cachedTokens": null,
+        "tokensIn": 101,
+        "tokensOut": 136,
+        "costUsd": 0.0000854,
+        "latencyMs": 2304,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": true,
+        "citationCount": 2,
+        "cachedTokens": null,
+        "tokensIn": 101,
+        "tokensOut": 173,
+        "costUsd": 0.00010093999999999999,
+        "latencyMs": 2886,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": true,
+        "citationCount": 2,
+        "cachedTokens": null,
+        "tokensIn": 101,
+        "tokensOut": 250,
+        "costUsd": 0.00013328,
+        "latencyMs": 3603,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": true,
+        "citationCount": 2,
+        "cachedTokens": null,
+        "tokensIn": 101,
+        "tokensOut": 225,
+        "costUsd": 0.00012278000000000001,
+        "latencyMs": 3492,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": true,
+        "citationCount": 2,
+        "cachedTokens": null,
+        "tokensIn": 101,
+        "tokensOut": 206,
+        "costUsd": 0.0001148,
+        "latencyMs": 2727,
+        "failureClass": null
+      }
+    ]
+  },
+  "stats": [
+    {
+      "fixtureId": "recent-earnings-citations",
+      "samples": 5,
+      "parseRate": 1,
+      "conformRate": null,
+      "valueAccuracyMean": null,
+      "conformCi95": null,
+      "meanCostUsd": 0.000094696
+    },
+    {
+      "fixtureId": "recent-policy-decision",
+      "samples": 5,
+      "parseRate": 1,
+      "conformRate": null,
+      "valueAccuracyMean": null,
+      "conformCi95": null,
+      "meanCostUsd": 0.00011144
+    }
+  ],
+  "totalCostUsd": 0.00103068
+}

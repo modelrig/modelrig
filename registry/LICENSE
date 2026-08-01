@@ -1,0 +1,20 @@
+The ModelRig registry data (registry.json, layers/, leaderboard.json, and all
+probe-derived data files in this directory) is licensed under the Creative
+Commons Attribution 4.0 International License (CC BY 4.0).
+
+You are free to share and adapt this data for any purpose, including
+commercially, provided you give appropriate credit to ModelRig
+(https://modelrig.dev), link to the license, and indicate if changes were made.
+
+Full license text: https://creativecommons.org/licenses/by/4.0/legalcode
+
+Attribution example:
+  "Model capability data from the ModelRig registry (https://modelrig.dev),
+   CC BY 4.0."
+
+The build scripts in this directory (build-*.ts) are code, licensed under the
+repository's Apache-2.0 LICENSE.
+
+The pricing snapshot under data/ is derived from BerriAI/litellm's
+model_prices_and_context_window.json (MIT License, Copyright (c) 2023 Berri AI)
+at the pinned SHA recorded in data/PROVENANCE.md.

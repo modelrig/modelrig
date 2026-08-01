@@ -1,0 +1,90 @@
+{
+  "modelKey": "openai/gpt-5-mini",
+  "class": "caching",
+  "date": "2026-08-01T23:38:25.372Z",
+  "harnessVersion": "0.0.1",
+  "fixtureHashes": {
+    "long-prefix-repeat": "28595a700e587856"
+  },
+  "raw": {
+    "long-prefix-repeat": [
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2688,
+        "tokensIn": 2787,
+        "tokensOut": 99,
+        "costUsd": 0.0013127,
+        "latencyMs": 1390,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2688,
+        "tokensIn": 2787,
+        "tokensOut": 99,
+        "costUsd": 0.0007079,
+        "latencyMs": 1400,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2688,
+        "tokensIn": 2787,
+        "tokensOut": 99,
+        "costUsd": 0.0007038999999999999,
+        "latencyMs": 1624,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2688,
+        "tokensIn": 2787,
+        "tokensOut": 163,
+        "costUsd": 0.0008359,
+        "latencyMs": 1552,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2688,
+        "tokensIn": 2787,
+        "tokensOut": 98,
+        "costUsd": 0.0005778999999999999,
+        "latencyMs": 1407,
+        "failureClass": null
+      }
+    ]
+  },
+  "stats": [
+    {
+      "fixtureId": "long-prefix-repeat",
+      "samples": 5,
+      "parseRate": 1,
+      "conformRate": null,
+      "valueAccuracyMean": null,
+      "conformCi95": null,
+      "meanCostUsd": 0.00082766
+    }
+  ],
+  "totalCostUsd": 0.0041383
+}

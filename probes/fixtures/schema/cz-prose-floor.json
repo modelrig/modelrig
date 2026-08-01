@@ -1,0 +1,20 @@
+{
+  "id": "cz-prose-floor",
+  "class": "schema",
+  "source": "customer-zero",
+  "prompt": "You are an equity analyst. Using the facts below, write a growth assessment for the company. The narrative field has a MINIMUM length of 600 characters — that is a floor, not a target; write substantive, non-repetitive analysis that comfortably exceeds it. Also extract the two figures exactly.\n\nFACTS (synthetic):\nBorealis Semiconductors grew revenue 24.1% last year to $872.4 million, driven by design wins in automotive radar. Gross margin expanded 310 basis points. The company holds 14% share of a market growing ~20% annually. Two customers account for 38% of revenue. Management is investing in a second fab, which will pressure free cash flow through next year.",
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["narrative", "revenue", "revenue_growth_pct"],
+    "properties": {
+      "narrative": { "type": "string", "minLength": 600 },
+      "revenue": { "type": "number" },
+      "revenue_growth_pct": { "type": "number" }
+    }
+  },
+  "expectedValues": {
+    "revenue": 872.4,
+    "revenue_growth_pct": 24.1
+  }
+}

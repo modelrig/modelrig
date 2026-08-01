@@ -1,0 +1,167 @@
+{
+  "modelKey": "gemini/gemini-2.5-flash",
+  "class": "grounding",
+  "date": "2026-08-01T23:45:34.372Z",
+  "harnessVersion": "0.0.1",
+  "fixtureHashes": {
+    "recent-earnings-citations": "9f11967a9fac9b30",
+    "recent-policy-decision": "7022d3e00d277dc9"
+  },
+  "raw": {
+    "recent-earnings-citations": [
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": true,
+        "citationCount": 2,
+        "cachedTokens": null,
+        "tokensIn": 97,
+        "tokensOut": 1009,
+        "costUsd": 0.0025516,
+        "latencyMs": 6118,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": true,
+        "citationCount": 2,
+        "cachedTokens": null,
+        "tokensIn": 97,
+        "tokensOut": 943,
+        "costUsd": 0.0023866,
+        "latencyMs": 5816,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": true,
+        "citationCount": 2,
+        "cachedTokens": null,
+        "tokensIn": 97,
+        "tokensOut": 1640,
+        "costUsd": 0.0041291,
+        "latencyMs": 8479,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": true,
+        "citationCount": 2,
+        "cachedTokens": null,
+        "tokensIn": 97,
+        "tokensOut": 688,
+        "costUsd": 0.0017491000000000002,
+        "latencyMs": 4787,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": false,
+        "citationCount": 0,
+        "cachedTokens": null,
+        "tokensIn": 97,
+        "tokensOut": 510,
+        "costUsd": 0.0013041,
+        "latencyMs": 4181,
+        "failureClass": null
+      }
+    ],
+    "recent-policy-decision": [
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": false,
+        "citationCount": 0,
+        "cachedTokens": null,
+        "tokensIn": 99,
+        "tokensOut": 559,
+        "costUsd": 0.0014272,
+        "latencyMs": 4448,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": true,
+        "citationCount": 3,
+        "cachedTokens": null,
+        "tokensIn": 99,
+        "tokensOut": 761,
+        "costUsd": 0.0019322,
+        "latencyMs": 4711,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": true,
+        "citationCount": 2,
+        "cachedTokens": null,
+        "tokensIn": 99,
+        "tokensOut": 618,
+        "costUsd": 0.0015747,
+        "latencyMs": 4811,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": true,
+        "citationCount": 3,
+        "cachedTokens": null,
+        "tokensIn": 99,
+        "tokensOut": 825,
+        "costUsd": 0.0020922000000000002,
+        "latencyMs": 5203,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": false,
+        "citationCount": 0,
+        "cachedTokens": null,
+        "tokensIn": 99,
+        "tokensOut": 299,
+        "costUsd": 0.0007772,
+        "latencyMs": 3292,
+        "failureClass": null
+      }
+    ]
+  },
+  "stats": [
+    {
+      "fixtureId": "recent-earnings-citations",
+      "samples": 5,
+      "parseRate": 1,
+      "conformRate": null,
+      "valueAccuracyMean": null,
+      "conformCi95": null,
+      "meanCostUsd": 0.0024241
+    },
+    {
+      "fixtureId": "recent-policy-decision",
+      "samples": 5,
+      "parseRate": 1,
+      "conformRate": null,
+      "valueAccuracyMean": null,
+      "conformCi95": null,
+      "meanCostUsd": 0.0015607000000000004
+    }
+  ],
+  "totalCostUsd": 0.019924
+}

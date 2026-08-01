@@ -1,0 +1,23 @@
+{
+  "id": "litellm-strict-no-extras",
+  "class": "schema",
+  "source": "litellm-mined:tests/llm_translation (additionalProperties:false strictness pattern)",
+  "prompt": "Extract the contract terms below into the required JSON. Output ONLY the fields defined by the schema — no commentary fields, no explanations, no extra keys of any kind.\n\nCONTRACT SUMMARY (synthetic):\nTerm: 36 months. Monthly fee: $12,500. Auto-renewal: yes. Termination notice: 90 days. Governing law: Delaware.",
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["term_months", "monthly_fee_usd", "auto_renewal", "termination_notice_days"],
+    "properties": {
+      "term_months": { "type": "integer" },
+      "monthly_fee_usd": { "type": "number" },
+      "auto_renewal": { "type": "boolean" },
+      "termination_notice_days": { "type": "integer" }
+    }
+  },
+  "expectedValues": {
+    "term_months": 36,
+    "monthly_fee_usd": 12500,
+    "auto_renewal": true,
+    "termination_notice_days": 90
+  }
+}

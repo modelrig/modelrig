@@ -1,0 +1,47 @@
+{
+  "id": "deepseek-nested-required",
+  "class": "schema",
+  "source": "litellm-mined:documented json_object-vs-schema gap (deep nesting + exhaustive required)",
+  "prompt": "Build the quarterly report index below into the required JSON structure. Every field in the schema is required at every level — omit nothing; all values are present in the data.\n\nDATA (synthetic):\nCompany: Atlas Marine. Quarter: Q3 2026.\nSegments: Shipping (revenue $310.2M, operating margin 14.6%), Logistics (revenue $128.9M, operating margin 8.1%).\nGuidance: next-quarter revenue between $440M and $470M; confidence level high.",
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["company", "quarter", "segments", "guidance"],
+    "properties": {
+      "company": { "type": "string" },
+      "quarter": { "type": "string" },
+      "segments": {
+        "type": "array",
+        "minItems": 2,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["name", "revenue_musd", "operating_margin_pct"],
+          "properties": {
+            "name": { "type": "string" },
+            "revenue_musd": { "type": "number" },
+            "operating_margin_pct": { "type": "number" }
+          }
+        }
+      },
+      "guidance": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["next_quarter_revenue_low_musd", "next_quarter_revenue_high_musd", "confidence"],
+        "properties": {
+          "next_quarter_revenue_low_musd": { "type": "number" },
+          "next_quarter_revenue_high_musd": { "type": "number" },
+          "confidence": { "type": "string", "enum": ["low", "medium", "high"] }
+        }
+      }
+    }
+  },
+  "expectedValues": {
+    "company": "Atlas Marine",
+    "segments.0.revenue_musd": 310.2,
+    "segments.1.operating_margin_pct": 8.1,
+    "guidance.next_quarter_revenue_low_musd": 440,
+    "guidance.next_quarter_revenue_high_musd": 470,
+    "guidance.confidence": "high"
+  }
+}
