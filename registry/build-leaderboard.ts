@@ -11,6 +11,7 @@ import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 
 import { join } from "node:path";
 import { effectiveCostPer1kConformant } from "../src/registry/build";
 import type { Registry, RegistryEntry } from "../src/registry/build";
+import { probeFreshness, stalenessSentence, PROBE_FRESHNESS_SLO_DAYS } from "../src/registry/staleness";
 
 const DEFAULT_REGISTRY = join(__dirname, "registry.json");
 const DEFAULT_OUT_DIR = __dirname;
@@ -99,7 +100,20 @@ function escapeHtml(text: string): string {
     .replace(/"/g, "&quot;");
 }
 
-export function renderLeaderboardHtml(registry: Registry, rows: readonly LeaderboardRow[]): string {
+export function renderLeaderboardHtml(
+  registry: Registry,
+  rows: readonly LeaderboardRow[],
+  now: Date = new Date()
+): string {
+  // A2: never serve stale-as-fresh. Rendered visible when stale at
+  // generation; the inline script re-checks age at VIEW time (a fresh page
+  // read months later must still banner).
+  const freshness = probeFreshness(rows.map((r) => r.as_of), now);
+  const bannerAttrs = freshness.stale ? "" : " hidden";
+  const banner =
+    `<div id="staleness-banner"${bannerAttrs} data-newest-as-of="${escapeHtml(freshness.newestAsOf ?? "")}" ` +
+    `data-slo-days="${PROBE_FRESHNESS_SLO_DAYS}" class="staleness">` +
+    `${escapeHtml(stalenessSentence(freshness))}</div>`;
   const bodyRows = rows
     .map((row) => {
       const badges = row.discrepancies
@@ -139,11 +153,31 @@ export function renderLeaderboardHtml(registry: Registry, rows: readonly Leaderb
   .badge { display: inline-block; background: #b4540a22; color: #b4540a; border: 1px solid #b4540a55;
            border-radius: 4px; padding: 0 0.4rem; font-size: 0.75rem; margin-top: 0.25rem; }
   .ci { color: #888; font-size: 0.8rem; }
+  .staleness { background: #E5A63C22; border: 1px solid #E5A63C; color: #b07818;
+               border-radius: 6px; padding: 0.6rem 0.9rem; margin-bottom: 1rem; font-size: 0.9rem; }
   footer { margin-top: 2rem; color: #777; font-size: 0.8rem; }
 </style>
 </head>
 <body>
 <h1>ModelRig Leaderboard</h1>
+${banner}
+<script>
+  // A2: re-check freshness with the viewer's clock (static page, live SLO).
+  (function () {
+    var el = document.getElementById("staleness-banner");
+    if (!el || !el.hidden) return;
+    var asOf = Date.parse(el.getAttribute("data-newest-as-of") || "");
+    var sloDays = Number(el.getAttribute("data-slo-days") || "31");
+    if (!isFinite(asOf)) return;
+    var daysOld = Math.floor((Date.now() - asOf) / 86400000);
+    if (daysOld > sloDays) {
+      el.textContent = "This probe data exceeded its freshness window (" + sloDays +
+        " days): newest result " + new Date(asOf).toISOString().slice(0, 10) + ", " +
+        daysOld + " days old. The data below is still shown, clearly dated — a rerun is due.";
+      el.hidden = false;
+    }
+  })();
+</script>
 <p class="sub">Probed, dated, reproducible capability facts — sampled statistics with 95% confidence
 intervals, never single-shot verdicts. Ranked by effective cost per 1,000 schema-conformant outputs.
 Reproduce any row: <code>npx modelrig-probes run --model &lt;model&gt;</code>. ⚠ badges mark

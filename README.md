@@ -15,6 +15,32 @@ do, at the best price that passes your bar.
 - **Sell it** — publish a route as a **rig**: a metered, billed AI endpoint
   with your price on it. You keep the spread; we keep it cheap to serve.
 
+## Migrate with your coding agent (60 seconds)
+
+Paste this into Claude Code, Cursor, or any coding agent — it converts your
+existing LLM calls into ModelRig routes without changing behavior:
+
+```text
+Migrate this project's LLM calls to ModelRig routes (https://modelrig.dev).
+
+1. Find every direct LLM call (openai / @google/genai / deepseek SDK or raw HTTP).
+2. For each call site, create modelrig/routes/<task>.yaml containing:
+   - prompt: the existing prompt as a system template, with {{variables}} for the dynamic parts
+   - schema: ./schemas/<task>.schema.json — the JSON Schema the caller expects (null if free-form)
+   - candidates: ONLY the models this task is allowed to use today (same models as now)
+   - policy: retries per failure class, timeout_ms, tier, json: native
+3. Create modelrig/rig.yaml naming the project and the cost dimensions you tag calls with.
+4. Replace each call site with:
+     import { createRig, loadConfigFromEnv } from "modelrig";
+     const rig = createRig(loadConfigFromEnv());
+     const result = await rig.run("<task>", { input: { ...variables }, tags: { run_id } });
+5. Provider keys move to environment variables (GEMINI_API_KEY, OPENAI_API_KEY, DEEPSEEK_API_KEY).
+6. Do NOT change model choices or prompt content beyond templating — behavior must stay identical.
+7. Run the project's tests and show me the diff before committing.
+```
+
+`modelrig init` will automate this; the prompt is the zero-install version.
+
 ## What's in this repository
 
 | Directory | What it is | License |

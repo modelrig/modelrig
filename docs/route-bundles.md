@@ -12,11 +12,14 @@ invalid bundle throws a `RouteConfigError` naming the file and every problem.
 | `version` | integer ≥ 1 | yes | Bump on ANY change to the bundle, schema, or prompt. Recorded on every telemetry row. |
 | `schema` | relative path \| null | yes | JSON Schema file for the output. `null` = unstructured route (output must still be parseable JSON). Path resolves relative to the bundle file. |
 | `candidates` | list | yes, non-empty | THE candidate set. Each entry is `{provider, model}`. Providers: `gemini`, `openai`, `deepseek` (`anthropic`, `grok` reserved). Nothing outside this list can serve the route — enforced structurally (branded `CandidateRef`) and at runtime. |
-| `require` | list | no | Hard constraints: `schema_conformant`, `grounded`, `zero_retention` (validated in Phase 1; `zero_retention` is declared intent until the registry lands). |
+| `require` | list | no | Hard constraints: `schema_conformant`, `grounded`, `zero_retention`, `trace_visible` (v2 — reasoning trace exposed to the caller; `zero_retention` remains declared intent). `grounded` is satisfied natively OR — when a search provider is configured — via the grounding-inject rung (search results injected into the prompt, citations normalized onto `RunMeta.citations`, search cost accounted). |
 | `prefer` | list | no | Advisory ordering: `cost` (ascending via the pricing snapshot; unknown cost sorts last), `latency` (no-op until probe data exists, Phase 2). |
 | `prompt.system` | relative path | yes | Template file (see below). |
 | `prompt.variables` | string list | yes | Every `{{var}}` referenced by the template must be declared here. |
 | `policy` | object | yes | See below. |
+| `capture` | boolean | no (default `false`) | **v2.** Local-only replay capture opt-in: every attempt's rendered variables + output text are written to the local SQLite `captures` table. Captures NEVER leave the machine — the exporter is structurally unable to read them (export-isolation test). |
+| `repair` | object | no | **v2.** Repair rung for the default variant — see below. |
+| `variants` | list | no | **v2.** Named serving variants — see below. Absence = pure v1 semantics. |
 
 ## `policy`
 
@@ -25,17 +28,72 @@ invalid bundle throws a `RouteConfigError` naming the file and every problem.
 | `retries` | map | Per-failure-class retry budgets, e.g. `{ content_invalid: 2, network: 4, capacity_shed: 3 }`. Missing class = 0 retries. Budgets are non-fungible. Terminal classes (`budget_exhausted`, `invariant_violation`) are rejected here at load time. |
 | `timeout_ms` | positive integer | Wall-clock deadline per attempt; breach maps to the `timeout` class. |
 | `tier` | `standard` \| `flex` \| `priority` | Requested service tier. The tier actually served is recorded separately (`servedTier`) — silent downgrades become visible in telemetry. |
-| `json` | `native` \| `json_mode` | Emission rung. `native`: candidates need native strict schema enforcement (`structured_native`); the schema goes to the provider natively. `json_mode`: candidates need either mechanism; the schema is additionally coached into the prompt with strict formatting guidance. Rungs 3–4 (repair) arrive in Phase 3. |
+| `json` | `native` \| `json_mode` | Emission rung. `native`: candidates need native strict schema enforcement (`structured_native`); the schema goes to the provider natively. `json_mode`: candidates need either mechanism; the schema is additionally coached into the prompt with strict formatting guidance. |
 
-## Requirement → capability mapping (Phase 1 static stub)
+## Variants (bundle format v2 — Phase 3)
+
+A route may declare `variants` — named bindings served via
+`rig.run(route, { variant: "name" })`. Omitting `variant` (or passing
+`"default"`) serves the route's base config exactly as v1 did; v1 bundles
+remain valid unchanged. Every telemetry row records `served_variant`.
+
+```yaml
+variants:
+  - name: cheap
+    candidates:               # narrowing ONLY — must be ⊆ the route's list
+      - provider: openai
+        model: gpt-5.4-mini
+    json: json_mode           # rung override for this variant
+    repair:
+      max_repairs: 2
+      repair_model: openai/gpt-5.4-mini
+  - name: scaffolded
+    scaffold: |               # reasoning scaffold, appended before coaching
+      Think through the drivers step by step before emitting JSON.
+  - name: reworded
+    prompt_override: ./prompts/echo-v2.system.md   # inline text also accepted
+```
+
+| field | notes |
+|---|---|
+| `name` | Unique per route; `"default"` is reserved for the base config. |
+| `candidates` | Subset of the route's declared candidates — variants narrow, never widen (load error otherwise; the candidate-set invariant holds through variants). |
+| `prompt_override` | Replaces the system template (rendered with the same variables + capability conditionals). Mutually exclusive with `prompt_append`. |
+| `prompt_append` | Appended to the rendered system prompt. |
+| `scaffold` | Reasoning-scaffold text appended after `prompt_append`, before json coaching. Manual authoring only this phase. |
+| `json` | Rung override (`native` \| `json_mode`). |
+| `repair` | Variant-level repair rung, overrides the route-level `repair`. |
+
+## `repair` (ladder rung 4 — Phase 3)
+
+```yaml
+repair:
+  max_repairs: 2                     # 1 = retry-with-errors only; 2 adds the repair model
+  repair_model: deepseek/deepseek-chat   # required when max_repairs is 2; must be a declared candidate
+```
+
+On a schema-invalid output with repair enabled: attempt 1 re-asks the SAME
+model with the ajv error summary appended; attempt 2 hands
+`{invalid output, errors, schema}` to the designated repair model with a fixed
+repair prompt. Repair attempts draw from their own `repair` budget (never the
+`content_invalid` budget), and repaired rows carry `repaired_by` in telemetry
+— repair cost is visible, not hidden.
+
+## Requirement → capability mapping (registry-wired since Phase 3)
 
 | requirement | satisfied by |
 |---|---|
 | `schema_conformant` + `json: native` | `structured_native` |
 | `schema_conformant` + `json: json_mode` | `structured_native` OR `json_mode` |
-| `grounded` | `grounded_native` (also flips the grounding directive on dispatch) |
+| `grounded` | `grounded_native` (native directive on dispatch) OR a configured search provider (grounding-inject) |
+| `trace_visible` | `trace_visible` (e.g. deepseek-reasoner's exposed reasoning_content) |
 
-Static capability flags per provider (probed registry replaces this in Phase 2):
+Capability flags are resolved from **registry facts** (the packaged
+`registry/registry.json`, env-overridable via `MODELRIG_REGISTRY_PATH`) with
+per-flag precedence `capabilityOverrides > probed > declared` — a
+probed-false trumps a declared-true (DeepSeek's declared schema support is
+revoked because every probed sample served via json_mode coaching). Models
+absent from the registry fall back to the adapter-static baseline below:
 
 | capability | gemini | openai | deepseek |
 |---|---|---|---|
