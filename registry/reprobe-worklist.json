@@ -1,0 +1,6 @@
+{
+  "generated_at": "2026-08-02T00:06:56.446Z",
+  "vendor_sha": "de706a35a6",
+  "items": [],
+  "note": "Models needing re-probe after upstream pricing/capability changes. Manual trigger this phase: npx modelrig-probes run --model <model_key>"
+}
