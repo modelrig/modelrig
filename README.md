@@ -52,9 +52,10 @@ Disagreements are contributions — file an issue with your result attached.
   1 technical · caching: 1 general), seeded from our first production
   customer. Every fixture carries a `domain` tag and per-fixture stats are
   in each result file, so per-domain rates are always derivable — but treat
-  The legal, e-commerce, and technical fixtures were added after the 2026-08-01 campaign — their results land in the next probe cycle; published rates currently cover the finance/general fixtures only.
-  aggregate rates as corpus-wide, not domain-general. **The probe-kit's
-  headline ask is fixtures from your domain** — see
+  aggregate rates as corpus-wide, not domain-general. The e-commerce and
+  technical fixtures were added under addendum A2 on 2026-08-02, and all
+  published results were re-run that day with the full corpus. **The
+  probe-kit's headline ask is fixtures from your domain** — see
   [kits/probe-kit](kits/probe-kit/).
 
 `registry/leaderboard.html` ranks models by **conformance per dollar**
