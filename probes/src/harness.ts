@@ -1,16 +1,17 @@
 /**
- * Probe harness — Phase 2 plan §4. Drives modelrig's ProviderAdapters
- * DIRECTLY (not rig.run — probes isolate model behavior from routing);
+ * Probe harness — Phase 2 plan §4, made self-contained by post-C2 patch P2:
+ * drives vendored direct-API callers (src/vendor/*) — no modelrig dependency,
+ * so `run` reproduces externally with this repo + your own keys.
  * N samples per fixture; per-run envelope guard (default $5/model);
  * stats via pure summarize() (unit-tested without network).
  */
 
 import Ajv from "ajv";
 import type { ValidateFunction } from "ajv";
-import { estimateCostUsd, getPricing } from "modelrig";
-import type { CandidateRef, ProviderAdapter, ProviderId } from "modelrig";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
+import { probeSampleCostUsd } from "./vendor/pricing";
+import type { ProbeCaller } from "./vendor/types";
 import { fixtureHash } from "./fixtures";
 import { resolveModel } from "./providers";
 import { loadProbesConfigFromEnv } from "./config";
@@ -122,32 +123,26 @@ export function jsonModeCoaching(schema: object): string {
 const USER_DIRECTIVE = "Produce the required output now, following the instructions exactly.";
 
 export interface SampleContext {
-  readonly adapter: ProviderAdapter;
-  readonly candidate: CandidateRef;
-  readonly provider: ProviderId;
-  readonly model: string;
+  readonly caller: ProbeCaller;
 }
 
-/** One schema-class sample: dispatch (native rung when the adapter declares
- * structured_native for this model, else json_mode coaching), parse, ajv,
- * value-accuracy. Pure aside from the adapter call — hermetic tests inject
- * a fake adapter. */
+/** One schema-class sample: dispatch (native rung when the caller declares
+ * structured_native, else json_mode coaching), parse, ajv, value-accuracy.
+ * Pure aside from the caller dispatch — hermetic tests inject a fake caller. */
 export async function runSchemaSample(
   ctx: SampleContext,
   fixture: ProbeFixture
 ): Promise<ProbeSample> {
-  const native = ctx.adapter.supports("structured_native", ctx.model);
+  const native = ctx.caller.supports("structured_native");
   const schema = fixture.schema ?? null;
   const systemPrompt =
     native || schema === null ? fixture.prompt : fixture.prompt + jsonModeCoaching(schema);
 
   const started = Date.now();
-  const result = await ctx.adapter.call({
-    candidate: ctx.candidate,
+  const result = await ctx.caller.call({
     systemPrompt,
     userPrompt: USER_DIRECTIVE,
     outputSchema: native ? schema : null,
-    requestedTier: "standard",
     timeoutMs: 180_000,
   });
   const latencyMs = Date.now() - started;
@@ -166,21 +161,12 @@ export async function runSchemaSample(
       tokensOut: 0,
       costUsd: 0,
       latencyMs,
-      failureClass: result.failure.class,
+      failureClass: result.failureClass,
       rung,
     };
   }
 
-  const pricing = getPricing(ctx.provider, ctx.model);
-  const costUsd =
-    pricing === null
-      ? 0
-      : estimateCostUsd(
-          pricing,
-          result.usage.tokensIn,
-          result.usage.tokensOut,
-          result.usage.tokensCached
-        );
+  const costUsd = probeSampleCostUsd(ctx.caller.provider, ctx.caller.model, result.usage);
 
   let parsed: unknown;
   let parseOk = true;
@@ -349,9 +335,9 @@ export async function runProbe(
         ? (await import("./grounding")).runGroundingSample
         : (await import("./caching")).runCachingSample;
   const resolvedKeys = keys ?? loadProbesConfigFromEnv().keys;
-  const { adapter, candidate, provider, model } = resolveModel(config.modelKey, resolvedKeys);
+  const caller = resolveModel(config.modelKey, resolvedKeys);
   return sampleFixtures(
-    { adapter, candidate, provider, model },
+    { caller },
     config.modelKey,
     cls,
     fixtures,

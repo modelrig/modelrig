@@ -7,23 +7,16 @@
  * what the provider actually reports, whatever the mechanism.
  */
 
-import { estimateCostUsd, getPricing } from "modelrig";
-import type { AdapterResult } from "modelrig";
+import { probeSampleCostUsd } from "./vendor/pricing";
+import type { ProbeCallResult } from "./vendor/types";
 import type { ProbeFixture, ProbeSample } from "./types";
 import type { SampleContext } from "./harness";
 
 const USER_DIRECTIVE = "Answer the question at the end of the instructions now, in one short paragraph.";
 
-function costOf(ctx: SampleContext, result: AdapterResult): number {
+function costOf(ctx: SampleContext, result: ProbeCallResult): number {
   if (!result.ok) return 0;
-  const pricing = getPricing(ctx.provider, ctx.model);
-  if (pricing === null) return 0;
-  return estimateCostUsd(
-    pricing,
-    result.usage.tokensIn,
-    result.usage.tokensOut,
-    result.usage.tokensCached
-  );
+  return probeSampleCostUsd(ctx.caller.provider, ctx.caller.model, result.usage);
 }
 
 export async function runCachingSample(
@@ -31,16 +24,14 @@ export async function runCachingSample(
   fixture: ProbeFixture
 ): Promise<ProbeSample> {
   const request = {
-    candidate: ctx.candidate,
     systemPrompt: fixture.prompt,
     userPrompt: USER_DIRECTIVE,
     outputSchema: null,
-    requestedTier: "standard" as const,
     timeoutMs: 180_000,
   };
 
   const started = Date.now();
-  const prime = await ctx.adapter.call(request);
+  const prime = await ctx.caller.call(request);
   const primeCost = costOf(ctx, prime);
   if (!prime.ok) {
     return {
@@ -54,12 +45,12 @@ export async function runCachingSample(
       tokensOut: 0,
       costUsd: 0,
       latencyMs: Date.now() - started,
-      failureClass: prime.failure.class,
+      failureClass: prime.failureClass,
     };
   }
 
   const repeatStarted = Date.now();
-  const repeat = await ctx.adapter.call(request);
+  const repeat = await ctx.caller.call(request);
   const latencyMs = Date.now() - repeatStarted;
   if (!repeat.ok) {
     return {
@@ -73,7 +64,7 @@ export async function runCachingSample(
       tokensOut: prime.usage.tokensOut,
       costUsd: primeCost,
       latencyMs,
-      failureClass: repeat.failure.class,
+      failureClass: repeat.failureClass,
     };
   }
 

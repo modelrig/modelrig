@@ -97,8 +97,8 @@ try {
 } catch (err) {
   if (err instanceof RigFailureError) {
     err.failure.class;   // content_invalid | capacity_shed | network | refusal
-                         // | cache_invalid | timeout | budget_exhausted
-                         // | invariant_violation
+                         // | cache_invalid | timeout | config_auth
+                         // | budget_exhausted | invariant_violation
     err.failure.fixHint; // machine-readable remediation when available
   }
 }
@@ -107,6 +107,12 @@ try {
 Retry budgets are **per class and non-fungible** — exhausting `network`
 retries never consumes the `content_invalid` budget. Terminal classes
 (`budget_exhausted`, `invariant_violation`) are never retried.
+`config_auth` (bad or missing credentials) is **non-retryable by contract**:
+it cannot appear in a bundle's retry budgets, is never retried on the same
+candidate, and the run loop advances straight to the next candidate — a dead
+key never burns backoff time. Failures that still billed tokens (refusals,
+truncations) carry their token usage, so envelopes and telemetry account the
+real spend.
 
 ## 5. Where the telemetry goes
 

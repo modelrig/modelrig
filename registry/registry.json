@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-02T06:11:39.664Z",
+  "generated_at": "2026-08-02T16:06:38.367Z",
   "license": "CC-BY-4.0",
   "models": [
     {
@@ -56,6 +56,13 @@
           "kind": "citations_without_declared_search",
           "message": "no declared web-search support, but 93% of probed answers cited URLs — verify whether these are real or fabricated sources"
         }
+      ],
+      "callNotes": [
+        "no native json_schema — json_object forcing only; the schema must be coached into the prompt and validated caller-side",
+        "json_object mode returns 400 unless the literal word \"JSON\" appears in the prompt",
+        "automatic prefix caching: prompt_cache_hit_tokens are billed ~10x cheaper than fresh input",
+        "no service tiers — served tier is always standard",
+        "max_tokens up to 64K — full capacity for long structured reports"
       ]
     },
     {
@@ -112,6 +119,13 @@
           "kind": "citations_without_declared_search",
           "message": "no declared web-search support, but 87% of probed answers cited URLs — verify whether these are real or fabricated sources"
         }
+      ],
+      "callNotes": [
+        "no native json_schema — json_object forcing only; the schema must be coached into the prompt and validated caller-side",
+        "json_object mode returns 400 unless the literal word \"JSON\" appears in the prompt",
+        "automatic prefix caching: prompt_cache_hit_tokens are billed ~10x cheaper than fresh input",
+        "no service tiers — served tier is always standard",
+        "emits reasoning_content (chain-of-thought) deltas — exclude them from the JSON buffer; only delta.content is the answer"
       ]
     },
     {
@@ -159,7 +173,14 @@
         }
       },
       "observed": null,
-      "discrepancies": []
+      "discrepancies": [],
+      "callNotes": [
+        "temperature must be 1.0 — lower values cause output looping on Gemini 3 models",
+        "native strict structured output via responseJsonSchema; very complex schemas can be rejected as INVALID_ARGUMENT (complexity ceiling)",
+        "native web grounding via the googleSearch tool",
+        "cachedContent excludes systemInstruction and tools — bake the system prompt (and the googleSearch tool for grounded steps) into the cache at creation time",
+        "does NOT accept thinkingConfig — sending it returns 400 (thinking models only)"
+      ]
     },
     {
       "model_key": "gemini/gemini-3-flash-preview",
@@ -211,6 +232,13 @@
           "kind": "declared_caching_unrealized",
           "message": "declared supports_prompt_caching, but no probed repeat call reported cached tokens"
         }
+      ],
+      "callNotes": [
+        "temperature must be 1.0 — lower values cause output looping on Gemini 3 models",
+        "native strict structured output via responseJsonSchema; very complex schemas can be rejected as INVALID_ARGUMENT (complexity ceiling)",
+        "native web grounding via the googleSearch tool",
+        "cachedContent excludes systemInstruction and tools — bake the system prompt (and the googleSearch tool for grounded steps) into the cache at creation time",
+        "does NOT accept thinkingConfig — sending it returns 400 (thinking models only)"
       ]
     },
     {
@@ -275,6 +303,13 @@
           "kind": "declared_caching_unrealized",
           "message": "declared supports_prompt_caching, but no probed repeat call reported cached tokens"
         }
+      ],
+      "callNotes": [
+        "temperature must be 1.0 — lower values cause output looping on Gemini 3 models",
+        "native strict structured output via responseJsonSchema; very complex schemas can be rejected as INVALID_ARGUMENT (complexity ceiling)",
+        "native web grounding via the googleSearch tool",
+        "cachedContent excludes systemInstruction and tools — bake the system prompt (and the googleSearch tool for grounded steps) into the cache at creation time",
+        "does NOT accept thinkingConfig — sending it returns 400 (thinking models only)"
       ]
     },
     {
@@ -337,6 +372,13 @@
           "kind": "declared_caching_unrealized",
           "message": "declared supports_prompt_caching, but no probed repeat call reported cached tokens"
         }
+      ],
+      "callNotes": [
+        "temperature must be 1.0 — lower values cause output looping on Gemini 3 models",
+        "native strict structured output via responseJsonSchema; very complex schemas can be rejected as INVALID_ARGUMENT (complexity ceiling)",
+        "native web grounding via the googleSearch tool",
+        "cachedContent excludes systemInstruction and tools — bake the system prompt (and the googleSearch tool for grounded steps) into the cache at creation time",
+        "accepts thinkingConfig (thinking level); thinking tokens are billed as output and count against maxOutputTokens"
       ]
     },
     {
@@ -384,7 +426,14 @@
         }
       },
       "observed": null,
-      "discrepancies": []
+      "discrepancies": [],
+      "callNotes": [
+        "native strict structured output via response_format json_schema with strict: true",
+        "streamed refusal deltas are terminal for the call, even alongside partial content",
+        "prompt caching is keyed via prompt_cache_key; retention extends to 24h when the cache directive's TTL is ≥ 86400s",
+        "finish_reason=stop with <200 visible completion tokens on a 50K+ token prompt indicates flex-tier degradation or a stream drop — treat as invalid, not success",
+        "NOT flex-eligible (mini/nano and older families) — flex requests are silently served at default tier"
+      ]
     },
     {
       "model_key": "openai/gpt-5.2",
@@ -436,6 +485,13 @@
           "kind": "declared_search_ungrounded",
           "message": "declared supports_web_search, but only 13% of probed answers carried citations (bar: 50%)"
         }
+      ],
+      "callNotes": [
+        "native strict structured output via response_format json_schema with strict: true",
+        "streamed refusal deltas are terminal for the call, even alongside partial content",
+        "prompt caching is keyed via prompt_cache_key; retention extends to 24h when the cache directive's TTL is ≥ 86400s",
+        "finish_reason=stop with <200 visible completion tokens on a 50K+ token prompt indicates flex-tier degradation or a stream drop — treat as invalid, not success",
+        "flex service tier eligible — discounted, sheddable capacity; served tier is echoed on the stream"
       ]
     },
     {
@@ -496,7 +552,14 @@
           "budget_exhausted": 0.034482758620689655
         }
       },
-      "discrepancies": []
+      "discrepancies": [],
+      "callNotes": [
+        "native strict structured output via response_format json_schema with strict: true",
+        "streamed refusal deltas are terminal for the call, even alongside partial content",
+        "prompt caching is keyed via prompt_cache_key; retention extends to 24h when the cache directive's TTL is ≥ 86400s",
+        "finish_reason=stop with <200 visible completion tokens on a 50K+ token prompt indicates flex-tier degradation or a stream drop — treat as invalid, not success",
+        "NOT flex-eligible (mini/nano and older families) — flex requests are silently served at default tier"
+      ]
     },
     {
       "model_key": "openai/gpt-5.4-nano",
@@ -543,7 +606,14 @@
         }
       },
       "observed": null,
-      "discrepancies": []
+      "discrepancies": [],
+      "callNotes": [
+        "native strict structured output via response_format json_schema with strict: true",
+        "streamed refusal deltas are terminal for the call, even alongside partial content",
+        "prompt caching is keyed via prompt_cache_key; retention extends to 24h when the cache directive's TTL is ≥ 86400s",
+        "finish_reason=stop with <200 visible completion tokens on a 50K+ token prompt indicates flex-tier degradation or a stream drop — treat as invalid, not success",
+        "NOT flex-eligible (mini/nano and older families) — flex requests are silently served at default tier"
+      ]
     }
   ]
 }

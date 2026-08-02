@@ -39,14 +39,13 @@ Disagreements are contributions — file an issue with your result attached.
 
 **Current reproducibility limits, stated plainly:**
 
-- **`verify` is fully standalone today; `run` is not yet.** The probe runner
-  drives provider adapters from the `modelrig` package, whose npm release is
-  still a placeholder — so `run` currently executes only inside our
-  workspace. Every published result ships with its raw per-sample records
-  and fixture hashes, so `verify` lets you independently recompute all
-  published statistics now. Self-contained provider callers (removing the
-  `modelrig` dependency from `run`) are the next planned change to this
-  repo.
+- **Both `run` and `verify` are fully standalone.** As of 2026-08-02 the
+  probe runner drives its own vendored direct-API callers
+  (`probes/src/vendor/`) — the `modelrig` dependency is gone, so `run`
+  executes anywhere with this repo checkout and your own provider API keys.
+  Every published result still ships with its raw per-sample records and
+  fixture hashes, so `verify` independently recomputes all published
+  statistics without any API key at all.
 - **Coverage: the v0 corpus is small and finance-weighted** — 10 fixtures
   (schema: 4 finance, 1 legal, 1 e-commerce · grounding: 2 finance,
   1 technical · caching: 1 general), seeded from our first production

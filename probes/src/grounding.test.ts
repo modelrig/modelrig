@@ -1,14 +1,13 @@
 /**
- * Grounding + caching class tests (hermetic, fake adapters).
+ * Grounding + caching class tests (hermetic, fake callers).
  */
 
 import { describe, expect, it } from "vitest";
-import type { AdapterRequest, AdapterResult, ProviderAdapter } from "modelrig";
-import { resolveCandidates } from "modelrig";
 import { runCachingSample } from "./caching";
 import { extractCitations, runGroundingSample } from "./grounding";
 import type { SampleContext } from "./harness";
 import type { ProbeFixture } from "./types";
+import type { ProbeCallRequest, ProbeCallResult, ProbeCaller } from "./vendor/types";
 
 const GROUNDING_FIXTURE: ProbeFixture = {
   id: "g1",
@@ -27,14 +26,16 @@ const CACHING_FIXTURE: ProbeFixture = {
 };
 
 function ctxWith(
-  results: AdapterResult[],
+  results: ProbeCallResult[],
   flags: { groundedNative?: boolean } = {}
-): SampleContext & { requests: AdapterRequest[] } {
-  const requests: AdapterRequest[] = [];
+): SampleContext & { requests: ProbeCallRequest[] } {
+  const requests: ProbeCallRequest[] = [];
   let i = 0;
-  const adapter: ProviderAdapter = {
-    id: "gemini",
-    supports: (flag) => (flag === "grounded_native" ? (flags.groundedNative ?? false) : false),
+  const caller: ProbeCaller = {
+    provider: "gemini",
+    model: "g-model",
+    supports: (capability) =>
+      capability === "grounded_native" ? (flags.groundedNative ?? false) : false,
     call: async (req) => {
       requests.push(req);
       const next = results[Math.min(i, results.length - 1)];
@@ -42,32 +43,14 @@ function ctxWith(
       return next;
     },
   };
-  const iter = resolveCandidates(
-    {
-      route: "probe.test",
-      version: 1,
-      outputSchema: null,
-      candidates: [{ provider: "gemini", model: "g-model" }],
-      require: [],
-      prefer: [],
-      systemTemplate: "",
-      variables: [],
-      policy: { retries: {}, timeoutMs: 1000, tier: "standard", json: "native" },
-      fingerprintCell: null,
-    },
-    () => new Set(),
-    () => null
-  );
-  const candidate = iter.next();
-  if (candidate === null) throw new Error("unreachable");
-  return { adapter, candidate, provider: "gemini", model: "g-model", requests };
+  return { caller, requests };
 }
 
-function ok(text: string, cached = 0): AdapterResult {
+function ok(text: string, cached = 0): ProbeCallResult {
   return {
     ok: true,
     text,
-    usage: { tokensIn: 4000, tokensOut: 100, tokensCached: cached, servedTier: "standard" },
+    usage: { tokensIn: 4000, tokensOut: 100, tokensCached: cached },
   };
 }
 
@@ -119,7 +102,7 @@ describe("runCachingSample", () => {
   });
 
   it("records a failure class when the prime call fails", async () => {
-    const ctx = ctxWith([{ ok: false, failure: { class: "network", message: "boom" } }]);
+    const ctx = ctxWith([{ ok: false, failureClass: "network", message: "boom" }]);
     const sample = await runCachingSample(ctx, CACHING_FIXTURE);
     expect(sample.failureClass).toBe("network");
     expect(sample.cachedTokens).toBeNull();

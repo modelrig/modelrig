@@ -1,29 +1,19 @@
 /**
- * Model-key resolution: "provider/model" → a live ProviderAdapter plus a
- * legitimately-minted CandidateRef. Probes bypass ROUTING, never the brand:
- * the ref is minted by modelrig's resolveCandidates — the single sanctioned
- * brand site — against a synthetic single-candidate probe route.
+ * Model-key resolution: "provider/model" → a vendored direct-API ProbeCaller.
+ * Post-C2 patch P2: the probe runner is fully self-contained — no modelrig
+ * dependency — so `run` reproduces externally with nothing but this repo and
+ * your own API keys.
  */
 
-import {
-  createDeepSeekAdapter,
-  createGeminiAdapter,
-  createOpenAIAdapter,
-  resolveCandidates,
-} from "modelrig";
-import type { CandidateRef, ProviderAdapter, ProviderId, RouteBundle } from "modelrig";
 import type { ProbesConfig } from "./config";
+import { createDeepSeekCaller } from "./vendor/deepseek";
+import { createGeminiCaller } from "./vendor/gemini";
+import { createOpenAICaller } from "./vendor/openai";
+import type { ProbeCaller, ProbeProviderId } from "./vendor/types";
 
 const SUPPORTED_PROVIDERS: ReadonlySet<string> = new Set(["gemini", "openai", "deepseek"]);
 
-export interface ResolvedModel {
-  readonly provider: ProviderId;
-  readonly model: string;
-  readonly adapter: ProviderAdapter;
-  readonly candidate: CandidateRef;
-}
-
-export function parseModelKey(modelKey: string): { provider: ProviderId; model: string } {
+export function parseModelKey(modelKey: string): { provider: ProbeProviderId; model: string } {
   const slash = modelKey.indexOf("/");
   if (slash <= 0 || slash === modelKey.length - 1) {
     throw new Error(`model key "${modelKey}" must be "provider/model" (e.g. "openai/gpt-5.2")`);
@@ -36,51 +26,20 @@ export function parseModelKey(modelKey: string): { provider: ProviderId; model: 
         `known providers: [${[...SUPPORTED_PROVIDERS].join(", ")}]`
     );
   }
-  return { provider: provider as ProviderId, model };
+  return { provider: provider as ProbeProviderId, model };
 }
 
-function probeRoute(provider: ProviderId, model: string): RouteBundle {
-  return {
-    route: `probe.${provider}.${model}`,
-    version: 1,
-    outputSchema: null,
-    candidates: [{ provider, model }],
-    require: [],
-    prefer: [],
-    systemTemplate: "",
-    variables: [],
-    policy: { retries: {}, timeoutMs: 180_000, tier: "standard", json: "native" },
-    fingerprintCell: null,
-  };
-}
-
-export function resolveModel(modelKey: string, keys: ProbesConfig["keys"]): ResolvedModel {
+export function resolveModel(modelKey: string, keys: ProbesConfig["keys"]): ProbeCaller {
   const { provider, model } = parseModelKey(modelKey);
-
-  let adapter: ProviderAdapter;
   switch (provider) {
     case "gemini":
       if (!keys.gemini) throw new Error("GEMINI_API_KEY is not set");
-      adapter = createGeminiAdapter({ apiKey: keys.gemini });
-      break;
+      return createGeminiCaller(model, keys.gemini);
     case "openai":
       if (!keys.openai) throw new Error("OPENAI_API_KEY is not set");
-      adapter = createOpenAIAdapter({ apiKey: keys.openai });
-      break;
+      return createOpenAICaller(model, keys.openai);
     case "deepseek":
       if (!keys.deepseek) throw new Error("DEEPSEEK_API_KEY is not set");
-      adapter = createDeepSeekAdapter({ apiKey: keys.deepseek });
-      break;
-    default:
-      throw new Error(`unreachable provider "${provider as string}"`);
+      return createDeepSeekCaller(model, keys.deepseek);
   }
-
-  // require:[] means every declared candidate is eligible regardless of
-  // capability flags, so an empty lookup suffices to mint the ref.
-  const iter = resolveCandidates(probeRoute(provider, model), () => new Set(), () => null);
-  const candidate = iter.next();
-  if (candidate === null) {
-    throw new Error(`could not resolve a candidate for "${modelKey}"`);
-  }
-  return { provider, model, adapter, candidate };
 }

@@ -5,8 +5,7 @@
  */
 
 import { describe, expect, it } from "vitest";
-import type { AdapterRequest, AdapterResult, ProviderAdapter } from "modelrig";
-import { resolveCandidates } from "modelrig";
+import type { ProbeCallRequest, ProbeCallResult, ProbeCaller } from "./vendor/types";
 import {
   ProbeBudgetExceededError,
   runSchemaSample,
@@ -53,14 +52,15 @@ function sample(overrides: Partial<ProbeSample> = {}): ProbeSample {
 }
 
 function fakeContext(
-  results: AdapterResult[],
+  results: ProbeCallResult[],
   structuredNative: boolean
-): SampleContext & { requests: AdapterRequest[] } {
-  const requests: AdapterRequest[] = [];
+): SampleContext & { requests: ProbeCallRequest[] } {
+  const requests: ProbeCallRequest[] = [];
   let i = 0;
-  const adapter: ProviderAdapter = {
-    id: "openai",
-    supports: (flag) => (flag === "structured_native" ? structuredNative : false),
+  const caller: ProbeCaller = {
+    provider: "openai",
+    model: "test-model",
+    supports: (capability) => (capability === "structured_native" ? structuredNative : false),
     call: async (req) => {
       requests.push(req);
       const next = results[Math.min(i, results.length - 1)];
@@ -68,32 +68,14 @@ function fakeContext(
       return next;
     },
   };
-  const iter = resolveCandidates(
-    {
-      route: "probe.test",
-      version: 1,
-      outputSchema: null,
-      candidates: [{ provider: "openai", model: "test-model" }],
-      require: [],
-      prefer: [],
-      systemTemplate: "",
-      variables: [],
-      policy: { retries: {}, timeoutMs: 1000, tier: "standard", json: "native" },
-      fingerprintCell: null,
-    },
-    () => new Set(),
-    () => null
-  );
-  const candidate = iter.next();
-  if (candidate === null) throw new Error("unreachable: probe route has one candidate");
-  return { adapter, candidate, provider: "openai", model: "test-model", requests };
+  return { caller, requests };
 }
 
-function ok(text: string): AdapterResult {
+function ok(text: string): ProbeCallResult {
   return {
     ok: true,
     text,
-    usage: { tokensIn: 100, tokensOut: 50, tokensCached: 0, servedTier: "standard" },
+    usage: { tokensIn: 100, tokensOut: 50, tokensCached: 0 },
   };
 }
 
@@ -216,9 +198,9 @@ describe("runSchemaSample", () => {
     expect(unparseable.schemaConform).toBe(false);
   });
 
-  it("records adapter failures as failed samples with the failure class", async () => {
+  it("records caller failures as failed samples with the failure class", async () => {
     const ctx = fakeContext(
-      [{ ok: false, failure: { class: "capacity_shed", message: "shed" } }],
+      [{ ok: false, failureClass: "capacity_shed", message: "shed" }],
       true
     );
     const result = await runSchemaSample(ctx, FIXTURE);

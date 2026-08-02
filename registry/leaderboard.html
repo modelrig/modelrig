@@ -24,8 +24,10 @@ intervals, never single-shot verdicts. Ranked by effective cost per 1,000 schema
 Reproduce any row: <code>npx modelrig-probes run --model &lt;model&gt;</code>. ⚠ badges mark
 declared-vs-probed discrepancies.</p>
 <p class="sub"><strong>Coverage:</strong> v0 corpus: 10 fixtures, finance-weighted (seeded from our first production customer) — schema: 4 finance, 1 e-commerce, 1 legal · grounding: 2 finance, 1 technical · caching: 1 general. Per-fixture stats (with
-domains) are in each published result file; rates here aggregate the whole corpus. <strong>The
-probe-kit's headline ask is fixtures from your domain</strong> —
+domains) are in each published result file; rates here aggregate the whole corpus. The
+e-commerce and technical fixtures were added under addendum A2 on 2026-08-02, and all published
+results were re-run that day with the full corpus. <strong>The probe-kit's headline ask is
+fixtures from your domain</strong> —
 <a href="https://github.com/modelrig/modelrig/tree/main/kits/probe-kit">contribute one</a>.</p>
 <table>
 <thead><tr><th>Model</th><th>Schema conformance</th><th>Value accuracy</th>
@@ -43,7 +45,7 @@ probe-kit's headline ask is fixtures from your domain</strong> —
 <tr><td class="model">gemini/gemini-3.1-pro-preview<div class="badges"><span class="badge" title="declared supports_prompt_caching, but no probed repeat call reported cached tokens">⚠ declared_caching_unrealized</span></div></td><td>100% <span class="ci">[89%–100%]</span></td><td>100%</td><td>$11.838</td><td>100%</td><td>0%</td><td>30</td></tr>
 </tbody>
 </table>
-<footer>Generated 2026-08-02T06:11:39.664Z · data CC-BY-4.0 ·
+<footer>Generated 2026-08-02T16:06:38.367Z · data CC-BY-4.0 ·
 probe code Apache-2.0 · <a href="https://github.com/modelrig/modelrig">github.com/modelrig/modelrig</a></footer>
 </body>
 </html>

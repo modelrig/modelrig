@@ -9,7 +9,7 @@
 
 import type { ProbeFixture, ProbeSample } from "./types";
 import type { SampleContext } from "./harness";
-import { estimateCostUsd, getPricing } from "modelrig";
+import { probeSampleCostUsd } from "./vendor/pricing";
 
 const URL_PATTERN = /https?:\/\/[^\s"'<>)\]]+/g;
 
@@ -38,18 +38,16 @@ export async function runGroundingSample(
   ctx: SampleContext,
   fixture: ProbeFixture
 ): Promise<ProbeSample> {
-  // Native grounding when the adapter declares it; otherwise the plain call
+  // Native grounding when the caller declares it; otherwise the plain call
   // still probes whether the model fabricates citations without search —
   // both behaviors belong in the registry.
-  const nativeGrounding = ctx.adapter.supports("grounded_native", ctx.model);
+  const nativeGrounding = ctx.caller.supports("grounded_native");
 
   const started = Date.now();
-  const result = await ctx.adapter.call({
-    candidate: ctx.candidate,
+  const result = await ctx.caller.call({
     systemPrompt: fixture.prompt,
     userPrompt: USER_DIRECTIVE,
     outputSchema: null,
-    requestedTier: "standard",
     timeoutMs: 180_000,
     ...(nativeGrounding ? { grounding: true } : {}),
   });
@@ -67,20 +65,11 @@ export async function runGroundingSample(
       tokensOut: 0,
       costUsd: 0,
       latencyMs,
-      failureClass: result.failure.class,
+      failureClass: result.failureClass,
     };
   }
 
-  const pricing = getPricing(ctx.provider, ctx.model);
-  const costUsd =
-    pricing === null
-      ? 0
-      : estimateCostUsd(
-          pricing,
-          result.usage.tokensIn,
-          result.usage.tokensOut,
-          result.usage.tokensCached
-        );
+  const costUsd = probeSampleCostUsd(ctx.caller.provider, ctx.caller.model, result.usage);
 
   const scan = extractCitations(result.text);
   return {

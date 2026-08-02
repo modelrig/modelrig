@@ -149,8 +149,10 @@ intervals, never single-shot verdicts. Ranked by effective cost per 1,000 schema
 Reproduce any row: <code>npx modelrig-probes run --model &lt;model&gt;</code>. ⚠ badges mark
 declared-vs-probed discrepancies.</p>
 <p class="sub"><strong>Coverage:</strong> ${escapeHtml(corpusSummary())}. Per-fixture stats (with
-domains) are in each published result file; rates here aggregate the whole corpus. <strong>The
-probe-kit's headline ask is fixtures from your domain</strong> —
+domains) are in each published result file; rates here aggregate the whole corpus. The
+e-commerce and technical fixtures were added under addendum A2 on 2026-08-02, and all published
+results were re-run that day with the full corpus. <strong>The probe-kit's headline ask is
+fixtures from your domain</strong> —
 <a href="https://github.com/modelrig/modelrig/tree/main/kits/probe-kit">contribute one</a>.</p>
 <table>
 <thead><tr><th>Model</th><th>Schema conformance</th><th>Value accuracy</th>

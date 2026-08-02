@@ -22,10 +22,11 @@ describe("resolveModel", () => {
     expect(() => resolveModel("openai/gpt-5.2", {})).toThrow(/OPENAI_API_KEY/);
   });
 
-  it("mints a legitimate CandidateRef for a keyed provider", () => {
-    const resolved = resolveModel("openai/gpt-5.2", { openai: "sk-test" });
-    expect(resolved.candidate.provider).toBe("openai");
-    expect(resolved.candidate.model).toBe("gpt-5.2");
-    expect(resolved.adapter.id).toBe("openai");
+  it("returns a vendored caller for a keyed provider (P2: no modelrig involved)", () => {
+    const caller = resolveModel("openai/gpt-5.2", { openai: "sk-test" });
+    expect(caller.provider).toBe("openai");
+    expect(caller.model).toBe("gpt-5.2");
+    expect(caller.supports("structured_native")).toBe(true);
+    expect(caller.supports("grounded_native")).toBe(false);
   });
 });

@@ -13,8 +13,9 @@
     "test": "vitest run --exclude '**/*.live.test.ts'"
   },
   "dependencies": {
+    "@google/genai": "^2.4.0",
     "ajv": "^8.17.0",
-    "modelrig": "^0.0.1"
+    "openai": "^4.77.0"
   },
   "devDependencies": {
     "typescript": "^5.2.0",

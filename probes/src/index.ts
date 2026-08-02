@@ -32,3 +32,16 @@ export type { ReproducibilityReport, VerifyReport } from "./verify";
 export { loadProbesConfigFromEnv } from "./config";
 export type { ProbesConfig } from "./config";
 export { parseModelKey, resolveModel } from "./providers";
+// Vendored self-contained caller layer (post-C2 patch P2).
+export type {
+  ProbeCallRequest,
+  ProbeCallResult,
+  ProbeCaller,
+  ProbeCapability,
+  ProbeProviderId,
+  ProbeUsage,
+} from "./vendor/types";
+export { createGeminiCaller } from "./vendor/gemini";
+export { createOpenAICaller } from "./vendor/openai";
+export { createDeepSeekCaller } from "./vendor/deepseek";
+export { estimateProbeCostUsd, getProbePricing, probeSampleCostUsd } from "./vendor/pricing";
