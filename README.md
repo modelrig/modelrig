@@ -37,9 +37,29 @@ npx modelrig-probes verify <your-result>.json --against probes/results/<publishe
 A reproduction "passes" when your rerun lands inside the published interval.
 Disagreements are contributions — file an issue with your result attached.
 
+**Current reproducibility limits, stated plainly:**
+
+- **`verify` is fully standalone today; `run` is not yet.** The probe runner
+  drives provider adapters from the `modelrig` package, whose npm release is
+  still a placeholder — so `run` currently executes only inside our
+  workspace. Every published result ships with its raw per-sample records
+  and fixture hashes, so `verify` lets you independently recompute all
+  published statistics now. Self-contained provider callers (removing the
+  `modelrig` dependency from `run`) are the next planned change to this
+  repo.
+- **Coverage: the v0 corpus is small and finance-weighted** — 10 fixtures
+  (schema: 4 finance, 1 legal, 1 e-commerce · grounding: 2 finance,
+  1 technical · caching: 1 general), seeded from our first production
+  customer. Every fixture carries a `domain` tag and per-fixture stats are
+  in each result file, so per-domain rates are always derivable — but treat
+  aggregate rates as corpus-wide, not domain-general. **The probe-kit's
+  headline ask is fixtures from your domain** — see
+  [kits/probe-kit](kits/probe-kit/).
+
 `registry/leaderboard.html` ranks models by **conformance per dollar**
 (effective $ per 1,000 schema-conformant outputs), with declared-vs-probed
-discrepancies flagged prominently.
+discrepancies flagged prominently and the same coverage statement on the
+page.
 
 ## Status
 

@@ -23,6 +23,7 @@ import type { ProbeFixture, ProbeSample } from "./types";
 const FIXTURE: ProbeFixture = {
   id: "fx-1",
   class: "schema",
+  domain: "general",
   schema: {
     type: "object",
     additionalProperties: false,

@@ -1,23 +1,23 @@
 {
   "deepseek/deepseek-chat": {
-    "as_of": "2026-08-01T23:32:57.312Z",
+    "as_of": "2026-08-02T06:00:07.239Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 25,
+      "samples": 30,
       "parse_rate": 1,
       "conform_rate": 1,
       "conform_ci95": [
-        0.8668077490609515,
+        0.8864866068260312,
         0.9999999999999999
       ],
       "value_accuracy_mean": 1,
       "native_rung_rate": 0,
-      "mean_cost_usd": 0.00008531600000000002
+      "mean_cost_usd": 0.00008992946666666672
     },
     "grounding": {
-      "samples": 10,
-      "grounded_rate": 1,
-      "mean_citations": 2
+      "samples": 15,
+      "grounded_rate": 0.9333333333333333,
+      "mean_citations": 2.1333333333333333
     },
     "caching": {
       "samples": 5,
@@ -26,24 +26,24 @@
     }
   },
   "deepseek/deepseek-reasoner": {
-    "as_of": "2026-08-01T23:34:55.894Z",
+    "as_of": "2026-08-02T06:03:25.423Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 25,
+      "samples": 30,
       "parse_rate": 1,
       "conform_rate": 1,
       "conform_ci95": [
-        0.8668077490609515,
+        0.8864866068260312,
         0.9999999999999999
       ],
       "value_accuracy_mean": 1,
       "native_rung_rate": 0,
-      "mean_cost_usd": 0.00013559280000000003
+      "mean_cost_usd": 0.0001505494666666667
     },
     "grounding": {
-      "samples": 10,
-      "grounded_rate": 0.9,
-      "mean_citations": 1.9
+      "samples": 15,
+      "grounded_rate": 0.8666666666666667,
+      "mean_citations": 2.2666666666666666
     },
     "caching": {
       "samples": 5,
@@ -52,24 +52,24 @@
     }
   },
   "gemini/gemini-2.5-flash": {
-    "as_of": "2026-08-01T23:45:47.054Z",
+    "as_of": "2026-08-02T06:10:18.326Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 25,
+      "samples": 30,
       "parse_rate": 1,
       "conform_rate": 1,
       "conform_ci95": [
-        0.8668077490609515,
+        0.8864866068260312,
         0.9999999999999999
       ],
       "value_accuracy_mean": 1,
       "native_rung_rate": 1,
-      "mean_cost_usd": 0.001726460000000001
+      "mean_cost_usd": 0.0015196376666666669
     },
     "grounding": {
-      "samples": 10,
-      "grounded_rate": 0.7,
-      "mean_citations": 1.6
+      "samples": 15,
+      "grounded_rate": 0.6666666666666666,
+      "mean_citations": 1.2666666666666666
     },
     "caching": {
       "samples": 5,
@@ -78,24 +78,24 @@
     }
   },
   "gemini/gemini-3-flash-preview": {
-    "as_of": "2026-08-01T23:43:21.696Z",
+    "as_of": "2026-08-02T06:04:45.824Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 25,
+      "samples": 30,
       "parse_rate": 1,
       "conform_rate": 1,
       "conform_ci95": [
-        0.8668077490609515,
+        0.8864866068260312,
         0.9999999999999999
       ],
       "value_accuracy_mean": 1,
       "native_rung_rate": 1,
-      "mean_cost_usd": 0.00247244
+      "mean_cost_usd": 0.0028512333333333335
     },
     "grounding": {
-      "samples": 10,
+      "samples": 15,
       "grounded_rate": 1,
-      "mean_citations": 2.9
+      "mean_citations": 3.066666666666667
     },
     "caching": {
       "samples": 5,
@@ -104,24 +104,24 @@
     }
   },
   "gemini/gemini-3.1-flash-lite": {
-    "as_of": "2026-08-01T23:46:38.340Z",
+    "as_of": "2026-08-02T06:11:16.593Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 25,
+      "samples": 30,
       "parse_rate": 1,
       "conform_rate": 1,
       "conform_ci95": [
-        0.8668077490609515,
+        0.8864866068260312,
         0.9999999999999999
       ],
       "value_accuracy_mean": 1,
       "native_rung_rate": 1,
-      "mean_cost_usd": 0.0002540800000000001
+      "mean_cost_usd": 0.00028411666666666686
     },
     "grounding": {
-      "samples": 10,
+      "samples": 15,
       "grounded_rate": 1,
-      "mean_citations": 2
+      "mean_citations": 2.2666666666666666
     },
     "caching": {
       "samples": 5,
@@ -130,24 +130,24 @@
     }
   },
   "gemini/gemini-3.1-pro-preview": {
-    "as_of": "2026-08-01T23:39:46.570Z",
+    "as_of": "2026-08-02T05:59:59.823Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 25,
+      "samples": 30,
       "parse_rate": 1,
       "conform_rate": 1,
       "conform_ci95": [
-        0.8668077490609515,
+        0.8864866068260312,
         0.9999999999999999
       ],
       "value_accuracy_mean": 1,
       "native_rung_rate": 1,
-      "mean_cost_usd": 0.012097279999999998
+      "mean_cost_usd": 0.011837733333333333
     },
     "grounding": {
-      "samples": 10,
+      "samples": 15,
       "grounded_rate": 1,
-      "mean_citations": 2.6
+      "mean_citations": 2.4
     },
     "caching": {
       "samples": 5,
@@ -156,24 +156,24 @@
     }
   },
   "openai/gpt-5-mini": {
-    "as_of": "2026-08-01T23:38:25.372Z",
+    "as_of": "2026-08-02T05:57:19.984Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 25,
+      "samples": 30,
       "parse_rate": 1,
       "conform_rate": 1,
       "conform_ci95": [
-        0.8668077490609515,
+        0.8864866068260312,
         0.9999999999999999
       ],
       "value_accuracy_mean": 1,
       "native_rung_rate": 1,
-      "mean_cost_usd": 0.0009163999999999996
+      "mean_cost_usd": 0.000952458333333333
     },
     "grounding": {
-      "samples": 10,
-      "grounded_rate": 0.5,
-      "mean_citations": 1.7
+      "samples": 15,
+      "grounded_rate": 0.5333333333333333,
+      "mean_citations": 1.9333333333333333
     },
     "caching": {
       "samples": 5,
@@ -182,24 +182,24 @@
     }
   },
   "openai/gpt-5.2": {
-    "as_of": "2026-08-01T23:32:19.832Z",
+    "as_of": "2026-08-02T05:50:47.539Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 25,
+      "samples": 30,
       "parse_rate": 1,
       "conform_rate": 1,
       "conform_ci95": [
-        0.8668077490609515,
+        0.8864866068260312,
         0.9999999999999999
       ],
       "value_accuracy_mean": 1,
       "native_rung_rate": 1,
-      "mean_cost_usd": 0.002028879999999999
+      "mean_cost_usd": 0.002187208333333332
     },
     "grounding": {
-      "samples": 10,
-      "grounded_rate": 0.1,
-      "mean_citations": 0.1
+      "samples": 15,
+      "grounded_rate": 0.13333333333333333,
+      "mean_citations": 0.13333333333333333
     },
     "caching": {
       "samples": 5,
@@ -208,24 +208,24 @@
     }
   },
   "openai/gpt-5.4-mini": {
-    "as_of": "2026-08-01T23:33:08.623Z",
+    "as_of": "2026-08-02T05:51:30.310Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 25,
+      "samples": 30,
       "parse_rate": 1,
       "conform_rate": 1,
       "conform_ci95": [
-        0.8668077490609515,
+        0.8864866068260312,
         0.9999999999999999
       ],
       "value_accuracy_mean": 1,
       "native_rung_rate": 1,
-      "mean_cost_usd": 0.0006473399999999998
+      "mean_cost_usd": 0.0006848250000000002
     },
     "grounding": {
-      "samples": 10,
-      "grounded_rate": 0.7,
-      "mean_citations": 1.4
+      "samples": 15,
+      "grounded_rate": 0.8666666666666667,
+      "mean_citations": 1.7333333333333334
     },
     "caching": {
       "samples": 5,
@@ -234,24 +234,24 @@
     }
   },
   "openai/gpt-5.4-nano": {
-    "as_of": "2026-08-01T23:33:54.799Z",
+    "as_of": "2026-08-02T05:52:23.112Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 25,
+      "samples": 30,
       "parse_rate": 1,
       "conform_rate": 1,
       "conform_ci95": [
-        0.8668077490609515,
+        0.8864866068260312,
         0.9999999999999999
       ],
       "value_accuracy_mean": 1,
       "native_rung_rate": 1,
-      "mean_cost_usd": 0.00021549000000000007
+      "mean_cost_usd": 0.00022643333333333338
     },
     "grounding": {
-      "samples": 10,
-      "grounded_rate": 0.6,
-      "mean_citations": 1.3
+      "samples": 15,
+      "grounded_rate": 0.5333333333333333,
+      "mean_citations": 1.0666666666666667
     },
     "caching": {
       "samples": 5,

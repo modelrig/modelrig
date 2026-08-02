@@ -1,6 +1,7 @@
 {
   "id": "recent-policy-decision",
   "class": "grounding",
+  "domain": "finance",
   "source": "customer-zero",
   "prompt": "You are a research assistant with web search available. What was the outcome of the most recent U.S. Federal Reserve FOMC interest-rate decision, and when was it announced? You MUST search the web — this changes too often for training data. State the decision and date, and cite AT LEAST TWO distinct sources as full URLs (https://...) inline in your answer. If you cannot search, say so explicitly instead of guessing."
 }

@@ -28,8 +28,13 @@ export function canonicalJson(value: unknown): string {
   return JSON.stringify(value);
 }
 
+/** Hash covers the model-relevant fixture content. `domain` (A2) is
+ * classification metadata that never reaches the model, so it is excluded —
+ * retro-tagging the corpus must NOT invalidate published result hashes
+ * (the reproducibility contract compares hashes across runs). */
 export function fixtureHash(fixture: ProbeFixture): string {
-  return createHash("sha256").update(canonicalJson(fixture)).digest("hex").slice(0, 16);
+  const { domain: _domain, ...hashed } = fixture;
+  return createHash("sha256").update(canonicalJson(hashed)).digest("hex").slice(0, 16);
 }
 
 function isRecord(v: unknown): v is Record<string, unknown> {
@@ -46,6 +51,11 @@ function parseFixture(raw: unknown, file: string): ProbeFixture {
   }
   if (typeof prompt !== "string" || prompt === "") throw new Error(`fixture ${file}: prompt required`);
   if (typeof source !== "string" || source === "") throw new Error(`fixture ${file}: source required`);
+  if (typeof raw.domain !== "string" || !/^[a-z0-9][a-z0-9-]*$/.test(raw.domain)) {
+    throw new Error(
+      `fixture ${file}: domain required (lowercase token, e.g. finance|legal|technical|e-commerce|general)`
+    );
+  }
   if (raw.schema !== undefined && !isRecord(raw.schema)) {
     throw new Error(`fixture ${file}: schema must be an object when present`);
   }
@@ -55,6 +65,7 @@ function parseFixture(raw: unknown, file: string): ProbeFixture {
   return {
     id,
     class: cls as ProbeClass,
+    domain: raw.domain,
     ...(raw.schema !== undefined ? { schema: raw.schema as object } : {}),
     prompt,
     ...(raw.expectedValues !== undefined

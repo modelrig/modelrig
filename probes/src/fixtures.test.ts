@@ -10,15 +10,23 @@ import type { ProbeFixture } from "./types";
 
 describe("canonicalJson / fixtureHash", () => {
   it("is key-order insensitive", () => {
-    const a: ProbeFixture = { id: "x", class: "schema", prompt: "p", source: "s" };
-    const b = JSON.parse('{"source":"s","prompt":"p","class":"schema","id":"x"}') as ProbeFixture;
+    const a: ProbeFixture = { id: "x", class: "schema", domain: "general", prompt: "p", source: "s" };
+    const b = JSON.parse(
+      '{"source":"s","prompt":"p","domain":"general","class":"schema","id":"x"}'
+    ) as ProbeFixture;
     expect(fixtureHash(a)).toBe(fixtureHash(b));
   });
 
   it("changes when content changes", () => {
-    const a: ProbeFixture = { id: "x", class: "schema", prompt: "p", source: "s" };
-    const b: ProbeFixture = { id: "x", class: "schema", prompt: "p2", source: "s" };
+    const a: ProbeFixture = { id: "x", class: "schema", domain: "general", prompt: "p", source: "s" };
+    const b: ProbeFixture = { id: "x", class: "schema", domain: "general", prompt: "p2", source: "s" };
     expect(fixtureHash(a)).not.toBe(fixtureHash(b));
+  });
+
+  it("A2: domain is metadata — retro-tagging must not invalidate published hashes", () => {
+    const finance: ProbeFixture = { id: "x", class: "schema", domain: "finance", prompt: "p", source: "s" };
+    const legal: ProbeFixture = { id: "x", class: "schema", domain: "legal", prompt: "p", source: "s" };
+    expect(fixtureHash(finance)).toBe(fixtureHash(legal));
   });
 
   it("canonicalizes nested structures deterministically", () => {
@@ -48,5 +56,15 @@ describe("shipped fixture corpus", () => {
     const sources = fixtures.map((f) => f.source);
     expect(sources.some((s) => s === "customer-zero")).toBe(true);
     expect(sources.some((s) => s.startsWith("litellm-mined:"))).toBe(true);
+  });
+
+  it("A2: every fixture carries a domain; every class has ≥1 non-finance fixture", () => {
+    for (const fixture of fixtures) {
+      expect(fixture.domain, `${fixture.id} missing domain`).toMatch(/^[a-z0-9][a-z0-9-]*$/);
+    }
+    for (const cls of ["schema", "grounding", "caching"] as const) {
+      const nonFinance = fixtures.filter((f) => f.class === cls && f.domain !== "finance");
+      expect(nonFinance.length, `class ${cls} has no non-finance fixture`).toBeGreaterThanOrEqual(1);
+    }
   });
 });

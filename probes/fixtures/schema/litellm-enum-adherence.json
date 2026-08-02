@@ -1,12 +1,15 @@
 {
   "id": "litellm-enum-adherence",
   "class": "schema",
+  "domain": "finance",
   "source": "litellm-mined:tests/llm_translation (json-mode enum drift pattern)",
   "prompt": "Classify each headline's sentiment for the named company. Allowed sentiment values are EXACTLY: \"bullish\", \"bearish\", \"neutral\" (lowercase). Do not invent other labels such as \"positive\" or \"mixed\".\n\nHEADLINES:\n1. \"Vantage Foods raises full-year guidance after record quarter\" (Vantage Foods)\n2. \"Regulator opens probe into Meridian Bank's lending practices\" (Meridian Bank)\n3. \"Copper prices steady as markets await inventory data\" (Global Copper Corp)",
   "schema": {
     "type": "object",
     "additionalProperties": false,
-    "required": ["classifications"],
+    "required": [
+      "classifications"
+    ],
     "properties": {
       "classifications": {
         "type": "array",
@@ -15,10 +18,24 @@
         "items": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["headline_index", "sentiment"],
+          "required": [
+            "headline_index",
+            "sentiment"
+          ],
           "properties": {
-            "headline_index": { "type": "integer", "minimum": 1, "maximum": 3 },
-            "sentiment": { "type": "string", "enum": ["bullish", "bearish", "neutral"] }
+            "headline_index": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 3
+            },
+            "sentiment": {
+              "type": "string",
+              "enum": [
+                "bullish",
+                "bearish",
+                "neutral"
+              ]
+            }
           }
         }
       }

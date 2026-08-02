@@ -71,9 +71,20 @@ discrepancy detectors:
 - `declared_caching_unrealized` — claims prompt caching, zero cached tokens
   observed on repeat calls
 
+## Coverage honesty
+
+The v0 corpus is small and **finance-weighted** — it was seeded from our
+first production customer, which bought realism at the cost of domain
+breadth. Every fixture carries a `domain` tag (`finance`, `legal`,
+`technical`, `e-commerce`, `general`, …), the leaderboard states the corpus
+mix on every render, and per-fixture stats in each result file make
+per-domain rates derivable. Treat aggregate rates as corpus-wide, never
+domain-general.
+
 ## Contributing fixtures
 
-If a model's behavior on *your* schema shape isn't covered, add a fixture —
-see the probe kit (`kits/probe-kit/`) in the public repo. Synthetic data
-only; provenance is recorded in the fixture's `source` field and credit lands
-on the leaderboard.
+**The headline ask is fixtures from your domain.** If a model's behavior on
+*your* schema shape — or in your subject domain — isn't covered, add a
+fixture: see the probe kit (`kits/probe-kit/`) in the public repo. Synthetic
+data only; set the `domain` field; provenance is recorded in `source` and
+credit lands on the leaderboard.

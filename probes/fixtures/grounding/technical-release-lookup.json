@@ -1,0 +1,7 @@
+{
+  "id": "technical-release-lookup",
+  "class": "grounding",
+  "domain": "technical",
+  "source": "contributed:modelrig-core (A2 domain diversification)",
+  "prompt": "You are a research assistant with web search available. What is the current Long-Term Support (LTS) release line of Node.js, and what is its latest patch version as of today? You MUST search the web — release versions change too often for training data to be reliable. State the LTS codename and exact version number, and cite AT LEAST TWO distinct sources as full URLs (https://...) inline in your answer, one of which should be nodejs.org. If you cannot search, say so explicitly instead of guessing."
+}

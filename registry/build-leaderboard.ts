@@ -7,13 +7,39 @@
  * Usage: tsx registry/build-leaderboard.ts [--registry <file>] [--out-dir <dir>]
  */
 
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { effectiveCostPer1kConformant } from "../src/registry/build";
 import type { Registry, RegistryEntry } from "../src/registry/build";
 
 const DEFAULT_REGISTRY = join(__dirname, "registry.json");
 const DEFAULT_OUT_DIR = __dirname;
+const FIXTURES_DIR = join(__dirname, "..", "..", "modelrig-probes", "fixtures");
+
+/** Coverage honesty (addendum A2): the corpus size and domain mix are stated
+ * on every leaderboard render so single-domain results are never presented
+ * as domain-general. */
+export function corpusSummary(fixturesDir: string = FIXTURES_DIR): string {
+  const perClass: string[] = [];
+  let total = 0;
+  for (const cls of ["schema", "grounding", "caching"]) {
+    const dir = join(fixturesDir, cls);
+    if (!existsSync(dir)) continue;
+    const domains = new Map<string, number>();
+    for (const file of readdirSync(dir).filter((f) => f.endsWith(".json"))) {
+      const fixture = JSON.parse(readFileSync(join(dir, file), "utf8")) as { domain?: string };
+      const domain = fixture.domain ?? "untagged";
+      domains.set(domain, (domains.get(domain) ?? 0) + 1);
+      total += 1;
+    }
+    const mix = [...domains.entries()]
+      .sort((a, b) => b[1] - a[1])
+      .map(([domain, count]) => `${count} ${domain}`)
+      .join(", ");
+    perClass.push(`${cls}: ${mix}`);
+  }
+  return `v0 corpus: ${total} fixtures, finance-weighted (seeded from our first production customer) — ${perClass.join(" · ")}`;
+}
 
 export interface LeaderboardRow {
   readonly model_key: string;
@@ -122,6 +148,10 @@ export function renderLeaderboardHtml(registry: Registry, rows: readonly Leaderb
 intervals, never single-shot verdicts. Ranked by effective cost per 1,000 schema-conformant outputs.
 Reproduce any row: <code>npx modelrig-probes run --model &lt;model&gt;</code>. ⚠ badges mark
 declared-vs-probed discrepancies.</p>
+<p class="sub"><strong>Coverage:</strong> ${escapeHtml(corpusSummary())}. Per-fixture stats (with
+domains) are in each published result file; rates here aggregate the whole corpus. <strong>The
+probe-kit's headline ask is fixtures from your domain</strong> —
+<a href="https://github.com/modelrig/modelrig/tree/main/kits/probe-kit">contribute one</a>.</p>
 <table>
 <thead><tr><th>Model</th><th>Schema conformance</th><th>Value accuracy</th>
 <th>$ / 1K conformant</th><th>Grounded</th><th>Cache hits</th><th>Samples</th></tr></thead>

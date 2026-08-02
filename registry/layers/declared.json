@@ -1,6 +1,6 @@
 {
   "deepseek/deepseek-chat": {
-    "as_of": "2026-08-01T23:48:04.370Z",
+    "as_of": "2026-08-02T06:11:37.779Z",
     "source": "litellm-pricing-map(pinned)+adapter-static",
     "pricing": {
       "input_usd_per_mtok": 0.28,
@@ -16,7 +16,7 @@
     }
   },
   "deepseek/deepseek-reasoner": {
-    "as_of": "2026-08-01T23:48:04.370Z",
+    "as_of": "2026-08-02T06:11:37.779Z",
     "source": "litellm-pricing-map(pinned)+adapter-static",
     "pricing": {
       "input_usd_per_mtok": 0.28,
@@ -32,7 +32,7 @@
     }
   },
   "gemini/gemini-2.5-flash": {
-    "as_of": "2026-08-01T23:48:04.370Z",
+    "as_of": "2026-08-02T06:11:37.779Z",
     "source": "litellm-pricing-map(pinned)+adapter-static",
     "pricing": {
       "input_usd_per_mtok": 0.3,
@@ -48,7 +48,7 @@
     }
   },
   "gemini/gemini-3-flash-preview": {
-    "as_of": "2026-08-01T23:48:04.370Z",
+    "as_of": "2026-08-02T06:11:37.779Z",
     "source": "litellm-pricing-map(pinned)+adapter-static",
     "pricing": {
       "input_usd_per_mtok": 0.5,
@@ -64,7 +64,7 @@
     }
   },
   "gemini/gemini-3.1-flash-lite": {
-    "as_of": "2026-08-01T23:48:04.370Z",
+    "as_of": "2026-08-02T06:11:37.779Z",
     "source": "litellm-pricing-map(pinned)+adapter-static",
     "pricing": {
       "input_usd_per_mtok": 0.25,
@@ -80,7 +80,7 @@
     }
   },
   "gemini/gemini-3.1-pro-preview": {
-    "as_of": "2026-08-01T23:48:04.370Z",
+    "as_of": "2026-08-02T06:11:37.779Z",
     "source": "litellm-pricing-map(pinned)+adapter-static",
     "pricing": {
       "input_usd_per_mtok": 2,
@@ -96,7 +96,7 @@
     }
   },
   "openai/gpt-5-mini": {
-    "as_of": "2026-08-01T23:48:04.370Z",
+    "as_of": "2026-08-02T06:11:37.779Z",
     "source": "litellm-pricing-map(pinned)+adapter-static",
     "pricing": {
       "input_usd_per_mtok": 0.25,
@@ -112,7 +112,7 @@
     }
   },
   "openai/gpt-5.2": {
-    "as_of": "2026-08-01T23:48:04.370Z",
+    "as_of": "2026-08-02T06:11:37.779Z",
     "source": "litellm-pricing-map(pinned)+adapter-static",
     "pricing": {
       "input_usd_per_mtok": 1.75,
@@ -128,7 +128,7 @@
     }
   },
   "openai/gpt-5.4-mini": {
-    "as_of": "2026-08-01T23:48:04.370Z",
+    "as_of": "2026-08-02T06:11:37.779Z",
     "source": "litellm-pricing-map(pinned)+adapter-static",
     "pricing": {
       "input_usd_per_mtok": 0.75,
@@ -144,7 +144,7 @@
     }
   },
   "openai/gpt-5.4-nano": {
-    "as_of": "2026-08-01T23:48:04.370Z",
+    "as_of": "2026-08-02T06:11:37.779Z",
     "source": "litellm-pricing-map(pinned)+adapter-static",
     "pricing": {
       "input_usd_per_mtok": 0.19999999999999998,

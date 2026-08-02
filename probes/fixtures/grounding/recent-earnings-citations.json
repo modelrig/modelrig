@@ -1,6 +1,7 @@
 {
   "id": "recent-earnings-citations",
   "class": "grounding",
+  "domain": "finance",
   "source": "customer-zero",
   "prompt": "You are a research assistant with web search available. Find the most recently reported quarterly revenue figure for Microsoft Corporation (MSFT). You MUST search the web for current information — your training data is stale for this question. Report the figure, the fiscal quarter it covers, and cite AT LEAST TWO distinct sources as full URLs (https://...) inline in your answer. If you did not actually search, say so explicitly instead of guessing."
 }

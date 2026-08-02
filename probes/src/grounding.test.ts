@@ -13,6 +13,7 @@ import type { ProbeFixture } from "./types";
 const GROUNDING_FIXTURE: ProbeFixture = {
   id: "g1",
   class: "grounding",
+  domain: "general",
   prompt: "Find X and cite sources.",
   source: "test",
 };
@@ -20,6 +21,7 @@ const GROUNDING_FIXTURE: ProbeFixture = {
 const CACHING_FIXTURE: ProbeFixture = {
   id: "c1",
   class: "caching",
+  domain: "general",
   prompt: "long fixed prefix …",
   source: "test",
 };

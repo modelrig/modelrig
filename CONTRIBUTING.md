@@ -41,9 +41,14 @@ itself a contribution: open an issue with your result file attached.
 
 ## Contributing a probe fixture
 
+Fixtures from under-represented domains are the most valuable contribution
+this repo takes — the v0 corpus is finance-weighted and says so wherever
+results are shown.
+
 1. Copy `kits/probe-kit/fixture-template.json`.
-2. Set `source` to `contributed:<your-github-handle>` — credit lands on the
-   leaderboard.
+2. Set `domain` to your task's subject domain (`legal`, `technical`,
+   `e-commerce`, `medical`, …) and `source` to
+   `contributed:<your-github-handle>` — credit lands on the leaderboard.
 3. Add the fixture under `probes/fixtures/<class>/`.
 4. Run the suite against at least one model and include the result in your PR.
 

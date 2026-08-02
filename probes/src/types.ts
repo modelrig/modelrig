@@ -9,6 +9,12 @@ export type ProbeClass = "schema" | "grounding" | "caching";
 export interface ProbeFixture {
   readonly id: string;
   readonly class: ProbeClass;
+  /** Task domain (addendum A2): "finance" | "legal" | "technical" |
+   * "e-commerce" | "general" | … (open vocabulary, lowercase token).
+   * Coverage honesty: the leaderboard and README state the corpus mix, so
+   * single-domain results are never presented as domain-general. Metadata
+   * only — excluded from the fixture hash (it never reaches the model). */
+  readonly domain: string;
   /** For schema probes: the JSON schema + input prompt + expected values
    * (value-accuracy keys with known-correct answers). */
   readonly schema?: object;

@@ -1,8 +1,21 @@
 {
-  "gemini/gemini-3.1-pro-preview": {
-    "as_of": "2026-08-01T23:48:06.133Z",
+  "gemini/gemini-3.1-flash-lite": {
+    "as_of": "2026-08-02T06:11:39.122Z",
     "source": "routed-telemetry",
-    "inferences": 1,
+    "inferences": 25,
+    "p50_latency_ms": 4130,
+    "served_tier_rates": {
+      "standard": 1
+    },
+    "cache_hit_rate": 0.24,
+    "failure_class_rates": {
+      "content_invalid": 0.08
+    }
+  },
+  "gemini/gemini-3.1-pro-preview": {
+    "as_of": "2026-08-02T06:11:39.122Z",
+    "source": "routed-telemetry",
+    "inferences": 2,
     "p50_latency_ms": 86284,
     "served_tier_rates": {
       "flex": 1
@@ -11,14 +24,17 @@
     "failure_class_rates": {}
   },
   "openai/gpt-5.4-mini": {
-    "as_of": "2026-08-01T23:48:06.133Z",
+    "as_of": "2026-08-02T06:11:39.122Z",
     "source": "routed-telemetry",
-    "inferences": 1,
-    "p50_latency_ms": 43037,
+    "inferences": 29,
+    "p50_latency_ms": 5166,
     "served_tier_rates": {
-      "flex": 1
+      "flex": 0.13793103448275862,
+      "standard": 0.8620689655172413
     },
-    "cache_hit_rate": 0,
-    "failure_class_rates": {}
+    "cache_hit_rate": 0.4827586206896552,
+    "failure_class_rates": {
+      "budget_exhausted": 0.034482758620689655
+    }
   }
 }

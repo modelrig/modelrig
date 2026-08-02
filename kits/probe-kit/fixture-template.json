@@ -1,6 +1,7 @@
 {
   "id": "your-fixture-id",
   "class": "schema",
+  "domain": "your-domain",
   "source": "contributed:your-github-handle",
   "prompt": "Task instructions with synthetic source data inline. State exactly what to extract or produce.",
   "schema": {

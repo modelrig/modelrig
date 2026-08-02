@@ -1,0 +1,244 @@
+{
+  "modelKey": "openai/gpt-5.2",
+  "class": "grounding",
+  "date": "2026-08-02T05:50:47.539Z",
+  "harnessVersion": "0.0.1",
+  "fixtureHashes": {
+    "recent-earnings-citations": "9f11967a9fac9b30",
+    "recent-policy-decision": "7022d3e00d277dc9",
+    "technical-release-lookup": "b4a1c373a0a9c110"
+  },
+  "raw": {
+    "recent-earnings-citations": [
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": false,
+        "citationCount": 0,
+        "cachedTokens": null,
+        "tokensIn": 105,
+        "tokensOut": 114,
+        "costUsd": 0.00177975,
+        "latencyMs": 2141,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": false,
+        "citationCount": 0,
+        "cachedTokens": null,
+        "tokensIn": 105,
+        "tokensOut": 112,
+        "costUsd": 0.0017517499999999998,
+        "latencyMs": 1932,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": false,
+        "citationCount": 0,
+        "cachedTokens": null,
+        "tokensIn": 105,
+        "tokensOut": 72,
+        "costUsd": 0.00119175,
+        "latencyMs": 1507,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": false,
+        "citationCount": 0,
+        "cachedTokens": null,
+        "tokensIn": 105,
+        "tokensOut": 65,
+        "costUsd": 0.00109375,
+        "latencyMs": 1232,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": false,
+        "citationCount": 0,
+        "cachedTokens": null,
+        "tokensIn": 105,
+        "tokensOut": 116,
+        "costUsd": 0.00180775,
+        "latencyMs": 1695,
+        "failureClass": null
+      }
+    ],
+    "recent-policy-decision": [
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": false,
+        "citationCount": 0,
+        "cachedTokens": null,
+        "tokensIn": 106,
+        "tokensOut": 66,
+        "costUsd": 0.0011095,
+        "latencyMs": 1345,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": false,
+        "citationCount": 0,
+        "cachedTokens": null,
+        "tokensIn": 106,
+        "tokensOut": 47,
+        "costUsd": 0.0008435,
+        "latencyMs": 1280,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": false,
+        "citationCount": 0,
+        "cachedTokens": null,
+        "tokensIn": 106,
+        "tokensOut": 77,
+        "costUsd": 0.0012634999999999999,
+        "latencyMs": 1354,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": false,
+        "citationCount": 0,
+        "cachedTokens": null,
+        "tokensIn": 106,
+        "tokensOut": 68,
+        "costUsd": 0.0011375,
+        "latencyMs": 1247,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": false,
+        "citationCount": 0,
+        "cachedTokens": null,
+        "tokensIn": 106,
+        "tokensOut": 73,
+        "costUsd": 0.0012074999999999998,
+        "latencyMs": 1321,
+        "failureClass": null
+      }
+    ],
+    "technical-release-lookup": [
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": true,
+        "citationCount": 1,
+        "cachedTokens": null,
+        "tokensIn": 126,
+        "tokensOut": 120,
+        "costUsd": 0.0019005,
+        "latencyMs": 2119,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": true,
+        "citationCount": 1,
+        "cachedTokens": null,
+        "tokensIn": 126,
+        "tokensOut": 105,
+        "costUsd": 0.0016905,
+        "latencyMs": 1909,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": false,
+        "citationCount": 0,
+        "cachedTokens": null,
+        "tokensIn": 126,
+        "tokensOut": 73,
+        "costUsd": 0.0012425,
+        "latencyMs": 1252,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": false,
+        "citationCount": 0,
+        "cachedTokens": null,
+        "tokensIn": 126,
+        "tokensOut": 59,
+        "costUsd": 0.0010465000000000001,
+        "latencyMs": 1127,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": false,
+        "citationCount": 0,
+        "cachedTokens": null,
+        "tokensIn": 126,
+        "tokensOut": 47,
+        "costUsd": 0.0008784999999999999,
+        "latencyMs": 962,
+        "failureClass": null
+      }
+    ]
+  },
+  "stats": [
+    {
+      "fixtureId": "recent-earnings-citations",
+      "samples": 5,
+      "parseRate": 1,
+      "conformRate": null,
+      "valueAccuracyMean": null,
+      "conformCi95": null,
+      "meanCostUsd": 0.00152495
+    },
+    {
+      "fixtureId": "recent-policy-decision",
+      "samples": 5,
+      "parseRate": 1,
+      "conformRate": null,
+      "valueAccuracyMean": null,
+      "conformCi95": null,
+      "meanCostUsd": 0.0011123
+    },
+    {
+      "fixtureId": "technical-release-lookup",
+      "samples": 5,
+      "parseRate": 1,
+      "conformRate": null,
+      "valueAccuracyMean": null,
+      "conformCi95": null,
+      "meanCostUsd": 0.0013517
+    }
+  ],
+  "totalCostUsd": 0.01994475
+}

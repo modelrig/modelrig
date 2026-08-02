@@ -1,8 +1,11 @@
 # Probe kit
 
-Contribute a probe fixture when a model's real-world behavior on *your* schema
-shape isn't covered — merged fixtures run on our infrastructure forever, with
-your credit on the leaderboard.
+**The headline ask: fixtures from your domain.** The v0 corpus is
+finance-weighted because it was seeded from our first production customer —
+a model that conforms on financial extractions may behave differently on
+legal clauses, product catalogs, or medical intake forms. Contributing a
+fixture from your domain gets your case covered forever, with your credit on
+the leaderboard, and makes every aggregate rate more honest.
 
 ## Fixture format
 
@@ -10,6 +13,10 @@ Copy `fixture-template.json`. Fields:
 
 - `id` — unique kebab-case identifier.
 - `class` — `schema` | `grounding` | `caching`.
+- `domain` — the task's subject domain, lowercase token: `finance`, `legal`,
+  `technical`, `e-commerce`, `general`, or your own. Domain is metadata (it
+  never reaches the model and is excluded from the fixture hash); it labels
+  coverage so results are never presented as domain-general.
 - `prompt` — the full task prompt. For schema fixtures, include the source
   data inline (synthetic data only — never real customer content).
 - `schema` — (schema class) the JSON Schema the output must conform to.
