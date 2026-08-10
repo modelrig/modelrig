@@ -11,7 +11,7 @@ import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 
 import { join } from "node:path";
 import { effectiveCostPer1kConformant } from "../src/registry/build";
 import type { Registry, RegistryEntry } from "../src/registry/build";
-import { computeParity } from "../src/registry/parity";
+import { computeParity, assertParityCoverageSane } from "../src/registry/parity";
 import type { ParityListEntry } from "../src/registry/parity";
 import { probeFreshness, stalenessSentence, PROBE_FRESHNESS_SLO_DAYS } from "../src/registry/staleness";
 
@@ -93,6 +93,12 @@ export interface LeaderboardRow {
   /** Which fixture families produced this row's schema samples (demo-rig
    * §11.3b) — a model probed only by demo-rig is visibly that. */
   readonly families: readonly string[];
+  /** How many schema samples each family contributed — `{ family: count }`
+   * (probe-cycle-001 contract addition, consumed by leaderboard-legibility
+   * §4). Lets a reader see "8 authored demo fixtures vs 30 field probes" where
+   * `samples` alone reports only the total. Always present; `{}` when unprobed,
+   * mirroring `families: []`. Keys always equal `families`. */
+  readonly fixture_counts: Readonly<Record<string, number>>;
   readonly discrepancies: ReadonlyArray<{ kind: string; message: string }>;
 }
 
@@ -116,6 +122,11 @@ export function toLeaderboardRows(registry: Registry): LeaderboardRow[] {
       samples: schema?.samples ?? 0,
       as_of: entry.probed?.as_of ?? null,
       families: schema?.by_family ? Object.keys(schema.by_family).sort() : [],
+      fixture_counts: schema?.by_family
+        ? Object.fromEntries(
+            Object.entries(schema.by_family).map(([family, stats]) => [family, stats.samples])
+          )
+        : {},
       discrepancies: [...entry.discrepancies],
     };
   });
@@ -334,6 +345,15 @@ function main(): void {
   }
 
   const registry = JSON.parse(readFileSync(registryPath, "utf8")) as Registry;
+  // Mechanical zero-coverage gate: if the parity list ↔ registry join collapses
+  // to 0 while real probed data exists, fail the build instead of publishing a
+  // false 0% coverage (see src/registry/parity.ts). The parity-coverage.gate
+  // test asserts the same on the committed data so CI catches it before deploy.
+  const parityPath = join(__dirname, "parity-50.json");
+  if (existsSync(parityPath)) {
+    const list = JSON.parse(readFileSync(parityPath, "utf8")) as { models: ParityListEntry[] };
+    assertParityCoverageSane(computeParity(list.models, registry), registry);
+  }
   const rows = toLeaderboardRows(registry);
   mkdirSync(outDir, { recursive: true });
   writeFileSync(join(outDir, "leaderboard.json"), `${JSON.stringify(rows, null, 2)}\n`);

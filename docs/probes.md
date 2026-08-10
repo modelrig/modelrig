@@ -18,6 +18,38 @@ JSON that parses but violates the schema, or conforms to the schema with
 wrong values. Routing on "supports JSON mode" alone is how silent quality
 rot happens.
 
+## What each measured column means
+
+Each measured leaderboard column links to its method here. Every rate is a
+sampled statistic with a 95% confidence interval — see [Honest
+stochasticity](#honest-stochasticity) for what "reproducible" means.
+
+### Schema conformance
+
+The share of samples whose output both parsed as JSON and validated against the
+requested JSON Schema. Parsing and conformance are scored separately: output
+can parse and still violate the schema. Each sample records parse-ok, schema
+conformance, and the serving rung (native strict enforcement vs json-mode
+coaching).
+
+### Value accuracy
+
+Among conformant samples, the share whose field values matched the
+known-correct answer in the fixture. Conformance checks the shape of the
+output; value accuracy checks the numbers inside it — a model can pass one and
+fail the other.
+
+### Grounded
+
+The share of grounding-class samples that carried at least one citation, counted
+as distinct URLs. Measures whether the model actually searched when asked rather
+than answering from memory.
+
+### Cache hits
+
+The share of identical repeat calls that reported cached input tokens. Measures
+whether declared prompt caching is realized on the serving path.
+
 ## Running probes
 
 ```bash

@@ -1,16 +1,30 @@
 {
-  "generated_at": "2026-08-09T23:35:37.905Z",
+  "generated_at": "2026-08-10T16:23:10.214Z",
   "license": "CC-BY-4.0",
   "models": [
     {
       "model_key": "anthropic/claude-haiku-4-5",
       "declared": {
-        "as_of": "2026-08-09T23:35:36.550Z",
+        "as_of": "2026-08-10T16:23:08.653Z",
         "source": "litellm-pricing-map(pinned)+adapter-static",
         "pricing": {
           "input_usd_per_mtok": 1,
           "output_usd_per_mtok": 5,
           "cached_input_usd_per_mtok": 0.09999999999999999
+        },
+        "pricing_v2": {
+          "base": {
+            "input": 0.000001,
+            "output": 0.000005,
+            "cache_read": 1e-7
+          },
+          "tiers": null,
+          "context_bands": null,
+          "batch_discount": null,
+          "modality": null,
+          "source": "litellm-snapshot",
+          "as_of": "2026-08-10T16:23:08.653Z",
+          "basis": "base · standard tier · text"
         },
         "flags": {
           "supports_response_schema": true,
@@ -21,19 +35,19 @@
         }
       },
       "probed": {
-        "as_of": "2026-08-09T18:20:40.456Z",
+        "as_of": "2026-08-10T12:25:56.418Z",
         "source": "modelrig-probes@0.0.1",
         "schema": {
-          "samples": 50,
+          "samples": 65,
           "parse_rate": 1,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9441984686771432,
             1
           ],
-          "value_accuracy_mean": 1,
+          "value_accuracy_mean": 0.7846153846153846,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.0019232000000000001,
+          "mean_cost_usd": 0.001740923076923077,
           "by_family": {
             "demo-rig": {
               "samples": 20,
@@ -42,16 +56,40 @@
                 0.8388748419471806,
                 1
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 1
             },
             "probe-suite": {
-              "samples": 30,
+              "samples": 45,
               "conform_rate": 1,
               "conform_ci95": [
-                0.8864866068260312,
-                0.9999999999999999
+                0.9213484012671117,
+                1
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 0.6888888888888889,
+              "native_rung_rate": 1
+            }
+          },
+          "by_difficulty": {
+            "hard": {
+              "samples": 15,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.7961166989641515,
+                1
+              ],
+              "value_accuracy_mean": 0.06666666666666667,
+              "native_rung_rate": 1
+            },
+            "standard": {
+              "samples": 50,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.9286524008666414,
+                1
+              ],
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 1
             }
           }
         },
@@ -83,12 +121,26 @@
     {
       "model_key": "anthropic/claude-sonnet-5",
       "declared": {
-        "as_of": "2026-08-09T23:35:36.550Z",
+        "as_of": "2026-08-10T16:23:08.653Z",
         "source": "litellm-pricing-map(pinned)+adapter-static",
         "pricing": {
           "input_usd_per_mtok": 2,
           "output_usd_per_mtok": 10,
           "cached_input_usd_per_mtok": 0.19999999999999998
+        },
+        "pricing_v2": {
+          "base": {
+            "input": 0.000002,
+            "output": 0.00001,
+            "cache_read": 2e-7
+          },
+          "tiers": null,
+          "context_bands": null,
+          "batch_discount": null,
+          "modality": null,
+          "source": "litellm-snapshot",
+          "as_of": "2026-08-10T16:23:08.653Z",
+          "basis": "base · standard tier · text"
         },
         "flags": {
           "supports_response_schema": true,
@@ -99,19 +151,19 @@
         }
       },
       "probed": {
-        "as_of": "2026-08-09T18:24:22.476Z",
+        "as_of": "2026-08-10T12:30:25.528Z",
         "source": "modelrig-probes@0.0.1",
         "schema": {
-          "samples": 50,
+          "samples": 65,
           "parse_rate": 1,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9441984686771432,
             1
           ],
-          "value_accuracy_mean": 0.96,
+          "value_accuracy_mean": 0.9769230769230769,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.004402999999999999,
+          "mean_cost_usd": 0.003908923076923076,
           "by_family": {
             "demo-rig": {
               "samples": 20,
@@ -120,16 +172,40 @@
                 0.8388748419471806,
                 1
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 1
             },
             "probe-suite": {
-              "samples": 30,
+              "samples": 45,
               "conform_rate": 1,
               "conform_ci95": [
-                0.8864866068260312,
-                0.9999999999999999
+                0.9213484012671117,
+                1
               ],
-              "value_accuracy_mean": 0.9333333333333333
+              "value_accuracy_mean": 0.9666666666666667,
+              "native_rung_rate": 1
+            }
+          },
+          "by_difficulty": {
+            "hard": {
+              "samples": 15,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.7961166989641515,
+                1
+              ],
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 1
+            },
+            "standard": {
+              "samples": 50,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.9286524008666414,
+                1
+              ],
+              "value_accuracy_mean": 0.97,
+              "native_rung_rate": 1
             }
           }
         },
@@ -161,12 +237,26 @@
     {
       "model_key": "deepinfra/MiniMaxAI/MiniMax-M3",
       "declared": {
-        "as_of": "2026-08-09T23:35:36.550Z",
+        "as_of": "2026-08-10T16:23:08.653Z",
         "source": "litellm-pricing-map(pinned)+adapter-static",
         "pricing": {
           "input_usd_per_mtok": 0.28,
           "output_usd_per_mtok": 1.1,
           "cached_input_usd_per_mtok": null
+        },
+        "pricing_v2": {
+          "base": {
+            "input": 2.8e-7,
+            "output": 0.0000011,
+            "cache_read": null
+          },
+          "tiers": null,
+          "context_bands": null,
+          "batch_discount": null,
+          "modality": null,
+          "source": "litellm-snapshot",
+          "as_of": "2026-08-10T16:23:08.653Z",
+          "basis": "base · standard tier · text"
         },
         "flags": {
           "supports_response_schema": null,
@@ -177,19 +267,19 @@
         }
       },
       "probed": {
-        "as_of": "2026-08-09T17:59:45.687Z",
+        "as_of": "2026-08-10T12:34:02.472Z",
         "source": "modelrig-probes@0.0.1",
         "schema": {
-          "samples": 50,
+          "samples": 65,
           "parse_rate": 1,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9441984686771432,
             1
           ],
-          "value_accuracy_mean": 0.995,
+          "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.0004722440000000001,
+          "mean_cost_usd": 0.0004254538461538461,
           "by_family": {
             "demo-rig": {
               "samples": 20,
@@ -198,16 +288,40 @@
                 0.8388748419471806,
                 1
               ],
-              "value_accuracy_mean": 0.9875
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
             },
             "probe-suite": {
-              "samples": 30,
+              "samples": 45,
               "conform_rate": 1,
               "conform_ci95": [
-                0.8864866068260312,
-                0.9999999999999999
+                0.9213484012671117,
+                1
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
+            }
+          },
+          "by_difficulty": {
+            "hard": {
+              "samples": 15,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.7961166989641515,
+                1
+              ],
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
+            },
+            "standard": {
+              "samples": 50,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.9286524008666414,
+                1
+              ],
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
             }
           }
         },
@@ -239,12 +353,26 @@
     {
       "model_key": "deepinfra/Qwen/Qwen3-30B-A3B",
       "declared": {
-        "as_of": "2026-08-09T23:35:36.550Z",
+        "as_of": "2026-08-10T16:23:08.653Z",
         "source": "litellm-pricing-map(pinned)+adapter-static",
         "pricing": {
           "input_usd_per_mtok": 0.08,
           "output_usd_per_mtok": 0.29,
           "cached_input_usd_per_mtok": null
+        },
+        "pricing_v2": {
+          "base": {
+            "input": 8e-8,
+            "output": 2.9e-7,
+            "cache_read": null
+          },
+          "tiers": null,
+          "context_bands": null,
+          "batch_discount": null,
+          "modality": null,
+          "source": "litellm-snapshot",
+          "as_of": "2026-08-10T16:23:08.653Z",
+          "basis": "base · standard tier · text"
         },
         "flags": {
           "supports_response_schema": null,
@@ -255,19 +383,19 @@
         }
       },
       "probed": {
-        "as_of": "2026-08-08T22:39:37.206Z",
+        "as_of": "2026-08-10T12:39:40.149Z",
         "source": "modelrig-probes@0.0.1",
         "schema": {
-          "samples": 50,
+          "samples": 65,
           "parse_rate": 1,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9441984686771432,
             1
           ],
-          "value_accuracy_mean": 0.97,
+          "value_accuracy_mean": 0.9846153846153847,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.00016272999999999995,
+          "mean_cost_usd": 0.00015568692307692302,
           "by_family": {
             "demo-rig": {
               "samples": 20,
@@ -276,16 +404,40 @@
                 0.8388748419471806,
                 1
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
             },
             "probe-suite": {
-              "samples": 30,
+              "samples": 45,
               "conform_rate": 1,
               "conform_ci95": [
-                0.8864866068260312,
-                0.9999999999999999
+                0.9213484012671117,
+                1
               ],
-              "value_accuracy_mean": 0.95
+              "value_accuracy_mean": 0.9777777777777777,
+              "native_rung_rate": 0
+            }
+          },
+          "by_difficulty": {
+            "hard": {
+              "samples": 15,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.7961166989641515,
+                1
+              ],
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
+            },
+            "standard": {
+              "samples": 50,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.9286524008666414,
+                1
+              ],
+              "value_accuracy_mean": 0.98,
+              "native_rung_rate": 0
             }
           }
         },
@@ -317,12 +469,26 @@
     {
       "model_key": "deepinfra/Qwen/Qwen3-Coder-480B-A35B-Instruct-Turbo",
       "declared": {
-        "as_of": "2026-08-09T23:35:36.550Z",
+        "as_of": "2026-08-10T16:23:08.653Z",
         "source": "litellm-pricing-map(pinned)+adapter-static",
         "pricing": {
           "input_usd_per_mtok": 0.29,
           "output_usd_per_mtok": 1.2,
           "cached_input_usd_per_mtok": null
+        },
+        "pricing_v2": {
+          "base": {
+            "input": 2.9e-7,
+            "output": 0.0000012,
+            "cache_read": null
+          },
+          "tiers": null,
+          "context_bands": null,
+          "batch_discount": null,
+          "modality": null,
+          "source": "litellm-snapshot",
+          "as_of": "2026-08-10T16:23:08.653Z",
+          "basis": "base · standard tier · text"
         },
         "flags": {
           "supports_response_schema": null,
@@ -333,19 +499,19 @@
         }
       },
       "probed": {
-        "as_of": "2026-08-08T22:41:52.930Z",
+        "as_of": "2026-08-10T12:42:51.936Z",
         "source": "modelrig-probes@0.0.1",
         "schema": {
-          "samples": 50,
+          "samples": 65,
           "parse_rate": 1,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9441984686771432,
             1
           ],
-          "value_accuracy_mean": 1,
+          "value_accuracy_mean": 0.9230769230769231,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.00023501800000000014,
+          "mean_cost_usd": 0.00020621769230769234,
           "by_family": {
             "demo-rig": {
               "samples": 20,
@@ -354,16 +520,40 @@
                 0.8388748419471806,
                 1
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
             },
             "probe-suite": {
-              "samples": 30,
+              "samples": 45,
               "conform_rate": 1,
               "conform_ci95": [
-                0.8864866068260312,
-                0.9999999999999999
+                0.9213484012671117,
+                1
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 0.8888888888888888,
+              "native_rung_rate": 0
+            }
+          },
+          "by_difficulty": {
+            "hard": {
+              "samples": 15,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.7961166989641515,
+                1
+              ],
+              "value_accuracy_mean": 0.6666666666666666,
+              "native_rung_rate": 0
+            },
+            "standard": {
+              "samples": 50,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.9286524008666414,
+                1
+              ],
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
             }
           }
         },
@@ -395,12 +585,26 @@
     {
       "model_key": "deepinfra/google/gemma-4-31B-it",
       "declared": {
-        "as_of": "2026-08-09T23:35:36.550Z",
+        "as_of": "2026-08-10T16:23:08.653Z",
         "source": "litellm-pricing-map(pinned)+adapter-static",
         "pricing": {
           "input_usd_per_mtok": 0.13,
           "output_usd_per_mtok": 0.38,
           "cached_input_usd_per_mtok": null
+        },
+        "pricing_v2": {
+          "base": {
+            "input": 1.3e-7,
+            "output": 3.8e-7,
+            "cache_read": null
+          },
+          "tiers": null,
+          "context_bands": null,
+          "batch_discount": null,
+          "modality": null,
+          "source": "litellm-snapshot",
+          "as_of": "2026-08-10T16:23:08.653Z",
+          "basis": "base · standard tier · text"
         },
         "flags": {
           "supports_response_schema": null,
@@ -411,19 +615,19 @@
         }
       },
       "probed": {
-        "as_of": "2026-08-09T18:03:14.225Z",
+        "as_of": "2026-08-10T13:18:02.049Z",
         "source": "modelrig-probes@0.0.1",
         "schema": {
-          "samples": 50,
+          "samples": 65,
           "parse_rate": 1,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9441984686771432,
             1
           ],
-          "value_accuracy_mean": 0.95,
+          "value_accuracy_mean": 0.9615384615384616,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.00009456140000000002,
+          "mean_cost_usd": 0.0000833567692307693,
           "by_family": {
             "demo-rig": {
               "samples": 20,
@@ -432,16 +636,40 @@
                 0.8388748419471806,
                 1
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
             },
             "probe-suite": {
-              "samples": 30,
+              "samples": 45,
               "conform_rate": 1,
               "conform_ci95": [
-                0.8864866068260312,
-                0.9999999999999999
+                0.9213484012671117,
+                1
               ],
-              "value_accuracy_mean": 0.9166666666666666
+              "value_accuracy_mean": 0.9444444444444444,
+              "native_rung_rate": 0
+            }
+          },
+          "by_difficulty": {
+            "hard": {
+              "samples": 15,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.7961166989641515,
+                1
+              ],
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
+            },
+            "standard": {
+              "samples": 50,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.9286524008666414,
+                1
+              ],
+              "value_accuracy_mean": 0.95,
+              "native_rung_rate": 0
             }
           }
         },
@@ -465,12 +693,26 @@
     {
       "model_key": "deepinfra/meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
       "declared": {
-        "as_of": "2026-08-09T23:35:36.550Z",
+        "as_of": "2026-08-10T16:23:08.653Z",
         "source": "litellm-pricing-map(pinned)+adapter-static",
         "pricing": {
           "input_usd_per_mtok": 0.15,
           "output_usd_per_mtok": 0.6,
           "cached_input_usd_per_mtok": null
+        },
+        "pricing_v2": {
+          "base": {
+            "input": 1.5e-7,
+            "output": 6e-7,
+            "cache_read": null
+          },
+          "tiers": null,
+          "context_bands": null,
+          "batch_discount": null,
+          "modality": null,
+          "source": "litellm-snapshot",
+          "as_of": "2026-08-10T16:23:08.653Z",
+          "basis": "base · standard tier · text"
         },
         "flags": {
           "supports_response_schema": null,
@@ -481,19 +723,19 @@
         }
       },
       "probed": {
-        "as_of": "2026-08-08T22:44:22.427Z",
+        "as_of": "2026-08-10T13:20:46.887Z",
         "source": "modelrig-probes@0.0.1",
         "schema": {
-          "samples": 50,
-          "parse_rate": 1,
-          "conform_rate": 1,
+          "samples": 65,
+          "parse_rate": 0.7692307692307693,
+          "conform_rate": 0.7692307692307693,
           "conform_ci95": [
-            0.9286524008666414,
-            1
+            0.6535529085185335,
+            0.8548616515383899
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.00010483199999999996,
+          "mean_cost_usd": 0.00012325615384615383,
           "by_family": {
             "demo-rig": {
               "samples": 20,
@@ -502,16 +744,40 @@
                 0.8388748419471806,
                 1
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
             },
             "probe-suite": {
-              "samples": 30,
+              "samples": 45,
+              "conform_rate": 0.6666666666666666,
+              "conform_ci95": [
+                0.5207048830990042,
+                0.7864112506566996
+              ],
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
+            }
+          },
+          "by_difficulty": {
+            "hard": {
+              "samples": 15,
+              "conform_rate": 0,
+              "conform_ci95": [
+                0,
+                0.20388330103584862
+              ],
+              "value_accuracy_mean": null,
+              "native_rung_rate": 0
+            },
+            "standard": {
+              "samples": 50,
               "conform_rate": 1,
               "conform_ci95": [
-                0.8864866068260312,
-                0.9999999999999999
+                0.9286524008666414,
+                1
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
             }
           }
         },
@@ -529,10 +795,6 @@
       "observed": null,
       "discrepancies": [
         {
-          "kind": "undeclared_schema_capable",
-          "message": "no declared schema support, but probed conformance is 100% — capability exists undeclared"
-        },
-        {
           "kind": "citations_without_declared_search",
           "message": "no declared web-search support, but 100% of probed answers cited URLs — verify whether these are real or fabricated sources"
         }
@@ -543,12 +805,26 @@
     {
       "model_key": "deepinfra/meta-llama/Llama-4-Scout-17B-16E-Instruct",
       "declared": {
-        "as_of": "2026-08-09T23:35:36.550Z",
+        "as_of": "2026-08-10T16:23:08.653Z",
         "source": "litellm-pricing-map(pinned)+adapter-static",
         "pricing": {
           "input_usd_per_mtok": 0.08,
           "output_usd_per_mtok": 0.3,
           "cached_input_usd_per_mtok": null
+        },
+        "pricing_v2": {
+          "base": {
+            "input": 8e-8,
+            "output": 3e-7,
+            "cache_read": null
+          },
+          "tiers": null,
+          "context_bands": null,
+          "batch_discount": null,
+          "modality": null,
+          "source": "litellm-snapshot",
+          "as_of": "2026-08-10T16:23:08.653Z",
+          "basis": "base · standard tier · text"
         },
         "flags": {
           "supports_response_schema": null,
@@ -559,19 +835,19 @@
         }
       },
       "probed": {
-        "as_of": "2026-08-08T22:46:06.495Z",
+        "as_of": "2026-08-10T13:24:10.466Z",
         "source": "modelrig-probes@0.0.1",
         "schema": {
-          "samples": 50,
-          "parse_rate": 1,
-          "conform_rate": 1,
+          "samples": 65,
+          "parse_rate": 0.9230769230769231,
+          "conform_rate": 0.9230769230769231,
           "conform_ci95": [
-            0.9286524008666414,
-            1
+            0.8322406672989,
+            0.9666964985048365
           ],
-          "value_accuracy_mean": 1,
+          "value_accuracy_mean": 0.9916666666666667,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.000055588,
+          "mean_cost_usd": 0.00005699384615384615,
           "by_family": {
             "demo-rig": {
               "samples": 20,
@@ -580,16 +856,40 @@
                 0.8388748419471806,
                 1
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
             },
             "probe-suite": {
-              "samples": 30,
+              "samples": 45,
+              "conform_rate": 0.8888888888888888,
+              "conform_ci95": [
+                0.7650090300423141,
+                0.9515952820543282
+              ],
+              "value_accuracy_mean": 0.9875,
+              "native_rung_rate": 0
+            }
+          },
+          "by_difficulty": {
+            "hard": {
+              "samples": 15,
+              "conform_rate": 0.6666666666666666,
+              "conform_ci95": [
+                0.41713547738519774,
+                0.8482367556028526
+              ],
+              "value_accuracy_mean": 0.95,
+              "native_rung_rate": 0
+            },
+            "standard": {
+              "samples": 50,
               "conform_rate": 1,
               "conform_ci95": [
-                0.8864866068260312,
-                0.9999999999999999
+                0.9286524008666414,
+                1
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
             }
           }
         },
@@ -608,7 +908,7 @@
       "discrepancies": [
         {
           "kind": "undeclared_schema_capable",
-          "message": "no declared schema support, but probed conformance is 100% — capability exists undeclared"
+          "message": "no declared schema support, but probed conformance is 92% — capability exists undeclared"
         },
         {
           "kind": "citations_without_declared_search",
@@ -621,12 +921,26 @@
     {
       "model_key": "deepinfra/mistralai/Mistral-Small-3.2-24B-Instruct-2506",
       "declared": {
-        "as_of": "2026-08-09T23:35:36.550Z",
+        "as_of": "2026-08-10T16:23:08.653Z",
         "source": "litellm-pricing-map(pinned)+adapter-static",
         "pricing": {
           "input_usd_per_mtok": 0.075,
           "output_usd_per_mtok": 0.19999999999999998,
           "cached_input_usd_per_mtok": null
+        },
+        "pricing_v2": {
+          "base": {
+            "input": 7.5e-8,
+            "output": 2e-7,
+            "cache_read": null
+          },
+          "tiers": null,
+          "context_bands": null,
+          "batch_discount": null,
+          "modality": null,
+          "source": "litellm-snapshot",
+          "as_of": "2026-08-10T16:23:08.653Z",
+          "basis": "base · standard tier · text"
         },
         "flags": {
           "supports_response_schema": null,
@@ -637,19 +951,19 @@
         }
       },
       "probed": {
-        "as_of": "2026-08-08T22:48:52.760Z",
+        "as_of": "2026-08-10T13:27:51.016Z",
         "source": "modelrig-probes@0.0.1",
         "schema": {
-          "samples": 50,
+          "samples": 65,
           "parse_rate": 1,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9441984686771432,
             1
           ],
-          "value_accuracy_mean": 1,
+          "value_accuracy_mean": 0.8461538461538461,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.00005020649999999996,
+          "mean_cost_usd": 0.00004551307692307691,
           "by_family": {
             "demo-rig": {
               "samples": 20,
@@ -658,16 +972,40 @@
                 0.8388748419471806,
                 1
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
             },
             "probe-suite": {
-              "samples": 30,
+              "samples": 45,
               "conform_rate": 1,
               "conform_ci95": [
-                0.8864866068260312,
-                0.9999999999999999
+                0.9213484012671117,
+                1
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 0.7777777777777778,
+              "native_rung_rate": 0
+            }
+          },
+          "by_difficulty": {
+            "hard": {
+              "samples": 15,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.7961166989641515,
+                1
+              ],
+              "value_accuracy_mean": 0.3333333333333333,
+              "native_rung_rate": 0
+            },
+            "standard": {
+              "samples": 50,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.9286524008666414,
+                1
+              ],
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
             }
           }
         },
@@ -695,12 +1033,26 @@
     {
       "model_key": "deepinfra/moonshotai/Kimi-K2.6",
       "declared": {
-        "as_of": "2026-08-09T23:35:36.550Z",
+        "as_of": "2026-08-10T16:23:08.653Z",
         "source": "litellm-pricing-map(pinned)+adapter-static",
         "pricing": {
           "input_usd_per_mtok": 0.7499999999999999,
           "output_usd_per_mtok": 3.5,
           "cached_input_usd_per_mtok": null
+        },
+        "pricing_v2": {
+          "base": {
+            "input": 7.499999999999999e-7,
+            "output": 0.0000035,
+            "cache_read": null
+          },
+          "tiers": null,
+          "context_bands": null,
+          "batch_discount": null,
+          "modality": null,
+          "source": "litellm-snapshot",
+          "as_of": "2026-08-10T16:23:08.653Z",
+          "basis": "base · standard tier · text"
         },
         "flags": {
           "supports_response_schema": null,
@@ -711,37 +1063,61 @@
         }
       },
       "probed": {
-        "as_of": "2026-08-09T17:02:45.336Z",
+        "as_of": "2026-08-10T14:08:40.519Z",
         "source": "modelrig-probes@0.0.1",
         "schema": {
-          "samples": 50,
-          "parse_rate": 0.98,
-          "conform_rate": 0.98,
+          "samples": 65,
+          "parse_rate": 1,
+          "conform_rate": 1,
           "conform_ci95": [
-            0.8950455641036219,
-            0.9964607407283539
+            0.9441984686771432,
+            1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.003095255,
+          "mean_cost_usd": 0.0027681499999999996,
           "by_family": {
             "demo-rig": {
               "samples": 20,
-              "conform_rate": 0.95,
-              "conform_ci95": [
-                0.763868806553258,
-                0.9911185511992047
-              ],
-              "value_accuracy_mean": 1
-            },
-            "probe-suite": {
-              "samples": 30,
               "conform_rate": 1,
               "conform_ci95": [
-                0.8864866068260312,
-                0.9999999999999999
+                0.8388748419471806,
+                1
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
+            },
+            "probe-suite": {
+              "samples": 45,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.9213484012671117,
+                1
+              ],
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
+            }
+          },
+          "by_difficulty": {
+            "hard": {
+              "samples": 15,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.7961166989641515,
+                1
+              ],
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
+            },
+            "standard": {
+              "samples": 50,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.9286524008666414,
+                1
+              ],
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
             }
           }
         },
@@ -760,7 +1136,7 @@
       "discrepancies": [
         {
           "kind": "undeclared_schema_capable",
-          "message": "no declared schema support, but probed conformance is 98% — capability exists undeclared"
+          "message": "no declared schema support, but probed conformance is 100% — capability exists undeclared"
         }
       ],
       "callNotes": [],
@@ -769,12 +1145,26 @@
     {
       "model_key": "deepinfra/moonshotai/Kimi-K2.7-Code",
       "declared": {
-        "as_of": "2026-08-09T23:35:36.550Z",
+        "as_of": "2026-08-10T16:23:08.653Z",
         "source": "litellm-pricing-map(pinned)+adapter-static",
         "pricing": {
           "input_usd_per_mtok": 0.6799999999999999,
           "output_usd_per_mtok": 3.4,
           "cached_input_usd_per_mtok": null
+        },
+        "pricing_v2": {
+          "base": {
+            "input": 6.8e-7,
+            "output": 0.0000034,
+            "cache_read": null
+          },
+          "tiers": null,
+          "context_bands": null,
+          "batch_discount": null,
+          "modality": null,
+          "source": "litellm-snapshot",
+          "as_of": "2026-08-10T16:23:08.653Z",
+          "basis": "base · standard tier · text"
         },
         "flags": {
           "supports_response_schema": null,
@@ -785,19 +1175,19 @@
         }
       },
       "probed": {
-        "as_of": "2026-08-09T17:05:25.454Z",
+        "as_of": "2026-08-10T14:13:59.896Z",
         "source": "modelrig-probes@0.0.1",
         "schema": {
-          "samples": 50,
+          "samples": 65,
           "parse_rate": 1,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9441984686771432,
             1
           ],
-          "value_accuracy_mean": 1,
+          "value_accuracy_mean": 0.9846153846153847,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.001235764,
+          "mean_cost_usd": 0.0010801015384615386,
           "by_family": {
             "demo-rig": {
               "samples": 20,
@@ -806,16 +1196,40 @@
                 0.8388748419471806,
                 1
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
             },
             "probe-suite": {
-              "samples": 30,
+              "samples": 45,
               "conform_rate": 1,
               "conform_ci95": [
-                0.8864866068260312,
-                0.9999999999999999
+                0.9213484012671117,
+                1
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 0.9777777777777777,
+              "native_rung_rate": 0
+            }
+          },
+          "by_difficulty": {
+            "hard": {
+              "samples": 15,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.7961166989641515,
+                1
+              ],
+              "value_accuracy_mean": 0.9333333333333333,
+              "native_rung_rate": 0
+            },
+            "standard": {
+              "samples": 50,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.9286524008666414,
+                1
+              ],
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
             }
           }
         },
@@ -843,12 +1257,26 @@
     {
       "model_key": "deepinfra/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B",
       "declared": {
-        "as_of": "2026-08-09T23:35:36.550Z",
+        "as_of": "2026-08-10T16:23:08.653Z",
         "source": "litellm-pricing-map(pinned)+adapter-static",
         "pricing": {
           "input_usd_per_mtok": 0.5,
           "output_usd_per_mtok": 2.2,
           "cached_input_usd_per_mtok": null
+        },
+        "pricing_v2": {
+          "base": {
+            "input": 5e-7,
+            "output": 0.0000022,
+            "cache_read": null
+          },
+          "tiers": null,
+          "context_bands": null,
+          "batch_discount": null,
+          "modality": null,
+          "source": "litellm-snapshot",
+          "as_of": "2026-08-10T16:23:08.653Z",
+          "basis": "base · standard tier · text"
         },
         "flags": {
           "supports_response_schema": null,
@@ -859,19 +1287,19 @@
         }
       },
       "probed": {
-        "as_of": "2026-08-09T18:18:48.527Z",
+        "as_of": "2026-08-10T14:27:27.816Z",
         "source": "modelrig-probes@0.0.1",
         "schema": {
-          "samples": 50,
+          "samples": 65,
           "parse_rate": 1,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9441984686771432,
             1
           ],
-          "value_accuracy_mean": 0.995,
+          "value_accuracy_mean": 0.9961538461538462,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.0011292260000000003,
+          "mean_cost_usd": 0.0010327923076923077,
           "by_family": {
             "demo-rig": {
               "samples": 20,
@@ -880,16 +1308,40 @@
                 0.8388748419471806,
                 1
               ],
-              "value_accuracy_mean": 0.9875
+              "value_accuracy_mean": 0.9875,
+              "native_rung_rate": 0
             },
             "probe-suite": {
-              "samples": 30,
+              "samples": 45,
               "conform_rate": 1,
               "conform_ci95": [
-                0.8864866068260312,
-                0.9999999999999999
+                0.9213484012671117,
+                1
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
+            }
+          },
+          "by_difficulty": {
+            "hard": {
+              "samples": 15,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.7961166989641515,
+                1
+              ],
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
+            },
+            "standard": {
+              "samples": 50,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.9286524008666414,
+                1
+              ],
+              "value_accuracy_mean": 0.995,
+              "native_rung_rate": 0
             }
           }
         },
@@ -917,12 +1369,26 @@
     {
       "model_key": "deepinfra/openai/gpt-oss-120b",
       "declared": {
-        "as_of": "2026-08-09T23:35:36.550Z",
+        "as_of": "2026-08-10T16:23:08.653Z",
         "source": "litellm-pricing-map(pinned)+adapter-static",
         "pricing": {
           "input_usd_per_mtok": 0.049999999999999996,
           "output_usd_per_mtok": 0.44999999999999996,
           "cached_input_usd_per_mtok": null
+        },
+        "pricing_v2": {
+          "base": {
+            "input": 5e-8,
+            "output": 4.5e-7,
+            "cache_read": null
+          },
+          "tiers": null,
+          "context_bands": null,
+          "batch_discount": null,
+          "modality": null,
+          "source": "litellm-snapshot",
+          "as_of": "2026-08-10T16:23:08.653Z",
+          "basis": "base · standard tier · text"
         },
         "flags": {
           "supports_response_schema": null,
@@ -933,19 +1399,19 @@
         }
       },
       "probed": {
-        "as_of": "2026-08-09T18:52:52.558Z",
+        "as_of": "2026-08-10T14:35:06.024Z",
         "source": "modelrig-probes@0.0.1",
         "schema": {
-          "samples": 50,
+          "samples": 65,
           "parse_rate": 1,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9441984686771432,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.00016848099999999992,
+          "mean_cost_usd": 0.00015322153846153837,
           "by_family": {
             "demo-rig": {
               "samples": 20,
@@ -954,16 +1420,40 @@
                 0.8388748419471806,
                 1
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
             },
             "probe-suite": {
-              "samples": 30,
+              "samples": 45,
               "conform_rate": 1,
               "conform_ci95": [
-                0.8864866068260312,
-                0.9999999999999999
+                0.9213484012671117,
+                1
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
+            }
+          },
+          "by_difficulty": {
+            "hard": {
+              "samples": 15,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.7961166989641515,
+                1
+              ],
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
+            },
+            "standard": {
+              "samples": 50,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.9286524008666414,
+                1
+              ],
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
             }
           }
         },
@@ -991,12 +1481,26 @@
     {
       "model_key": "deepinfra/zai-org/GLM-5.2",
       "declared": {
-        "as_of": "2026-08-09T23:35:36.550Z",
+        "as_of": "2026-08-10T16:23:08.653Z",
         "source": "litellm-pricing-map(pinned)+adapter-static",
         "pricing": {
           "input_usd_per_mtok": 0.7499999999999999,
           "output_usd_per_mtok": 2.4,
           "cached_input_usd_per_mtok": null
+        },
+        "pricing_v2": {
+          "base": {
+            "input": 7.499999999999999e-7,
+            "output": 0.0000024,
+            "cache_read": null
+          },
+          "tiers": null,
+          "context_bands": null,
+          "batch_discount": null,
+          "modality": null,
+          "source": "litellm-snapshot",
+          "as_of": "2026-08-10T16:23:08.653Z",
+          "basis": "base · standard tier · text"
         },
         "flags": {
           "supports_response_schema": null,
@@ -1007,19 +1511,19 @@
         }
       },
       "probed": {
-        "as_of": "2026-08-09T15:58:53.460Z",
+        "as_of": "2026-08-10T15:03:19.686Z",
         "source": "modelrig-probes@0.0.1",
         "schema": {
-          "samples": 50,
+          "samples": 65,
           "parse_rate": 1,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9441984686771432,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.0015530640000000005,
+          "mean_cost_usd": 0.001259584615384615,
           "by_family": {
             "demo-rig": {
               "samples": 20,
@@ -1028,16 +1532,40 @@
                 0.8388748419471806,
                 1
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
             },
             "probe-suite": {
-              "samples": 30,
+              "samples": 45,
               "conform_rate": 1,
               "conform_ci95": [
-                0.8864866068260312,
-                0.9999999999999999
+                0.9213484012671117,
+                1
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
+            }
+          },
+          "by_difficulty": {
+            "hard": {
+              "samples": 15,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.7961166989641515,
+                1
+              ],
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
+            },
+            "standard": {
+              "samples": 50,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.9286524008666414,
+                1
+              ],
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
             }
           }
         },
@@ -1069,12 +1597,26 @@
     {
       "model_key": "deepseek/deepseek-chat",
       "declared": {
-        "as_of": "2026-08-09T23:35:36.550Z",
+        "as_of": "2026-08-10T16:23:08.653Z",
         "source": "litellm-pricing-map(pinned)+adapter-static",
         "pricing": {
           "input_usd_per_mtok": 0.28,
           "output_usd_per_mtok": 0.42,
           "cached_input_usd_per_mtok": 0.028
+        },
+        "pricing_v2": {
+          "base": {
+            "input": 2.8e-7,
+            "output": 4.2e-7,
+            "cache_read": 2.8e-8
+          },
+          "tiers": null,
+          "context_bands": null,
+          "batch_discount": null,
+          "modality": null,
+          "source": "litellm-snapshot",
+          "as_of": "2026-08-10T16:23:08.653Z",
+          "basis": "base · standard tier · text"
         },
         "flags": {
           "supports_response_schema": true,
@@ -1085,19 +1627,19 @@
         }
       },
       "probed": {
-        "as_of": "2026-08-08T23:01:20.994Z",
+        "as_of": "2026-08-10T15:05:08.390Z",
         "source": "modelrig-probes@0.0.1",
         "schema": {
-          "samples": 50,
-          "parse_rate": 1,
-          "conform_rate": 1,
+          "samples": 65,
+          "parse_rate": 0.9846153846153847,
+          "conform_rate": 0.9846153846153847,
           "conform_ci95": [
-            0.9286524008666414,
-            1
+            0.9178671527044854,
+            0.9972790553979766
           ],
-          "value_accuracy_mean": 1,
+          "value_accuracy_mean": 0.921875,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.00008656032,
+          "mean_cost_usd": 0.00005954307692307696,
           "by_family": {
             "demo-rig": {
               "samples": 20,
@@ -1106,16 +1648,40 @@
                 0.8388748419471806,
                 1
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
             },
             "probe-suite": {
-              "samples": 30,
+              "samples": 45,
+              "conform_rate": 0.9777777777777777,
+              "conform_ci95": [
+                0.8843331823158513,
+                0.9960664011171667
+              ],
+              "value_accuracy_mean": 0.8863636363636364,
+              "native_rung_rate": 0
+            }
+          },
+          "by_difficulty": {
+            "hard": {
+              "samples": 15,
               "conform_rate": 1,
               "conform_ci95": [
-                0.8864866068260312,
-                0.9999999999999999
+                0.7961166989641515,
+                1
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 0.6666666666666666,
+              "native_rung_rate": 0
+            },
+            "standard": {
+              "samples": 50,
+              "conform_rate": 0.98,
+              "conform_ci95": [
+                0.8950455641036219,
+                0.9964607407283539
+              ],
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
             }
           }
         },
@@ -1153,12 +1719,26 @@
     {
       "model_key": "deepseek/deepseek-reasoner",
       "declared": {
-        "as_of": "2026-08-09T23:35:36.550Z",
+        "as_of": "2026-08-10T16:23:08.653Z",
         "source": "litellm-pricing-map(pinned)+adapter-static",
         "pricing": {
           "input_usd_per_mtok": 0.28,
           "output_usd_per_mtok": 0.42,
           "cached_input_usd_per_mtok": 0.028
+        },
+        "pricing_v2": {
+          "base": {
+            "input": 2.8e-7,
+            "output": 4.2e-7,
+            "cache_read": 2.8e-8
+          },
+          "tiers": null,
+          "context_bands": null,
+          "batch_discount": null,
+          "modality": null,
+          "source": "litellm-snapshot",
+          "as_of": "2026-08-10T16:23:08.653Z",
+          "basis": "base · standard tier · text"
         },
         "flags": {
           "supports_response_schema": true,
@@ -1169,19 +1749,19 @@
         }
       },
       "probed": {
-        "as_of": "2026-08-08T23:03:26.251Z",
+        "as_of": "2026-08-10T15:07:43.953Z",
         "source": "modelrig-probes@0.0.1",
         "schema": {
-          "samples": 50,
+          "samples": 65,
           "parse_rate": 1,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9441984686771432,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.0001357888,
+          "mean_cost_usd": 0.00011366449230769231,
           "by_family": {
             "demo-rig": {
               "samples": 20,
@@ -1190,16 +1770,40 @@
                 0.8388748419471806,
                 1
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
             },
             "probe-suite": {
-              "samples": 30,
+              "samples": 45,
               "conform_rate": 1,
               "conform_ci95": [
-                0.8864866068260312,
-                0.9999999999999999
+                0.9213484012671117,
+                1
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
+            }
+          },
+          "by_difficulty": {
+            "hard": {
+              "samples": 15,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.7961166989641515,
+                1
+              ],
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
+            },
+            "standard": {
+              "samples": 50,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.9286524008666414,
+                1
+              ],
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
             }
           }
         },
@@ -1237,12 +1841,26 @@
     {
       "model_key": "fireworks/glm-5p2",
       "declared": {
-        "as_of": "2026-08-09T23:35:36.550Z",
+        "as_of": "2026-08-10T16:23:08.653Z",
         "source": "litellm-pricing-map(pinned)+adapter-static",
         "pricing": {
           "input_usd_per_mtok": 1.4,
           "output_usd_per_mtok": 4.4,
           "cached_input_usd_per_mtok": 0.14
+        },
+        "pricing_v2": {
+          "base": {
+            "input": 0.0000014,
+            "output": 0.0000044,
+            "cache_read": 1.4e-7
+          },
+          "tiers": null,
+          "context_bands": null,
+          "batch_discount": null,
+          "modality": null,
+          "source": "litellm-snapshot",
+          "as_of": "2026-08-10T16:23:08.653Z",
+          "basis": "base · standard tier · text"
         },
         "flags": {
           "supports_response_schema": true,
@@ -1253,19 +1871,19 @@
         }
       },
       "probed": {
-        "as_of": "2026-08-09T15:18:21.645Z",
+        "as_of": "2026-08-10T15:17:27.672Z",
         "source": "modelrig-probes@0.0.1",
         "schema": {
-          "samples": 50,
-          "parse_rate": 0.98,
-          "conform_rate": 0.98,
+          "samples": 65,
+          "parse_rate": 1,
+          "conform_rate": 1,
           "conform_ci95": [
-            0.8950455641036219,
-            0.9964607407283539
+            0.9441984686771432,
+            1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.0026497455999999996,
+          "mean_cost_usd": 0.0020838861538461533,
           "by_family": {
             "demo-rig": {
               "samples": 20,
@@ -1274,16 +1892,40 @@
                 0.8388748419471806,
                 1
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
             },
             "probe-suite": {
-              "samples": 30,
-              "conform_rate": 0.9666666666666667,
+              "samples": 45,
+              "conform_rate": 1,
               "conform_ci95": [
-                0.8332960900859082,
-                0.9940914096183874
+                0.9213484012671117,
+                1
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
+            }
+          },
+          "by_difficulty": {
+            "hard": {
+              "samples": 15,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.7961166989641515,
+                1
+              ],
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
+            },
+            "standard": {
+              "samples": 50,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.9286524008666414,
+                1
+              ],
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
             }
           }
         },
@@ -1315,12 +1957,26 @@
     {
       "model_key": "fireworks/gpt-oss-120b",
       "declared": {
-        "as_of": "2026-08-09T23:35:36.550Z",
+        "as_of": "2026-08-10T16:23:08.653Z",
         "source": "litellm-pricing-map(pinned)+adapter-static",
         "pricing": {
           "input_usd_per_mtok": 0.15,
           "output_usd_per_mtok": 0.6,
           "cached_input_usd_per_mtok": 0.015
+        },
+        "pricing_v2": {
+          "base": {
+            "input": 1.5e-7,
+            "output": 6e-7,
+            "cache_read": 1.5e-8
+          },
+          "tiers": null,
+          "context_bands": null,
+          "batch_discount": null,
+          "modality": null,
+          "source": "litellm-snapshot",
+          "as_of": "2026-08-10T16:23:08.653Z",
+          "basis": "base · standard tier · text"
         },
         "flags": {
           "supports_response_schema": true,
@@ -1331,19 +1987,19 @@
         }
       },
       "probed": {
-        "as_of": "2026-08-09T18:54:14.906Z",
+        "as_of": "2026-08-10T15:19:48.371Z",
         "source": "modelrig-probes@0.0.1",
         "schema": {
-          "samples": 50,
+          "samples": 65,
           "parse_rate": 1,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9441984686771432,
             1
           ],
-          "value_accuracy_mean": 0.995,
+          "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.00024279450000000001,
+          "mean_cost_usd": 0.0002187062307692308,
           "by_family": {
             "demo-rig": {
               "samples": 20,
@@ -1352,16 +2008,40 @@
                 0.8388748419471806,
                 1
               ],
-              "value_accuracy_mean": 0.9875
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
             },
             "probe-suite": {
-              "samples": 30,
+              "samples": 45,
               "conform_rate": 1,
               "conform_ci95": [
-                0.8864866068260312,
-                0.9999999999999999
+                0.9213484012671117,
+                1
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
+            }
+          },
+          "by_difficulty": {
+            "hard": {
+              "samples": 15,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.7961166989641515,
+                1
+              ],
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
+            },
+            "standard": {
+              "samples": 50,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.9286524008666414,
+                1
+              ],
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
             }
           }
         },
@@ -1389,12 +2069,28 @@
     {
       "model_key": "fireworks/kimi-k3",
       "declared": {
-        "as_of": "2026-08-09T23:35:36.550Z",
+        "as_of": "2026-08-10T16:23:08.653Z",
         "source": "litellm-pricing-map(pinned)+adapter-static",
         "pricing": {
           "input_usd_per_mtok": 3,
           "output_usd_per_mtok": 15,
           "cached_input_usd_per_mtok": 0.3
+        },
+        "pricing_v2": {
+          "base": {
+            "input": 0.000003,
+            "output": 0.000015,
+            "cache_read": 3e-7,
+            "cache_write": null
+          },
+          "tiers": {
+            "priority": 1.25,
+            "fast": 1.5,
+            "region_us": 1.1
+          },
+          "source": "fireworks-website:https://fireworks.ai/models/fireworks/kimi-k3",
+          "as_of": "2026-08-09",
+          "basis": "base serverless · standard tier · text"
         },
         "flags": {
           "supports_response_schema": null,
@@ -1405,19 +2101,19 @@
         }
       },
       "probed": {
-        "as_of": "2026-08-09T23:35:08.047Z",
+        "as_of": "2026-08-10T15:25:43.678Z",
         "source": "modelrig-probes@0.0.1",
         "schema": {
-          "samples": 50,
+          "samples": 65,
           "parse_rate": 1,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9441984686771432,
             1
           ],
-          "value_accuracy_mean": 1,
+          "value_accuracy_mean": 0.9923076923076923,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.003980742000000001,
+          "mean_cost_usd": 0.004027246153846153,
           "by_family": {
             "demo-rig": {
               "samples": 20,
@@ -1426,16 +2122,40 @@
                 0.8388748419471806,
                 1
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
             },
             "probe-suite": {
-              "samples": 30,
+              "samples": 45,
               "conform_rate": 1,
               "conform_ci95": [
-                0.8864866068260312,
-                0.9999999999999999
+                0.9213484012671117,
+                1
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 0.9888888888888889,
+              "native_rung_rate": 0
+            }
+          },
+          "by_difficulty": {
+            "hard": {
+              "samples": 15,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.7961166989641515,
+                1
+              ],
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 0
+            },
+            "standard": {
+              "samples": 50,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.9286524008666414,
+                1
+              ],
+              "value_accuracy_mean": 0.99,
+              "native_rung_rate": 0
             }
           }
         },
@@ -1467,12 +2187,26 @@
     {
       "model_key": "gemini/gemini-2.5-flash",
       "declared": {
-        "as_of": "2026-08-09T23:35:36.550Z",
+        "as_of": "2026-08-10T16:23:08.653Z",
         "source": "litellm-pricing-map(pinned)+adapter-static",
         "pricing": {
           "input_usd_per_mtok": 0.3,
           "output_usd_per_mtok": 2.5,
           "cached_input_usd_per_mtok": 0.03
+        },
+        "pricing_v2": {
+          "base": {
+            "input": 3e-7,
+            "output": 0.0000025,
+            "cache_read": 3e-8
+          },
+          "tiers": null,
+          "context_bands": null,
+          "batch_discount": null,
+          "modality": null,
+          "source": "litellm-snapshot",
+          "as_of": "2026-08-10T16:23:08.653Z",
+          "basis": "base · standard tier · text"
         },
         "flags": {
           "supports_response_schema": true,
@@ -1483,19 +2217,19 @@
         }
       },
       "probed": {
-        "as_of": "2026-08-09T03:38:38.000Z",
+        "as_of": "2026-08-10T15:28:26.443Z",
         "source": "modelrig-probes@0.0.1",
         "schema": {
-          "samples": 50,
+          "samples": 65,
           "parse_rate": 1,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9441984686771432,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.00120507,
+          "mean_cost_usd": 0.0012367307692307693,
           "by_family": {
             "demo-rig": {
               "samples": 20,
@@ -1504,16 +2238,40 @@
                 0.8388748419471806,
                 1
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 1
             },
             "probe-suite": {
-              "samples": 30,
+              "samples": 45,
               "conform_rate": 1,
               "conform_ci95": [
-                0.8864866068260312,
-                0.9999999999999999
+                0.9213484012671117,
+                1
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 1
+            }
+          },
+          "by_difficulty": {
+            "hard": {
+              "samples": 15,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.7961166989641515,
+                1
+              ],
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 1
+            },
+            "standard": {
+              "samples": 50,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.9286524008666414,
+                1
+              ],
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 1
             }
           }
         },
@@ -1542,12 +2300,26 @@
     {
       "model_key": "gemini/gemini-3-flash-preview",
       "declared": {
-        "as_of": "2026-08-09T23:35:36.550Z",
+        "as_of": "2026-08-10T16:23:08.653Z",
         "source": "litellm-pricing-map(pinned)+adapter-static",
         "pricing": {
           "input_usd_per_mtok": 0.5,
           "output_usd_per_mtok": 3,
           "cached_input_usd_per_mtok": 0.049999999999999996
+        },
+        "pricing_v2": {
+          "base": {
+            "input": 5e-7,
+            "output": 0.000003,
+            "cache_read": 5e-8
+          },
+          "tiers": null,
+          "context_bands": null,
+          "batch_discount": null,
+          "modality": null,
+          "source": "litellm-snapshot",
+          "as_of": "2026-08-10T16:23:08.653Z",
+          "basis": "base · standard tier · text"
         },
         "flags": {
           "supports_response_schema": true,
@@ -1558,19 +2330,19 @@
         }
       },
       "probed": {
-        "as_of": "2026-08-09T03:45:14.155Z",
+        "as_of": "2026-08-10T15:32:17.588Z",
         "source": "modelrig-probes@0.0.1",
         "schema": {
-          "samples": 50,
-          "parse_rate": 0.98,
-          "conform_rate": 0.98,
+          "samples": 65,
+          "parse_rate": 1,
+          "conform_rate": 1,
           "conform_ci95": [
-            0.8950455641036219,
-            0.9964607407283539
+            0.9441984686771432,
+            1
           ],
-          "value_accuracy_mean": 0.9948979591836735,
+          "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.002450929999999999,
+          "mean_cost_usd": 0.0023001461538461544,
           "by_family": {
             "demo-rig": {
               "samples": 20,
@@ -1579,16 +2351,40 @@
                 0.8388748419471806,
                 1
               ],
-              "value_accuracy_mean": 0.9875
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 1
             },
             "probe-suite": {
-              "samples": 30,
-              "conform_rate": 0.9666666666666667,
+              "samples": 45,
+              "conform_rate": 1,
               "conform_ci95": [
-                0.8332960900859082,
-                0.9940914096183874
+                0.9213484012671117,
+                1
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 1
+            }
+          },
+          "by_difficulty": {
+            "hard": {
+              "samples": 15,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.7961166989641515,
+                1
+              ],
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 1
+            },
+            "standard": {
+              "samples": 50,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.9286524008666414,
+                1
+              ],
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 1
             }
           }
         },
@@ -1622,12 +2418,26 @@
     {
       "model_key": "gemini/gemini-3.1-flash-lite",
       "declared": {
-        "as_of": "2026-08-09T23:35:36.550Z",
+        "as_of": "2026-08-10T16:23:08.653Z",
         "source": "litellm-pricing-map(pinned)+adapter-static",
         "pricing": {
           "input_usd_per_mtok": 0.25,
           "output_usd_per_mtok": 1.5,
           "cached_input_usd_per_mtok": 0.024999999999999998
+        },
+        "pricing_v2": {
+          "base": {
+            "input": 2.5e-7,
+            "output": 0.0000015,
+            "cache_read": 2.5e-8
+          },
+          "tiers": null,
+          "context_bands": null,
+          "batch_discount": null,
+          "modality": null,
+          "source": "litellm-snapshot",
+          "as_of": "2026-08-10T16:23:08.653Z",
+          "basis": "base · standard tier · text"
         },
         "flags": {
           "supports_response_schema": true,
@@ -1638,19 +2448,19 @@
         }
       },
       "probed": {
-        "as_of": "2026-08-09T03:46:07.456Z",
+        "as_of": "2026-08-10T15:33:13.033Z",
         "source": "modelrig-probes@0.0.1",
         "schema": {
-          "samples": 50,
+          "samples": 65,
           "parse_rate": 1,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9441984686771432,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.0002299050000000001,
+          "mean_cost_usd": 0.00019593461538461546,
           "by_family": {
             "demo-rig": {
               "samples": 20,
@@ -1659,16 +2469,40 @@
                 0.8388748419471806,
                 1
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 1
             },
             "probe-suite": {
-              "samples": 30,
+              "samples": 45,
               "conform_rate": 1,
               "conform_ci95": [
-                0.8864866068260312,
-                0.9999999999999999
+                0.9213484012671117,
+                1
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 1
+            }
+          },
+          "by_difficulty": {
+            "hard": {
+              "samples": 15,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.7961166989641515,
+                1
+              ],
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 1
+            },
+            "standard": {
+              "samples": 50,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.9286524008666414,
+                1
+              ],
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 1
             }
           }
         },
@@ -1714,12 +2548,26 @@
     {
       "model_key": "gemini/gemini-3.1-pro-preview",
       "declared": {
-        "as_of": "2026-08-09T23:35:36.550Z",
+        "as_of": "2026-08-10T16:23:08.653Z",
         "source": "litellm-pricing-map(pinned)+adapter-static",
         "pricing": {
           "input_usd_per_mtok": 2,
           "output_usd_per_mtok": 12,
           "cached_input_usd_per_mtok": 0.19999999999999998
+        },
+        "pricing_v2": {
+          "base": {
+            "input": 0.000002,
+            "output": 0.000012,
+            "cache_read": 2e-7
+          },
+          "tiers": null,
+          "context_bands": null,
+          "batch_discount": null,
+          "modality": null,
+          "source": "litellm-snapshot",
+          "as_of": "2026-08-10T16:23:08.653Z",
+          "basis": "base · standard tier · text"
         },
         "flags": {
           "supports_response_schema": true,
@@ -1730,19 +2578,19 @@
         }
       },
       "probed": {
-        "as_of": "2026-08-09T18:30:58.050Z",
+        "as_of": "2026-08-10T15:41:42.406Z",
         "source": "modelrig-probes@0.0.1",
         "schema": {
-          "samples": 50,
+          "samples": 65,
           "parse_rate": 1,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9441984686771432,
             1
           ],
-          "value_accuracy_mean": 0.995,
+          "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.01104612,
+          "mean_cost_usd": 0.010112399999999997,
           "by_family": {
             "demo-rig": {
               "samples": 20,
@@ -1751,16 +2599,40 @@
                 0.8388748419471806,
                 1
               ],
-              "value_accuracy_mean": 0.9875
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 1
             },
             "probe-suite": {
-              "samples": 30,
+              "samples": 45,
               "conform_rate": 1,
               "conform_ci95": [
-                0.8864866068260312,
-                0.9999999999999999
+                0.9213484012671117,
+                1
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 1
+            }
+          },
+          "by_difficulty": {
+            "hard": {
+              "samples": 15,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.7961166989641515,
+                1
+              ],
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 1
+            },
+            "standard": {
+              "samples": 50,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.9286524008666414,
+                1
+              ],
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 1
             }
           }
         },
@@ -1813,12 +2685,26 @@
     {
       "model_key": "grok/grok-4-1-fast",
       "declared": {
-        "as_of": "2026-08-09T23:35:36.550Z",
+        "as_of": "2026-08-10T16:23:08.653Z",
         "source": "litellm-pricing-map(pinned)+adapter-static",
         "pricing": {
           "input_usd_per_mtok": 0.19999999999999998,
           "output_usd_per_mtok": 0.5,
           "cached_input_usd_per_mtok": 0.049999999999999996
+        },
+        "pricing_v2": {
+          "base": {
+            "input": 2e-7,
+            "output": 5e-7,
+            "cache_read": 5e-8
+          },
+          "tiers": null,
+          "context_bands": null,
+          "batch_discount": null,
+          "modality": null,
+          "source": "litellm-snapshot",
+          "as_of": "2026-08-10T16:23:08.653Z",
+          "basis": "base · standard tier · text"
         },
         "flags": {
           "supports_response_schema": true,
@@ -1850,7 +2736,20 @@
                 0.8864866068260312,
                 0.9999999999999999
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 1
+            }
+          },
+          "by_difficulty": {
+            "standard": {
+              "samples": 30,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.8864866068260312,
+                0.9999999999999999
+              ],
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 1
             }
           }
         },
@@ -1878,12 +2777,26 @@
     {
       "model_key": "grok/grok-4.3",
       "declared": {
-        "as_of": "2026-08-09T23:35:36.550Z",
+        "as_of": "2026-08-10T16:23:08.653Z",
         "source": "litellm-pricing-map(pinned)+adapter-static",
         "pricing": {
           "input_usd_per_mtok": 1.25,
           "output_usd_per_mtok": 2.5,
           "cached_input_usd_per_mtok": 0.19999999999999998
+        },
+        "pricing_v2": {
+          "base": {
+            "input": 0.00000125,
+            "output": 0.0000025,
+            "cache_read": 2e-7
+          },
+          "tiers": null,
+          "context_bands": null,
+          "batch_discount": null,
+          "modality": null,
+          "source": "litellm-snapshot",
+          "as_of": "2026-08-10T16:23:08.653Z",
+          "basis": "base · standard tier · text"
         },
         "flags": {
           "supports_response_schema": true,
@@ -1915,7 +2828,20 @@
                 0.8864866068260312,
                 0.9999999999999999
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 1
+            }
+          },
+          "by_difficulty": {
+            "standard": {
+              "samples": 30,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.8864866068260312,
+                0.9999999999999999
+              ],
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 1
             }
           }
         },
@@ -1943,12 +2869,26 @@
     {
       "model_key": "grok/grok-4.5",
       "declared": {
-        "as_of": "2026-08-09T23:35:36.550Z",
+        "as_of": "2026-08-10T16:23:08.653Z",
         "source": "litellm-pricing-map(pinned)+adapter-static",
         "pricing": {
           "input_usd_per_mtok": 2,
           "output_usd_per_mtok": 6,
           "cached_input_usd_per_mtok": 0.5
+        },
+        "pricing_v2": {
+          "base": {
+            "input": 0.000002,
+            "output": 0.000006,
+            "cache_read": 5e-7
+          },
+          "tiers": null,
+          "context_bands": null,
+          "batch_discount": null,
+          "modality": null,
+          "source": "litellm-snapshot",
+          "as_of": "2026-08-10T16:23:08.653Z",
+          "basis": "base · standard tier · text"
         },
         "flags": {
           "supports_response_schema": true,
@@ -1980,7 +2920,20 @@
                 0.8864866068260312,
                 0.9999999999999999
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 1
+            }
+          },
+          "by_difficulty": {
+            "standard": {
+              "samples": 30,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.8864866068260312,
+                0.9999999999999999
+              ],
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 1
             }
           }
         },
@@ -2008,12 +2961,26 @@
     {
       "model_key": "openai/gpt-5-mini",
       "declared": {
-        "as_of": "2026-08-09T23:35:36.550Z",
+        "as_of": "2026-08-10T16:23:08.653Z",
         "source": "litellm-pricing-map(pinned)+adapter-static",
         "pricing": {
           "input_usd_per_mtok": 0.25,
           "output_usd_per_mtok": 2,
           "cached_input_usd_per_mtok": 0.024999999999999998
+        },
+        "pricing_v2": {
+          "base": {
+            "input": 2.5e-7,
+            "output": 0.000002,
+            "cache_read": 2.5e-8
+          },
+          "tiers": null,
+          "context_bands": null,
+          "batch_discount": null,
+          "modality": null,
+          "source": "litellm-snapshot",
+          "as_of": "2026-08-10T16:23:08.653Z",
+          "basis": "base · standard tier · text"
         },
         "flags": {
           "supports_response_schema": true,
@@ -2024,19 +2991,19 @@
         }
       },
       "probed": {
-        "as_of": "2026-08-09T03:35:51.600Z",
+        "as_of": "2026-08-10T15:46:57.533Z",
         "source": "modelrig-probes@0.0.1",
         "schema": {
-          "samples": 50,
+          "samples": 65,
           "parse_rate": 1,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9441984686771432,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.0007078349999999999,
+          "mean_cost_usd": 0.0007096538461538465,
           "by_family": {
             "demo-rig": {
               "samples": 20,
@@ -2045,16 +3012,40 @@
                 0.8388748419471806,
                 1
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 1
             },
             "probe-suite": {
-              "samples": 30,
+              "samples": 45,
               "conform_rate": 1,
               "conform_ci95": [
-                0.8864866068260312,
-                0.9999999999999999
+                0.9213484012671117,
+                1
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 1
+            }
+          },
+          "by_difficulty": {
+            "hard": {
+              "samples": 15,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.7961166989641515,
+                1
+              ],
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 1
+            },
+            "standard": {
+              "samples": 50,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.9286524008666414,
+                1
+              ],
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 1
             }
           }
         },
@@ -2083,12 +3074,26 @@
     {
       "model_key": "openai/gpt-5.2",
       "declared": {
-        "as_of": "2026-08-09T23:35:36.550Z",
+        "as_of": "2026-08-10T16:23:08.653Z",
         "source": "litellm-pricing-map(pinned)+adapter-static",
         "pricing": {
           "input_usd_per_mtok": 1.75,
           "output_usd_per_mtok": 14,
           "cached_input_usd_per_mtok": 0.175
+        },
+        "pricing_v2": {
+          "base": {
+            "input": 0.00000175,
+            "output": 0.000014,
+            "cache_read": 1.75e-7
+          },
+          "tiers": null,
+          "context_bands": null,
+          "batch_discount": null,
+          "modality": null,
+          "source": "litellm-snapshot",
+          "as_of": "2026-08-10T16:23:08.653Z",
+          "basis": "base · standard tier · text"
         },
         "flags": {
           "supports_response_schema": true,
@@ -2099,19 +3104,19 @@
         }
       },
       "probed": {
-        "as_of": "2026-08-09T03:16:27.814Z",
+        "as_of": "2026-08-10T15:49:15.851Z",
         "source": "modelrig-probes@0.0.1",
         "schema": {
-          "samples": 50,
+          "samples": 65,
           "parse_rate": 1,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9441984686771432,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.0017995250000000004,
+          "mean_cost_usd": 0.0015156076923076925,
           "by_family": {
             "demo-rig": {
               "samples": 20,
@@ -2120,16 +3125,40 @@
                 0.8388748419471806,
                 1
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 1
             },
             "probe-suite": {
-              "samples": 30,
+              "samples": 45,
               "conform_rate": 1,
               "conform_ci95": [
-                0.8864866068260312,
-                0.9999999999999999
+                0.9213484012671117,
+                1
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 1
+            }
+          },
+          "by_difficulty": {
+            "hard": {
+              "samples": 15,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.7961166989641515,
+                1
+              ],
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 1
+            },
+            "standard": {
+              "samples": 50,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.9286524008666414,
+                1
+              ],
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 1
             }
           }
         },
@@ -2163,12 +3192,26 @@
     {
       "model_key": "openai/gpt-5.4-mini",
       "declared": {
-        "as_of": "2026-08-09T23:35:36.550Z",
+        "as_of": "2026-08-10T16:23:08.653Z",
         "source": "litellm-pricing-map(pinned)+adapter-static",
         "pricing": {
           "input_usd_per_mtok": 0.75,
           "output_usd_per_mtok": 4.5,
           "cached_input_usd_per_mtok": 0.075
+        },
+        "pricing_v2": {
+          "base": {
+            "input": 7.5e-7,
+            "output": 0.0000045,
+            "cache_read": 7.5e-8
+          },
+          "tiers": null,
+          "context_bands": null,
+          "batch_discount": null,
+          "modality": null,
+          "source": "litellm-snapshot",
+          "as_of": "2026-08-10T16:23:08.653Z",
+          "basis": "base · standard tier · text"
         },
         "flags": {
           "supports_response_schema": true,
@@ -2179,19 +3222,19 @@
         }
       },
       "probed": {
-        "as_of": "2026-08-09T03:17:28.861Z",
+        "as_of": "2026-08-10T15:50:36.230Z",
         "source": "modelrig-probes@0.0.1",
         "schema": {
-          "samples": 50,
+          "samples": 65,
           "parse_rate": 1,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9441984686771432,
             1
           ],
-          "value_accuracy_mean": 0.99,
+          "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.0005780550000000003,
+          "mean_cost_usd": 0.0004975153846153846,
           "by_family": {
             "demo-rig": {
               "samples": 20,
@@ -2200,16 +3243,40 @@
                 0.8388748419471806,
                 1
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 1
             },
             "probe-suite": {
-              "samples": 30,
+              "samples": 45,
               "conform_rate": 1,
               "conform_ci95": [
-                0.8864866068260312,
-                0.9999999999999999
+                0.9213484012671117,
+                1
               ],
-              "value_accuracy_mean": 0.9833333333333333
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 1
+            }
+          },
+          "by_difficulty": {
+            "hard": {
+              "samples": 15,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.7961166989641515,
+                1
+              ],
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 1
+            },
+            "standard": {
+              "samples": 50,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.9286524008666414,
+                1
+              ],
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 1
             }
           }
         },
@@ -2266,12 +3333,26 @@
     {
       "model_key": "openai/gpt-5.4-nano",
       "declared": {
-        "as_of": "2026-08-09T23:35:36.550Z",
+        "as_of": "2026-08-10T16:23:08.653Z",
         "source": "litellm-pricing-map(pinned)+adapter-static",
         "pricing": {
           "input_usd_per_mtok": 0.19999999999999998,
           "output_usd_per_mtok": 1.25,
           "cached_input_usd_per_mtok": 0.02
+        },
+        "pricing_v2": {
+          "base": {
+            "input": 2e-7,
+            "output": 0.00000125,
+            "cache_read": 2e-8
+          },
+          "tiers": null,
+          "context_bands": null,
+          "batch_discount": null,
+          "modality": null,
+          "source": "litellm-snapshot",
+          "as_of": "2026-08-10T16:23:08.653Z",
+          "basis": "base · standard tier · text"
         },
         "flags": {
           "supports_response_schema": true,
@@ -2282,19 +3363,19 @@
         }
       },
       "probed": {
-        "as_of": "2026-08-09T03:18:40.821Z",
+        "as_of": "2026-08-10T15:52:07.525Z",
         "source": "modelrig-probes@0.0.1",
         "schema": {
-          "samples": 50,
+          "samples": 65,
           "parse_rate": 1,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9441984686771432,
             1
           ],
-          "value_accuracy_mean": 1,
+          "value_accuracy_mean": 0.8615384615384616,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.00018238500000000005,
+          "mean_cost_usd": 0.0001596076923076924,
           "by_family": {
             "demo-rig": {
               "samples": 20,
@@ -2303,16 +3384,40 @@
                 0.8388748419471806,
                 1
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 1
             },
             "probe-suite": {
-              "samples": 30,
+              "samples": 45,
               "conform_rate": 1,
               "conform_ci95": [
-                0.8864866068260312,
-                0.9999999999999999
+                0.9213484012671117,
+                1
               ],
-              "value_accuracy_mean": 1
+              "value_accuracy_mean": 0.8,
+              "native_rung_rate": 1
+            }
+          },
+          "by_difficulty": {
+            "hard": {
+              "samples": 15,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.7961166989641515,
+                1
+              ],
+              "value_accuracy_mean": 0.4,
+              "native_rung_rate": 1
+            },
+            "standard": {
+              "samples": 50,
+              "conform_rate": 1,
+              "conform_ci95": [
+                0.9286524008666414,
+                1
+              ],
+              "value_accuracy_mean": 1,
+              "native_rung_rate": 1
             }
           }
         },

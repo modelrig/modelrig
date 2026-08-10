@@ -3,6 +3,8 @@
  * coverage note that must describe the corpus it actually has.
  */
 
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import {
   corpusSummary,
@@ -10,6 +12,12 @@ import {
   servingPathLabel,
   toLeaderboardRows,
 } from "./build-leaderboard";
+import {
+  assertParityCoverageSane,
+  computeParity,
+  registryHasProbedModels,
+  type ParityListEntry,
+} from "../src/registry/parity";
 import type { Registry } from "../src/registry/build";
 
 function registryWith(models: Registry["models"]): Registry {
@@ -30,6 +38,35 @@ describe("corpusSummary", () => {
     expect(summary).toMatch(/not a claim about any customer's workload/);
     // once demo-rig lands, finance is < 50% of the corpus → not finance-weighted
     expect(summary).not.toMatch(/finance-weighted/);
+  });
+});
+
+describe("parity-50 coverage gate on the committed data (regression gate)", () => {
+  // Un-forgettable mechanical gate: load the ACTUAL registry.json +
+  // parity-50.json that ship, and assert the join does not silently collapse to
+  // 0 while probed models exist. If a future cycle renames ids and breaks the
+  // join, THIS fails in CI before the false-0 leaderboard is published.
+  const registry = JSON.parse(
+    readFileSync(join(__dirname, "registry.json"), "utf8")
+  ) as Registry;
+  const list = JSON.parse(readFileSync(join(__dirname, "parity-50.json"), "utf8")) as {
+    models: ParityListEntry[];
+  };
+
+  it("real committed registry joins the parity list without collapsing to 0", () => {
+    const parity = computeParity(list.models, registry);
+    expect(registryHasProbedModels(registry)).toBe(true);
+    expect(parity.probed).toBeGreaterThan(0);
+    expect(() => assertParityCoverageSane(parity, registry)).not.toThrow();
+  });
+
+  it("the gate WOULD fire if the join were broken (proves it is not vacuous)", () => {
+    // Same registry, but a parity list whose keys match nothing → 0 probed
+    // while probed data exists → must throw.
+    const brokenList = [{ name: "X", registry_keys: ["bogus/unmatched"] }];
+    expect(() => assertParityCoverageSane(computeParity(brokenList, registry), registry)).toThrow(
+      /join/i
+    );
   });
 });
 
@@ -202,6 +239,88 @@ describe("leaderboard rows carry corpus provenance", () => {
       { model_key: "p/unprobed", declared: null, probed: null, observed: null, discrepancies: [], callNotes: [], facts: null },
     ]);
     const rows = toLeaderboardRows(registry);
+    expect(rows[0].families).toEqual([]);
+  });
+
+  it("carries per-row fixture_counts {family: count} so provenance is real, not decorative (probe-cycle-001 contract addition)", () => {
+    // A row measured by 8 authored demo fixtures + 30 field probes must say so —
+    // `samples: 38` alone cannot. fixture_counts mirrors families: derived from
+    // by_family (family -> its sample count), always present as an object.
+    const registry = registryWith([
+      {
+        model_key: "p/mixed",
+        declared: null,
+        probed: {
+          as_of: "2026-08-08T00:00:00.000Z",
+          source: "modelrig-probes@0.0.1",
+          schema: {
+            samples: 38,
+            parse_rate: 1,
+            conform_rate: 1,
+            conform_ci95: [0.7, 1],
+            value_accuracy_mean: 1,
+            native_rung_rate: 1,
+            mean_cost_usd: 0.001,
+            by_family: {
+              "demo-rig": { samples: 8, conform_rate: 1, conform_ci95: [0.5, 1], value_accuracy_mean: 1, native_rung_rate: 1 },
+              "probe-suite": { samples: 30, conform_rate: 1, conform_ci95: [0.8, 1], value_accuracy_mean: 1, native_rung_rate: 1 },
+            },
+          },
+          grounding: null,
+          caching: null,
+        },
+        observed: null,
+        discrepancies: [],
+        callNotes: [],
+        facts: null,
+      },
+    ]);
+    const rows = toLeaderboardRows(registry);
+    expect(rows[0].fixture_counts).toEqual({ "demo-rig": 8, "probe-suite": 30 });
+    // families and fixture_counts describe the same set of corpora.
+    expect(Object.keys(rows[0].fixture_counts).sort()).toEqual(rows[0].families);
+  });
+
+  it("unprobed rows carry an empty fixture_counts object (present, not null — mirrors families:[])", () => {
+    const registry = registryWith([
+      { model_key: "p/unprobed", declared: null, probed: null, observed: null, discrepancies: [], callNotes: [], facts: null },
+    ]);
+    const rows = toLeaderboardRows(registry);
+    expect(rows[0].fixture_counts).toEqual({});
+  });
+
+  it("a probed schema with no by_family (legacy result) still yields {} — never undefined", () => {
+    // Distinct branch from probed:null — here the schema EXISTS but predates the
+    // by_family rollup. fixture_counts must stay a present object so the www
+    // consumer never null-guards the value, only keys off families.
+    const registry = registryWith([
+      {
+        model_key: "p/no-family",
+        declared: null,
+        probed: {
+          as_of: "2026-08-08T00:00:00.000Z",
+          source: "modelrig-probes@0.0.1",
+          schema: {
+            samples: 5,
+            parse_rate: 1,
+            conform_rate: 1,
+            conform_ci95: [0.5, 1],
+            value_accuracy_mean: 1,
+            native_rung_rate: 1,
+            mean_cost_usd: 0.001,
+            // no by_family
+          },
+          grounding: null,
+          caching: null,
+        },
+        observed: null,
+        discrepancies: [],
+        callNotes: [],
+        facts: null,
+      },
+    ]);
+    const rows = toLeaderboardRows(registry);
+    expect(rows[0].fixture_counts).toEqual({});
     expect(rows[0].families).toEqual([]);
   });
 });

@@ -1,0 +1,446 @@
+{
+  "cycle": "cycle-002",
+  "date": "2026-08-10T15:52:07.527Z",
+  "samples": 5,
+  "cycleCeilingUsd": 25,
+  "projectedUsd": 2.5189732499999997,
+  "totalSpentUsd": 2.3576030869999993,
+  "ceilingReached": false,
+  "counts": {
+    "probed": 27,
+    "partial": 0,
+    "contaminated": 0,
+    "skipped-unpriced": 0,
+    "skipped-unreachable": 3,
+    "not-probed-this-cycle": 0,
+    "failed": 0
+  },
+  "models": [
+    {
+      "modelKey": "anthropic/claude-haiku-4-5",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 65,
+          "costUsd": 0.11316,
+          "failureRate": 0,
+          "resultPath": "results/anthropic-claude-haiku-4-5/schema-2026-08-10.json"
+        }
+      ],
+      "costUsd": 0.11316
+    },
+    {
+      "modelKey": "anthropic/claude-sonnet-5",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 65,
+          "costUsd": 0.25408,
+          "failureRate": 0,
+          "resultPath": "results/anthropic-claude-sonnet-5/schema-2026-08-10.json"
+        }
+      ],
+      "costUsd": 0.25408
+    },
+    {
+      "modelKey": "deepinfra/MiniMaxAI/MiniMax-M3",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 65,
+          "costUsd": 0.0276545,
+          "failureRate": 0,
+          "resultPath": "results/deepinfra-MiniMaxAI-MiniMax-M3/schema-2026-08-10.json"
+        }
+      ],
+      "costUsd": 0.0276545
+    },
+    {
+      "modelKey": "deepinfra/Qwen/Qwen3-30B-A3B",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 65,
+          "costUsd": 0.010119649999999996,
+          "failureRate": 0,
+          "resultPath": "results/deepinfra-Qwen-Qwen3-30B-A3B/schema-2026-08-10.json"
+        }
+      ],
+      "costUsd": 0.010119649999999996
+    },
+    {
+      "modelKey": "deepinfra/Qwen/Qwen3-Coder-480B-A35B-Instruct-Turbo",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 65,
+          "costUsd": 0.013404150000000002,
+          "failureRate": 0,
+          "resultPath": "results/deepinfra-Qwen-Qwen3-Coder-480B-A35B-Instruct-Turbo/schema-2026-08-10.json"
+        }
+      ],
+      "costUsd": 0.013404150000000002
+    },
+    {
+      "modelKey": "deepinfra/google/gemma-4-31B-it",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 65,
+          "costUsd": 0.005418190000000004,
+          "failureRate": 0,
+          "resultPath": "results/deepinfra-google-gemma-4-31B-it/schema-2026-08-10.json"
+        }
+      ],
+      "costUsd": 0.005418190000000004
+    },
+    {
+      "modelKey": "deepinfra/meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 65,
+          "costUsd": 0.008011649999999999,
+          "failureRate": 0,
+          "resultPath": "results/deepinfra-meta-llama-Llama-4-Maverick-17B-128E-Instruct-FP8/schema-2026-08-10.json"
+        }
+      ],
+      "costUsd": 0.008011649999999999
+    },
+    {
+      "modelKey": "deepinfra/meta-llama/Llama-4-Scout-17B-16E-Instruct",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 65,
+          "costUsd": 0.0037045999999999997,
+          "failureRate": 0,
+          "resultPath": "results/deepinfra-meta-llama-Llama-4-Scout-17B-16E-Instruct/schema-2026-08-10.json"
+        }
+      ],
+      "costUsd": 0.0037045999999999997
+    },
+    {
+      "modelKey": "deepinfra/mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 65,
+          "costUsd": 0.0029583499999999993,
+          "failureRate": 0,
+          "resultPath": "results/deepinfra-mistralai-Mistral-Small-3.2-24B-Instruct-2506/schema-2026-08-10.json"
+        }
+      ],
+      "costUsd": 0.0029583499999999993
+    },
+    {
+      "modelKey": "deepinfra/moonshotai/Kimi-K2.6",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 65,
+          "costUsd": 0.17992974999999997,
+          "failureRate": 0,
+          "resultPath": "results/deepinfra-moonshotai-Kimi-K2.6/schema-2026-08-10.json"
+        }
+      ],
+      "costUsd": 0.17992974999999997
+    },
+    {
+      "modelKey": "deepinfra/moonshotai/Kimi-K2.7-Code",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 65,
+          "costUsd": 0.07020660000000001,
+          "failureRate": 0,
+          "resultPath": "results/deepinfra-moonshotai-Kimi-K2.7-Code/schema-2026-08-10.json"
+        }
+      ],
+      "costUsd": 0.07020660000000001
+    },
+    {
+      "modelKey": "deepinfra/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 65,
+          "costUsd": 0.0671315,
+          "failureRate": 0,
+          "resultPath": "results/deepinfra-nvidia-NVIDIA-Nemotron-3-Ultra-550B-A55B/schema-2026-08-10.json"
+        }
+      ],
+      "costUsd": 0.0671315
+    },
+    {
+      "modelKey": "deepinfra/openai/gpt-oss-120b",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 65,
+          "costUsd": 0.009959399999999993,
+          "failureRate": 0,
+          "resultPath": "results/deepinfra-openai-gpt-oss-120b/schema-2026-08-10.json"
+        }
+      ],
+      "costUsd": 0.009959399999999993
+    },
+    {
+      "modelKey": "deepinfra/zai-org/GLM-5.2",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 65,
+          "costUsd": 0.08187299999999997,
+          "failureRate": 0,
+          "resultPath": "results/deepinfra-zai-org-GLM-5.2/schema-2026-08-10.json"
+        }
+      ],
+      "costUsd": 0.08187299999999997
+    },
+    {
+      "modelKey": "deepseek/deepseek-chat",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 65,
+          "costUsd": 0.0038703000000000023,
+          "failureRate": 0,
+          "resultPath": "results/deepseek-deepseek-chat/schema-2026-08-10.json"
+        }
+      ],
+      "costUsd": 0.0038703000000000023
+    },
+    {
+      "modelKey": "deepseek/deepseek-reasoner",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 65,
+          "costUsd": 0.007388192,
+          "failureRate": 0,
+          "resultPath": "results/deepseek-deepseek-reasoner/schema-2026-08-10.json"
+        }
+      ],
+      "costUsd": 0.007388192
+    },
+    {
+      "modelKey": "fireworks/glm-5p2",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 65,
+          "costUsd": 0.13545259999999998,
+          "failureRate": 0,
+          "resultPath": "results/fireworks-glm-5p2/schema-2026-08-10.json"
+        }
+      ],
+      "costUsd": 0.13545259999999998
+    },
+    {
+      "modelKey": "fireworks/gpt-oss-120b",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 65,
+          "costUsd": 0.014215905000000003,
+          "failureRate": 0,
+          "resultPath": "results/fireworks-gpt-oss-120b/schema-2026-08-10.json"
+        }
+      ],
+      "costUsd": 0.014215905000000003
+    },
+    {
+      "modelKey": "fireworks/kimi-k3",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 65,
+          "costUsd": 0.2617709999999999,
+          "failureRate": 0,
+          "resultPath": "results/fireworks-kimi-k3/schema-2026-08-10.json"
+        }
+      ],
+      "costUsd": 0.2617709999999999
+    },
+    {
+      "modelKey": "gemini/gemini-2.5-flash",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 65,
+          "costUsd": 0.0803875,
+          "failureRate": 0,
+          "resultPath": "results/gemini-gemini-2.5-flash/schema-2026-08-10.json"
+        }
+      ],
+      "costUsd": 0.0803875
+    },
+    {
+      "modelKey": "gemini/gemini-3-flash-preview",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 65,
+          "costUsd": 0.14950950000000005,
+          "failureRate": 0,
+          "resultPath": "results/gemini-gemini-3-flash-preview/schema-2026-08-10.json"
+        }
+      ],
+      "costUsd": 0.14950950000000005
+    },
+    {
+      "modelKey": "gemini/gemini-3.1-flash-lite",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 65,
+          "costUsd": 0.012735750000000004,
+          "failureRate": 0,
+          "resultPath": "results/gemini-gemini-3.1-flash-lite/schema-2026-08-10.json"
+        }
+      ],
+      "costUsd": 0.012735750000000004
+    },
+    {
+      "modelKey": "gemini/gemini-3.1-pro-preview",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 65,
+          "costUsd": 0.6573059999999998,
+          "failureRate": 0,
+          "resultPath": "results/gemini-gemini-3.1-pro-preview/schema-2026-08-10.json"
+        }
+      ],
+      "costUsd": 0.6573059999999998
+    },
+    {
+      "modelKey": "grok/grok-4-1-fast",
+      "status": "skipped-unreachable",
+      "classes": [],
+      "costUsd": 0,
+      "note": "no API key for provider \"grok\""
+    },
+    {
+      "modelKey": "grok/grok-4.3",
+      "status": "skipped-unreachable",
+      "classes": [],
+      "costUsd": 0,
+      "note": "no API key for provider \"grok\""
+    },
+    {
+      "modelKey": "grok/grok-4.5",
+      "status": "skipped-unreachable",
+      "classes": [],
+      "costUsd": 0,
+      "note": "no API key for provider \"grok\""
+    },
+    {
+      "modelKey": "openai/gpt-5-mini",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 65,
+          "costUsd": 0.04612750000000002,
+          "failureRate": 0,
+          "resultPath": "results/openai-gpt-5-mini/schema-2026-08-10.json"
+        }
+      ],
+      "costUsd": 0.04612750000000002
+    },
+    {
+      "modelKey": "openai/gpt-5.2",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 65,
+          "costUsd": 0.09851450000000002,
+          "failureRate": 0,
+          "resultPath": "results/openai-gpt-5.2/schema-2026-08-10.json"
+        }
+      ],
+      "costUsd": 0.09851450000000002
+    },
+    {
+      "modelKey": "openai/gpt-5.4-mini",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 65,
+          "costUsd": 0.0323385,
+          "failureRate": 0,
+          "resultPath": "results/openai-gpt-5.4-mini/schema-2026-08-10.json"
+        }
+      ],
+      "costUsd": 0.0323385
+    },
+    {
+      "modelKey": "openai/gpt-5.4-nano",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 65,
+          "costUsd": 0.010374500000000007,
+          "failureRate": 0,
+          "resultPath": "results/openai-gpt-5.4-nano/schema-2026-08-10.json"
+        }
+      ],
+      "costUsd": 0.010374500000000007
+    }
+  ]
+}
