@@ -11,26 +11,37 @@ import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 
 import { join } from "node:path";
 import { effectiveCostPer1kConformant } from "../src/registry/build";
 import type { Registry, RegistryEntry } from "../src/registry/build";
+import { computeParity } from "../src/registry/parity";
+import type { ParityListEntry } from "../src/registry/parity";
 import { probeFreshness, stalenessSentence, PROBE_FRESHNESS_SLO_DAYS } from "../src/registry/staleness";
 
 const DEFAULT_REGISTRY = join(__dirname, "registry.json");
 const DEFAULT_OUT_DIR = __dirname;
 const FIXTURES_DIR = join(__dirname, "..", "..", "modelrig-probes", "fixtures");
 
-/** Coverage honesty (addendum A2): the corpus size and domain mix are stated
- * on every leaderboard render so single-domain results are never presented
- * as domain-general. */
+/** Coverage honesty (addendum A2 + demo-rig §11.3b): the corpus size, its
+ * fixture families, and the per-class domain mix are stated on every render,
+ * computed from the fixtures on disk — never a hand-written adjective — so the
+ * note always describes the corpus it actually has. */
 export function corpusSummary(fixturesDir: string = FIXTURES_DIR): string {
   const perClass: string[] = [];
+  const families = new Map<string, number>();
+  const domainsAll = new Map<string, number>();
   let total = 0;
   for (const cls of ["schema", "grounding", "caching"]) {
     const dir = join(fixturesDir, cls);
     if (!existsSync(dir)) continue;
     const domains = new Map<string, number>();
     for (const file of readdirSync(dir).filter((f) => f.endsWith(".json"))) {
-      const fixture = JSON.parse(readFileSync(join(dir, file), "utf8")) as { domain?: string };
+      const fixture = JSON.parse(readFileSync(join(dir, file), "utf8")) as {
+        domain?: string;
+        family?: string;
+      };
       const domain = fixture.domain ?? "untagged";
+      const family = fixture.family ?? "probe-suite";
       domains.set(domain, (domains.get(domain) ?? 0) + 1);
+      domainsAll.set(domain, (domainsAll.get(domain) ?? 0) + 1);
+      families.set(family, (families.get(family) ?? 0) + 1);
       total += 1;
     }
     const mix = [...domains.entries()]
@@ -39,7 +50,21 @@ export function corpusSummary(fixturesDir: string = FIXTURES_DIR): string {
       .join(", ");
     perClass.push(`${cls}: ${mix}`);
   }
-  return `v0 corpus: ${total} fixtures, finance-weighted (seeded from our first production customer) — ${perClass.join(" · ")}`;
+  const familyMix = [...families.entries()]
+    .sort((a, b) => b[1] - a[1])
+    .map(([family, count]) => `${count} ${family}`)
+    .join(", ");
+  const financeShare = domainsAll.get("finance") ?? 0;
+  const weighting =
+    total > 0 && financeShare / total >= 0.5
+      ? "finance-weighted (seeded from our first production customer)"
+      : "mixed-domain (a finance-seeded probe-suite plus a domain-general demo-rig family)";
+  return (
+    `${total} fixtures, ${weighting}, in ${families.size} families (${familyMix}) — ` +
+    `${perClass.join(" · ")}. The demo-rig family is authored synthetic / public-domain tasks ` +
+    `(example.support_summarize, invoice.extract, docs.qa, content.classify) with deterministic ground ` +
+    `truth — strong for capability ranking, and explicitly not a claim about any customer's workload.`
+  );
 }
 
 export interface LeaderboardRow {
@@ -48,28 +73,49 @@ export interface LeaderboardRow {
   readonly conform_ci95: readonly [number, number] | null;
   readonly value_accuracy_mean: number | null;
   readonly native_rung_rate: number | null;
+  /** Conformance / value-accuracy on the HARD subset only
+   * (discriminating-fixtures §3) — the differentiating column. Null when the
+   * model has no hard-tier samples (pre-difficulty result, or none reached). */
+  readonly hard_conform_rate: number | null;
+  readonly hard_value_accuracy_mean: number | null;
+  readonly hard_samples: number;
+  /** Serving path the HARD subset was probed through (follow-up 3a): the
+   * fraction served via the native structured rung vs json_mode coaching. Lets
+   * a hard miss read "coached, missed" rather than a flat fail — a model without
+   * probed structured_native is coached on every sample. Null when no hard
+   * sample recorded a rung. */
+  readonly hard_native_rung_rate: number | null;
   readonly effective_usd_per_1k_conformant: number | null;
   readonly grounded_rate: number | null;
   readonly cache_hit_rate: number | null;
   readonly samples: number;
   readonly as_of: string | null;
+  /** Which fixture families produced this row's schema samples (demo-rig
+   * §11.3b) — a model probed only by demo-rig is visibly that. */
+  readonly families: readonly string[];
   readonly discrepancies: ReadonlyArray<{ kind: string; message: string }>;
 }
 
 export function toLeaderboardRows(registry: Registry): LeaderboardRow[] {
   const rows = registry.models.map((entry: RegistryEntry): LeaderboardRow => {
     const schema = entry.probed?.schema ?? null;
+    const hard = schema?.by_difficulty?.["hard"] ?? null;
     return {
       model_key: entry.model_key,
       conform_rate: schema?.conform_rate ?? null,
       conform_ci95: schema?.conform_ci95 ?? null,
       value_accuracy_mean: schema?.value_accuracy_mean ?? null,
       native_rung_rate: schema?.native_rung_rate ?? null,
+      hard_conform_rate: hard?.conform_rate ?? null,
+      hard_value_accuracy_mean: hard?.value_accuracy_mean ?? null,
+      hard_samples: hard?.samples ?? 0,
+      hard_native_rung_rate: hard?.native_rung_rate ?? null,
       effective_usd_per_1k_conformant: effectiveCostPer1kConformant(schema),
       grounded_rate: entry.probed?.grounding?.grounded_rate ?? null,
       cache_hit_rate: entry.probed?.caching?.cache_hit_rate ?? null,
       samples: schema?.samples ?? 0,
       as_of: entry.probed?.as_of ?? null,
+      families: schema?.by_family ? Object.keys(schema.by_family).sort() : [],
       discrepancies: [...entry.discrepancies],
     };
   });
@@ -92,12 +138,65 @@ function money(value: number | null): string {
   return value === null ? "—" : `$${value.toFixed(3)}`;
 }
 
+/**
+ * The serving-path label rendered beside a hard-subset cell (follow-up 3a):
+ * did the model serve these strict fixtures through its NATIVE structured rung,
+ * or through json_mode coaching? A json_mode model that misses a strict
+ * constraint read as a flat fail before this — now it reads "coached, missed",
+ * which is the honest interpretation (the miss is the coaching path's limit).
+ * Labeling only: every model still runs every fixture; nothing is excluded.
+ */
+export function servingPathLabel(nativeRungRate: number | null): string | null {
+  if (nativeRungRate === null) return null;
+  if (nativeRungRate >= 0.99) return "native";
+  if (nativeRungRate <= 0.01) return "coached";
+  return `mixed · ${(nativeRungRate * 100).toFixed(0)}% native`;
+}
+
+/** Which corpora produced a row's schema numbers (demo-rig §11.3b). A model
+ * probed only by demo-rig fixtures is labeled as such — never silently mixed
+ * with probe-suite rows. "—" when unprobed on the schema class. */
+function corpusCell(families: readonly string[]): string {
+  if (families.length === 0) return "—";
+  if (families.length === 1 && families[0] === "demo-rig") {
+    return `<span class="badge">demo-rig only</span>`;
+  }
+  return escapeHtml(families.join(" + "));
+}
+
 function escapeHtml(text: string): string {
   return text
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
+}
+
+/** parity-50 section (addendum A1, provider-coverage-plan §3): probed
+ * coverage of the top-50-by-usage yardstick, unprobed gaps NAMED — an
+ * unprobed model is labeled, never invisible. */
+export function parityHtml(registry: Registry): string {
+  const parityPath = join(__dirname, "parity-50.json");
+  if (!existsSync(parityPath)) return "";
+  const list = JSON.parse(readFileSync(parityPath, "utf8")) as {
+    as_of: string;
+    source: string;
+    models: ParityListEntry[];
+  };
+  const parity = computeParity(list.models, registry);
+  const gaps =
+    parity.gaps.length === 0
+      ? ""
+      : `<div class="badges">${parity.gaps
+          .map((g) => `<span class="badge">${escapeHtml(g.name)} — ${escapeHtml(g.status)}</span>`)
+          .join(" ")}</div>`;
+  return (
+    `<p class="sub"><strong>parity-50:</strong> ${parity.probed}/${parity.total} of the ` +
+    `top-by-usage yardstick (<a href="${escapeHtml(list.source)}">source</a>, as of ` +
+    `${escapeHtml(list.as_of)}) are PROBED — ${(parity.probedPct * 100).toFixed(0)}%. ` +
+    `Their coverage is declared; ours is verified — and our gaps are named, not hidden:</p>` +
+    gaps
+  );
 }
 
 export function renderLeaderboardHtml(
@@ -125,14 +224,27 @@ export function renderLeaderboardHtml(
       const ci = row.conform_ci95
         ? ` <span class="ci">[${pct(row.conform_ci95[0])}–${pct(row.conform_ci95[1])}]</span>`
         : "";
+      const servingPath = servingPathLabel(row.hard_native_rung_rate);
+      const pathTag =
+        servingPath === null
+          ? ""
+          : ` <span class="path path-${servingPath === "native" ? "native" : "coached"}" ` +
+            `title="Serving path the hard fixtures were probed through — a coached miss is the ` +
+            `json_mode path's limit, not a native strict failure">${escapeHtml(servingPath)}</span>`;
+      const hardCell =
+        row.hard_samples === 0
+          ? "—"
+          : `${pct(row.hard_conform_rate)} <span class="ci">(acc ${pct(row.hard_value_accuracy_mean)}, n=${row.hard_samples})</span>${pathTag}`;
       return (
         `<tr><td class="model">${escapeHtml(row.model_key)}${badges ? `<div class="badges">${badges}</div>` : ""}</td>` +
         `<td>${pct(row.conform_rate)}${ci}</td>` +
+        `<td>${hardCell}</td>` +
         `<td>${pct(row.value_accuracy_mean)}</td>` +
         `<td>${money(row.effective_usd_per_1k_conformant)}</td>` +
         `<td>${pct(row.grounded_rate)}</td>` +
         `<td>${pct(row.cache_hit_rate)}</td>` +
-        `<td>${row.samples}</td></tr>`
+        `<td>${row.samples}</td>` +
+        `<td>${corpusCell(row.families)}</td></tr>`
       );
     })
     .join("\n");
@@ -153,6 +265,9 @@ export function renderLeaderboardHtml(
   .badge { display: inline-block; background: #b4540a22; color: #b4540a; border: 1px solid #b4540a55;
            border-radius: 4px; padding: 0 0.4rem; font-size: 0.75rem; margin-top: 0.25rem; }
   .ci { color: #888; font-size: 0.8rem; }
+  .path { display: inline-block; border-radius: 4px; padding: 0 0.35rem; font-size: 0.7rem; margin-left: 0.25rem; }
+  .path-native { background: #2e7d3222; color: #2e7d32; border: 1px solid #2e7d3255; }
+  .path-coached { background: #6a5acd22; color: #6a5acd; border: 1px solid #6a5acd55; }
   .staleness { background: #E5A63C22; border: 1px solid #E5A63C; color: #b07818;
                border-radius: 6px; padding: 0.6rem 0.9rem; margin-bottom: 1rem; font-size: 0.9rem; }
   footer { margin-top: 2rem; color: #777; font-size: 0.8rem; }
@@ -182,15 +297,22 @@ ${banner}
 intervals, never single-shot verdicts. Ranked by effective cost per 1,000 schema-conformant outputs.
 Reproduce any row: <code>npx modelrig-probes run --model &lt;model&gt;</code>. ⚠ badges mark
 declared-vs-probed discrepancies.</p>
-<p class="sub"><strong>Coverage:</strong> ${escapeHtml(corpusSummary())}. Per-fixture stats (with
-domains) are in each published result file; rates here aggregate the whole corpus. The
-e-commerce and technical fixtures were added under addendum A2 on 2026-08-02, and all published
-results were re-run that day with the full corpus. <strong>The probe-kit's headline ask is
-fixtures from your domain</strong> —
+<p class="sub"><strong>Coverage:</strong> ${escapeHtml(corpusSummary())} Per-fixture stats (with
+domains and families) are in each published result file; the rates in this table aggregate the whole
+schema corpus, and the <strong>Corpus</strong> column names which families produced each row — a model
+probed only by demo-rig fixtures is marked so, never mixed silently. The <strong>Hard conf.</strong>
+column is conformance on the authored hard-tier subset — the same fixtures for every model — where
+capable models separate; the aggregate stays the ranking basis. A <span class="path path-native">native</span>
+or <span class="path path-coached">coached</span> tag beside it names the serving path those strict
+fixtures were probed through: a model without probed <code>structured_native</code> is coached via
+json_mode, so a coached miss is that path's limit — read "coached, missed", not a flat fail. Every
+model still runs every fixture; the tag labels, it never excludes. <strong>The probe-kit's headline
+ask is fixtures from your domain</strong> —
 <a href="https://github.com/modelrig/modelrig/tree/main/kits/probe-kit">contribute one</a>.</p>
+${parityHtml(registry)}
 <table>
-<thead><tr><th>Model</th><th>Schema conformance</th><th>Value accuracy</th>
-<th>$ / 1K conformant</th><th>Grounded</th><th>Cache hits</th><th>Samples</th></tr></thead>
+<thead><tr><th>Model</th><th>Schema conformance</th><th title="Conformance on the hard-tier fixture subset — the differentiating column">Hard conf.</th><th>Value accuracy</th>
+<th>$ / 1K conformant</th><th>Grounded</th><th>Cache hits</th><th>Samples</th><th>Corpus</th></tr></thead>
 <tbody>
 ${bodyRows}
 </tbody>

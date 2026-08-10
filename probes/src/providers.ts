@@ -6,12 +6,23 @@
  */
 
 import type { ProbesConfig } from "./config";
+import { createAnthropicCaller } from "./vendor/anthropic";
 import { createDeepSeekCaller } from "./vendor/deepseek";
 import { createGeminiCaller } from "./vendor/gemini";
 import { createOpenAICaller } from "./vendor/openai";
+import { createOpenAICompatibleCaller, OPENAI_COMPAT_HOSTS } from "./vendor/openai-compatible";
+import { createXaiCaller } from "./vendor/xai";
 import type { ProbeCaller, ProbeProviderId } from "./vendor/types";
 
-const SUPPORTED_PROVIDERS: ReadonlySet<string> = new Set(["gemini", "openai", "deepseek"]);
+const SUPPORTED_PROVIDERS: ReadonlySet<string> = new Set([
+  "gemini",
+  "openai",
+  "deepseek",
+  "anthropic",
+  "grok",
+  "deepinfra",
+  "fireworks",
+]);
 
 export function parseModelKey(modelKey: string): { provider: ProbeProviderId; model: string } {
   const slash = modelKey.indexOf("/");
@@ -41,5 +52,17 @@ export function resolveModel(modelKey: string, keys: ProbesConfig["keys"]): Prob
     case "deepseek":
       if (!keys.deepseek) throw new Error("DEEPSEEK_API_KEY is not set");
       return createDeepSeekCaller(model, keys.deepseek);
+    case "anthropic":
+      if (!keys.anthropic) throw new Error("ANTHROPIC_API_KEY is not set");
+      return createAnthropicCaller(model, keys.anthropic);
+    case "grok":
+      if (!keys.grok) throw new Error("XAI_API_KEY is not set");
+      return createXaiCaller(model, keys.grok);
+    case "deepinfra":
+      if (!keys.deepinfra) throw new Error("MODELRIG_DEEPINFRA_API_KEY is not set");
+      return createOpenAICompatibleCaller(OPENAI_COMPAT_HOSTS.deepinfra, model, keys.deepinfra);
+    case "fireworks":
+      if (!keys.fireworks) throw new Error("MODELRIG_FIREWORKS_API_KEY is not set");
+      return createOpenAICompatibleCaller(OPENAI_COMPAT_HOSTS.fireworks, model, keys.fireworks);
   }
 }

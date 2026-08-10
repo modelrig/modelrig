@@ -1,0 +1,90 @@
+{
+  "modelKey": "anthropic/claude-haiku-4-5",
+  "class": "caching",
+  "date": "2026-08-02T20:34:55.244Z",
+  "harnessVersion": "0.0.1",
+  "fixtureHashes": {
+    "long-prefix-repeat": "28595a700e587856"
+  },
+  "raw": {
+    "long-prefix-repeat": [
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 0,
+        "tokensIn": 3138,
+        "tokensOut": 57,
+        "costUsd": 0.006846,
+        "latencyMs": 901,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 0,
+        "tokensIn": 3138,
+        "tokensOut": 47,
+        "costUsd": 0.006735999999999999,
+        "latencyMs": 1206,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 0,
+        "tokensIn": 3138,
+        "tokensOut": 47,
+        "costUsd": 0.006751,
+        "latencyMs": 832,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 0,
+        "tokensIn": 3138,
+        "tokensOut": 47,
+        "costUsd": 0.006745999999999999,
+        "latencyMs": 2013,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 0,
+        "tokensIn": 3138,
+        "tokensOut": 47,
+        "costUsd": 0.006745999999999999,
+        "latencyMs": 849,
+        "failureClass": null
+      }
+    ]
+  },
+  "stats": [
+    {
+      "fixtureId": "long-prefix-repeat",
+      "samples": 5,
+      "parseRate": 1,
+      "conformRate": null,
+      "valueAccuracyMean": null,
+      "conformCi95": null,
+      "meanCostUsd": 0.0067649999999999984
+    }
+  ],
+  "totalCostUsd": 0.033824999999999994
+}

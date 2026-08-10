@@ -18,6 +18,7 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import type { ObservedLayer } from "../src/registry/build";
+import { computePercentiles, DEFAULT_HEALTH_MIN_N, percentile } from "../src/telemetry/health";
 
 const DEFAULT_OUT = join(__dirname, "layers", "observed.json");
 
@@ -28,17 +29,16 @@ interface ObservedRow {
   readonly latency_ms: number;
   readonly tokens_cached: number;
   readonly failure_class: string | null;
-}
-
-function percentile(sorted: readonly number[], p: number): number | null {
-  if (sorted.length === 0) return null;
-  const index = Math.min(sorted.length - 1, Math.floor((p / 100) * sorted.length));
-  return sorted[index];
+  /** TTFB (Phase 4 WS3) — null for rows recorded before the column existed. */
+  readonly ttfb_ms?: number | null;
 }
 
 export function aggregateObserved(
   rows: readonly ObservedRow[],
-  asOf: string
+  asOf: string,
+  // Health percentiles/error-rate below this sample count surface as null — the
+  // same min-n gate the live store reader applies (observed-health/spec §4.1).
+  minN: number = DEFAULT_HEALTH_MIN_N
 ): Record<string, ObservedLayer> {
   const byModel = new Map<string, ObservedRow[]>();
   for (const row of rows) {
@@ -63,11 +63,29 @@ export function aggregateObserved(
       .map((r) => r.latency_ms)
       .filter((l) => l > 0)
       .sort((a, b) => a - b);
+    const ttfbs = modelRows
+      .map((r) => r.ttfb_ms ?? null)
+      .filter((t): t is number => t !== null && t > 0)
+      .sort((a, b) => a - b);
+    // G-4 health percentiles + error-rate, gated below min-n. p50_* stay
+    // ungated for backward compatibility with existing observed layers; the new
+    // health fields are additive and the console health block reads them.
+    const gated = n < minN;
+    const latencyPcts = gated ? null : computePercentiles(latencies);
+    const ttfbPcts = gated ? null : computePercentiles(ttfbs);
+    const errorCount = Object.values(failureCounts).reduce((sum, c) => sum + c, 0);
     out[key] = {
       as_of: asOf,
       source: "routed-telemetry",
       inferences: n,
       p50_latency_ms: percentile(latencies, 50),
+      p50_ttfb_ms: percentile(ttfbs, 50),
+      p90_latency_ms: latencyPcts?.p90 ?? null,
+      p99_latency_ms: latencyPcts?.p99 ?? null,
+      p90_ttfb_ms: ttfbPcts?.p90 ?? null,
+      p99_ttfb_ms: ttfbPcts?.p99 ?? null,
+      error_rate: gated ? null : errorCount / n,
+      sample_n: n,
       served_tier_rates: Object.fromEntries(
         Object.entries(tierCounts).map(([tier, count]) => [tier, count / n])
       ),
@@ -86,7 +104,7 @@ async function fetchRows(supabaseUrl: string, anonKey: string): Promise<Observed
   for (let offset = 0; ; offset += pageSize) {
     const url =
       `${supabaseUrl.replace(/\/$/, "")}/rest/v1/inferences` +
-      `?select=provider,model,served_tier,latency_ms,tokens_cached,failure_class` +
+      `?select=provider,model,served_tier,latency_ms,ttfb_ms,tokens_cached,failure_class` +
       `&order=ts.desc&limit=${pageSize}&offset=${offset}`;
     const response = await fetch(url, {
       headers: { apikey: anonKey, authorization: `Bearer ${anonKey}` },

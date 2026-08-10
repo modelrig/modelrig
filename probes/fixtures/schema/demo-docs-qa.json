@@ -1,0 +1,23 @@
+{
+  "id": "demo-docs-qa",
+  "class": "schema",
+  "domain": "general",
+  "family": "demo-rig",
+  "source": "demo-rig:docs.qa (question over ModelRig's own published probe docs — public grounding target)",
+  "prompt": "Answer the question using ONLY the documentation excerpt below. Return the required JSON. `answer` is a short natural-language answer. `envelope_default_usd` is the numeric dollar figure the excerpt gives for the default per-run probe envelope. `supporting_quote` is a verbatim span copied from the excerpt that establishes the answer. `answer_in_context` is true only if the excerpt actually contains the answer.\n\nDOCUMENTATION EXCERPT (from ModelRig's public probe-suite docs):\n\"The probe harness samples each fixture several times and stops the moment accrued spend crosses the per-run envelope, whose default is 5 US dollars per model. Every published leaderboard row ships with its raw samples, so you can reproduce any number by running the same suite with your own API key.\"\n\nQUESTION: What is the default per-run probe envelope, in US dollars per model?",
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["answer", "envelope_default_usd", "supporting_quote", "answer_in_context"],
+    "properties": {
+      "answer": { "type": "string", "minLength": 10 },
+      "envelope_default_usd": { "type": "number" },
+      "supporting_quote": { "type": "string", "minLength": 10 },
+      "answer_in_context": { "type": "boolean" }
+    }
+  },
+  "expectedValues": {
+    "envelope_default_usd": 5,
+    "answer_in_context": true
+  }
+}

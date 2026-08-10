@@ -8,7 +8,11 @@
  * your own key and reproduce published numbers.
  */
 
+import { readFileSync, writeFileSync } from "node:fs";
+import { join } from "node:path";
 import { loadProbesConfigFromEnv } from "./config";
+import { buildCyclePlan, estimateCycleCost, runCycle } from "./cycle";
+import type { CyclePlan } from "./cycle";
 import { loadFixtures, fixtureHash } from "./fixtures";
 import { ProbeBudgetExceededError, runProbe } from "./harness";
 import { readResult, writeResult } from "./results";
@@ -134,20 +138,98 @@ function cmdVerify(flags: Flags): number {
   return 0;
 }
 
+/** The recurring monthly fan-out (demo-rig §11.3b). Builds a plan from the
+ * existing registry + a campaign, ALWAYS prints the projected cost first (the
+ * mission gate), refuses if the projection exceeds the ceiling, and otherwise
+ * runs under the hard ceiling and writes a manifest. `--estimate-only` stops
+ * after the projection so a human can review before any spend. */
+async function cmdCycle(flags: Flags): Promise<number> {
+  const config = loadProbesConfigFromEnv();
+  const cycle = flags.named.get("cycle") ?? "cycle-001";
+  const ceiling = flags.named.has("ceiling") ? Number(flags.named.get("ceiling")) : 25;
+  const perModel = flags.named.has("per-model") ? Number(flags.named.get("per-model")) : 5;
+  const samples = flags.named.has("samples") ? Number(flags.named.get("samples")) : config.samplesPerFixture;
+  const outDir = flags.named.get("out") ?? config.outDir;
+  const resultsDir = flags.named.get("results") ?? outDir;
+  const campaignPath = flags.named.get("campaign");
+  if (!Number.isFinite(ceiling) || ceiling <= 0) throw new Error("--ceiling must be positive");
+
+  // --plan <file> runs a pre-authored plan verbatim (targeted re-runs,
+  // reproducibility); otherwise the plan is built from results + campaign.
+  const planIn = flags.named.get("plan");
+  const plan: CyclePlan = planIn !== undefined
+    ? (JSON.parse(readFileSync(planIn, "utf8")) as CyclePlan)
+    : buildCyclePlan({
+        cycle,
+        resultsDir,
+        campaignPath,
+        samples,
+        perModelEnvelopeUsd: perModel,
+        cycleCeilingUsd: ceiling,
+      });
+  const planOut = flags.named.get("plan-out");
+  if (planOut !== undefined) writeFileSync(planOut, `${JSON.stringify(plan, null, 2)}\n`);
+
+  const estimate = estimateCycleCost(plan, config.keys);
+  console.log(`\n=== cycle ${cycle}: cost projection (BEFORE running) ===`);
+  console.log(`jobs: ${plan.jobs.length} · priced+reachable: ${estimate.pricedReachableModels} · samples/fixture: ${samples}`);
+  for (const m of estimate.perModel) {
+    if (m.skipReason) {
+      console.log(`  SKIP  ${m.modelKey}  (${m.skipReason})`);
+    } else {
+      const cls = m.classes.map((c) => `${c.cls}:$${c.usd.toFixed(4)}`).join(" ");
+      console.log(`  $${m.usd.toFixed(4)}  ${m.modelKey}  [${cls}]`);
+    }
+  }
+  console.log(`\nPROJECTED TOTAL: $${estimate.projectedUsd.toFixed(4)} against ceiling $${ceiling.toFixed(2)}`);
+  if (estimate.unpriced.length > 0)
+    console.log(`unpriced (fail-closed, not probed): ${estimate.unpriced.length} — ${estimate.unpriced.join(", ")}`);
+  if (estimate.unreachable.length > 0)
+    console.log(`unreachable (no key): ${estimate.unreachable.length} — ${estimate.unreachable.join(", ")}`);
+
+  if (flags.named.get("estimate-only") !== undefined || flags.positional.includes("estimate")) {
+    console.log("\n(estimate-only — no probes run)");
+    return 0;
+  }
+  if (estimate.projectedUsd > ceiling) {
+    console.error(`\nREFUSING TO RUN: projection $${estimate.projectedUsd.toFixed(2)} exceeds ceiling $${ceiling.toFixed(2)}.`);
+    return 2;
+  }
+
+  const manifest = await runCycle(plan, { outDir, keys: config.keys, projectedUsd: estimate.projectedUsd });
+  const manifestPath = flags.named.get("manifest") ?? join(outDir, `cycle-manifest-${cycle}.json`);
+  writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`);
+  console.log(`\n=== cycle ${cycle} complete ===`);
+  console.log(
+    `spent $${manifest.totalSpentUsd.toFixed(4)} of $${ceiling.toFixed(2)} ceiling · ` +
+      `probed ${manifest.counts.probed} · partial ${manifest.counts.partial} · ` +
+      `contaminated ${manifest.counts.contaminated} · ` +
+      `skipped-unpriced ${manifest.counts["skipped-unpriced"]} · ` +
+      `skipped-unreachable ${manifest.counts["skipped-unreachable"]} · ` +
+      `not-reached ${manifest.counts["not-probed-this-cycle"]} · failed ${manifest.counts.failed}`
+  );
+  console.log(`manifest → ${manifestPath}`);
+  return manifest.ceilingReached ? 2 : 0;
+}
+
 export async function main(argv: readonly string[]): Promise<number> {
   const [command, ...rest] = argv;
   const flags = parseArgs(rest);
   switch (command) {
     case "run":
       return cmdRun(flags);
+    case "cycle":
+      return cmdCycle(flags);
     case "list-fixtures":
       return cmdListFixtures(flags);
     case "verify":
       return cmdVerify(flags);
     default:
       console.error(
-        "usage: modelrig-probes <run|list-fixtures|verify>\n" +
+        "usage: modelrig-probes <run|cycle|list-fixtures|verify>\n" +
           "  run --model <provider/model> [--class schema|grounding|caching] [--samples N] [--out dir] [--envelope usd]\n" +
+          "  cycle [--campaign <file>] [--results <dir>] [--ceiling 25] [--per-model 5] [--samples N]\n" +
+          "        [--out <resultsDir>] [--manifest <file>] [--plan-out <file>] [--estimate-only]\n" +
           "  list-fixtures [--class <class>]\n" +
           "  verify <result.json> [--against <published.json>]"
       );

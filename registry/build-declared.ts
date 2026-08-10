@@ -10,8 +10,17 @@
 
 import { mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
-import { createDeepSeekAdapter, createGeminiAdapter, createOpenAIAdapter, getPricing } from "../src/index";
-import type { ProviderAdapter, ProviderId } from "../src/index";
+import {
+  createAnthropicAdapter,
+  createDeepSeekAdapter,
+  createGeminiAdapter,
+  createGrokAdapter,
+  createOpenAIAdapter,
+  getPricing,
+  getPricingV2,
+  synthesizeFromFlat,
+} from "../src/index";
+import type { ModelPricing, ModelPricingV2, ProviderAdapter, ProviderId } from "../src/index";
 import type { DeclaredLayer } from "../src/registry/build";
 
 const PKG_ROOT = join(__dirname, "..");
@@ -30,6 +39,11 @@ const KEY_PREFIXES: Record<string, readonly string[]> = {
   gemini: ["gemini/"],
   openai: ["", "openai/"],
   deepseek: ["deepseek/", ""],
+  anthropic: ["anthropic/", ""],
+  grok: ["xai/"],
+  // A1 hosts — mirror src/registry/pricing.ts exactly.
+  deepinfra: ["deepinfra/"],
+  fireworks: ["fireworks_ai/accounts/fireworks/models/", "fireworks_ai/"],
 };
 
 function pricingMapEntry(
@@ -85,9 +99,50 @@ function adapterFor(provider: ProviderId): ProviderAdapter | null {
       return createOpenAIAdapter({ apiKey: "declared-layer-static" });
     case "deepseek":
       return createDeepSeekAdapter({ apiKey: "declared-layer-static" });
+    case "anthropic":
+      return createAnthropicAdapter({ apiKey: "declared-layer-static" });
+    case "grok":
+      return createGrokAdapter({ apiKey: "declared-layer-static" });
     default:
       return null;
   }
+}
+
+/**
+ * Reconcile the flat resolved price with any richer `pricing_v2` on file.
+ *
+ * `base` is ALWAYS taken from the authoritative flat rate (`getPricing`), so
+ * `pricing_v2.base` equals the flat `pricing` field for every entry BY
+ * CONSTRUCTION (spec §5 backward-compat). A richer overlay/manual shape
+ * contributes only what the flat field cannot: serving-tier multipliers,
+ * cache-write, context bands, batch, modality, and its own provenance/basis.
+ * Absent a richer shape, we synthesize a `base`-only entry (fail-closed — no
+ * fabricated tiers, dev-rule L5).
+ */
+function pricingV2ForEntry(
+  pricing: ModelPricing,
+  richer: ModelPricingV2 | null,
+  asOf: string
+): ModelPricingV2 {
+  if (richer === null) {
+    return synthesizeFromFlat(
+      pricing.inputUsdPerTok,
+      pricing.outputUsdPerTok,
+      pricing.cachedInputUsdPerTok,
+      asOf
+    );
+  }
+  return {
+    ...richer,
+    base: {
+      // authoritative flat rate wins on the three flat components; cache_write
+      // (no flat equivalent) is carried through from the richer shape.
+      input: pricing.inputUsdPerTok,
+      output: pricing.outputUsdPerTok,
+      cache_read: pricing.cachedInputUsdPerTok,
+      cache_write: richer.base.cache_write ?? null,
+    },
+  };
 }
 
 export function buildDeclaredLayer(modelKey: string, asOf: string): DeclaredLayer | null {
@@ -115,6 +170,8 @@ export function buildDeclaredLayer(modelKey: string, asOf: string): DeclaredLaye
             cached_input_usd_per_mtok:
               pricing.cachedInputUsdPerTok === null ? null : pricing.cachedInputUsdPerTok * 1e6,
           },
+    pricing_v2:
+      pricing === null ? null : pricingV2ForEntry(pricing, getPricingV2(provider, model), asOf),
     flags: {
       supports_response_schema: entry?.supports_response_schema ?? null,
       supports_web_search: entry?.supports_web_search ?? null,

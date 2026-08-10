@@ -1,0 +1,90 @@
+{
+  "modelKey": "grok/grok-4.5",
+  "class": "caching",
+  "date": "2026-08-02T20:22:46.268Z",
+  "harnessVersion": "0.0.1",
+  "fixtureHashes": {
+    "long-prefix-repeat": "28595a700e587856"
+  },
+  "raw": {
+    "long-prefix-repeat": [
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2944,
+        "tokensIn": 3014,
+        "tokensOut": 30,
+        "costUsd": 0.007807999999999999,
+        "latencyMs": 1849,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2944,
+        "tokensIn": 3014,
+        "tokensOut": 30,
+        "costUsd": 0.003584,
+        "latencyMs": 2294,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2944,
+        "tokensIn": 3014,
+        "tokensOut": 30,
+        "costUsd": 0.003584,
+        "latencyMs": 1765,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2944,
+        "tokensIn": 3014,
+        "tokensOut": 30,
+        "costUsd": 0.003584,
+        "latencyMs": 1712,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2944,
+        "tokensIn": 3014,
+        "tokensOut": 30,
+        "costUsd": 0.003584,
+        "latencyMs": 1802,
+        "failureClass": null
+      }
+    ]
+  },
+  "stats": [
+    {
+      "fixtureId": "long-prefix-repeat",
+      "samples": 5,
+      "parseRate": 1,
+      "conformRate": null,
+      "valueAccuracyMean": null,
+      "conformCi95": null,
+      "meanCostUsd": 0.0044288
+    }
+  ],
+  "totalCostUsd": 0.022144
+}

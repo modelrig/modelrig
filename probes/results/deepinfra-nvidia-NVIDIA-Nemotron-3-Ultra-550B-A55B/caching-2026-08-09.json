@@ -1,0 +1,93 @@
+{
+  "modelKey": "deepinfra/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B",
+  "class": "caching",
+  "date": "2026-08-09T18:18:48.527Z",
+  "harnessVersion": "0.0.1",
+  "fixtureHashes": {
+    "long-prefix-repeat": "28595a700e587856"
+  },
+  "fixtureFamilies": {
+    "long-prefix-repeat": "probe-suite"
+  },
+  "raw": {
+    "long-prefix-repeat": [
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 0,
+        "tokensIn": 2967,
+        "tokensOut": 140,
+        "costUsd": 0.0036336000000000003,
+        "latencyMs": 2260,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 0,
+        "tokensIn": 2967,
+        "tokensOut": 139,
+        "costUsd": 0.0036314,
+        "latencyMs": 2122,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 0,
+        "tokensIn": 2967,
+        "tokensOut": 148,
+        "costUsd": 0.0036292,
+        "latencyMs": 1637,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 0,
+        "tokensIn": 2967,
+        "tokensOut": 141,
+        "costUsd": 0.0036226,
+        "latencyMs": 2290,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 0,
+        "tokensIn": 2967,
+        "tokensOut": 153,
+        "costUsd": 0.0036336,
+        "latencyMs": 3448,
+        "failureClass": null
+      }
+    ]
+  },
+  "stats": [
+    {
+      "fixtureId": "long-prefix-repeat",
+      "samples": 5,
+      "parseRate": 1,
+      "conformRate": null,
+      "valueAccuracyMean": null,
+      "conformCi95": null,
+      "meanCostUsd": 0.00363008
+    }
+  ],
+  "totalCostUsd": 0.0181504
+}

@@ -1,0 +1,346 @@
+{
+  "campaign": "tier2-2026-08",
+  "status": "RUN as probe cycle 001 (2026-08-08/09). Spend approved by Matt ($25 ceiling); actual total across all passes ~$3.10. 14 of 15 targets probed (schema+grounding+caching); the host-pricing sweep priced 6 formerly-unpriced targets from the DeepInfra API. ONE named gap remains: fireworks/kimi-k3 (Fireworks pricing not in-API). This campaign is now the first monthly cycle — see docs/ModelRig/probe-cycle-runbook.md; cycle 002 re-runs the same two commands.",
+  "created": "2026-08-02",
+  "source": "phase-4 addendum A1 · provider-coverage-plan §2 (architect pick: DeepInfra + Fireworks)",
+  "budget": {
+    "estimate_usd_per_model": "2-5",
+    "envelope": "rides the watch envelope (MODELRIG_WATCH_MONTHLY_USD); at ~19 host-model targets × $2-5 this may need a one-time raise above $50 — flag to Matt at kickoff",
+    "probe_classes": [
+      "schema",
+      "grounding",
+      "caching"
+    ],
+    "plus": "callNotes per model",
+    "revised_estimate_usd": "30-75",
+    "revised_note": "Recomputed after A3.1 id repair: 15 runnable targets (3 dropped as not-hosted, 1 flagged for architect). A $50 cap covers the low-to-mid range; the top of the range needs a one-time raise."
+  },
+  "note_host_pairing": "Same weights probed on BOTH hosts where listed — host-level conformance/latency/price deltas become endpoint-scoped registry facts (the dataset nobody else publishes).",
+  "targets": [
+    {
+      "provider": "deepinfra",
+      "model": "Qwen/Qwen3-Coder-480B-A35B-Instruct-Turbo",
+      "family": "Qwen3 Coder",
+      "original_model": "Qwen/Qwen3-Coder-480B-A35B-Instruct"
+    },
+    {
+      "provider": "deepinfra",
+      "model": "Qwen/Qwen3-30B-A3B",
+      "family": "Qwen3 small/cheap tier"
+    },
+    {
+      "provider": "deepinfra",
+      "model": "zai-org/GLM-5.2",
+      "family": "GLM-5.2"
+    },
+    {
+      "provider": "fireworks",
+      "model": "glm-5p2",
+      "family": "GLM-5.2"
+    },
+    {
+      "provider": "deepinfra",
+      "model": "moonshotai/Kimi-K2.6",
+      "family": "Kimi K3",
+      "original_model": "moonshotai/Kimi-K3"
+    },
+    {
+      "provider": "fireworks",
+      "model": "kimi-k3",
+      "family": "Kimi K3",
+      "original_model": "kimi-k3-instruct"
+    },
+    {
+      "provider": "deepinfra",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "family": "Kimi K2.7-Code"
+    },
+    {
+      "provider": "deepinfra",
+      "model": "MiniMaxAI/MiniMax-M3",
+      "family": "MiniMax M3"
+    },
+    {
+      "provider": "deepinfra",
+      "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "family": "Llama 4",
+      "original_model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct"
+    },
+    {
+      "provider": "deepinfra",
+      "model": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+      "family": "Llama 4"
+    },
+    {
+      "provider": "deepinfra",
+      "model": "openai/gpt-oss-120b",
+      "family": "gpt-oss"
+    },
+    {
+      "provider": "fireworks",
+      "model": "gpt-oss-120b",
+      "family": "gpt-oss"
+    },
+    {
+      "provider": "deepinfra",
+      "model": "google/gemma-4-31B-it",
+      "family": "Gemma 4",
+      "original_model": "google/gemma-4-27b-it"
+    },
+    {
+      "provider": "deepinfra",
+      "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+      "family": "Mistral open",
+      "original_model": "mistralai/Mistral-Small-3.4-24B-Instruct"
+    },
+    {
+      "provider": "deepinfra",
+      "model": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B",
+      "family": "Nemotron 3",
+      "original_model": "nvidia/Llama-3.3-Nemotron-3-Ultra"
+    }
+  ],
+  "runbook": [
+    "1. Set MODELRIG_DEEPINFRA_API_KEY and/or MODELRIG_FIREWORKS_API_KEY in packages/modelrig/.env.local (and Render staging).",
+    "2. Verify exact host model ids against each host's live catalog (ids here follow the pricing map; hosts rename dated checkpoints).",
+    "3. Per target: npx modelrig-probes run --model <provider>/<model> (3 classes; budget-enveloped).",
+    "4. Rebuild registry (build-probed → build-registry → build-leaderboard → sync-registry-mirror) — parity-50 on the leaderboard moves automatically.",
+    "5. Add callNotes per model in src/registry/call-notes.ts as quirks surface.",
+    "6. New probed entries auto-feed the watch loop's new-model lane on later cycles.",
+    "7. MONTHLY (C4 finding F4 — standing operational step, not part of this campaign's one-shot run): re-render parity-50 against OpenRouter's current top-50. Run build-leaderboard + sync-registry-mirror and review registry/parity-50.json — the list churns, so a static 'X/50 probed' number silently rots. First refresh due ~2026-09-02; tracked as architect-queue item 6 in docs/ModelRig/todo-queue.md."
+  ],
+  "parity50_refresh": {
+    "cadence": "monthly",
+    "first_due": "2026-09-02",
+    "why": "parity-50 is measured against a list that changes; an unrefreshed coverage number reads as progress it hasn't made.",
+    "owner": "architect queue #6"
+  },
+  "catalog_verification": {
+    "ran": "2026-08-04",
+    "by": "phase-5 builder (runbook step 2)",
+    "method": "GET /v1/openai/models (deepinfra) and /inference/v1/models (fireworks) with the live keys; fireworks ids compared on the leaf segment of accounts/fireworks/models/<id>",
+    "catalog_sizes": {
+      "deepinfra": 180,
+      "fireworks": 20
+    },
+    "verified_present": [
+      "deepinfra/Qwen/Qwen3-30B-A3B",
+      "deepinfra/zai-org/GLM-5.2",
+      "fireworks/glm-5p2",
+      "deepinfra/moonshotai/Kimi-K2.7-Code",
+      "deepinfra/MiniMaxAI/MiniMax-M3",
+      "deepinfra/meta-llama/Llama-4-Scout-17B-16E-Instruct",
+      "deepinfra/openai/gpt-oss-120b",
+      "fireworks/gpt-oss-120b"
+    ],
+    "needs_id_repair": [
+      {
+        "target": "deepinfra/Qwen/Qwen3.5-235B-A22B",
+        "family": "Qwen3.5",
+        "live_candidates": [
+          "Qwen/Qwen3-14B",
+          "Qwen/Qwen3-235B-A22B-Instruct-2507",
+          "Qwen/Qwen3-235B-A22B-Thinking-2507",
+          "Qwen/Qwen3-30B-A3B"
+        ]
+      },
+      {
+        "target": "fireworks/qwen3p5-235b-a22b",
+        "family": "Qwen3.5",
+        "live_candidates": [
+          "qwen3-embedding-8b",
+          "qwen3-reranker-8b",
+          "qwen3p7-plus"
+        ]
+      },
+      {
+        "target": "deepinfra/Qwen/Qwen3-Coder-480B-A35B-Instruct",
+        "family": "Qwen3 Coder",
+        "live_candidates": [
+          "Qwen/Qwen3-14B",
+          "Qwen/Qwen3-235B-A22B-Instruct-2507",
+          "Qwen/Qwen3-235B-A22B-Thinking-2507",
+          "Qwen/Qwen3-30B-A3B"
+        ]
+      },
+      {
+        "target": "deepinfra/moonshotai/Kimi-K3",
+        "family": "Kimi K3",
+        "live_candidates": [
+          "moonshotai/Kimi-K2.5",
+          "moonshotai/Kimi-K2.6",
+          "moonshotai/Kimi-K2.7-Code"
+        ]
+      },
+      {
+        "target": "fireworks/kimi-k3-instruct",
+        "family": "Kimi K3",
+        "live_candidates": [
+          "kimi-k2p6",
+          "kimi-k2p6-turbo",
+          "kimi-k2p7-code",
+          "kimi-k2p7-code-fast"
+        ]
+      },
+      {
+        "target": "deepinfra/meta-llama/Llama-4-Maverick-17B-128E-Instruct",
+        "family": "Llama 4",
+        "live_candidates": [
+          "NousResearch/Hermes-3-Llama-3.1-405B",
+          "NousResearch/Hermes-3-Llama-3.1-70B",
+          "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+          "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8"
+        ]
+      },
+      {
+        "target": "fireworks/llama4-maverick-instruct-basic",
+        "family": "Llama 4",
+        "live_candidates": []
+      },
+      {
+        "target": "deepinfra/google/gemma-4-27b-it",
+        "family": "Gemma 4",
+        "live_candidates": [
+          "google/embeddinggemma-300m",
+          "google/gemma-3-12b-it",
+          "google/gemma-3-27b-it",
+          "google/gemma-3-4b-it"
+        ]
+      },
+      {
+        "target": "deepinfra/mistralai/Mistral-Large-3",
+        "family": "Mistral open",
+        "live_candidates": [
+          "mistralai/Mistral-Nemo-Instruct-2407",
+          "mistralai/Mistral-Small-24B-Instruct-2501",
+          "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+          "mistralai/Voxtral-Mini-3B-2507"
+        ]
+      },
+      {
+        "target": "deepinfra/mistralai/Mistral-Small-3.4-24B-Instruct",
+        "family": "Mistral open",
+        "live_candidates": [
+          "mistralai/Mistral-Nemo-Instruct-2407",
+          "mistralai/Mistral-Small-24B-Instruct-2501",
+          "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+          "mistralai/Voxtral-Mini-3B-2507"
+        ]
+      },
+      {
+        "target": "deepinfra/nvidia/Llama-3.3-Nemotron-3-Ultra",
+        "family": "Nemotron 3",
+        "live_candidates": [
+          "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+          "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B",
+          "nvidia/Nemotron-3-Nano-30B-A3B",
+          "nvidia/Nemotron-3.5-ASR-Streaming-Multilingual-0.6b"
+        ]
+      }
+    ],
+    "note": "The runbook anticipated this: hosts rename dated checkpoints. 8 of 19 target ids resolve as written; the other 11 are renamed, superseded, or not hosted. Repair the ids from live_candidates BEFORE spending — a probe against a wrong id burns budget on a 404."
+  },
+  "id_repair": {
+    "applied": "2026-08-04",
+    "by": "phase-5 builder (addendum A3.1, architect substitution rule)",
+    "rule": "Substitute when same family AND same tier/role (dated-checkpoint renames, quantization/serving suffixes, minor generation steps). Drop and record a gap when only a different-tier or different-role model exists. Flag anything that cannot be classified.",
+    "mapping": [
+      {
+        "original": "deepinfra/Qwen/Qwen3.5-235B-A22B",
+        "substituted": null,
+        "rule": "flag",
+        "why": "JUDGMENT CALL — NOT SUBSTITUTED. Qwen3.5 is hosted, but not at 235B-A22B; available sizes are 9B, 27B, 35B-A3B, 122B-A10B, 397B-A17B. The requested size sits between 122B-A10B and 397B-A17B, and either choice materially changes the cost/latency profile the campaign is meant to measure. Architect decision needed: pick a size or drop."
+      },
+      {
+        "original": "fireworks/qwen3p5-235b-a22b",
+        "substituted": null,
+        "rule": "drop",
+        "why": "Fireworks hosts no Qwen3.5 at any size; qwen3p7-plus is a different product tier and qwen3-embedding/reranker are different roles. Host pairing for Qwen3.5 is lost."
+      },
+      {
+        "original": "deepinfra/Qwen/Qwen3-Coder-480B-A35B-Instruct",
+        "substituted": "deepinfra/Qwen/Qwen3-Coder-480B-A35B-Instruct-Turbo",
+        "rule": "substitute",
+        "why": "same model, host serving-variant suffix (-Turbo) — id rename, not a model change"
+      },
+      {
+        "original": "deepinfra/moonshotai/Kimi-K3",
+        "substituted": "deepinfra/moonshotai/Kimi-K2.6",
+        "rule": "substitute",
+        "why": "K3 is not hosted on DeepInfra; K2.6 is the nearest same-role general model (K2.7 exists only as -Code, a different role). Architect rule's explicit example. NOTE: Fireworks DOES host K3, so the host pairing for this family is broken — the two lanes now measure different models"
+      },
+      {
+        "original": "fireworks/kimi-k3-instruct",
+        "substituted": "fireworks/kimi-k3",
+        "rule": "substitute",
+        "why": "pure id rename — Fireworks hosts this exact model as `kimi-k3`; the `-instruct` suffix never existed. (The original verification pass missed this: stem-matching on the family compared against the wrong leaf.)"
+      },
+      {
+        "original": "deepinfra/meta-llama/Llama-4-Maverick-17B-128E-Instruct",
+        "substituted": "deepinfra/meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+        "rule": "substitute",
+        "why": "quantization suffix — architect rule's explicit example"
+      },
+      {
+        "original": "fireworks/llama4-maverick-instruct-basic",
+        "substituted": null,
+        "rule": "drop",
+        "why": "Fireworks hosts no Llama model at all on the current lane. Host pairing for Llama 4 is lost; DeepInfra side proceeds solo."
+      },
+      {
+        "original": "deepinfra/google/gemma-4-27b-it",
+        "substituted": "deepinfra/google/gemma-4-31B-it",
+        "rule": "substitute",
+        "why": "Gemma 4 IS hosted, but not at 27B. 31B-it is the same generation, same role (instruction-tuned) and the nearest DENSE size (26B-A4B is MoE, a different architecture class). Size delta 27B->31B is recorded"
+      },
+      {
+        "original": "deepinfra/mistralai/Mistral-Large-3",
+        "substituted": null,
+        "rule": "drop",
+        "why": "Only Mistral Small / Nemo / Voxtral are hosted. Large -> Small is a TIER change, not a rename — architect rule's explicit drop example."
+      },
+      {
+        "original": "deepinfra/mistralai/Mistral-Small-3.4-24B-Instruct",
+        "substituted": "deepinfra/mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+        "rule": "substitute",
+        "why": "same family, same size (24B), same role (Instruct), minor generation step back (3.4 -> 3.2)"
+      },
+      {
+        "original": "deepinfra/nvidia/Llama-3.3-Nemotron-3-Ultra",
+        "substituted": "deepinfra/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B",
+        "rule": "substitute",
+        "why": "same family and same tier (Nemotron 3, Ultra); the original id mashed a Llama base name into the Nemotron name"
+      }
+    ],
+    "not_hosted_gaps": [
+      {
+        "target": "fireworks/qwen3p5-235b-a22b",
+        "family": "Qwen3.5",
+        "why": "Fireworks hosts no Qwen3.5 at any size; qwen3p7-plus is a different product tier and qwen3-embedding/reranker are different roles. Host pairing for Qwen3.5 is lost."
+      },
+      {
+        "target": "fireworks/llama4-maverick-instruct-basic",
+        "family": "Llama 4",
+        "why": "Fireworks hosts no Llama model at all on the current lane. Host pairing for Llama 4 is lost; DeepInfra side proceeds solo."
+      },
+      {
+        "target": "deepinfra/mistralai/Mistral-Large-3",
+        "family": "Mistral open",
+        "why": "Only Mistral Small / Nemo / Voxtral are hosted. Large -> Small is a TIER change, not a rename — architect rule's explicit drop example."
+      }
+    ],
+    "flagged_for_architect": [
+      {
+        "target": "deepinfra/Qwen/Qwen3.5-235B-A22B",
+        "why": "JUDGMENT CALL — NOT SUBSTITUTED. Qwen3.5 is hosted, but not at 235B-A22B; available sizes are 9B, 27B, 35B-A3B, 122B-A10B, 397B-A17B. The requested size sits between 122B-A10B and 397B-A17B, and either choice materially changes the cost/latency profile the campaign is meant to measure. Architect decision needed: pick a size or drop."
+      }
+    ],
+    "correction_note": "The build-session verification pass reported 11 unresolved ids using family stem-matching. That method was too loose in one direction and too tight in the other: it invented irrelevant 'near matches' (e.g. Hermes-3 for a Nemotron target) and MISSED exact hosted models (Fireworks `kimi-k3`, DeepInfra `Qwen3-Coder-...-Turbo`, the whole hosted Gemma-4 and Qwen3.5 lines). This repair pass re-queried both catalogs per family with substring matching. Treat the earlier near-match list as superseded.",
+    "runnable_after_repair": 15,
+    "host_pairings_lost": [
+      "Llama 4 (no Fireworks lane)",
+      "Qwen3.5 (no Fireworks lane)",
+      "Kimi K3 (DeepInfra substituted to K2.6; Fireworks kept K3)"
+    ]
+  }
+}

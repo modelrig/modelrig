@@ -8,6 +8,13 @@ export interface ProbesConfig {
     readonly gemini?: string;
     readonly openai?: string;
     readonly deepseek?: string;
+    readonly anthropic?: string;
+    /** xAI — env: XAI_API_KEY (xAI's own convention). */
+    readonly grok?: string;
+    /** DeepInfra aggregator host — env: MODELRIG_DEEPINFRA_API_KEY. */
+    readonly deepinfra?: string;
+    /** Fireworks aggregator host — env: MODELRIG_FIREWORKS_API_KEY. */
+    readonly fireworks?: string;
   };
   /** Per-run spend ceiling — spec WS2 default $5/model. */
   readonly envelopeUsd: number;
@@ -29,6 +36,10 @@ export function loadProbesConfigFromEnv(overrides?: Partial<ProbesConfig>): Prob
       ...(env.GEMINI_API_KEY ? { gemini: env.GEMINI_API_KEY } : {}),
       ...(env.OPENAI_API_KEY ? { openai: env.OPENAI_API_KEY } : {}),
       ...(env.DEEPSEEK_API_KEY ? { deepseek: env.DEEPSEEK_API_KEY } : {}),
+      ...(env.ANTHROPIC_API_KEY ? { anthropic: env.ANTHROPIC_API_KEY } : {}),
+      ...(env.XAI_API_KEY ? { grok: env.XAI_API_KEY } : {}),
+      ...(env.MODELRIG_DEEPINFRA_API_KEY ? { deepinfra: env.MODELRIG_DEEPINFRA_API_KEY } : {}),
+      ...(env.MODELRIG_FIREWORKS_API_KEY ? { fireworks: env.MODELRIG_FIREWORKS_API_KEY } : {}),
     },
     envelopeUsd: envelope !== undefined && Number.isFinite(envelope) ? envelope : DEFAULT_ENVELOPE_USD,
     samplesPerFixture: DEFAULT_SAMPLES,

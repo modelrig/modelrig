@@ -12,7 +12,7 @@ invalid bundle throws a `RouteConfigError` naming the file and every problem.
 | `version` | integer ≥ 1 | yes | Bump on ANY change to the bundle, schema, or prompt. Recorded on every telemetry row. |
 | `schema` | relative path \| null | yes | JSON Schema file for the output. `null` = unstructured route (output must still be parseable JSON). Path resolves relative to the bundle file. |
 | `candidates` | list | yes, non-empty | THE candidate set. Each entry is `{provider, model}`. Providers: `gemini`, `openai`, `deepseek` (`anthropic`, `grok` reserved). Nothing outside this list can serve the route — enforced structurally (branded `CandidateRef`) and at runtime. |
-| `require` | list | no | Hard constraints: `schema_conformant`, `grounded`, `zero_retention`, `trace_visible` (v2 — reasoning trace exposed to the caller; `zero_retention` remains declared intent). `grounded` is satisfied natively OR — when a search provider is configured — via the grounding-inject rung (search results injected into the prompt, citations normalized onto `RunMeta.citations`, search cost accounted). |
+| `require` | list | no | Hard constraints: `schema_conformant`, `grounded`, `zero_retention`, `trace_visible` (v2 — reasoning trace exposed to the caller). `grounded` is satisfied natively OR — when a search provider is configured — via the grounding-inject rung (search results injected into the prompt, citations normalized onto `RunMeta.citations`, search cost accounted). `zero_retention` is an **opt-in data-governance filter** (G-3): it routes only to zero-retention–designated endpoints, and fails closed (no designated candidate → the no-eligible-candidate error, never a silent non-ZDR dispatch). A single run can opt in without editing the bundle via `RunOptions.zeroRetention: true`. |
 | `prefer` | list | no | Advisory ordering: `cost` (ascending via the pricing snapshot; unknown cost sorts last), `latency` (no-op until probe data exists, Phase 2). |
 | `prompt.system` | relative path | yes | Template file (see below). |
 | `prompt.variables` | string list | yes | Every `{{var}}` referenced by the template must be declared here. |
@@ -87,6 +87,7 @@ repair prompt. Repair attempts draw from their own `repair` budget (never the
 | `schema_conformant` + `json: json_mode` | `structured_native` OR `json_mode` |
 | `grounded` | `grounded_native` (native directive on dispatch) OR a configured search provider (grounding-inject) |
 | `trace_visible` | `trace_visible` (e.g. deepseek-reasoner's exposed reasoning_content) |
+| `zero_retention` | `zero_retention` — a model the credential-scoped registry facts designate zero-retention under our managed account (a BYOK key is scoped separately). Opt-in; fail-closed when absent. |
 
 Capability flags are resolved from **registry facts** (the packaged
 `registry/registry.json`, env-overridable via `MODELRIG_REGISTRY_PATH`) with
@@ -124,3 +125,31 @@ in tests).
 The `(route, version)` pair keys the compiled validator cache, telemetry rows,
 and the console's routes mirror. Editing a bundle without bumping `version`
 makes telemetry lie across the change — bump every time.
+
+## When it doesn't work
+
+These are the load-time and first-run failures a bundle actually hits, in the
+loader's own words. The first three fail LOUDLY (the bundle won't load); the
+last fails SILENTLY (it loads and then behaves unlike the code it replaced) —
+which is why it is the one to be most careful about.
+
+- **`schema file not found: <path>`** — `schema:` names a JSON Schema file that
+  isn't at that path. Paths resolve relative to the bundle file. Create the file
+  there, or set `schema: null` for a genuinely free-form task.
+- **`prompt.system file not found: <path>`** — same shape for the prompt
+  template. Point `prompt.system` at where the file actually is.
+- **`references undeclared variable "<name>"`** — the template (or
+  `grounding.query`) uses a `{{name}}` that `prompt.variables` doesn't declare.
+  Add it to the list, or fix the typo. This is caught at load so an empty slot
+  can't ship silently. Note the ONLY conditional blocks the template engine
+  supports are `{{#if capability.X}}` / `{{#unless capability.X}}` — a
+  `{{#if <variable>}}` is not a feature and will not render.
+- **A wrong `json: native`** — the bundle loads, then the run behaves unlike the
+  code it replaced. `json: native` is a claim about the MODEL: set it only for a
+  candidate whose registry entry shows probed native strict enforcement
+  (`structured_native`). Otherwise omit it and let the emulation ladder handle
+  structure. Check the probed registry (llms.txt or the MCP oracle) rather than
+  recalling — declared and probed behaviour differ, which is the whole point.
+
+Still stuck? Open an issue at <https://github.com/modelrig/modelrig/issues> — a
+human reads them.

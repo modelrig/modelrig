@@ -10,7 +10,16 @@
  * comparable across harness versions).
  */
 
-export type ProbeProviderId = "gemini" | "openai" | "deepseek";
+export type ProbeProviderId =
+  | "gemini"
+  | "openai"
+  | "deepseek"
+  | "anthropic"
+  | "grok"
+  // A1 aggregator hosts (openai-compatible generic caller): DeepInfra +
+  // Fireworks. Same wire dialect as openai, different base URL and key.
+  | "deepinfra"
+  | "fireworks";
 
 /** The two capability facts probe sampling branches on. */
 export type ProbeCapability = "structured_native" | "grounded_native";

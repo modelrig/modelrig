@@ -7,6 +7,10 @@
   "bin": {
     "modelrig-probes": "dist/cli.js"
   },
+  "//files": "G2 (dev-rule) — ALLOWLIST, not a denylist. This package is destined for the public modelrig/modelrig repo, so the guard matters most here: without it `npm pack` ships src/, tsconfig, and the fixtures/results test corpora, and any future .env would fall through the same gap that put 13 secrets in `modelrig`'s pack. dist/ only. Extended per A-WS3.1. See src/publish-safety.test.ts.",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc",
     "type-check": "tsc --noEmit",

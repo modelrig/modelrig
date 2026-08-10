@@ -1,18 +1,678 @@
 {
-  "deepseek/deepseek-chat": {
-    "as_of": "2026-08-02T06:00:07.239Z",
+  "anthropic/claude-haiku-4-5": {
+    "as_of": "2026-08-09T18:20:40.456Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 30,
+      "samples": 50,
       "parse_rate": 1,
       "conform_rate": 1,
       "conform_ci95": [
-        0.8864866068260312,
-        0.9999999999999999
+        0.9286524008666414,
+        1
+      ],
+      "value_accuracy_mean": 1,
+      "native_rung_rate": 1,
+      "mean_cost_usd": 0.0019232000000000001,
+      "by_family": {
+        "demo-rig": {
+          "samples": 20,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8388748419471806,
+            1
+          ],
+          "value_accuracy_mean": 1
+        },
+        "probe-suite": {
+          "samples": 30,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8864866068260312,
+            0.9999999999999999
+          ],
+          "value_accuracy_mean": 1
+        }
+      }
+    },
+    "grounding": {
+      "samples": 15,
+      "grounded_rate": 0.9333333333333333,
+      "mean_citations": 2
+    },
+    "caching": {
+      "samples": 5,
+      "cache_hit_rate": 0,
+      "mean_cached_tokens": 0
+    }
+  },
+  "anthropic/claude-sonnet-5": {
+    "as_of": "2026-08-09T18:24:22.476Z",
+    "source": "modelrig-probes@0.0.1",
+    "schema": {
+      "samples": 50,
+      "parse_rate": 1,
+      "conform_rate": 1,
+      "conform_ci95": [
+        0.9286524008666414,
+        1
+      ],
+      "value_accuracy_mean": 0.96,
+      "native_rung_rate": 1,
+      "mean_cost_usd": 0.004402999999999999,
+      "by_family": {
+        "demo-rig": {
+          "samples": 20,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8388748419471806,
+            1
+          ],
+          "value_accuracy_mean": 1
+        },
+        "probe-suite": {
+          "samples": 30,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8864866068260312,
+            0.9999999999999999
+          ],
+          "value_accuracy_mean": 0.9333333333333333
+        }
+      }
+    },
+    "grounding": {
+      "samples": 15,
+      "grounded_rate": 1,
+      "mean_citations": 3.466666666666667
+    },
+    "caching": {
+      "samples": 5,
+      "cache_hit_rate": 0,
+      "mean_cached_tokens": 0
+    }
+  },
+  "deepinfra/MiniMaxAI/MiniMax-M3": {
+    "as_of": "2026-08-09T17:59:45.687Z",
+    "source": "modelrig-probes@0.0.1",
+    "schema": {
+      "samples": 50,
+      "parse_rate": 1,
+      "conform_rate": 1,
+      "conform_ci95": [
+        0.9286524008666414,
+        1
+      ],
+      "value_accuracy_mean": 0.995,
+      "native_rung_rate": 0,
+      "mean_cost_usd": 0.0004722440000000001,
+      "by_family": {
+        "demo-rig": {
+          "samples": 20,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8388748419471806,
+            1
+          ],
+          "value_accuracy_mean": 0.9875
+        },
+        "probe-suite": {
+          "samples": 30,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8864866068260312,
+            0.9999999999999999
+          ],
+          "value_accuracy_mean": 1
+        }
+      }
+    },
+    "grounding": {
+      "samples": 15,
+      "grounded_rate": 0.7333333333333333,
+      "mean_citations": 2.933333333333333
+    },
+    "caching": {
+      "samples": 5,
+      "cache_hit_rate": 1,
+      "mean_cached_tokens": 2816
+    }
+  },
+  "deepinfra/Qwen/Qwen3-30B-A3B": {
+    "as_of": "2026-08-08T22:39:37.206Z",
+    "source": "modelrig-probes@0.0.1",
+    "schema": {
+      "samples": 50,
+      "parse_rate": 1,
+      "conform_rate": 1,
+      "conform_ci95": [
+        0.9286524008666414,
+        1
+      ],
+      "value_accuracy_mean": 0.97,
+      "native_rung_rate": 0,
+      "mean_cost_usd": 0.00016272999999999995,
+      "by_family": {
+        "demo-rig": {
+          "samples": 20,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8388748419471806,
+            1
+          ],
+          "value_accuracy_mean": 1
+        },
+        "probe-suite": {
+          "samples": 30,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8864866068260312,
+            0.9999999999999999
+          ],
+          "value_accuracy_mean": 0.95
+        }
+      }
+    },
+    "grounding": {
+      "samples": 15,
+      "grounded_rate": 1,
+      "mean_citations": 2.1333333333333333
+    },
+    "caching": {
+      "samples": 5,
+      "cache_hit_rate": 0,
+      "mean_cached_tokens": 0
+    }
+  },
+  "deepinfra/Qwen/Qwen3-Coder-480B-A35B-Instruct-Turbo": {
+    "as_of": "2026-08-08T22:41:52.930Z",
+    "source": "modelrig-probes@0.0.1",
+    "schema": {
+      "samples": 50,
+      "parse_rate": 1,
+      "conform_rate": 1,
+      "conform_ci95": [
+        0.9286524008666414,
+        1
       ],
       "value_accuracy_mean": 1,
       "native_rung_rate": 0,
-      "mean_cost_usd": 0.00008992946666666672
+      "mean_cost_usd": 0.00023501800000000014,
+      "by_family": {
+        "demo-rig": {
+          "samples": 20,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8388748419471806,
+            1
+          ],
+          "value_accuracy_mean": 1
+        },
+        "probe-suite": {
+          "samples": 30,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8864866068260312,
+            0.9999999999999999
+          ],
+          "value_accuracy_mean": 1
+        }
+      }
+    },
+    "grounding": {
+      "samples": 15,
+      "grounded_rate": 0.8666666666666667,
+      "mean_citations": 1.8
+    },
+    "caching": {
+      "samples": 5,
+      "cache_hit_rate": 1,
+      "mean_cached_tokens": 2752
+    }
+  },
+  "deepinfra/google/gemma-4-31B-it": {
+    "as_of": "2026-08-09T18:03:14.225Z",
+    "source": "modelrig-probes@0.0.1",
+    "schema": {
+      "samples": 50,
+      "parse_rate": 1,
+      "conform_rate": 1,
+      "conform_ci95": [
+        0.9286524008666414,
+        1
+      ],
+      "value_accuracy_mean": 0.95,
+      "native_rung_rate": 0,
+      "mean_cost_usd": 0.00009456140000000002,
+      "by_family": {
+        "demo-rig": {
+          "samples": 20,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8388748419471806,
+            1
+          ],
+          "value_accuracy_mean": 1
+        },
+        "probe-suite": {
+          "samples": 30,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8864866068260312,
+            0.9999999999999999
+          ],
+          "value_accuracy_mean": 0.9166666666666666
+        }
+      }
+    },
+    "grounding": null,
+    "caching": {
+      "samples": 5,
+      "cache_hit_rate": 0,
+      "mean_cached_tokens": 0
+    }
+  },
+  "deepinfra/meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8": {
+    "as_of": "2026-08-08T22:44:22.427Z",
+    "source": "modelrig-probes@0.0.1",
+    "schema": {
+      "samples": 50,
+      "parse_rate": 1,
+      "conform_rate": 1,
+      "conform_ci95": [
+        0.9286524008666414,
+        1
+      ],
+      "value_accuracy_mean": 1,
+      "native_rung_rate": 0,
+      "mean_cost_usd": 0.00010483199999999996,
+      "by_family": {
+        "demo-rig": {
+          "samples": 20,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8388748419471806,
+            1
+          ],
+          "value_accuracy_mean": 1
+        },
+        "probe-suite": {
+          "samples": 30,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8864866068260312,
+            0.9999999999999999
+          ],
+          "value_accuracy_mean": 1
+        }
+      }
+    },
+    "grounding": {
+      "samples": 15,
+      "grounded_rate": 1,
+      "mean_citations": 2.1333333333333333
+    },
+    "caching": {
+      "samples": 5,
+      "cache_hit_rate": 0,
+      "mean_cached_tokens": 0
+    }
+  },
+  "deepinfra/meta-llama/Llama-4-Scout-17B-16E-Instruct": {
+    "as_of": "2026-08-08T22:46:06.495Z",
+    "source": "modelrig-probes@0.0.1",
+    "schema": {
+      "samples": 50,
+      "parse_rate": 1,
+      "conform_rate": 1,
+      "conform_ci95": [
+        0.9286524008666414,
+        1
+      ],
+      "value_accuracy_mean": 1,
+      "native_rung_rate": 0,
+      "mean_cost_usd": 0.000055588,
+      "by_family": {
+        "demo-rig": {
+          "samples": 20,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8388748419471806,
+            1
+          ],
+          "value_accuracy_mean": 1
+        },
+        "probe-suite": {
+          "samples": 30,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8864866068260312,
+            0.9999999999999999
+          ],
+          "value_accuracy_mean": 1
+        }
+      }
+    },
+    "grounding": {
+      "samples": 15,
+      "grounded_rate": 1,
+      "mean_citations": 2.2
+    },
+    "caching": {
+      "samples": 5,
+      "cache_hit_rate": 0,
+      "mean_cached_tokens": 0
+    }
+  },
+  "deepinfra/mistralai/Mistral-Small-3.2-24B-Instruct-2506": {
+    "as_of": "2026-08-08T22:48:52.760Z",
+    "source": "modelrig-probes@0.0.1",
+    "schema": {
+      "samples": 50,
+      "parse_rate": 1,
+      "conform_rate": 1,
+      "conform_ci95": [
+        0.9286524008666414,
+        1
+      ],
+      "value_accuracy_mean": 1,
+      "native_rung_rate": 0,
+      "mean_cost_usd": 0.00005020649999999996,
+      "by_family": {
+        "demo-rig": {
+          "samples": 20,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8388748419471806,
+            1
+          ],
+          "value_accuracy_mean": 1
+        },
+        "probe-suite": {
+          "samples": 30,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8864866068260312,
+            0.9999999999999999
+          ],
+          "value_accuracy_mean": 1
+        }
+      }
+    },
+    "grounding": {
+      "samples": 15,
+      "grounded_rate": 0,
+      "mean_citations": 0
+    },
+    "caching": {
+      "samples": 5,
+      "cache_hit_rate": 0,
+      "mean_cached_tokens": 0
+    }
+  },
+  "deepinfra/moonshotai/Kimi-K2.6": {
+    "as_of": "2026-08-09T17:02:45.336Z",
+    "source": "modelrig-probes@0.0.1",
+    "schema": {
+      "samples": 50,
+      "parse_rate": 0.98,
+      "conform_rate": 0.98,
+      "conform_ci95": [
+        0.8950455641036219,
+        0.9964607407283539
+      ],
+      "value_accuracy_mean": 1,
+      "native_rung_rate": 0,
+      "mean_cost_usd": 0.003095255,
+      "by_family": {
+        "demo-rig": {
+          "samples": 20,
+          "conform_rate": 0.95,
+          "conform_ci95": [
+            0.763868806553258,
+            0.9911185511992047
+          ],
+          "value_accuracy_mean": 1
+        },
+        "probe-suite": {
+          "samples": 30,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8864866068260312,
+            0.9999999999999999
+          ],
+          "value_accuracy_mean": 1
+        }
+      }
+    },
+    "grounding": {
+      "samples": 15,
+      "grounded_rate": 0.26666666666666666,
+      "mean_citations": 0.8
+    },
+    "caching": {
+      "samples": 5,
+      "cache_hit_rate": 1,
+      "mean_cached_tokens": 2752
+    }
+  },
+  "deepinfra/moonshotai/Kimi-K2.7-Code": {
+    "as_of": "2026-08-09T17:05:25.454Z",
+    "source": "modelrig-probes@0.0.1",
+    "schema": {
+      "samples": 50,
+      "parse_rate": 1,
+      "conform_rate": 1,
+      "conform_ci95": [
+        0.9286524008666414,
+        1
+      ],
+      "value_accuracy_mean": 1,
+      "native_rung_rate": 0,
+      "mean_cost_usd": 0.001235764,
+      "by_family": {
+        "demo-rig": {
+          "samples": 20,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8388748419471806,
+            1
+          ],
+          "value_accuracy_mean": 1
+        },
+        "probe-suite": {
+          "samples": 30,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8864866068260312,
+            0.9999999999999999
+          ],
+          "value_accuracy_mean": 1
+        }
+      }
+    },
+    "grounding": {
+      "samples": 15,
+      "grounded_rate": 0,
+      "mean_citations": 0
+    },
+    "caching": {
+      "samples": 5,
+      "cache_hit_rate": 1,
+      "mean_cached_tokens": 2784
+    }
+  },
+  "deepinfra/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B": {
+    "as_of": "2026-08-09T18:18:48.527Z",
+    "source": "modelrig-probes@0.0.1",
+    "schema": {
+      "samples": 50,
+      "parse_rate": 1,
+      "conform_rate": 1,
+      "conform_ci95": [
+        0.9286524008666414,
+        1
+      ],
+      "value_accuracy_mean": 0.995,
+      "native_rung_rate": 0,
+      "mean_cost_usd": 0.0011292260000000003,
+      "by_family": {
+        "demo-rig": {
+          "samples": 20,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8388748419471806,
+            1
+          ],
+          "value_accuracy_mean": 0.9875
+        },
+        "probe-suite": {
+          "samples": 30,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8864866068260312,
+            0.9999999999999999
+          ],
+          "value_accuracy_mean": 1
+        }
+      }
+    },
+    "grounding": {
+      "samples": 15,
+      "grounded_rate": 0.4,
+      "mean_citations": 2.466666666666667
+    },
+    "caching": {
+      "samples": 5,
+      "cache_hit_rate": 0,
+      "mean_cached_tokens": 0
+    }
+  },
+  "deepinfra/openai/gpt-oss-120b": {
+    "as_of": "2026-08-09T18:52:52.558Z",
+    "source": "modelrig-probes@0.0.1",
+    "schema": {
+      "samples": 50,
+      "parse_rate": 1,
+      "conform_rate": 1,
+      "conform_ci95": [
+        0.9286524008666414,
+        1
+      ],
+      "value_accuracy_mean": 1,
+      "native_rung_rate": 0,
+      "mean_cost_usd": 0.00016848099999999992,
+      "by_family": {
+        "demo-rig": {
+          "samples": 20,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8388748419471806,
+            1
+          ],
+          "value_accuracy_mean": 1
+        },
+        "probe-suite": {
+          "samples": 30,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8864866068260312,
+            0.9999999999999999
+          ],
+          "value_accuracy_mean": 1
+        }
+      }
+    },
+    "grounding": {
+      "samples": 15,
+      "grounded_rate": 0,
+      "mean_citations": 0
+    },
+    "caching": {
+      "samples": 5,
+      "cache_hit_rate": 0,
+      "mean_cached_tokens": 0
+    }
+  },
+  "deepinfra/zai-org/GLM-5.2": {
+    "as_of": "2026-08-09T15:58:53.460Z",
+    "source": "modelrig-probes@0.0.1",
+    "schema": {
+      "samples": 50,
+      "parse_rate": 1,
+      "conform_rate": 1,
+      "conform_ci95": [
+        0.9286524008666414,
+        1
+      ],
+      "value_accuracy_mean": 1,
+      "native_rung_rate": 0,
+      "mean_cost_usd": 0.0015530640000000005,
+      "by_family": {
+        "demo-rig": {
+          "samples": 20,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8388748419471806,
+            1
+          ],
+          "value_accuracy_mean": 1
+        },
+        "probe-suite": {
+          "samples": 30,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8864866068260312,
+            0.9999999999999999
+          ],
+          "value_accuracy_mean": 1
+        }
+      }
+    },
+    "grounding": {
+      "samples": 15,
+      "grounded_rate": 0.6,
+      "mean_citations": 1.3333333333333333
+    },
+    "caching": {
+      "samples": 5,
+      "cache_hit_rate": 1,
+      "mean_cached_tokens": 2752
+    }
+  },
+  "deepseek/deepseek-chat": {
+    "as_of": "2026-08-08T23:01:20.994Z",
+    "source": "modelrig-probes@0.0.1",
+    "schema": {
+      "samples": 50,
+      "parse_rate": 1,
+      "conform_rate": 1,
+      "conform_ci95": [
+        0.9286524008666414,
+        1
+      ],
+      "value_accuracy_mean": 1,
+      "native_rung_rate": 0,
+      "mean_cost_usd": 0.00008656032,
+      "by_family": {
+        "demo-rig": {
+          "samples": 20,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8388748419471806,
+            1
+          ],
+          "value_accuracy_mean": 1
+        },
+        "probe-suite": {
+          "samples": 30,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8864866068260312,
+            0.9999999999999999
+          ],
+          "value_accuracy_mean": 1
+        }
+      }
     },
     "grounding": {
       "samples": 15,
@@ -26,19 +686,39 @@
     }
   },
   "deepseek/deepseek-reasoner": {
-    "as_of": "2026-08-02T06:03:25.423Z",
+    "as_of": "2026-08-08T23:03:26.251Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 30,
+      "samples": 50,
       "parse_rate": 1,
       "conform_rate": 1,
       "conform_ci95": [
-        0.8864866068260312,
-        0.9999999999999999
+        0.9286524008666414,
+        1
       ],
       "value_accuracy_mean": 1,
       "native_rung_rate": 0,
-      "mean_cost_usd": 0.0001505494666666667
+      "mean_cost_usd": 0.0001357888,
+      "by_family": {
+        "demo-rig": {
+          "samples": 20,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8388748419471806,
+            1
+          ],
+          "value_accuracy_mean": 1
+        },
+        "probe-suite": {
+          "samples": 30,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8864866068260312,
+            0.9999999999999999
+          ],
+          "value_accuracy_mean": 1
+        }
+      }
     },
     "grounding": {
       "samples": 15,
@@ -51,20 +731,178 @@
       "mean_cached_tokens": 2816
     }
   },
-  "gemini/gemini-2.5-flash": {
-    "as_of": "2026-08-02T06:10:18.326Z",
+  "fireworks/glm-5p2": {
+    "as_of": "2026-08-09T15:18:21.645Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 30,
+      "samples": 50,
+      "parse_rate": 0.98,
+      "conform_rate": 0.98,
+      "conform_ci95": [
+        0.8950455641036219,
+        0.9964607407283539
+      ],
+      "value_accuracy_mean": 1,
+      "native_rung_rate": 0,
+      "mean_cost_usd": 0.0026497455999999996,
+      "by_family": {
+        "demo-rig": {
+          "samples": 20,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8388748419471806,
+            1
+          ],
+          "value_accuracy_mean": 1
+        },
+        "probe-suite": {
+          "samples": 30,
+          "conform_rate": 0.9666666666666667,
+          "conform_ci95": [
+            0.8332960900859082,
+            0.9940914096183874
+          ],
+          "value_accuracy_mean": 1
+        }
+      }
+    },
+    "grounding": {
+      "samples": 15,
+      "grounded_rate": 0.7333333333333333,
+      "mean_citations": 1.7333333333333334
+    },
+    "caching": {
+      "samples": 5,
+      "cache_hit_rate": 1,
+      "mean_cached_tokens": 2789
+    }
+  },
+  "fireworks/gpt-oss-120b": {
+    "as_of": "2026-08-09T18:54:14.906Z",
+    "source": "modelrig-probes@0.0.1",
+    "schema": {
+      "samples": 50,
       "parse_rate": 1,
       "conform_rate": 1,
       "conform_ci95": [
-        0.8864866068260312,
-        0.9999999999999999
+        0.9286524008666414,
+        1
+      ],
+      "value_accuracy_mean": 0.995,
+      "native_rung_rate": 0,
+      "mean_cost_usd": 0.00024279450000000001,
+      "by_family": {
+        "demo-rig": {
+          "samples": 20,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8388748419471806,
+            1
+          ],
+          "value_accuracy_mean": 0.9875
+        },
+        "probe-suite": {
+          "samples": 30,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8864866068260312,
+            0.9999999999999999
+          ],
+          "value_accuracy_mean": 1
+        }
+      }
+    },
+    "grounding": {
+      "samples": 15,
+      "grounded_rate": 0.26666666666666666,
+      "mean_citations": 0.4666666666666667
+    },
+    "caching": {
+      "samples": 5,
+      "cache_hit_rate": 1,
+      "mean_cached_tokens": 2268
+    }
+  },
+  "fireworks/kimi-k3": {
+    "as_of": "2026-08-09T23:35:08.047Z",
+    "source": "modelrig-probes@0.0.1",
+    "schema": {
+      "samples": 50,
+      "parse_rate": 1,
+      "conform_rate": 1,
+      "conform_ci95": [
+        0.9286524008666414,
+        1
+      ],
+      "value_accuracy_mean": 1,
+      "native_rung_rate": 0,
+      "mean_cost_usd": 0.003980742000000001,
+      "by_family": {
+        "demo-rig": {
+          "samples": 20,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8388748419471806,
+            1
+          ],
+          "value_accuracy_mean": 1
+        },
+        "probe-suite": {
+          "samples": 30,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8864866068260312,
+            0.9999999999999999
+          ],
+          "value_accuracy_mean": 1
+        }
+      }
+    },
+    "grounding": {
+      "samples": 15,
+      "grounded_rate": 0.7333333333333333,
+      "mean_citations": 1.6666666666666667
+    },
+    "caching": {
+      "samples": 5,
+      "cache_hit_rate": 1,
+      "mean_cached_tokens": 2890
+    }
+  },
+  "gemini/gemini-2.5-flash": {
+    "as_of": "2026-08-09T03:38:38.000Z",
+    "source": "modelrig-probes@0.0.1",
+    "schema": {
+      "samples": 50,
+      "parse_rate": 1,
+      "conform_rate": 1,
+      "conform_ci95": [
+        0.9286524008666414,
+        1
       ],
       "value_accuracy_mean": 1,
       "native_rung_rate": 1,
-      "mean_cost_usd": 0.0015196376666666669
+      "mean_cost_usd": 0.00120507,
+      "by_family": {
+        "demo-rig": {
+          "samples": 20,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8388748419471806,
+            1
+          ],
+          "value_accuracy_mean": 1
+        },
+        "probe-suite": {
+          "samples": 30,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8864866068260312,
+            0.9999999999999999
+          ],
+          "value_accuracy_mean": 1
+        }
+      }
     },
     "grounding": {
       "samples": 15,
@@ -78,19 +916,39 @@
     }
   },
   "gemini/gemini-3-flash-preview": {
-    "as_of": "2026-08-02T06:04:45.824Z",
+    "as_of": "2026-08-09T03:45:14.155Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 30,
-      "parse_rate": 1,
-      "conform_rate": 1,
+      "samples": 50,
+      "parse_rate": 0.98,
+      "conform_rate": 0.98,
       "conform_ci95": [
-        0.8864866068260312,
-        0.9999999999999999
+        0.8950455641036219,
+        0.9964607407283539
       ],
-      "value_accuracy_mean": 1,
+      "value_accuracy_mean": 0.9948979591836735,
       "native_rung_rate": 1,
-      "mean_cost_usd": 0.0028512333333333335
+      "mean_cost_usd": 0.002450929999999999,
+      "by_family": {
+        "demo-rig": {
+          "samples": 20,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8388748419471806,
+            1
+          ],
+          "value_accuracy_mean": 0.9875
+        },
+        "probe-suite": {
+          "samples": 30,
+          "conform_rate": 0.9666666666666667,
+          "conform_ci95": [
+            0.8332960900859082,
+            0.9940914096183874
+          ],
+          "value_accuracy_mean": 1
+        }
+      }
     },
     "grounding": {
       "samples": 15,
@@ -104,19 +962,39 @@
     }
   },
   "gemini/gemini-3.1-flash-lite": {
-    "as_of": "2026-08-02T06:11:16.593Z",
+    "as_of": "2026-08-09T03:46:07.456Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 30,
+      "samples": 50,
       "parse_rate": 1,
       "conform_rate": 1,
       "conform_ci95": [
-        0.8864866068260312,
-        0.9999999999999999
+        0.9286524008666414,
+        1
       ],
       "value_accuracy_mean": 1,
       "native_rung_rate": 1,
-      "mean_cost_usd": 0.00028411666666666686
+      "mean_cost_usd": 0.0002299050000000001,
+      "by_family": {
+        "demo-rig": {
+          "samples": 20,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8388748419471806,
+            1
+          ],
+          "value_accuracy_mean": 1
+        },
+        "probe-suite": {
+          "samples": 30,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8864866068260312,
+            0.9999999999999999
+          ],
+          "value_accuracy_mean": 1
+        }
+      }
     },
     "grounding": {
       "samples": 15,
@@ -130,19 +1008,39 @@
     }
   },
   "gemini/gemini-3.1-pro-preview": {
-    "as_of": "2026-08-02T05:59:59.823Z",
+    "as_of": "2026-08-09T18:30:58.050Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 30,
+      "samples": 50,
       "parse_rate": 1,
       "conform_rate": 1,
       "conform_ci95": [
-        0.8864866068260312,
-        0.9999999999999999
+        0.9286524008666414,
+        1
       ],
-      "value_accuracy_mean": 1,
+      "value_accuracy_mean": 0.995,
       "native_rung_rate": 1,
-      "mean_cost_usd": 0.011837733333333333
+      "mean_cost_usd": 0.01104612,
+      "by_family": {
+        "demo-rig": {
+          "samples": 20,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8388748419471806,
+            1
+          ],
+          "value_accuracy_mean": 0.9875
+        },
+        "probe-suite": {
+          "samples": 30,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8864866068260312,
+            0.9999999999999999
+          ],
+          "value_accuracy_mean": 1
+        }
+      }
     },
     "grounding": {
       "samples": 15,
@@ -155,8 +1053,8 @@
       "mean_cached_tokens": 0
     }
   },
-  "openai/gpt-5-mini": {
-    "as_of": "2026-08-02T05:57:19.984Z",
+  "grok/grok-4-1-fast": {
+    "as_of": "2026-08-02T20:29:07.180Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
       "samples": 30,
@@ -168,7 +1066,138 @@
       ],
       "value_accuracy_mean": 1,
       "native_rung_rate": 1,
-      "mean_cost_usd": 0.000952458333333333
+      "mean_cost_usd": 0.00010421333333333336,
+      "by_family": {
+        "probe-suite": {
+          "samples": 30,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8864866068260312,
+            0.9999999999999999
+          ],
+          "value_accuracy_mean": 1
+        }
+      }
+    },
+    "grounding": {
+      "samples": 15,
+      "grounded_rate": 0.26666666666666666,
+      "mean_citations": 0.5333333333333333
+    },
+    "caching": {
+      "samples": 5,
+      "cache_hit_rate": 1,
+      "mean_cached_tokens": 2944
+    }
+  },
+  "grok/grok-4.3": {
+    "as_of": "2026-08-02T20:25:45.769Z",
+    "source": "modelrig-probes@0.0.1",
+    "schema": {
+      "samples": 30,
+      "parse_rate": 1,
+      "conform_rate": 1,
+      "conform_ci95": [
+        0.8864866068260312,
+        0.9999999999999999
+      ],
+      "value_accuracy_mean": 1,
+      "native_rung_rate": 1,
+      "mean_cost_usd": 0.00054366,
+      "by_family": {
+        "probe-suite": {
+          "samples": 30,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8864866068260312,
+            0.9999999999999999
+          ],
+          "value_accuracy_mean": 1
+        }
+      }
+    },
+    "grounding": {
+      "samples": 15,
+      "grounded_rate": 0.2,
+      "mean_citations": 0.4
+    },
+    "caching": {
+      "samples": 5,
+      "cache_hit_rate": 1,
+      "mean_cached_tokens": 2380.8
+    }
+  },
+  "grok/grok-4.5": {
+    "as_of": "2026-08-02T20:22:46.268Z",
+    "source": "modelrig-probes@0.0.1",
+    "schema": {
+      "samples": 30,
+      "parse_rate": 1,
+      "conform_rate": 1,
+      "conform_ci95": [
+        0.8864866068260312,
+        0.9999999999999999
+      ],
+      "value_accuracy_mean": 1,
+      "native_rung_rate": 1,
+      "mean_cost_usd": 0.0012777999999999997,
+      "by_family": {
+        "probe-suite": {
+          "samples": 30,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8864866068260312,
+            0.9999999999999999
+          ],
+          "value_accuracy_mean": 1
+        }
+      }
+    },
+    "grounding": {
+      "samples": 15,
+      "grounded_rate": 0.26666666666666666,
+      "mean_citations": 0.8
+    },
+    "caching": {
+      "samples": 5,
+      "cache_hit_rate": 1,
+      "mean_cached_tokens": 2944
+    }
+  },
+  "openai/gpt-5-mini": {
+    "as_of": "2026-08-09T03:35:51.600Z",
+    "source": "modelrig-probes@0.0.1",
+    "schema": {
+      "samples": 50,
+      "parse_rate": 1,
+      "conform_rate": 1,
+      "conform_ci95": [
+        0.9286524008666414,
+        1
+      ],
+      "value_accuracy_mean": 1,
+      "native_rung_rate": 1,
+      "mean_cost_usd": 0.0007078349999999999,
+      "by_family": {
+        "demo-rig": {
+          "samples": 20,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8388748419471806,
+            1
+          ],
+          "value_accuracy_mean": 1
+        },
+        "probe-suite": {
+          "samples": 30,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8864866068260312,
+            0.9999999999999999
+          ],
+          "value_accuracy_mean": 1
+        }
+      }
     },
     "grounding": {
       "samples": 15,
@@ -182,19 +1211,39 @@
     }
   },
   "openai/gpt-5.2": {
-    "as_of": "2026-08-02T05:50:47.539Z",
+    "as_of": "2026-08-09T03:16:27.814Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 30,
+      "samples": 50,
       "parse_rate": 1,
       "conform_rate": 1,
       "conform_ci95": [
-        0.8864866068260312,
-        0.9999999999999999
+        0.9286524008666414,
+        1
       ],
       "value_accuracy_mean": 1,
       "native_rung_rate": 1,
-      "mean_cost_usd": 0.002187208333333332
+      "mean_cost_usd": 0.0017995250000000004,
+      "by_family": {
+        "demo-rig": {
+          "samples": 20,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8388748419471806,
+            1
+          ],
+          "value_accuracy_mean": 1
+        },
+        "probe-suite": {
+          "samples": 30,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8864866068260312,
+            0.9999999999999999
+          ],
+          "value_accuracy_mean": 1
+        }
+      }
     },
     "grounding": {
       "samples": 15,
@@ -208,19 +1257,39 @@
     }
   },
   "openai/gpt-5.4-mini": {
-    "as_of": "2026-08-02T05:51:30.310Z",
+    "as_of": "2026-08-09T03:17:28.861Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 30,
+      "samples": 50,
       "parse_rate": 1,
       "conform_rate": 1,
       "conform_ci95": [
-        0.8864866068260312,
-        0.9999999999999999
+        0.9286524008666414,
+        1
       ],
-      "value_accuracy_mean": 1,
+      "value_accuracy_mean": 0.99,
       "native_rung_rate": 1,
-      "mean_cost_usd": 0.0006848250000000002
+      "mean_cost_usd": 0.0005780550000000003,
+      "by_family": {
+        "demo-rig": {
+          "samples": 20,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8388748419471806,
+            1
+          ],
+          "value_accuracy_mean": 1
+        },
+        "probe-suite": {
+          "samples": 30,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8864866068260312,
+            0.9999999999999999
+          ],
+          "value_accuracy_mean": 0.9833333333333333
+        }
+      }
     },
     "grounding": {
       "samples": 15,
@@ -234,19 +1303,39 @@
     }
   },
   "openai/gpt-5.4-nano": {
-    "as_of": "2026-08-02T05:52:23.112Z",
+    "as_of": "2026-08-09T03:18:40.821Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 30,
+      "samples": 50,
       "parse_rate": 1,
       "conform_rate": 1,
       "conform_ci95": [
-        0.8864866068260312,
-        0.9999999999999999
+        0.9286524008666414,
+        1
       ],
       "value_accuracy_mean": 1,
       "native_rung_rate": 1,
-      "mean_cost_usd": 0.00022643333333333338
+      "mean_cost_usd": 0.00018238500000000005,
+      "by_family": {
+        "demo-rig": {
+          "samples": 20,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8388748419471806,
+            1
+          ],
+          "value_accuracy_mean": 1
+        },
+        "probe-suite": {
+          "samples": 30,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8864866068260312,
+            0.9999999999999999
+          ],
+          "value_accuracy_mean": 1
+        }
+      }
     },
     "grounding": {
       "samples": 15,

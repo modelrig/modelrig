@@ -1,0 +1,27 @@
+{
+  "id": "example.support_summarize",
+  "class": "schema",
+  "domain": "general",
+  "family": "demo-rig",
+  "source": "demo-rig:example.support_summarize (synthetic ticket, no personal data)",
+  "prompt": "You triage inbound support tickets. Read the ticket below and return the required JSON. `summary` is a one- or two-sentence neutral paraphrase. `category` and `priority` use the schema's enums. `refund_requested` is true only if the customer explicitly asks for money back. `affected_user_count` is the number of users the ticket says are affected (an integer).\n\nTICKET (synthetic):\nSubject: Analytics dashboard down for our whole team since this morning\nBody: Since about 9am today none of our 45 users can open the analytics dashboard — it just spins and never loads. This is blocking our month-end reporting and we need it back as soon as possible. We are not asking for a refund, we just need the dashboard working again.",
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["summary", "category", "priority", "product_area", "refund_requested", "affected_user_count"],
+    "properties": {
+      "summary": { "type": "string", "minLength": 40 },
+      "category": { "type": "string", "enum": ["bug", "billing", "feature_request", "how_to", "outage"] },
+      "priority": { "type": "string", "enum": ["low", "medium", "high", "urgent"] },
+      "product_area": { "type": "string", "minLength": 3 },
+      "refund_requested": { "type": "boolean" },
+      "affected_user_count": { "type": "integer" }
+    }
+  },
+  "expectedValues": {
+    "category": "outage",
+    "priority": "urgent",
+    "refund_requested": false,
+    "affected_user_count": 45
+  }
+}

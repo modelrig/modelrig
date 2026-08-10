@@ -1,0 +1,20 @@
+{
+  "id": "hard-weighted-average",
+  "class": "schema",
+  "domain": "general",
+  "family": "probe-suite",
+  "difficulty": "hard",
+  "source": "contributed:discriminating-fixtures",
+  "prompt": "Two teams reported customer-satisfaction scores.\n- Team A: 10 responses, average score 80.\n- Team B: 30 responses, average score 90.\n\nReport combined_average: the overall average across all 40 responses. Weight by the number of responses in each team — this is NOT a simple average of the two team averages.",
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["combined_average"],
+    "properties": {
+      "combined_average": { "type": "number", "minimum": 0, "maximum": 100 }
+    }
+  },
+  "expectedValues": {
+    "combined_average": 87.5
+  }
+}

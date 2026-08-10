@@ -6,7 +6,6 @@
  * stats via pure summarize() (unit-tested without network).
  */
 
-import Ajv from "ajv";
 import type { ValidateFunction } from "ajv";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
@@ -16,7 +15,9 @@ import { fixtureHash } from "./fixtures";
 import { resolveModel } from "./providers";
 import { loadProbesConfigFromEnv } from "./config";
 import type { ProbesConfig } from "./config";
+import { DEFAULT_FIXTURE_DIFFICULTY, DEFAULT_FIXTURE_FAMILY } from "./types";
 import type { FixtureStats, ProbeFixture, ProbeResult, ProbeSample } from "./types";
+import { createProbeAjv } from "./ajv";
 
 export interface HarnessConfig {
   readonly modelKey: string;
@@ -43,7 +44,7 @@ export class ProbeBudgetExceededError extends Error {
   }
 }
 
-const ajv = new Ajv({ strict: false, allErrors: true, allowUnionTypes: true });
+const ajv = createProbeAjv();
 const validatorCache = new Map<string, ValidateFunction>();
 
 function validatorFor(fixture: ProbeFixture): ValidateFunction | null {
@@ -264,8 +265,14 @@ export function assembleResult(
   version: string = harnessVersion()
 ): ProbeResult {
   const fixtureHashes: Record<string, string> = {};
+  const fixtureFamilies: Record<string, string> = {};
+  const fixtureDifficulties: Record<string, string> = {};
   for (const fixture of fixtures) {
-    if (raw[fixture.id] !== undefined) fixtureHashes[fixture.id] = fixtureHash(fixture);
+    if (raw[fixture.id] !== undefined) {
+      fixtureHashes[fixture.id] = fixtureHash(fixture);
+      fixtureFamilies[fixture.id] = fixture.family ?? DEFAULT_FIXTURE_FAMILY;
+      fixtureDifficulties[fixture.id] = fixture.difficulty ?? DEFAULT_FIXTURE_DIFFICULTY;
+    }
   }
   const stats = Object.entries(raw).map(([id, samples]) => summarize(id, samples));
   const totalCostUsd = Object.values(raw)
@@ -277,6 +284,8 @@ export function assembleResult(
     date: new Date().toISOString(),
     harnessVersion: version,
     fixtureHashes,
+    fixtureFamilies,
+    fixtureDifficulties,
     raw,
     stats,
     totalCostUsd,

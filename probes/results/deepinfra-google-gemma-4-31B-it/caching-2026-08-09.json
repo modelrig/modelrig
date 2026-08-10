@@ -1,0 +1,93 @@
+{
+  "modelKey": "deepinfra/google/gemma-4-31B-it",
+  "class": "caching",
+  "date": "2026-08-09T18:03:14.225Z",
+  "harnessVersion": "0.0.1",
+  "fixtureHashes": {
+    "long-prefix-repeat": "28595a700e587856"
+  },
+  "fixtureFamilies": {
+    "long-prefix-repeat": "probe-suite"
+  },
+  "raw": {
+    "long-prefix-repeat": [
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 0,
+        "tokensIn": 2816,
+        "tokensOut": 30,
+        "costUsd": 0.00075496,
+        "latencyMs": 2714,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 0,
+        "tokensIn": 2816,
+        "tokensOut": 30,
+        "costUsd": 0.00075496,
+        "latencyMs": 4014,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 0,
+        "tokensIn": 2816,
+        "tokensOut": 30,
+        "costUsd": 0.00075496,
+        "latencyMs": 2145,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 0,
+        "tokensIn": 2816,
+        "tokensOut": 30,
+        "costUsd": 0.00075496,
+        "latencyMs": 2214,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 0,
+        "tokensIn": 2816,
+        "tokensOut": 30,
+        "costUsd": 0.00075496,
+        "latencyMs": 1056,
+        "failureClass": null
+      }
+    ]
+  },
+  "stats": [
+    {
+      "fixtureId": "long-prefix-repeat",
+      "samples": 5,
+      "parseRate": 1,
+      "conformRate": null,
+      "valueAccuracyMean": null,
+      "conformCi95": null,
+      "meanCostUsd": 0.00075496
+    }
+  ],
+  "totalCostUsd": 0.0037748
+}

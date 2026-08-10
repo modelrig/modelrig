@@ -24,12 +24,16 @@ telemetry exporter's store interface has no capture accessors — there is *no
 code path* from captures to any network sink — and a runtime
 export-isolation test asserts no sink payload ever carries capture content.
 The cloud schema deliberately has no captures table. What does mirror: the
-per-route `capture` flag (status only) and bake-off aggregate metrics.
+per-route `capture` flag (status only) and bake-off aggregate metrics — and,
+when a bake-off is run with `--keep-outputs`, the bounded review samples it
+keeps, which land in `bakeoff_samples` in your organization, row-scoped by the
+database and deletable from the console. Turning `capture: true` on a route is
+what the brandscript calls Optimization on; leaving it off is Pure router.
 
 ## 2. Replay
 
 ```ts
-const samples = await rig.replay("research.growth_scenarios", {
+const samples = await rig.replay("example.support_summarize", {
   variant: "cheap",
   lastN: 50,
   envelopeUsd: 10, // hard cap for the whole pass
@@ -46,7 +50,7 @@ never written back to captures.
 ## 3. Bake-off
 
 ```bash
-modelrig bakeoff --route research.growth_scenarios \
+modelrig bakeoff --route example.support_summarize \
   --variants default,cheap,scaffolded --replay-last 50
 ```
 

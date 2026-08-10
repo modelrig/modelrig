@@ -10,10 +10,18 @@ describe("parseModelKey", () => {
     });
   });
 
+  it("parses the 2026-08-02 expansion providers (anthropic, grok)", () => {
+    expect(parseModelKey("anthropic/claude-sonnet-5")).toEqual({
+      provider: "anthropic",
+      model: "claude-sonnet-5",
+    });
+    expect(parseModelKey("grok/grok-4.5")).toEqual({ provider: "grok", model: "grok-4.5" });
+  });
+
   it("rejects malformed keys and unknown providers", () => {
     expect(() => parseModelKey("gpt-5.2")).toThrow(/provider\/model/);
     expect(() => parseModelKey("openai/")).toThrow(/provider\/model/);
-    expect(() => parseModelKey("anthropic/claude")).toThrow(/not supported/);
+    expect(() => parseModelKey("mistral/mistral-large")).toThrow(/not supported/);
   });
 });
 

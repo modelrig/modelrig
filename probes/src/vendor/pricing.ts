@@ -11,7 +11,7 @@
  */
 
 import { existsSync, readFileSync } from "node:fs";
-import { join } from "node:path";
+import { dirname, join } from "node:path";
 import type { ProbeProviderId } from "./types";
 
 export interface ProbeModelPricing {
@@ -30,6 +30,12 @@ const KEY_PREFIXES: Record<ProbeProviderId, readonly string[]> = {
   gemini: ["gemini/"],
   openai: ["", "openai/"],
   deepseek: ["deepseek/", ""],
+  anthropic: ["anthropic/", ""],
+  grok: ["xai/"],
+  // A1 hosts — must mirror src/registry/pricing.ts exactly: DeepInfra keeps the
+  // org path ("Qwen/QwQ-32B"); Fireworks pricing keys carry the wire prefix.
+  deepinfra: ["deepinfra/"],
+  fireworks: ["fireworks_ai/accounts/fireworks/models/", "fireworks_ai/"],
 };
 
 /** Both repo layouts, relative to this file (src/vendor or dist/vendor —
@@ -44,6 +50,19 @@ function candidatePaths(): string[] {
 
 let cachedMap: Record<string, PricingMapEntry> | null = null;
 
+/** Host-swept gap-filler sitting next to the snapshot (pricing-overlay.json,
+ * written by modelrig's scripts/pricing-sweep.ts) — prices the pinned snapshot
+ * has not caught up to. Merged BENEATH the snapshot (snapshot wins on shared
+ * keys). Absent ⇒ unchanged behaviour. */
+function loadOverlay(snapshotPath: string): Record<string, PricingMapEntry> {
+  const overlayPath = join(dirname(snapshotPath), "pricing-overlay.json");
+  if (!existsSync(overlayPath)) return {};
+  const parsed = JSON.parse(readFileSync(overlayPath, "utf8")) as {
+    prices?: Record<string, PricingMapEntry>;
+  };
+  return parsed.prices ?? {};
+}
+
 function loadMap(): Record<string, PricingMapEntry> {
   if (cachedMap === null) {
     const paths = candidatePaths();
@@ -54,7 +73,8 @@ function loadMap(): Record<string, PricingMapEntry> {
           "(probe costs and envelopes need it; is the repo checkout complete?)"
       );
     }
-    cachedMap = JSON.parse(readFileSync(found, "utf8")) as Record<string, PricingMapEntry>;
+    const snapshot = JSON.parse(readFileSync(found, "utf8")) as Record<string, PricingMapEntry>;
+    cachedMap = { ...loadOverlay(found), ...snapshot };
   }
   return cachedMap;
 }

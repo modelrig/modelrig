@@ -1,0 +1,28 @@
+{
+  "id": "demo-content-classify",
+  "class": "schema",
+  "domain": "general",
+  "family": "demo-rig",
+  "source": "demo-rig:content.classify (synthetic public-domain snippet, no personal data)",
+  "prompt": "Classify the short text below and return the required JSON. `topic` and `sentiment` use the schema's enums. `language` is the ISO 639-1 code of the text's language (e.g. en). `contains_question` is true only if the text asks a question.\n\nTEXT (synthetic):\n\"The home team scored twice in the final ten minutes to win the championship match in front of a delighted sold-out crowd.\"",
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["topic", "sentiment", "language", "contains_question"],
+    "properties": {
+      "topic": {
+        "type": "string",
+        "enum": ["sports", "politics", "technology", "business", "health", "entertainment", "science"]
+      },
+      "sentiment": { "type": "string", "enum": ["positive", "neutral", "negative"] },
+      "language": { "type": "string" },
+      "contains_question": { "type": "boolean" }
+    }
+  },
+  "expectedValues": {
+    "topic": "sports",
+    "sentiment": "positive",
+    "language": "en",
+    "contains_question": false
+  }
+}

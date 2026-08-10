@@ -1,18 +1,76 @@
 [
   {
-    "model_key": "deepseek/deepseek-chat",
+    "model_key": "deepinfra/mistralai/Mistral-Small-3.2-24B-Instruct-2506",
     "conform_rate": 1,
     "conform_ci95": [
-      0.8864866068260312,
-      0.9999999999999999
+      0.9286524008666414,
+      1
     ],
     "value_accuracy_mean": 1,
     "native_rung_rate": 0,
-    "effective_usd_per_1k_conformant": 0.08992946666666672,
+    "effective_usd_per_1k_conformant": 0.05020649999999996,
+    "grounded_rate": 0,
+    "cache_hit_rate": 0,
+    "samples": 50,
+    "as_of": "2026-08-08T22:48:52.760Z",
+    "families": [
+      "demo-rig",
+      "probe-suite"
+    ],
+    "discrepancies": [
+      {
+        "kind": "undeclared_schema_capable",
+        "message": "no declared schema support, but probed conformance is 100% — capability exists undeclared"
+      }
+    ]
+  },
+  {
+    "model_key": "deepinfra/meta-llama/Llama-4-Scout-17B-16E-Instruct",
+    "conform_rate": 1,
+    "conform_ci95": [
+      0.9286524008666414,
+      1
+    ],
+    "value_accuracy_mean": 1,
+    "native_rung_rate": 0,
+    "effective_usd_per_1k_conformant": 0.055588,
+    "grounded_rate": 1,
+    "cache_hit_rate": 0,
+    "samples": 50,
+    "as_of": "2026-08-08T22:46:06.495Z",
+    "families": [
+      "demo-rig",
+      "probe-suite"
+    ],
+    "discrepancies": [
+      {
+        "kind": "undeclared_schema_capable",
+        "message": "no declared schema support, but probed conformance is 100% — capability exists undeclared"
+      },
+      {
+        "kind": "citations_without_declared_search",
+        "message": "no declared web-search support, but 100% of probed answers cited URLs — verify whether these are real or fabricated sources"
+      }
+    ]
+  },
+  {
+    "model_key": "deepseek/deepseek-chat",
+    "conform_rate": 1,
+    "conform_ci95": [
+      0.9286524008666414,
+      1
+    ],
+    "value_accuracy_mean": 1,
+    "native_rung_rate": 0,
+    "effective_usd_per_1k_conformant": 0.08656032,
     "grounded_rate": 0.9333333333333333,
     "cache_hit_rate": 1,
-    "samples": 30,
-    "as_of": "2026-08-02T06:00:07.239Z",
+    "samples": 50,
+    "as_of": "2026-08-08T23:01:20.994Z",
+    "families": [
+      "demo-rig",
+      "probe-suite"
+    ],
     "discrepancies": [
       {
         "kind": "schema_served_via_json_mode",
@@ -25,19 +83,101 @@
     ]
   },
   {
-    "model_key": "deepseek/deepseek-reasoner",
+    "model_key": "deepinfra/google/gemma-4-31B-it",
+    "conform_rate": 1,
+    "conform_ci95": [
+      0.9286524008666414,
+      1
+    ],
+    "value_accuracy_mean": 0.95,
+    "native_rung_rate": 0,
+    "effective_usd_per_1k_conformant": 0.09456140000000002,
+    "grounded_rate": null,
+    "cache_hit_rate": 0,
+    "samples": 50,
+    "as_of": "2026-08-09T18:03:14.225Z",
+    "families": [
+      "demo-rig",
+      "probe-suite"
+    ],
+    "discrepancies": [
+      {
+        "kind": "undeclared_schema_capable",
+        "message": "no declared schema support, but probed conformance is 100% — capability exists undeclared"
+      }
+    ]
+  },
+  {
+    "model_key": "grok/grok-4-1-fast",
     "conform_rate": 1,
     "conform_ci95": [
       0.8864866068260312,
       0.9999999999999999
     ],
     "value_accuracy_mean": 1,
-    "native_rung_rate": 0,
-    "effective_usd_per_1k_conformant": 0.1505494666666667,
-    "grounded_rate": 0.8666666666666667,
+    "native_rung_rate": 1,
+    "effective_usd_per_1k_conformant": 0.10421333333333337,
+    "grounded_rate": 0.26666666666666666,
     "cache_hit_rate": 1,
     "samples": 30,
-    "as_of": "2026-08-02T06:03:25.423Z",
+    "as_of": "2026-08-02T20:29:07.180Z",
+    "families": [
+      "probe-suite"
+    ],
+    "discrepancies": [
+      {
+        "kind": "declared_search_ungrounded",
+        "message": "declared supports_web_search, but only 27% of probed answers carried citations (bar: 50%)"
+      }
+    ]
+  },
+  {
+    "model_key": "deepinfra/meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+    "conform_rate": 1,
+    "conform_ci95": [
+      0.9286524008666414,
+      1
+    ],
+    "value_accuracy_mean": 1,
+    "native_rung_rate": 0,
+    "effective_usd_per_1k_conformant": 0.10483199999999997,
+    "grounded_rate": 1,
+    "cache_hit_rate": 0,
+    "samples": 50,
+    "as_of": "2026-08-08T22:44:22.427Z",
+    "families": [
+      "demo-rig",
+      "probe-suite"
+    ],
+    "discrepancies": [
+      {
+        "kind": "undeclared_schema_capable",
+        "message": "no declared schema support, but probed conformance is 100% — capability exists undeclared"
+      },
+      {
+        "kind": "citations_without_declared_search",
+        "message": "no declared web-search support, but 100% of probed answers cited URLs — verify whether these are real or fabricated sources"
+      }
+    ]
+  },
+  {
+    "model_key": "deepseek/deepseek-reasoner",
+    "conform_rate": 1,
+    "conform_ci95": [
+      0.9286524008666414,
+      1
+    ],
+    "value_accuracy_mean": 1,
+    "native_rung_rate": 0,
+    "effective_usd_per_1k_conformant": 0.1357888,
+    "grounded_rate": 0.8666666666666667,
+    "cache_hit_rate": 1,
+    "samples": 50,
+    "as_of": "2026-08-08T23:03:26.251Z",
+    "families": [
+      "demo-rig",
+      "probe-suite"
+    ],
     "discrepancies": [
       {
         "kind": "schema_served_via_json_mode",
@@ -50,35 +190,97 @@
     ]
   },
   {
+    "model_key": "deepinfra/Qwen/Qwen3-30B-A3B",
+    "conform_rate": 1,
+    "conform_ci95": [
+      0.9286524008666414,
+      1
+    ],
+    "value_accuracy_mean": 0.97,
+    "native_rung_rate": 0,
+    "effective_usd_per_1k_conformant": 0.16272999999999996,
+    "grounded_rate": 1,
+    "cache_hit_rate": 0,
+    "samples": 50,
+    "as_of": "2026-08-08T22:39:37.206Z",
+    "families": [
+      "demo-rig",
+      "probe-suite"
+    ],
+    "discrepancies": [
+      {
+        "kind": "undeclared_schema_capable",
+        "message": "no declared schema support, but probed conformance is 100% — capability exists undeclared"
+      },
+      {
+        "kind": "citations_without_declared_search",
+        "message": "no declared web-search support, but 100% of probed answers cited URLs — verify whether these are real or fabricated sources"
+      }
+    ]
+  },
+  {
+    "model_key": "deepinfra/openai/gpt-oss-120b",
+    "conform_rate": 1,
+    "conform_ci95": [
+      0.9286524008666414,
+      1
+    ],
+    "value_accuracy_mean": 1,
+    "native_rung_rate": 0,
+    "effective_usd_per_1k_conformant": 0.1684809999999999,
+    "grounded_rate": 0,
+    "cache_hit_rate": 0,
+    "samples": 50,
+    "as_of": "2026-08-09T18:52:52.558Z",
+    "families": [
+      "demo-rig",
+      "probe-suite"
+    ],
+    "discrepancies": [
+      {
+        "kind": "undeclared_schema_capable",
+        "message": "no declared schema support, but probed conformance is 100% — capability exists undeclared"
+      }
+    ]
+  },
+  {
     "model_key": "openai/gpt-5.4-nano",
     "conform_rate": 1,
     "conform_ci95": [
-      0.8864866068260312,
-      0.9999999999999999
+      0.9286524008666414,
+      1
     ],
     "value_accuracy_mean": 1,
     "native_rung_rate": 1,
-    "effective_usd_per_1k_conformant": 0.22643333333333338,
+    "effective_usd_per_1k_conformant": 0.18238500000000005,
     "grounded_rate": 0.5333333333333333,
     "cache_hit_rate": 1,
-    "samples": 30,
-    "as_of": "2026-08-02T05:52:23.112Z",
+    "samples": 50,
+    "as_of": "2026-08-09T03:18:40.821Z",
+    "families": [
+      "demo-rig",
+      "probe-suite"
+    ],
     "discrepancies": []
   },
   {
     "model_key": "gemini/gemini-3.1-flash-lite",
     "conform_rate": 1,
     "conform_ci95": [
-      0.8864866068260312,
-      0.9999999999999999
+      0.9286524008666414,
+      1
     ],
     "value_accuracy_mean": 1,
     "native_rung_rate": 1,
-    "effective_usd_per_1k_conformant": 0.28411666666666685,
+    "effective_usd_per_1k_conformant": 0.2299050000000001,
     "grounded_rate": 1,
     "cache_hit_rate": 0,
-    "samples": 30,
-    "as_of": "2026-08-02T06:11:16.593Z",
+    "samples": 50,
+    "as_of": "2026-08-09T03:46:07.456Z",
+    "families": [
+      "demo-rig",
+      "probe-suite"
+    ],
     "discrepancies": [
       {
         "kind": "declared_caching_unrealized",
@@ -87,7 +289,90 @@
     ]
   },
   {
-    "model_key": "openai/gpt-5.4-mini",
+    "model_key": "deepinfra/Qwen/Qwen3-Coder-480B-A35B-Instruct-Turbo",
+    "conform_rate": 1,
+    "conform_ci95": [
+      0.9286524008666414,
+      1
+    ],
+    "value_accuracy_mean": 1,
+    "native_rung_rate": 0,
+    "effective_usd_per_1k_conformant": 0.23501800000000014,
+    "grounded_rate": 0.8666666666666667,
+    "cache_hit_rate": 1,
+    "samples": 50,
+    "as_of": "2026-08-08T22:41:52.930Z",
+    "families": [
+      "demo-rig",
+      "probe-suite"
+    ],
+    "discrepancies": [
+      {
+        "kind": "undeclared_schema_capable",
+        "message": "no declared schema support, but probed conformance is 100% — capability exists undeclared"
+      },
+      {
+        "kind": "citations_without_declared_search",
+        "message": "no declared web-search support, but 87% of probed answers cited URLs — verify whether these are real or fabricated sources"
+      }
+    ]
+  },
+  {
+    "model_key": "fireworks/gpt-oss-120b",
+    "conform_rate": 1,
+    "conform_ci95": [
+      0.9286524008666414,
+      1
+    ],
+    "value_accuracy_mean": 0.995,
+    "native_rung_rate": 0,
+    "effective_usd_per_1k_conformant": 0.24279450000000002,
+    "grounded_rate": 0.26666666666666666,
+    "cache_hit_rate": 1,
+    "samples": 50,
+    "as_of": "2026-08-09T18:54:14.906Z",
+    "families": [
+      "demo-rig",
+      "probe-suite"
+    ],
+    "discrepancies": [
+      {
+        "kind": "schema_served_via_json_mode",
+        "message": "declared supports_response_schema, but every probed sample was served via json_mode coaching — no native strict enforcement exists on this serving path (the json_object-vs-schema gap)"
+      }
+    ]
+  },
+  {
+    "model_key": "deepinfra/MiniMaxAI/MiniMax-M3",
+    "conform_rate": 1,
+    "conform_ci95": [
+      0.9286524008666414,
+      1
+    ],
+    "value_accuracy_mean": 0.995,
+    "native_rung_rate": 0,
+    "effective_usd_per_1k_conformant": 0.4722440000000001,
+    "grounded_rate": 0.7333333333333333,
+    "cache_hit_rate": 1,
+    "samples": 50,
+    "as_of": "2026-08-09T17:59:45.687Z",
+    "families": [
+      "demo-rig",
+      "probe-suite"
+    ],
+    "discrepancies": [
+      {
+        "kind": "undeclared_schema_capable",
+        "message": "no declared schema support, but probed conformance is 100% — capability exists undeclared"
+      },
+      {
+        "kind": "citations_without_declared_search",
+        "message": "no declared web-search support, but 73% of probed answers cited URLs — verify whether these are real or fabricated sources"
+      }
+    ]
+  },
+  {
+    "model_key": "grok/grok-4.3",
     "conform_rate": 1,
     "conform_ci95": [
       0.8864866068260312,
@@ -95,47 +380,133 @@
     ],
     "value_accuracy_mean": 1,
     "native_rung_rate": 1,
-    "effective_usd_per_1k_conformant": 0.6848250000000002,
-    "grounded_rate": 0.8666666666666667,
+    "effective_usd_per_1k_conformant": 0.5436599999999999,
+    "grounded_rate": 0.2,
     "cache_hit_rate": 1,
     "samples": 30,
-    "as_of": "2026-08-02T05:51:30.310Z",
+    "as_of": "2026-08-02T20:25:45.769Z",
+    "families": [
+      "probe-suite"
+    ],
+    "discrepancies": [
+      {
+        "kind": "declared_search_ungrounded",
+        "message": "declared supports_web_search, but only 20% of probed answers carried citations (bar: 50%)"
+      }
+    ]
+  },
+  {
+    "model_key": "openai/gpt-5.4-mini",
+    "conform_rate": 1,
+    "conform_ci95": [
+      0.9286524008666414,
+      1
+    ],
+    "value_accuracy_mean": 0.99,
+    "native_rung_rate": 1,
+    "effective_usd_per_1k_conformant": 0.5780550000000003,
+    "grounded_rate": 0.8666666666666667,
+    "cache_hit_rate": 1,
+    "samples": 50,
+    "as_of": "2026-08-09T03:17:28.861Z",
+    "families": [
+      "demo-rig",
+      "probe-suite"
+    ],
     "discrepancies": []
   },
   {
     "model_key": "openai/gpt-5-mini",
     "conform_rate": 1,
     "conform_ci95": [
-      0.8864866068260312,
-      0.9999999999999999
+      0.9286524008666414,
+      1
     ],
     "value_accuracy_mean": 1,
     "native_rung_rate": 1,
-    "effective_usd_per_1k_conformant": 0.9524583333333331,
+    "effective_usd_per_1k_conformant": 0.7078349999999999,
     "grounded_rate": 0.5333333333333333,
     "cache_hit_rate": 1,
-    "samples": 30,
-    "as_of": "2026-08-02T05:57:19.984Z",
+    "samples": 50,
+    "as_of": "2026-08-09T03:35:51.600Z",
+    "families": [
+      "demo-rig",
+      "probe-suite"
+    ],
     "discrepancies": []
+  },
+  {
+    "model_key": "deepinfra/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B",
+    "conform_rate": 1,
+    "conform_ci95": [
+      0.9286524008666414,
+      1
+    ],
+    "value_accuracy_mean": 0.995,
+    "native_rung_rate": 0,
+    "effective_usd_per_1k_conformant": 1.1292260000000003,
+    "grounded_rate": 0.4,
+    "cache_hit_rate": 0,
+    "samples": 50,
+    "as_of": "2026-08-09T18:18:48.527Z",
+    "families": [
+      "demo-rig",
+      "probe-suite"
+    ],
+    "discrepancies": [
+      {
+        "kind": "undeclared_schema_capable",
+        "message": "no declared schema support, but probed conformance is 100% — capability exists undeclared"
+      }
+    ]
   },
   {
     "model_key": "gemini/gemini-2.5-flash",
     "conform_rate": 1,
     "conform_ci95": [
-      0.8864866068260312,
-      0.9999999999999999
+      0.9286524008666414,
+      1
     ],
     "value_accuracy_mean": 1,
     "native_rung_rate": 1,
-    "effective_usd_per_1k_conformant": 1.5196376666666669,
+    "effective_usd_per_1k_conformant": 1.2050699999999999,
     "grounded_rate": 0.6666666666666666,
     "cache_hit_rate": 0.6,
-    "samples": 30,
-    "as_of": "2026-08-02T06:10:18.326Z",
+    "samples": 50,
+    "as_of": "2026-08-09T03:38:38.000Z",
+    "families": [
+      "demo-rig",
+      "probe-suite"
+    ],
     "discrepancies": []
   },
   {
-    "model_key": "openai/gpt-5.2",
+    "model_key": "deepinfra/moonshotai/Kimi-K2.7-Code",
+    "conform_rate": 1,
+    "conform_ci95": [
+      0.9286524008666414,
+      1
+    ],
+    "value_accuracy_mean": 1,
+    "native_rung_rate": 0,
+    "effective_usd_per_1k_conformant": 1.235764,
+    "grounded_rate": 0,
+    "cache_hit_rate": 1,
+    "samples": 50,
+    "as_of": "2026-08-09T17:05:25.454Z",
+    "families": [
+      "demo-rig",
+      "probe-suite"
+    ],
+    "discrepancies": [
+      {
+        "kind": "undeclared_schema_capable",
+        "message": "no declared schema support, but probed conformance is 100% — capability exists undeclared"
+      }
+    ]
+  },
+  {
+    "model_key": "grok/grok-4.5",
     "conform_rate": 1,
     "conform_ci95": [
       0.8864866068260312,
@@ -143,11 +514,68 @@
     ],
     "value_accuracy_mean": 1,
     "native_rung_rate": 1,
-    "effective_usd_per_1k_conformant": 2.1872083333333316,
-    "grounded_rate": 0.13333333333333333,
+    "effective_usd_per_1k_conformant": 1.2777999999999998,
+    "grounded_rate": 0.26666666666666666,
     "cache_hit_rate": 1,
     "samples": 30,
-    "as_of": "2026-08-02T05:50:47.539Z",
+    "as_of": "2026-08-02T20:22:46.268Z",
+    "families": [
+      "probe-suite"
+    ],
+    "discrepancies": [
+      {
+        "kind": "declared_search_ungrounded",
+        "message": "declared supports_web_search, but only 27% of probed answers carried citations (bar: 50%)"
+      }
+    ]
+  },
+  {
+    "model_key": "deepinfra/zai-org/GLM-5.2",
+    "conform_rate": 1,
+    "conform_ci95": [
+      0.9286524008666414,
+      1
+    ],
+    "value_accuracy_mean": 1,
+    "native_rung_rate": 0,
+    "effective_usd_per_1k_conformant": 1.5530640000000004,
+    "grounded_rate": 0.6,
+    "cache_hit_rate": 1,
+    "samples": 50,
+    "as_of": "2026-08-09T15:58:53.460Z",
+    "families": [
+      "demo-rig",
+      "probe-suite"
+    ],
+    "discrepancies": [
+      {
+        "kind": "undeclared_schema_capable",
+        "message": "no declared schema support, but probed conformance is 100% — capability exists undeclared"
+      },
+      {
+        "kind": "citations_without_declared_search",
+        "message": "no declared web-search support, but 60% of probed answers cited URLs — verify whether these are real or fabricated sources"
+      }
+    ]
+  },
+  {
+    "model_key": "openai/gpt-5.2",
+    "conform_rate": 1,
+    "conform_ci95": [
+      0.9286524008666414,
+      1
+    ],
+    "value_accuracy_mean": 1,
+    "native_rung_rate": 1,
+    "effective_usd_per_1k_conformant": 1.7995250000000005,
+    "grounded_rate": 0.13333333333333333,
+    "cache_hit_rate": 1,
+    "samples": 50,
+    "as_of": "2026-08-09T03:16:27.814Z",
+    "families": [
+      "demo-rig",
+      "probe-suite"
+    ],
     "discrepancies": [
       {
         "kind": "declared_search_ungrounded",
@@ -156,20 +584,165 @@
     ]
   },
   {
-    "model_key": "gemini/gemini-3-flash-preview",
+    "model_key": "anthropic/claude-haiku-4-5",
     "conform_rate": 1,
     "conform_ci95": [
-      0.8864866068260312,
-      0.9999999999999999
+      0.9286524008666414,
+      1
     ],
     "value_accuracy_mean": 1,
     "native_rung_rate": 1,
-    "effective_usd_per_1k_conformant": 2.8512333333333335,
+    "effective_usd_per_1k_conformant": 1.9232,
+    "grounded_rate": 0.9333333333333333,
+    "cache_hit_rate": 0,
+    "samples": 50,
+    "as_of": "2026-08-09T18:20:40.456Z",
+    "families": [
+      "demo-rig",
+      "probe-suite"
+    ],
+    "discrepancies": [
+      {
+        "kind": "citations_without_declared_search",
+        "message": "no declared web-search support, but 93% of probed answers cited URLs — verify whether these are real or fabricated sources"
+      },
+      {
+        "kind": "declared_caching_unrealized",
+        "message": "declared supports_prompt_caching, but no probed repeat call reported cached tokens"
+      }
+    ]
+  },
+  {
+    "model_key": "gemini/gemini-3-flash-preview",
+    "conform_rate": 0.98,
+    "conform_ci95": [
+      0.8950455641036219,
+      0.9964607407283539
+    ],
+    "value_accuracy_mean": 0.9948979591836735,
+    "native_rung_rate": 1,
+    "effective_usd_per_1k_conformant": 2.500948979591836,
     "grounded_rate": 1,
     "cache_hit_rate": 0,
-    "samples": 30,
-    "as_of": "2026-08-02T06:04:45.824Z",
+    "samples": 50,
+    "as_of": "2026-08-09T03:45:14.155Z",
+    "families": [
+      "demo-rig",
+      "probe-suite"
+    ],
     "discrepancies": [
+      {
+        "kind": "declared_caching_unrealized",
+        "message": "declared supports_prompt_caching, but no probed repeat call reported cached tokens"
+      }
+    ]
+  },
+  {
+    "model_key": "fireworks/glm-5p2",
+    "conform_rate": 0.98,
+    "conform_ci95": [
+      0.8950455641036219,
+      0.9964607407283539
+    ],
+    "value_accuracy_mean": 1,
+    "native_rung_rate": 0,
+    "effective_usd_per_1k_conformant": 2.7038220408163265,
+    "grounded_rate": 0.7333333333333333,
+    "cache_hit_rate": 1,
+    "samples": 50,
+    "as_of": "2026-08-09T15:18:21.645Z",
+    "families": [
+      "demo-rig",
+      "probe-suite"
+    ],
+    "discrepancies": [
+      {
+        "kind": "schema_served_via_json_mode",
+        "message": "declared supports_response_schema, but every probed sample was served via json_mode coaching — no native strict enforcement exists on this serving path (the json_object-vs-schema gap)"
+      },
+      {
+        "kind": "citations_without_declared_search",
+        "message": "no declared web-search support, but 73% of probed answers cited URLs — verify whether these are real or fabricated sources"
+      }
+    ]
+  },
+  {
+    "model_key": "deepinfra/moonshotai/Kimi-K2.6",
+    "conform_rate": 0.98,
+    "conform_ci95": [
+      0.8950455641036219,
+      0.9964607407283539
+    ],
+    "value_accuracy_mean": 1,
+    "native_rung_rate": 0,
+    "effective_usd_per_1k_conformant": 3.158423469387755,
+    "grounded_rate": 0.26666666666666666,
+    "cache_hit_rate": 1,
+    "samples": 50,
+    "as_of": "2026-08-09T17:02:45.336Z",
+    "families": [
+      "demo-rig",
+      "probe-suite"
+    ],
+    "discrepancies": [
+      {
+        "kind": "undeclared_schema_capable",
+        "message": "no declared schema support, but probed conformance is 98% — capability exists undeclared"
+      }
+    ]
+  },
+  {
+    "model_key": "fireworks/kimi-k3",
+    "conform_rate": 1,
+    "conform_ci95": [
+      0.9286524008666414,
+      1
+    ],
+    "value_accuracy_mean": 1,
+    "native_rung_rate": 0,
+    "effective_usd_per_1k_conformant": 3.9807420000000007,
+    "grounded_rate": 0.7333333333333333,
+    "cache_hit_rate": 1,
+    "samples": 50,
+    "as_of": "2026-08-09T23:35:08.047Z",
+    "families": [
+      "demo-rig",
+      "probe-suite"
+    ],
+    "discrepancies": [
+      {
+        "kind": "undeclared_schema_capable",
+        "message": "no declared schema support, but probed conformance is 100% — capability exists undeclared"
+      },
+      {
+        "kind": "citations_without_declared_search",
+        "message": "no declared web-search support, but 73% of probed answers cited URLs — verify whether these are real or fabricated sources"
+      }
+    ]
+  },
+  {
+    "model_key": "anthropic/claude-sonnet-5",
+    "conform_rate": 1,
+    "conform_ci95": [
+      0.9286524008666414,
+      1
+    ],
+    "value_accuracy_mean": 0.96,
+    "native_rung_rate": 1,
+    "effective_usd_per_1k_conformant": 4.402999999999999,
+    "grounded_rate": 1,
+    "cache_hit_rate": 0,
+    "samples": 50,
+    "as_of": "2026-08-09T18:24:22.476Z",
+    "families": [
+      "demo-rig",
+      "probe-suite"
+    ],
+    "discrepancies": [
+      {
+        "kind": "citations_without_declared_search",
+        "message": "no declared web-search support, but 100% of probed answers cited URLs — verify whether these are real or fabricated sources"
+      },
       {
         "kind": "declared_caching_unrealized",
         "message": "declared supports_prompt_caching, but no probed repeat call reported cached tokens"
@@ -180,16 +753,20 @@
     "model_key": "gemini/gemini-3.1-pro-preview",
     "conform_rate": 1,
     "conform_ci95": [
-      0.8864866068260312,
-      0.9999999999999999
+      0.9286524008666414,
+      1
     ],
-    "value_accuracy_mean": 1,
+    "value_accuracy_mean": 0.995,
     "native_rung_rate": 1,
-    "effective_usd_per_1k_conformant": 11.837733333333333,
+    "effective_usd_per_1k_conformant": 11.04612,
     "grounded_rate": 1,
     "cache_hit_rate": 0,
-    "samples": 30,
-    "as_of": "2026-08-02T05:59:59.823Z",
+    "samples": 50,
+    "as_of": "2026-08-09T18:30:58.050Z",
+    "families": [
+      "demo-rig",
+      "probe-suite"
+    ],
     "discrepancies": [
       {
         "kind": "declared_caching_unrealized",

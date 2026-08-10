@@ -8,6 +8,7 @@
 import { createHash } from "node:crypto";
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
+import { FIXTURE_DIFFICULTIES } from "./types";
 import type { ProbeClass, ProbeFixture } from "./types";
 
 const FIXTURES_ROOT = join(__dirname, "..", "fixtures");
@@ -28,12 +29,14 @@ export function canonicalJson(value: unknown): string {
   return JSON.stringify(value);
 }
 
-/** Hash covers the model-relevant fixture content. `domain` (A2) is
- * classification metadata that never reaches the model, so it is excluded —
- * retro-tagging the corpus must NOT invalidate published result hashes
- * (the reproducibility contract compares hashes across runs). */
+/** Hash covers the model-relevant fixture content. `domain` (A2), `family`
+ * (demo-rig §11.3b) and `difficulty` (discriminating-fixtures §3) are all
+ * classification metadata that never reach the model, so all three are
+ * excluded — retro-tagging the corpus (a domain, a family, a difficulty) must
+ * NOT invalidate published result hashes (the reproducibility contract compares
+ * hashes across runs). */
 export function fixtureHash(fixture: ProbeFixture): string {
-  const { domain: _domain, ...hashed } = fixture;
+  const { domain: _domain, family: _family, difficulty: _difficulty, ...hashed } = fixture;
   return createHash("sha256").update(canonicalJson(hashed)).digest("hex").slice(0, 16);
 }
 
@@ -56,6 +59,20 @@ function parseFixture(raw: unknown, file: string): ProbeFixture {
       `fixture ${file}: domain required (lowercase token, e.g. finance|legal|technical|e-commerce|general)`
     );
   }
+  if (raw.family !== undefined && (typeof raw.family !== "string" || !/^[a-z0-9][a-z0-9-]*$/.test(raw.family))) {
+    throw new Error(
+      `fixture ${file}: family must be a lowercase token when present (e.g. probe-suite|demo-rig)`
+    );
+  }
+  if (
+    raw.difficulty !== undefined &&
+    (typeof raw.difficulty !== "string" ||
+      !(FIXTURE_DIFFICULTIES as readonly string[]).includes(raw.difficulty))
+  ) {
+    throw new Error(
+      `fixture ${file}: difficulty must be a lowercase token in [${FIXTURE_DIFFICULTIES.join(", ")}] when present`
+    );
+  }
   if (raw.schema !== undefined && !isRecord(raw.schema)) {
     throw new Error(`fixture ${file}: schema must be an object when present`);
   }
@@ -66,6 +83,8 @@ function parseFixture(raw: unknown, file: string): ProbeFixture {
     id,
     class: cls as ProbeClass,
     domain: raw.domain,
+    ...(raw.family !== undefined ? { family: raw.family } : {}),
+    ...(raw.difficulty !== undefined ? { difficulty: raw.difficulty as "standard" | "hard" } : {}),
     ...(raw.schema !== undefined ? { schema: raw.schema as object } : {}),
     prompt,
     ...(raw.expectedValues !== undefined

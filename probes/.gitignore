@@ -1,0 +1,9 @@
+dist/
+
+# Belt and braces (G2 / A-WS3.1). package.json carries a `files` allowlist,
+# which supersedes this. But npm's fallback path reads THIS file, never the
+# repo root's. This package is destined for the public repo, so the backstop
+# matters: if the allowlist is ever removed, this keeps an env file out of a pack.
+.env
+.env.*
+!.env.example

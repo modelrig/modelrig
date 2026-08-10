@@ -1,0 +1,93 @@
+{
+  "modelKey": "deepinfra/moonshotai/Kimi-K2.7-Code",
+  "class": "caching",
+  "date": "2026-08-09T17:05:25.454Z",
+  "harnessVersion": "0.0.1",
+  "fixtureHashes": {
+    "long-prefix-repeat": "28595a700e587856"
+  },
+  "fixtureFamilies": {
+    "long-prefix-repeat": "probe-suite"
+  },
+  "raw": {
+    "long-prefix-repeat": [
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2784,
+        "tokensIn": 2804,
+        "tokensOut": 161,
+        "costUsd": 0.0048844399999999994,
+        "latencyMs": 1166,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2784,
+        "tokensIn": 2804,
+        "tokensOut": 161,
+        "costUsd": 0.0049082399999999995,
+        "latencyMs": 1444,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2784,
+        "tokensIn": 2804,
+        "tokensOut": 149,
+        "costUsd": 0.0049082399999999995,
+        "latencyMs": 1528,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2784,
+        "tokensIn": 2804,
+        "tokensOut": 164,
+        "costUsd": 0.00492864,
+        "latencyMs": 1167,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2784,
+        "tokensIn": 2804,
+        "tokensOut": 164,
+        "costUsd": 0.00491844,
+        "latencyMs": 1153,
+        "failureClass": null
+      }
+    ]
+  },
+  "stats": [
+    {
+      "fixtureId": "long-prefix-repeat",
+      "samples": 5,
+      "parseRate": 1,
+      "conformRate": null,
+      "valueAccuracyMean": null,
+      "conformCi95": null,
+      "meanCostUsd": 0.004909599999999999
+    }
+  ],
+  "totalCostUsd": 0.024547999999999997
+}

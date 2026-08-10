@@ -8,6 +8,7 @@ import { describe, expect, it } from "vitest";
 import type { ProbeCallRequest, ProbeCallResult, ProbeCaller } from "./vendor/types";
 import {
   ProbeBudgetExceededError,
+  assembleResult,
   runSchemaSample,
   sampleFixtures,
   stripFence,
@@ -243,5 +244,41 @@ describe("sampleFixtures — envelope guard", () => {
     expect(result.stats[0].conformRate).toBe(1);
     expect(result.fixtureHashes["fx-1"]).toMatch(/^[0-9a-f]{16}$/);
     expect(result.harnessVersion).toBeTruthy();
+  });
+});
+
+describe("assembleResult — metadata threading (family + difficulty)", () => {
+  const samples: ProbeSample[] = [sample()];
+
+  it("threads a fixture's family and difficulty, defaulting the untagged one", () => {
+    const hard: ProbeFixture = {
+      id: "hard-fx",
+      class: "schema",
+      domain: "finance",
+      family: "probe-suite",
+      difficulty: "hard",
+      prompt: "p",
+      source: "test",
+    };
+    const bare: ProbeFixture = { id: "bare-fx", class: "schema", domain: "general", prompt: "p", source: "test" };
+    const result = assembleResult(
+      "p/m",
+      "schema",
+      [hard, bare],
+      { "hard-fx": samples, "bare-fx": samples },
+      "0.0.1"
+    );
+    expect(result.fixtureDifficulties?.["hard-fx"]).toBe("hard");
+    expect(result.fixtureDifficulties?.["bare-fx"]).toBe("standard"); // default
+    expect(result.fixtureFamilies?.["hard-fx"]).toBe("probe-suite");
+    expect(result.fixtureFamilies?.["bare-fx"]).toBe("probe-suite"); // default
+  });
+
+  it("only records metadata for fixtures that actually produced samples", () => {
+    const fx: ProbeFixture = { id: "ran", class: "schema", domain: "general", difficulty: "hard", prompt: "p", source: "test" };
+    const skipped: ProbeFixture = { id: "skipped", class: "schema", domain: "general", difficulty: "hard", prompt: "p", source: "test" };
+    const result = assembleResult("p/m", "schema", [fx, skipped], { ran: samples }, "0.0.1");
+    expect(result.fixtureDifficulties?.["ran"]).toBe("hard");
+    expect(result.fixtureDifficulties?.["skipped"]).toBeUndefined();
   });
 });

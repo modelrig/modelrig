@@ -1,0 +1,93 @@
+{
+  "modelKey": "deepinfra/mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "class": "caching",
+  "date": "2026-08-08T22:48:52.760Z",
+  "harnessVersion": "0.0.1",
+  "fixtureHashes": {
+    "long-prefix-repeat": "28595a700e587856"
+  },
+  "fixtureFamilies": {
+    "long-prefix-repeat": "probe-suite"
+  },
+  "raw": {
+    "long-prefix-repeat": [
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 0,
+        "tokensIn": 2956,
+        "tokensOut": 32,
+        "costUsd": 0.00045599999999999997,
+        "latencyMs": 585,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 0,
+        "tokensIn": 2956,
+        "tokensOut": 31,
+        "costUsd": 0.00045599999999999997,
+        "latencyMs": 421,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 0,
+        "tokensIn": 2956,
+        "tokensOut": 29,
+        "costUsd": 0.0004554,
+        "latencyMs": 512,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 0,
+        "tokensIn": 2956,
+        "tokensOut": 29,
+        "costUsd": 0.000455,
+        "latencyMs": 418,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 0,
+        "tokensIn": 2956,
+        "tokensOut": 31,
+        "costUsd": 0.00045579999999999997,
+        "latencyMs": 600,
+        "failureClass": null
+      }
+    ]
+  },
+  "stats": [
+    {
+      "fixtureId": "long-prefix-repeat",
+      "samples": 5,
+      "parseRate": 1,
+      "conformRate": null,
+      "valueAccuracyMean": null,
+      "conformCi95": null,
+      "meanCostUsd": 0.00045564000000000005
+    }
+  ],
+  "totalCostUsd": 0.0022782
+}

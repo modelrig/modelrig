@@ -1,0 +1,93 @@
+{
+  "modelKey": "fireworks/kimi-k3",
+  "class": "caching",
+  "date": "2026-08-09T23:35:08.047Z",
+  "harnessVersion": "0.0.1",
+  "fixtureHashes": {
+    "long-prefix-repeat": "28595a700e587856"
+  },
+  "fixtureFamilies": {
+    "long-prefix-repeat": "probe-suite"
+  },
+  "raw": {
+    "long-prefix-repeat": [
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2890,
+        "tokensIn": 2891,
+        "tokensOut": 104,
+        "costUsd": 0.013008,
+        "latencyMs": 1919,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2890,
+        "tokensIn": 2891,
+        "tokensOut": 133,
+        "costUsd": 0.004875,
+        "latencyMs": 2264,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2890,
+        "tokensIn": 2891,
+        "tokensOut": 114,
+        "costUsd": 0.004635,
+        "latencyMs": 2054,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2890,
+        "tokensIn": 2891,
+        "tokensOut": 94,
+        "costUsd": 0.012933,
+        "latencyMs": 1757,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2890,
+        "tokensIn": 2891,
+        "tokensOut": 117,
+        "costUsd": 0.005235,
+        "latencyMs": 2610,
+        "failureClass": null
+      }
+    ]
+  },
+  "stats": [
+    {
+      "fixtureId": "long-prefix-repeat",
+      "samples": 5,
+      "parseRate": 1,
+      "conformRate": null,
+      "valueAccuracyMean": null,
+      "conformCi95": null,
+      "meanCostUsd": 0.0081372
+    }
+  ],
+  "totalCostUsd": 0.040686
+}

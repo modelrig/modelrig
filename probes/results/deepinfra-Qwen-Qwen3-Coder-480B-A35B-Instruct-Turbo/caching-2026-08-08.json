@@ -1,0 +1,93 @@
+{
+  "modelKey": "deepinfra/Qwen/Qwen3-Coder-480B-A35B-Instruct-Turbo",
+  "class": "caching",
+  "date": "2026-08-08T22:41:52.930Z",
+  "harnessVersion": "0.0.1",
+  "fixtureHashes": {
+    "long-prefix-repeat": "28595a700e587856"
+  },
+  "fixtureFamilies": {
+    "long-prefix-repeat": "probe-suite"
+  },
+  "raw": {
+    "long-prefix-repeat": [
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2752,
+        "tokensIn": 2795,
+        "tokensOut": 40,
+        "costUsd": 0.0017039,
+        "latencyMs": 858,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2752,
+        "tokensIn": 2795,
+        "tokensOut": 40,
+        "costUsd": 0.0017170999999999998,
+        "latencyMs": 729,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2752,
+        "tokensIn": 2795,
+        "tokensOut": 38,
+        "costUsd": 0.0017111,
+        "latencyMs": 733,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2752,
+        "tokensIn": 2795,
+        "tokensOut": 40,
+        "costUsd": 0.0017134999999999997,
+        "latencyMs": 701,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2752,
+        "tokensIn": 2795,
+        "tokensOut": 37,
+        "costUsd": 0.0017002999999999999,
+        "latencyMs": 627,
+        "failureClass": null
+      }
+    ]
+  },
+  "stats": [
+    {
+      "fixtureId": "long-prefix-repeat",
+      "samples": 5,
+      "parseRate": 1,
+      "conformRate": null,
+      "valueAccuracyMean": null,
+      "conformCi95": null,
+      "meanCostUsd": 0.0017091799999999998
+    }
+  ],
+  "totalCostUsd": 0.008545899999999999
+}
