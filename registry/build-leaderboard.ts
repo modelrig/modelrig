@@ -10,7 +10,7 @@
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { effectiveCostPer1kConformant } from "../src/registry/build";
-import type { Registry, RegistryEntry } from "../src/registry/build";
+import type { ProbedFamilySummary, Registry, RegistryEntry } from "../src/registry/build";
 import { computeParity, assertParityCoverageSane } from "../src/registry/parity";
 import type { ParityListEntry } from "../src/registry/parity";
 import { probeFreshness, stalenessSentence, PROBE_FRESHNESS_SLO_DAYS } from "../src/registry/staleness";
@@ -67,6 +67,39 @@ export function corpusSummary(fixturesDir: string = FIXTURES_DIR): string {
   );
 }
 
+/** Min samples a per-family cell needs before its rates are shown rather than
+ * gated to `null` (task-type-leaderboards spec §2.1). A "some small N" floor in
+ * the DEFAULT_HEALTH_MIN_N style — kept local (not imported from telemetry) so
+ * the family/subtype granularity can be tuned independently of the observed-
+ * health gate. Below it the `value_accuracy_mean`/`conform_rate`/effective cost
+ * are `null` (surfaced as "—"); `samples` is retained so a reader sees WHY it is
+ * gated ("n=8, too few"), never a confident-looking number on thin evidence. */
+export const FAMILY_MIN_N = 10;
+
+/** Per-family rollup on a leaderboard row (task-type-leaderboards spec §2.1) —
+ * the same shape of numbers as the flat columns, sliced by fixture family, so a
+ * "who's best at <family>?" view can re-rank on `value_accuracy_mean` and
+ * tie-break on `effective_usd_per_1k_conformant`. A DESCRIPTIVE marginal
+ * statistic, never a RigIndex rank (spec §1 honesty boundary). */
+export interface LeaderboardFamilyStats {
+  /** Samples this family contributed — always the true count (never nulled), so
+   * a gated cell can explain itself ("n below the floor"). */
+  readonly samples: number;
+  /** `null` when `samples < FAMILY_MIN_N` (min-n gate) or no sample was judged. */
+  readonly conform_rate: number | null;
+  /** `null` when `samples < FAMILY_MIN_N` (min-n gate) or no value was scored. */
+  readonly value_accuracy_mean: number | null;
+  /** Serving path of this family's samples (native strict vs json_mode coaching)
+   * — passes through the probed sub-summary; not min-n gated (it is a mix ratio,
+   * not a rate whose CI the floor protects). `null` when no rung was recorded. */
+  readonly native_rung_rate: number | null;
+  /** Effective cost of conformance for THIS family: mean per-sample cost /
+   * conform_rate × 1000. `null` when gated, when conform_rate is 0/null, or when
+   * the probed layer predates per-family `mean_cost_usd` (graceful degradation
+   * — the cost column simply shows "—" until the next rebuild populates it). */
+  readonly effective_usd_per_1k_conformant: number | null;
+}
+
 export interface LeaderboardRow {
   readonly model_key: string;
   readonly conform_rate: number | null;
@@ -99,13 +132,56 @@ export interface LeaderboardRow {
    * `samples` alone reports only the total. Always present; `{}` when unprobed,
    * mirroring `families: []`. Keys always equal `families`. */
   readonly fixture_counts: Readonly<Record<string, number>>;
+  /** Per-family measured accuracy + cost (task-type-leaderboards spec §2.1),
+   * min-n gated. Present only when the probed schema layer carries a `by_family`
+   * rollup; absent (undefined) for legacy/unprobed rows so the www consumer
+   * degrades gracefully. Keys are the same families as `families`. These are
+   * DESCRIPTIVE marginal stats for the task-type views — not a RigIndex rank. */
+  readonly by_family?: Readonly<Record<string, LeaderboardFamilyStats>>;
   readonly discrepancies: ReadonlyArray<{ kind: string; message: string }>;
+}
+
+/** Effective cost of conformance for one per-family sub-summary — the same
+ * formula `effectiveCostPer1kConformant` applies to the aggregate, at family
+ * granularity. `null` unless we have a positive conform_rate AND a per-family
+ * `mean_cost_usd` (absent on pre–task-type probed layers → graceful "—"). */
+function familyEffectiveCost(family: ProbedFamilySummary): number | null {
+  if (family.mean_cost_usd === undefined) return null;
+  if (family.conform_rate === null || family.conform_rate === 0) return null;
+  return (family.mean_cost_usd / family.conform_rate) * 1000;
+}
+
+/** Roll the probed `by_family` map into the leaderboard's per-family view,
+ * applying the min-n gate (spec §2.1): below FAMILY_MIN_N the rate fields go
+ * `null` (kept honest as "—"), but `samples` and the derived cost stay
+ * computable-from-what-remains. Returns undefined when the schema carries no
+ * `by_family` (legacy/unprobed) so the field is simply omitted from the row. */
+function familyRollup(
+  byFamily: Readonly<Record<string, ProbedFamilySummary>> | undefined
+): Record<string, LeaderboardFamilyStats> | undefined {
+  if (byFamily === undefined) return undefined;
+  const out: Record<string, LeaderboardFamilyStats> = {};
+  for (const [family, stats] of Object.entries(byFamily)) {
+    const gated = stats.samples < FAMILY_MIN_N;
+    const conform_rate = gated ? null : stats.conform_rate;
+    out[family] = {
+      samples: stats.samples,
+      conform_rate,
+      value_accuracy_mean: gated ? null : stats.value_accuracy_mean,
+      native_rung_rate: stats.native_rung_rate,
+      // Cost uses the gated conform_rate: a gated family shows no cost either,
+      // so a "—" accuracy is never paired with a confident-looking price.
+      effective_usd_per_1k_conformant: gated ? null : familyEffectiveCost(stats),
+    };
+  }
+  return out;
 }
 
 export function toLeaderboardRows(registry: Registry): LeaderboardRow[] {
   const rows = registry.models.map((entry: RegistryEntry): LeaderboardRow => {
     const schema = entry.probed?.schema ?? null;
     const hard = schema?.by_difficulty?.["hard"] ?? null;
+    const by_family = familyRollup(schema?.by_family);
     return {
       model_key: entry.model_key,
       conform_rate: schema?.conform_rate ?? null,
@@ -127,6 +203,7 @@ export function toLeaderboardRows(registry: Registry): LeaderboardRow[] {
             Object.entries(schema.by_family).map(([family, stats]) => [family, stats.samples])
           )
         : {},
+      ...(by_family ? { by_family } : {}),
       discrepancies: [...entry.discrepancies],
     };
   });

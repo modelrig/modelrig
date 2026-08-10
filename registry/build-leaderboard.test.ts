@@ -8,6 +8,7 @@ import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import {
   corpusSummary,
+  FAMILY_MIN_N,
   renderLeaderboardHtml,
   servingPathLabel,
   toLeaderboardRows,
@@ -322,5 +323,201 @@ describe("leaderboard rows carry corpus provenance", () => {
     const rows = toLeaderboardRows(registry);
     expect(rows[0].fixture_counts).toEqual({});
     expect(rows[0].families).toEqual([]);
+  });
+});
+
+describe("leaderboard rows carry a per-family view (task-type-leaderboards spec §2.1)", () => {
+  // A model probed on two families of unequal size: one above the min-n floor
+  // (rates shown, effective cost derived from the per-family mean cost), one
+  // below it (rates gated to null, samples retained so the "—" explains itself).
+  function twoFamilyRegistry(): Registry {
+    return registryWith([
+      {
+        model_key: "p/two-family",
+        declared: null,
+        probed: {
+          as_of: "2026-08-10T00:00:00.000Z",
+          source: "modelrig-probes@0.0.1",
+          schema: {
+            samples: FAMILY_MIN_N + 4,
+            parse_rate: 1,
+            conform_rate: 0.75,
+            conform_ci95: [0.5, 1],
+            value_accuracy_mean: 0.8,
+            native_rung_rate: 1,
+            mean_cost_usd: 0.002,
+            by_family: {
+              // healthy: FAMILY_MIN_N samples, conform 0.5, cost 0.002/sample
+              extraction: {
+                samples: FAMILY_MIN_N,
+                conform_rate: 0.5,
+                conform_ci95: [0.3, 0.7],
+                value_accuracy_mean: 0.9,
+                native_rung_rate: 1,
+                mean_cost_usd: 0.002,
+              },
+              // thin: below the floor → rates gated to null, samples kept
+              classification: {
+                samples: FAMILY_MIN_N - 1,
+                conform_rate: 1,
+                conform_ci95: [0.6, 1],
+                value_accuracy_mean: 1,
+                native_rung_rate: 1,
+                mean_cost_usd: 0.001,
+              },
+            },
+          },
+          grounding: null,
+          caching: null,
+        },
+        observed: null,
+        discrepancies: [],
+        callNotes: [],
+        facts: null,
+      },
+    ]);
+  }
+
+  it("rolls up conform/value-accuracy/samples and derives per-family effective cost", () => {
+    const row = toLeaderboardRows(twoFamilyRegistry())[0];
+    const extraction = row.by_family?.extraction;
+    expect(extraction?.samples).toBe(FAMILY_MIN_N);
+    expect(extraction?.conform_rate).toBe(0.5);
+    expect(extraction?.value_accuracy_mean).toBe(0.9);
+    // effective cost = mean_cost_usd / conform_rate * 1000 = 0.002 / 0.5 * 1000
+    expect(extraction?.effective_usd_per_1k_conformant).toBeCloseTo(4, 6);
+  });
+
+  it("min-n gates a thin family's rates to null but keeps its sample count", () => {
+    const row = toLeaderboardRows(twoFamilyRegistry())[0];
+    const classification = row.by_family?.classification;
+    expect(classification?.samples).toBe(FAMILY_MIN_N - 1); // count retained
+    expect(classification?.conform_rate).toBeNull(); // gated
+    expect(classification?.value_accuracy_mean).toBeNull(); // gated
+    expect(classification?.effective_usd_per_1k_conformant).toBeNull(); // no confident price on "—"
+  });
+
+  it("omits a family the model was not tested on (never a zero row)", () => {
+    const row = toLeaderboardRows(twoFamilyRegistry())[0];
+    expect(Object.keys(row.by_family ?? {}).sort()).toEqual(["classification", "extraction"]);
+    expect(row.by_family?.grounding).toBeUndefined();
+  });
+
+  it("leaves effective cost null when the probed layer predates per-family mean_cost_usd", () => {
+    // A by_family sub-summary without mean_cost_usd (legacy probed layer): rates
+    // still roll up, but cost degrades to "—" rather than being invented.
+    const registry = registryWith([
+      {
+        model_key: "p/no-cost",
+        declared: null,
+        probed: {
+          as_of: "2026-08-09T00:00:00.000Z",
+          source: "modelrig-probes@0.0.1",
+          schema: {
+            samples: FAMILY_MIN_N,
+            parse_rate: 1,
+            conform_rate: 1,
+            conform_ci95: [0.7, 1],
+            value_accuracy_mean: 1,
+            native_rung_rate: 1,
+            mean_cost_usd: 0.001,
+            by_family: {
+              extraction: {
+                samples: FAMILY_MIN_N,
+                conform_rate: 1,
+                conform_ci95: [0.7, 1],
+                value_accuracy_mean: 1,
+                native_rung_rate: 1,
+                // no mean_cost_usd
+              },
+            },
+          },
+          grounding: null,
+          caching: null,
+        },
+        observed: null,
+        discrepancies: [],
+        callNotes: [],
+        facts: null,
+      },
+    ]);
+    const row = toLeaderboardRows(registry)[0];
+    expect(row.by_family?.extraction.conform_rate).toBe(1);
+    expect(row.by_family?.extraction.effective_usd_per_1k_conformant).toBeNull();
+  });
+
+  it("leaves effective cost null for a family that conforms on zero samples (no divide-by-zero)", () => {
+    const registry = registryWith([
+      {
+        model_key: "p/zero-conform",
+        declared: null,
+        probed: {
+          as_of: "2026-08-10T00:00:00.000Z",
+          source: "modelrig-probes@0.0.1",
+          schema: {
+            samples: FAMILY_MIN_N,
+            parse_rate: 1,
+            conform_rate: 0,
+            conform_ci95: [0, 0.3],
+            value_accuracy_mean: 0,
+            native_rung_rate: 0,
+            mean_cost_usd: 0.002,
+            by_family: {
+              extraction: {
+                samples: FAMILY_MIN_N,
+                conform_rate: 0, // nothing conformed → effective cost undefined, not Infinity
+                conform_ci95: [0, 0.3],
+                value_accuracy_mean: 0,
+                native_rung_rate: 0,
+                mean_cost_usd: 0.002,
+              },
+            },
+          },
+          grounding: null,
+          caching: null,
+        },
+        observed: null,
+        discrepancies: [],
+        callNotes: [],
+        facts: null,
+      },
+    ]);
+    const stats = toLeaderboardRows(registry)[0].by_family?.extraction;
+    expect(stats?.conform_rate).toBe(0);
+    expect(stats?.effective_usd_per_1k_conformant).toBeNull(); // never Infinity/NaN
+  });
+
+  it("back-compat: a legacy schema with no by_family yields no by_family field on the row", () => {
+    const registry = registryWith([
+      {
+        model_key: "p/legacy",
+        declared: null,
+        probed: {
+          as_of: "2026-08-08T00:00:00.000Z",
+          source: "modelrig-probes@0.0.1",
+          schema: {
+            samples: 5,
+            parse_rate: 1,
+            conform_rate: 1,
+            conform_ci95: [0.5, 1],
+            value_accuracy_mean: 1,
+            native_rung_rate: 1,
+            mean_cost_usd: 0.001,
+            // no by_family
+          },
+          grounding: null,
+          caching: null,
+        },
+        observed: null,
+        discrepancies: [],
+        callNotes: [],
+        facts: null,
+      },
+    ]);
+    const row = toLeaderboardRows(registry)[0];
+    expect(row.by_family).toBeUndefined();
+    // the flat columns are untouched (back-compat)
+    expect(row.conform_rate).toBe(1);
+    expect(row.value_accuracy_mean).toBe(1);
   });
 });

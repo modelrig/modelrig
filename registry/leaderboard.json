@@ -25,47 +25,26 @@
       "demo-rig": 20,
       "probe-suite": 45
     },
+    "by_family": {
+      "demo-rig": {
+        "samples": 20,
+        "conform_rate": 1,
+        "value_accuracy_mean": 1,
+        "native_rung_rate": 0,
+        "effective_usd_per_1k_conformant": 0.04038875000000001
+      },
+      "probe-suite": {
+        "samples": 45,
+        "conform_rate": 1,
+        "value_accuracy_mean": 0.7777777777777778,
+        "native_rung_rate": 0,
+        "effective_usd_per_1k_conformant": 0.047790555555555565
+      }
+    },
     "discrepancies": [
       {
         "kind": "undeclared_schema_capable",
         "message": "no declared schema support, but probed conformance is 100% — capability exists undeclared"
-      }
-    ]
-  },
-  {
-    "model_key": "deepseek/deepseek-chat",
-    "conform_rate": 0.9846153846153847,
-    "conform_ci95": [
-      0.9178671527044854,
-      0.9972790553979766
-    ],
-    "value_accuracy_mean": 0.921875,
-    "native_rung_rate": 0,
-    "hard_conform_rate": 1,
-    "hard_value_accuracy_mean": 0.6666666666666666,
-    "hard_samples": 15,
-    "hard_native_rung_rate": 0,
-    "effective_usd_per_1k_conformant": 0.06047343750000004,
-    "grounded_rate": 0.9333333333333333,
-    "cache_hit_rate": 1,
-    "samples": 65,
-    "as_of": "2026-08-10T15:05:08.390Z",
-    "families": [
-      "demo-rig",
-      "probe-suite"
-    ],
-    "fixture_counts": {
-      "demo-rig": 20,
-      "probe-suite": 45
-    },
-    "discrepancies": [
-      {
-        "kind": "schema_served_via_json_mode",
-        "message": "declared supports_response_schema, but every probed sample was served via json_mode coaching — no native strict enforcement exists on this serving path (the json_object-vs-schema gap)"
-      },
-      {
-        "kind": "citations_without_declared_search",
-        "message": "no declared web-search support, but 93% of probed answers cited URLs — verify whether these are real or fabricated sources"
       }
     ]
   },
@@ -94,6 +73,22 @@
     "fixture_counts": {
       "demo-rig": 20,
       "probe-suite": 45
+    },
+    "by_family": {
+      "demo-rig": {
+        "samples": 20,
+        "conform_rate": 1,
+        "value_accuracy_mean": 1,
+        "native_rung_rate": 0,
+        "effective_usd_per_1k_conformant": 0.04642
+      },
+      "probe-suite": {
+        "samples": 45,
+        "conform_rate": 0.8888888888888888,
+        "value_accuracy_mean": 0.9875,
+        "native_rung_rate": 0,
+        "effective_usd_per_1k_conformant": 0.06940500000000001
+      }
     },
     "discrepancies": [
       {
@@ -132,10 +127,79 @@
       "demo-rig": 20,
       "probe-suite": 45
     },
+    "by_family": {
+      "demo-rig": {
+        "samples": 20,
+        "conform_rate": 1,
+        "value_accuracy_mean": 1,
+        "native_rung_rate": 0,
+        "effective_usd_per_1k_conformant": 0.07696700000000002
+      },
+      "probe-suite": {
+        "samples": 45,
+        "conform_rate": 1,
+        "value_accuracy_mean": 0.9444444444444444,
+        "native_rung_rate": 0,
+        "effective_usd_per_1k_conformant": 0.08619666666666669
+      }
+    },
     "discrepancies": [
       {
         "kind": "undeclared_schema_capable",
         "message": "no declared schema support, but probed conformance is 100% — capability exists undeclared"
+      }
+    ]
+  },
+  {
+    "model_key": "deepseek/deepseek-chat",
+    "conform_rate": 1,
+    "conform_ci95": [
+      0.9286524008666414,
+      1
+    ],
+    "value_accuracy_mean": 1,
+    "native_rung_rate": 0,
+    "hard_conform_rate": null,
+    "hard_value_accuracy_mean": null,
+    "hard_samples": 0,
+    "hard_native_rung_rate": null,
+    "effective_usd_per_1k_conformant": 0.08656032,
+    "grounded_rate": 0.9333333333333333,
+    "cache_hit_rate": 1,
+    "samples": 50,
+    "as_of": "2026-08-08T23:01:20.994Z",
+    "families": [
+      "demo-rig",
+      "probe-suite"
+    ],
+    "fixture_counts": {
+      "demo-rig": 20,
+      "probe-suite": 30
+    },
+    "by_family": {
+      "demo-rig": {
+        "samples": 20,
+        "conform_rate": 1,
+        "value_accuracy_mean": 1,
+        "native_rung_rate": 0,
+        "effective_usd_per_1k_conformant": 0.061124000000000005
+      },
+      "probe-suite": {
+        "samples": 30,
+        "conform_rate": 1,
+        "value_accuracy_mean": 1,
+        "native_rung_rate": 0,
+        "effective_usd_per_1k_conformant": 0.10351786666666671
+      }
+    },
+    "discrepancies": [
+      {
+        "kind": "schema_served_via_json_mode",
+        "message": "declared supports_response_schema, but every probed sample was served via json_mode coaching — no native strict enforcement exists on this serving path (the json_object-vs-schema gap)"
+      },
+      {
+        "kind": "citations_without_declared_search",
+        "message": "no declared web-search support, but 93% of probed answers cited URLs — verify whether these are real or fabricated sources"
       }
     ]
   },
@@ -163,6 +227,15 @@
     "fixture_counts": {
       "probe-suite": 30
     },
+    "by_family": {
+      "probe-suite": {
+        "samples": 30,
+        "conform_rate": 1,
+        "value_accuracy_mean": 1,
+        "native_rung_rate": 1,
+        "effective_usd_per_1k_conformant": 0.10421333333333337
+      }
+    },
     "discrepancies": [
       {
         "kind": "declared_search_ungrounded",
@@ -174,27 +247,43 @@
     "model_key": "deepseek/deepseek-reasoner",
     "conform_rate": 1,
     "conform_ci95": [
-      0.9441984686771432,
+      0.9286524008666414,
       1
     ],
     "value_accuracy_mean": 1,
     "native_rung_rate": 0,
-    "hard_conform_rate": 1,
-    "hard_value_accuracy_mean": 1,
-    "hard_samples": 15,
-    "hard_native_rung_rate": 0,
-    "effective_usd_per_1k_conformant": 0.11366449230769231,
+    "hard_conform_rate": null,
+    "hard_value_accuracy_mean": null,
+    "hard_samples": 0,
+    "hard_native_rung_rate": null,
+    "effective_usd_per_1k_conformant": 0.1357888,
     "grounded_rate": 0.8666666666666667,
     "cache_hit_rate": 1,
-    "samples": 65,
-    "as_of": "2026-08-10T15:07:43.953Z",
+    "samples": 50,
+    "as_of": "2026-08-08T23:03:26.251Z",
     "families": [
       "demo-rig",
       "probe-suite"
     ],
     "fixture_counts": {
       "demo-rig": 20,
-      "probe-suite": 45
+      "probe-suite": 30
+    },
+    "by_family": {
+      "demo-rig": {
+        "samples": 20,
+        "conform_rate": 1,
+        "value_accuracy_mean": 1,
+        "native_rung_rate": 0,
+        "effective_usd_per_1k_conformant": 0.11497080000000003
+      },
+      "probe-suite": {
+        "samples": 30,
+        "conform_rate": 1,
+        "value_accuracy_mean": 1,
+        "native_rung_rate": 0,
+        "effective_usd_per_1k_conformant": 0.1496674666666667
+      }
     },
     "discrepancies": [
       {
@@ -233,6 +322,22 @@
       "demo-rig": 20,
       "probe-suite": 45
     },
+    "by_family": {
+      "demo-rig": {
+        "samples": 20,
+        "conform_rate": 1,
+        "value_accuracy_mean": 1,
+        "native_rung_rate": 0,
+        "effective_usd_per_1k_conformant": 0.14646
+      },
+      "probe-suite": {
+        "samples": 45,
+        "conform_rate": 1,
+        "value_accuracy_mean": 1,
+        "native_rung_rate": 0,
+        "effective_usd_per_1k_conformant": 0.1562266666666667
+      }
+    },
     "discrepancies": [
       {
         "kind": "undeclared_schema_capable",
@@ -266,6 +371,22 @@
       "demo-rig": 20,
       "probe-suite": 45
     },
+    "by_family": {
+      "demo-rig": {
+        "samples": 20,
+        "conform_rate": 1,
+        "value_accuracy_mean": 1,
+        "native_rung_rate": 0,
+        "effective_usd_per_1k_conformant": 0.13442250000000003
+      },
+      "probe-suite": {
+        "samples": 45,
+        "conform_rate": 1,
+        "value_accuracy_mean": 0.9777777777777777,
+        "native_rung_rate": 0,
+        "effective_usd_per_1k_conformant": 0.16513777777777777
+      }
+    },
     "discrepancies": [
       {
         "kind": "undeclared_schema_capable",
@@ -276,34 +397,6 @@
         "message": "no declared web-search support, but 100% of probed answers cited URLs — verify whether these are real or fabricated sources"
       }
     ]
-  },
-  {
-    "model_key": "openai/gpt-5.4-nano",
-    "conform_rate": 1,
-    "conform_ci95": [
-      0.9441984686771432,
-      1
-    ],
-    "value_accuracy_mean": 0.8615384615384616,
-    "native_rung_rate": 1,
-    "hard_conform_rate": 1,
-    "hard_value_accuracy_mean": 0.4,
-    "hard_samples": 15,
-    "hard_native_rung_rate": 1,
-    "effective_usd_per_1k_conformant": 0.1596076923076924,
-    "grounded_rate": 0.5333333333333333,
-    "cache_hit_rate": 1,
-    "samples": 65,
-    "as_of": "2026-08-10T15:52:07.525Z",
-    "families": [
-      "demo-rig",
-      "probe-suite"
-    ],
-    "fixture_counts": {
-      "demo-rig": 20,
-      "probe-suite": 45
-    },
-    "discrepancies": []
   },
   {
     "model_key": "deepinfra/meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
@@ -331,6 +424,22 @@
       "demo-rig": 20,
       "probe-suite": 45
     },
+    "by_family": {
+      "demo-rig": {
+        "samples": 20,
+        "conform_rate": 1,
+        "value_accuracy_mean": 1,
+        "native_rung_rate": 0,
+        "effective_usd_per_1k_conformant": 0.08545500000000002
+      },
+      "probe-suite": {
+        "samples": 45,
+        "conform_rate": 0.6666666666666666,
+        "value_accuracy_mean": 1,
+        "native_rung_rate": 0,
+        "effective_usd_per_1k_conformant": 0.21008499999999994
+      }
+    },
     "discrepancies": [
       {
         "kind": "citations_without_declared_search",
@@ -339,37 +448,48 @@
     ]
   },
   {
-    "model_key": "gemini/gemini-3.1-flash-lite",
+    "model_key": "openai/gpt-5.4-nano",
     "conform_rate": 1,
     "conform_ci95": [
-      0.9441984686771432,
+      0.9286524008666414,
       1
     ],
     "value_accuracy_mean": 1,
     "native_rung_rate": 1,
-    "hard_conform_rate": 1,
-    "hard_value_accuracy_mean": 1,
-    "hard_samples": 15,
-    "hard_native_rung_rate": 1,
-    "effective_usd_per_1k_conformant": 0.19593461538461546,
-    "grounded_rate": 1,
-    "cache_hit_rate": 0,
-    "samples": 65,
-    "as_of": "2026-08-10T15:33:13.033Z",
+    "hard_conform_rate": null,
+    "hard_value_accuracy_mean": null,
+    "hard_samples": 0,
+    "hard_native_rung_rate": null,
+    "effective_usd_per_1k_conformant": 0.18238500000000005,
+    "grounded_rate": 0.5333333333333333,
+    "cache_hit_rate": 1,
+    "samples": 50,
+    "as_of": "2026-08-09T03:18:40.821Z",
     "families": [
       "demo-rig",
       "probe-suite"
     ],
     "fixture_counts": {
       "demo-rig": 20,
-      "probe-suite": 45
+      "probe-suite": 30
     },
-    "discrepancies": [
-      {
-        "kind": "declared_caching_unrealized",
-        "message": "declared supports_prompt_caching, but no probed repeat call reported cached tokens"
+    "by_family": {
+      "demo-rig": {
+        "samples": 20,
+        "conform_rate": 1,
+        "value_accuracy_mean": 1,
+        "native_rung_rate": 1,
+        "effective_usd_per_1k_conformant": 0.12787500000000002
+      },
+      "probe-suite": {
+        "samples": 30,
+        "conform_rate": 1,
+        "value_accuracy_mean": 1,
+        "native_rung_rate": 1,
+        "effective_usd_per_1k_conformant": 0.218725
       }
-    ]
+    },
+    "discrepancies": []
   },
   {
     "model_key": "deepinfra/Qwen/Qwen3-Coder-480B-A35B-Instruct-Turbo",
@@ -397,6 +517,22 @@
       "demo-rig": 20,
       "probe-suite": 45
     },
+    "by_family": {
+      "demo-rig": {
+        "samples": 20,
+        "conform_rate": 1,
+        "value_accuracy_mean": 1,
+        "native_rung_rate": 0,
+        "effective_usd_per_1k_conformant": 0.18257500000000002
+      },
+      "probe-suite": {
+        "samples": 45,
+        "conform_rate": 1,
+        "value_accuracy_mean": 0.8888888888888888,
+        "native_rung_rate": 0,
+        "effective_usd_per_1k_conformant": 0.21672555555555553
+      }
+    },
     "discrepancies": [
       {
         "kind": "undeclared_schema_capable",
@@ -409,30 +545,95 @@
     ]
   },
   {
-    "model_key": "fireworks/gpt-oss-120b",
+    "model_key": "gemini/gemini-3.1-flash-lite",
     "conform_rate": 1,
     "conform_ci95": [
-      0.9441984686771432,
+      0.9286524008666414,
       1
     ],
     "value_accuracy_mean": 1,
-    "native_rung_rate": 0,
-    "hard_conform_rate": 1,
-    "hard_value_accuracy_mean": 1,
-    "hard_samples": 15,
-    "hard_native_rung_rate": 0,
-    "effective_usd_per_1k_conformant": 0.21870623076923082,
-    "grounded_rate": 0.26666666666666666,
-    "cache_hit_rate": 1,
-    "samples": 65,
-    "as_of": "2026-08-10T15:19:48.371Z",
+    "native_rung_rate": 1,
+    "hard_conform_rate": null,
+    "hard_value_accuracy_mean": null,
+    "hard_samples": 0,
+    "hard_native_rung_rate": null,
+    "effective_usd_per_1k_conformant": 0.2299050000000001,
+    "grounded_rate": 1,
+    "cache_hit_rate": 0,
+    "samples": 50,
+    "as_of": "2026-08-09T03:46:07.456Z",
     "families": [
       "demo-rig",
       "probe-suite"
     ],
     "fixture_counts": {
       "demo-rig": 20,
-      "probe-suite": 45
+      "probe-suite": 30
+    },
+    "by_family": {
+      "demo-rig": {
+        "samples": 20,
+        "conform_rate": 1,
+        "value_accuracy_mean": 1,
+        "native_rung_rate": 1,
+        "effective_usd_per_1k_conformant": 0.15653750000000002
+      },
+      "probe-suite": {
+        "samples": 30,
+        "conform_rate": 1,
+        "value_accuracy_mean": 1,
+        "native_rung_rate": 1,
+        "effective_usd_per_1k_conformant": 0.2788166666666668
+      }
+    },
+    "discrepancies": [
+      {
+        "kind": "declared_caching_unrealized",
+        "message": "declared supports_prompt_caching, but no probed repeat call reported cached tokens"
+      }
+    ]
+  },
+  {
+    "model_key": "fireworks/gpt-oss-120b",
+    "conform_rate": 1,
+    "conform_ci95": [
+      0.9286524008666414,
+      1
+    ],
+    "value_accuracy_mean": 0.995,
+    "native_rung_rate": 0,
+    "hard_conform_rate": null,
+    "hard_value_accuracy_mean": null,
+    "hard_samples": 0,
+    "hard_native_rung_rate": null,
+    "effective_usd_per_1k_conformant": 0.24279450000000002,
+    "grounded_rate": 0.26666666666666666,
+    "cache_hit_rate": 1,
+    "samples": 50,
+    "as_of": "2026-08-09T18:54:14.906Z",
+    "families": [
+      "demo-rig",
+      "probe-suite"
+    ],
+    "fixture_counts": {
+      "demo-rig": 20,
+      "probe-suite": 30
+    },
+    "by_family": {
+      "demo-rig": {
+        "samples": 20,
+        "conform_rate": 1,
+        "value_accuracy_mean": 0.9875,
+        "native_rung_rate": 0,
+        "effective_usd_per_1k_conformant": 0.24215850000000003
+      },
+      "probe-suite": {
+        "samples": 30,
+        "conform_rate": 1,
+        "value_accuracy_mean": 1,
+        "native_rung_rate": 0,
+        "effective_usd_per_1k_conformant": 0.24321849999999995
+      }
     },
     "discrepancies": [
       {
@@ -467,6 +668,22 @@
       "demo-rig": 20,
       "probe-suite": 45
     },
+    "by_family": {
+      "demo-rig": {
+        "samples": 20,
+        "conform_rate": 1,
+        "value_accuracy_mean": 1,
+        "native_rung_rate": 0,
+        "effective_usd_per_1k_conformant": 0.35827000000000003
+      },
+      "probe-suite": {
+        "samples": 45,
+        "conform_rate": 1,
+        "value_accuracy_mean": 1,
+        "native_rung_rate": 0,
+        "effective_usd_per_1k_conformant": 0.45531333333333346
+      }
+    },
     "discrepancies": [
       {
         "kind": "undeclared_schema_capable",
@@ -477,34 +694,6 @@
         "message": "no declared web-search support, but 73% of probed answers cited URLs — verify whether these are real or fabricated sources"
       }
     ]
-  },
-  {
-    "model_key": "openai/gpt-5.4-mini",
-    "conform_rate": 1,
-    "conform_ci95": [
-      0.9441984686771432,
-      1
-    ],
-    "value_accuracy_mean": 1,
-    "native_rung_rate": 1,
-    "hard_conform_rate": 1,
-    "hard_value_accuracy_mean": 1,
-    "hard_samples": 15,
-    "hard_native_rung_rate": 1,
-    "effective_usd_per_1k_conformant": 0.4975153846153846,
-    "grounded_rate": 0.8666666666666667,
-    "cache_hit_rate": 1,
-    "samples": 65,
-    "as_of": "2026-08-10T15:50:36.230Z",
-    "families": [
-      "demo-rig",
-      "probe-suite"
-    ],
-    "fixture_counts": {
-      "demo-rig": 20,
-      "probe-suite": 45
-    },
-    "discrepancies": []
   },
   {
     "model_key": "grok/grok-4.3",
@@ -530,6 +719,15 @@
     "fixture_counts": {
       "probe-suite": 30
     },
+    "by_family": {
+      "probe-suite": {
+        "samples": 30,
+        "conform_rate": 1,
+        "value_accuracy_mean": 1,
+        "native_rung_rate": 1,
+        "effective_usd_per_1k_conformant": 0.5436599999999999
+      }
+    },
     "discrepancies": [
       {
         "kind": "declared_search_ungrounded",
@@ -538,30 +736,90 @@
     ]
   },
   {
-    "model_key": "openai/gpt-5-mini",
+    "model_key": "openai/gpt-5.4-mini",
     "conform_rate": 1,
     "conform_ci95": [
-      0.9441984686771432,
+      0.9286524008666414,
       1
     ],
-    "value_accuracy_mean": 1,
+    "value_accuracy_mean": 0.99,
     "native_rung_rate": 1,
-    "hard_conform_rate": 1,
-    "hard_value_accuracy_mean": 1,
-    "hard_samples": 15,
-    "hard_native_rung_rate": 1,
-    "effective_usd_per_1k_conformant": 0.7096538461538465,
-    "grounded_rate": 0.5333333333333333,
+    "hard_conform_rate": null,
+    "hard_value_accuracy_mean": null,
+    "hard_samples": 0,
+    "hard_native_rung_rate": null,
+    "effective_usd_per_1k_conformant": 0.5780550000000003,
+    "grounded_rate": 0.8666666666666667,
     "cache_hit_rate": 1,
-    "samples": 65,
-    "as_of": "2026-08-10T15:46:57.533Z",
+    "samples": 50,
+    "as_of": "2026-08-09T03:17:28.861Z",
     "families": [
       "demo-rig",
       "probe-suite"
     ],
     "fixture_counts": {
       "demo-rig": 20,
-      "probe-suite": 45
+      "probe-suite": 30
+    },
+    "by_family": {
+      "demo-rig": {
+        "samples": 20,
+        "conform_rate": 1,
+        "value_accuracy_mean": 1,
+        "native_rung_rate": 1,
+        "effective_usd_per_1k_conformant": 0.44557500000000005
+      },
+      "probe-suite": {
+        "samples": 30,
+        "conform_rate": 1,
+        "value_accuracy_mean": 0.9833333333333333,
+        "native_rung_rate": 1,
+        "effective_usd_per_1k_conformant": 0.6663750000000002
+      }
+    },
+    "discrepancies": []
+  },
+  {
+    "model_key": "openai/gpt-5-mini",
+    "conform_rate": 1,
+    "conform_ci95": [
+      0.9286524008666414,
+      1
+    ],
+    "value_accuracy_mean": 1,
+    "native_rung_rate": 1,
+    "hard_conform_rate": null,
+    "hard_value_accuracy_mean": null,
+    "hard_samples": 0,
+    "hard_native_rung_rate": null,
+    "effective_usd_per_1k_conformant": 0.7078349999999999,
+    "grounded_rate": 0.5333333333333333,
+    "cache_hit_rate": 1,
+    "samples": 50,
+    "as_of": "2026-08-09T03:35:51.600Z",
+    "families": [
+      "demo-rig",
+      "probe-suite"
+    ],
+    "fixture_counts": {
+      "demo-rig": 20,
+      "probe-suite": 30
+    },
+    "by_family": {
+      "demo-rig": {
+        "samples": 20,
+        "conform_rate": 1,
+        "value_accuracy_mean": 1,
+        "native_rung_rate": 1,
+        "effective_usd_per_1k_conformant": 0.5651999999999999
+      },
+      "probe-suite": {
+        "samples": 30,
+        "conform_rate": 1,
+        "value_accuracy_mean": 1,
+        "native_rung_rate": 1,
+        "effective_usd_per_1k_conformant": 0.8029249999999996
+      }
     },
     "discrepancies": []
   },
@@ -590,6 +848,22 @@
     "fixture_counts": {
       "demo-rig": 20,
       "probe-suite": 45
+    },
+    "by_family": {
+      "demo-rig": {
+        "samples": 20,
+        "conform_rate": 1,
+        "value_accuracy_mean": 0.9875,
+        "native_rung_rate": 0,
+        "effective_usd_per_1k_conformant": 1.0186450000000002
+      },
+      "probe-suite": {
+        "samples": 45,
+        "conform_rate": 1,
+        "value_accuracy_mean": 1,
+        "native_rung_rate": 0,
+        "effective_usd_per_1k_conformant": 1.0390800000000002
+      }
     },
     "discrepancies": [
       {
@@ -624,6 +898,22 @@
       "demo-rig": 20,
       "probe-suite": 45
     },
+    "by_family": {
+      "demo-rig": {
+        "samples": 20,
+        "conform_rate": 1,
+        "value_accuracy_mean": 1,
+        "native_rung_rate": 0,
+        "effective_usd_per_1k_conformant": 0.99178
+      },
+      "probe-suite": {
+        "samples": 45,
+        "conform_rate": 1,
+        "value_accuracy_mean": 0.9777777777777777,
+        "native_rung_rate": 0,
+        "effective_usd_per_1k_conformant": 1.1193555555555557
+      }
+    },
     "discrepancies": [
       {
         "kind": "undeclared_schema_capable",
@@ -635,66 +925,45 @@
     "model_key": "gemini/gemini-2.5-flash",
     "conform_rate": 1,
     "conform_ci95": [
-      0.9441984686771432,
+      0.9286524008666414,
       1
     ],
     "value_accuracy_mean": 1,
     "native_rung_rate": 1,
-    "hard_conform_rate": 1,
-    "hard_value_accuracy_mean": 1,
-    "hard_samples": 15,
-    "hard_native_rung_rate": 1,
-    "effective_usd_per_1k_conformant": 1.2367307692307692,
+    "hard_conform_rate": null,
+    "hard_value_accuracy_mean": null,
+    "hard_samples": 0,
+    "hard_native_rung_rate": null,
+    "effective_usd_per_1k_conformant": 1.2050699999999999,
     "grounded_rate": 0.6666666666666666,
     "cache_hit_rate": 0.6,
-    "samples": 65,
-    "as_of": "2026-08-10T15:28:26.443Z",
+    "samples": 50,
+    "as_of": "2026-08-09T03:38:38.000Z",
     "families": [
       "demo-rig",
       "probe-suite"
     ],
     "fixture_counts": {
       "demo-rig": 20,
-      "probe-suite": 45
+      "probe-suite": 30
+    },
+    "by_family": {
+      "demo-rig": {
+        "samples": 20,
+        "conform_rate": 1,
+        "value_accuracy_mean": 1,
+        "native_rung_rate": 1,
+        "effective_usd_per_1k_conformant": 0.7664500000000001
+      },
+      "probe-suite": {
+        "samples": 30,
+        "conform_rate": 1,
+        "value_accuracy_mean": 1,
+        "native_rung_rate": 1,
+        "effective_usd_per_1k_conformant": 1.4974833333333335
+      }
     },
     "discrepancies": []
-  },
-  {
-    "model_key": "deepinfra/zai-org/GLM-5.2",
-    "conform_rate": 1,
-    "conform_ci95": [
-      0.9441984686771432,
-      1
-    ],
-    "value_accuracy_mean": 1,
-    "native_rung_rate": 0,
-    "hard_conform_rate": 1,
-    "hard_value_accuracy_mean": 1,
-    "hard_samples": 15,
-    "hard_native_rung_rate": 0,
-    "effective_usd_per_1k_conformant": 1.259584615384615,
-    "grounded_rate": 0.6,
-    "cache_hit_rate": 1,
-    "samples": 65,
-    "as_of": "2026-08-10T15:03:19.686Z",
-    "families": [
-      "demo-rig",
-      "probe-suite"
-    ],
-    "fixture_counts": {
-      "demo-rig": 20,
-      "probe-suite": 45
-    },
-    "discrepancies": [
-      {
-        "kind": "undeclared_schema_capable",
-        "message": "no declared schema support, but probed conformance is 100% — capability exists undeclared"
-      },
-      {
-        "kind": "citations_without_declared_search",
-        "message": "no declared web-search support, but 60% of probed answers cited URLs — verify whether these are real or fabricated sources"
-      }
-    ]
   },
   {
     "model_key": "grok/grok-4.5",
@@ -720,6 +989,15 @@
     "fixture_counts": {
       "probe-suite": 30
     },
+    "by_family": {
+      "probe-suite": {
+        "samples": 30,
+        "conform_rate": 1,
+        "value_accuracy_mean": 1,
+        "native_rung_rate": 1,
+        "effective_usd_per_1k_conformant": 1.2777999999999998
+      }
+    },
     "discrepancies": [
       {
         "kind": "declared_search_ungrounded",
@@ -728,35 +1006,55 @@
     ]
   },
   {
-    "model_key": "openai/gpt-5.2",
+    "model_key": "deepinfra/zai-org/GLM-5.2",
     "conform_rate": 1,
     "conform_ci95": [
-      0.9441984686771432,
+      0.9286524008666414,
       1
     ],
     "value_accuracy_mean": 1,
-    "native_rung_rate": 1,
-    "hard_conform_rate": 1,
-    "hard_value_accuracy_mean": 1,
-    "hard_samples": 15,
-    "hard_native_rung_rate": 1,
-    "effective_usd_per_1k_conformant": 1.5156076923076924,
-    "grounded_rate": 0.13333333333333333,
+    "native_rung_rate": 0,
+    "hard_conform_rate": null,
+    "hard_value_accuracy_mean": null,
+    "hard_samples": 0,
+    "hard_native_rung_rate": null,
+    "effective_usd_per_1k_conformant": 1.5530640000000004,
+    "grounded_rate": 0.6,
     "cache_hit_rate": 1,
-    "samples": 65,
-    "as_of": "2026-08-10T15:49:15.851Z",
+    "samples": 50,
+    "as_of": "2026-08-09T15:58:53.460Z",
     "families": [
       "demo-rig",
       "probe-suite"
     ],
     "fixture_counts": {
       "demo-rig": 20,
-      "probe-suite": 45
+      "probe-suite": 30
+    },
+    "by_family": {
+      "demo-rig": {
+        "samples": 20,
+        "conform_rate": 1,
+        "value_accuracy_mean": 1,
+        "native_rung_rate": 0,
+        "effective_usd_per_1k_conformant": 1.2357224999999998
+      },
+      "probe-suite": {
+        "samples": 30,
+        "conform_rate": 1,
+        "value_accuracy_mean": 1,
+        "native_rung_rate": 0,
+        "effective_usd_per_1k_conformant": 1.7646249999999999
+      }
     },
     "discrepancies": [
       {
-        "kind": "declared_search_ungrounded",
-        "message": "declared supports_web_search, but only 13% of probed answers carried citations (bar: 50%)"
+        "kind": "undeclared_schema_capable",
+        "message": "no declared schema support, but probed conformance is 100% — capability exists undeclared"
+      },
+      {
+        "kind": "citations_without_declared_search",
+        "message": "no declared web-search support, but 60% of probed answers cited URLs — verify whether these are real or fabricated sources"
       }
     ]
   },
@@ -786,6 +1084,22 @@
       "demo-rig": 20,
       "probe-suite": 45
     },
+    "by_family": {
+      "demo-rig": {
+        "samples": 20,
+        "conform_rate": 1,
+        "value_accuracy_mean": 1,
+        "native_rung_rate": 1,
+        "effective_usd_per_1k_conformant": 1.6557500000000003
+      },
+      "probe-suite": {
+        "samples": 45,
+        "conform_rate": 1,
+        "value_accuracy_mean": 0.6888888888888889,
+        "native_rung_rate": 1,
+        "effective_usd_per_1k_conformant": 1.7787777777777773
+      }
+    },
     "discrepancies": [
       {
         "kind": "citations_without_declared_search",
@@ -798,30 +1112,144 @@
     ]
   },
   {
-    "model_key": "fireworks/glm-5p2",
+    "model_key": "openai/gpt-5.2",
     "conform_rate": 1,
     "conform_ci95": [
-      0.9441984686771432,
+      0.9286524008666414,
       1
     ],
     "value_accuracy_mean": 1,
-    "native_rung_rate": 0,
-    "hard_conform_rate": 1,
-    "hard_value_accuracy_mean": 1,
-    "hard_samples": 15,
-    "hard_native_rung_rate": 0,
-    "effective_usd_per_1k_conformant": 2.0838861538461533,
-    "grounded_rate": 0.7333333333333333,
+    "native_rung_rate": 1,
+    "hard_conform_rate": null,
+    "hard_value_accuracy_mean": null,
+    "hard_samples": 0,
+    "hard_native_rung_rate": null,
+    "effective_usd_per_1k_conformant": 1.7995250000000005,
+    "grounded_rate": 0.13333333333333333,
     "cache_hit_rate": 1,
-    "samples": 65,
-    "as_of": "2026-08-10T15:17:27.672Z",
+    "samples": 50,
+    "as_of": "2026-08-09T03:16:27.814Z",
     "families": [
       "demo-rig",
       "probe-suite"
     ],
     "fixture_counts": {
       "demo-rig": 20,
-      "probe-suite": 45
+      "probe-suite": 30
+    },
+    "by_family": {
+      "demo-rig": {
+        "samples": 20,
+        "conform_rate": 1,
+        "value_accuracy_mean": 1,
+        "native_rung_rate": 1,
+        "effective_usd_per_1k_conformant": 1.3531
+      },
+      "probe-suite": {
+        "samples": 30,
+        "conform_rate": 1,
+        "value_accuracy_mean": 1,
+        "native_rung_rate": 1,
+        "effective_usd_per_1k_conformant": 2.097141666666665
+      }
+    },
+    "discrepancies": [
+      {
+        "kind": "declared_search_ungrounded",
+        "message": "declared supports_web_search, but only 13% of probed answers carried citations (bar: 50%)"
+      }
+    ]
+  },
+  {
+    "model_key": "gemini/gemini-3-flash-preview",
+    "conform_rate": 0.98,
+    "conform_ci95": [
+      0.8950455641036219,
+      0.9964607407283539
+    ],
+    "value_accuracy_mean": 0.9948979591836735,
+    "native_rung_rate": 1,
+    "hard_conform_rate": null,
+    "hard_value_accuracy_mean": null,
+    "hard_samples": 0,
+    "hard_native_rung_rate": null,
+    "effective_usd_per_1k_conformant": 2.500948979591836,
+    "grounded_rate": 1,
+    "cache_hit_rate": 0,
+    "samples": 50,
+    "as_of": "2026-08-09T03:45:14.155Z",
+    "families": [
+      "demo-rig",
+      "probe-suite"
+    ],
+    "fixture_counts": {
+      "demo-rig": 20,
+      "probe-suite": 30
+    },
+    "by_family": {
+      "demo-rig": {
+        "samples": 20,
+        "conform_rate": 1,
+        "value_accuracy_mean": 0.9875,
+        "native_rung_rate": 1,
+        "effective_usd_per_1k_conformant": 2.134375
+      },
+      "probe-suite": {
+        "samples": 30,
+        "conform_rate": 0.9666666666666667,
+        "value_accuracy_mean": 1,
+        "native_rung_rate": 1,
+        "effective_usd_per_1k_conformant": 2.7537586206896543
+      }
+    },
+    "discrepancies": [
+      {
+        "kind": "declared_caching_unrealized",
+        "message": "declared supports_prompt_caching, but no probed repeat call reported cached tokens"
+      }
+    ]
+  },
+  {
+    "model_key": "fireworks/glm-5p2",
+    "conform_rate": 0.98,
+    "conform_ci95": [
+      0.8950455641036219,
+      0.9964607407283539
+    ],
+    "value_accuracy_mean": 1,
+    "native_rung_rate": 0,
+    "hard_conform_rate": null,
+    "hard_value_accuracy_mean": null,
+    "hard_samples": 0,
+    "hard_native_rung_rate": null,
+    "effective_usd_per_1k_conformant": 2.7038220408163265,
+    "grounded_rate": 0.7333333333333333,
+    "cache_hit_rate": 1,
+    "samples": 50,
+    "as_of": "2026-08-09T15:18:21.645Z",
+    "families": [
+      "demo-rig",
+      "probe-suite"
+    ],
+    "fixture_counts": {
+      "demo-rig": 20,
+      "probe-suite": 30
+    },
+    "by_family": {
+      "demo-rig": {
+        "samples": 20,
+        "conform_rate": 1,
+        "value_accuracy_mean": 1,
+        "native_rung_rate": 0,
+        "effective_usd_per_1k_conformant": 2.087974
+      },
+      "probe-suite": {
+        "samples": 30,
+        "conform_rate": 0.9666666666666667,
+        "value_accuracy_mean": 1,
+        "native_rung_rate": 0,
+        "effective_usd_per_1k_conformant": 3.1285448275862073
+      }
     },
     "discrepancies": [
       {
@@ -831,39 +1259,6 @@
       {
         "kind": "citations_without_declared_search",
         "message": "no declared web-search support, but 73% of probed answers cited URLs — verify whether these are real or fabricated sources"
-      }
-    ]
-  },
-  {
-    "model_key": "gemini/gemini-3-flash-preview",
-    "conform_rate": 1,
-    "conform_ci95": [
-      0.9441984686771432,
-      1
-    ],
-    "value_accuracy_mean": 1,
-    "native_rung_rate": 1,
-    "hard_conform_rate": 1,
-    "hard_value_accuracy_mean": 1,
-    "hard_samples": 15,
-    "hard_native_rung_rate": 1,
-    "effective_usd_per_1k_conformant": 2.3001461538461543,
-    "grounded_rate": 1,
-    "cache_hit_rate": 0,
-    "samples": 65,
-    "as_of": "2026-08-10T15:32:17.588Z",
-    "families": [
-      "demo-rig",
-      "probe-suite"
-    ],
-    "fixture_counts": {
-      "demo-rig": 20,
-      "probe-suite": 45
-    },
-    "discrepancies": [
-      {
-        "kind": "declared_caching_unrealized",
-        "message": "declared supports_prompt_caching, but no probed repeat call reported cached tokens"
       }
     ]
   },
@@ -892,6 +1287,22 @@
     "fixture_counts": {
       "demo-rig": 20,
       "probe-suite": 45
+    },
+    "by_family": {
+      "demo-rig": {
+        "samples": 20,
+        "conform_rate": 1,
+        "value_accuracy_mean": 1,
+        "native_rung_rate": 0,
+        "effective_usd_per_1k_conformant": 2.8095375
+      },
+      "probe-suite": {
+        "samples": 45,
+        "conform_rate": 1,
+        "value_accuracy_mean": 1,
+        "native_rung_rate": 0,
+        "effective_usd_per_1k_conformant": 2.749755555555556
+      }
     },
     "discrepancies": [
       {
@@ -926,6 +1337,22 @@
       "demo-rig": 20,
       "probe-suite": 45
     },
+    "by_family": {
+      "demo-rig": {
+        "samples": 20,
+        "conform_rate": 1,
+        "value_accuracy_mean": 1,
+        "native_rung_rate": 1,
+        "effective_usd_per_1k_conformant": 3.692499999999999
+      },
+      "probe-suite": {
+        "samples": 45,
+        "conform_rate": 1,
+        "value_accuracy_mean": 0.9666666666666667,
+        "native_rung_rate": 1,
+        "effective_usd_per_1k_conformant": 4.005111111111112
+      }
+    },
     "discrepancies": [
       {
         "kind": "citations_without_declared_search",
@@ -941,27 +1368,43 @@
     "model_key": "fireworks/kimi-k3",
     "conform_rate": 1,
     "conform_ci95": [
-      0.9441984686771432,
+      0.9286524008666414,
       1
     ],
-    "value_accuracy_mean": 0.9923076923076923,
+    "value_accuracy_mean": 1,
     "native_rung_rate": 0,
-    "hard_conform_rate": 1,
-    "hard_value_accuracy_mean": 1,
-    "hard_samples": 15,
-    "hard_native_rung_rate": 0,
-    "effective_usd_per_1k_conformant": 4.027246153846153,
+    "hard_conform_rate": null,
+    "hard_value_accuracy_mean": null,
+    "hard_samples": 0,
+    "hard_native_rung_rate": null,
+    "effective_usd_per_1k_conformant": 3.9807420000000007,
     "grounded_rate": 0.7333333333333333,
     "cache_hit_rate": 1,
-    "samples": 65,
-    "as_of": "2026-08-10T15:25:43.678Z",
+    "samples": 50,
+    "as_of": "2026-08-09T23:35:08.047Z",
     "families": [
       "demo-rig",
       "probe-suite"
     ],
     "fixture_counts": {
       "demo-rig": 20,
-      "probe-suite": 45
+      "probe-suite": 30
+    },
+    "by_family": {
+      "demo-rig": {
+        "samples": 20,
+        "conform_rate": 1,
+        "value_accuracy_mean": 1,
+        "native_rung_rate": 0,
+        "effective_usd_per_1k_conformant": 3.1491749999999996
+      },
+      "probe-suite": {
+        "samples": 30,
+        "conform_rate": 1,
+        "value_accuracy_mean": 1,
+        "native_rung_rate": 0,
+        "effective_usd_per_1k_conformant": 4.53512
+      }
     },
     "discrepancies": [
       {
@@ -978,27 +1421,43 @@
     "model_key": "gemini/gemini-3.1-pro-preview",
     "conform_rate": 1,
     "conform_ci95": [
-      0.9441984686771432,
+      0.9286524008666414,
       1
     ],
-    "value_accuracy_mean": 1,
+    "value_accuracy_mean": 0.995,
     "native_rung_rate": 1,
-    "hard_conform_rate": 1,
-    "hard_value_accuracy_mean": 1,
-    "hard_samples": 15,
-    "hard_native_rung_rate": 1,
-    "effective_usd_per_1k_conformant": 10.112399999999997,
+    "hard_conform_rate": null,
+    "hard_value_accuracy_mean": null,
+    "hard_samples": 0,
+    "hard_native_rung_rate": null,
+    "effective_usd_per_1k_conformant": 11.04612,
     "grounded_rate": 1,
     "cache_hit_rate": 0,
-    "samples": 65,
-    "as_of": "2026-08-10T15:41:42.406Z",
+    "samples": 50,
+    "as_of": "2026-08-09T18:30:58.050Z",
     "families": [
       "demo-rig",
       "probe-suite"
     ],
     "fixture_counts": {
       "demo-rig": 20,
-      "probe-suite": 45
+      "probe-suite": 30
+    },
+    "by_family": {
+      "demo-rig": {
+        "samples": 20,
+        "conform_rate": 1,
+        "value_accuracy_mean": 0.9875,
+        "native_rung_rate": 1,
+        "effective_usd_per_1k_conformant": 10.210299999999998
+      },
+      "probe-suite": {
+        "samples": 30,
+        "conform_rate": 1,
+        "value_accuracy_mean": 1,
+        "native_rung_rate": 1,
+        "effective_usd_per_1k_conformant": 11.603333333333335
+      }
     },
     "discrepancies": [
       {
