@@ -96,5 +96,6 @@
     "scenarios.pessimistic.cagr_pct": 6.2,
     "scenarios.base.cagr_pct": 11.5,
     "scenarios.optimistic.cagr_pct": 16.8
-  }
+  },
+  "subtype": "extraction.tabular"
 }

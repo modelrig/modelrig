@@ -29,6 +29,14 @@ export interface ProbeFixture {
    * reaches the model, so it is excluded from the fixture hash: retro-tagging a
    * difficulty must not invalidate published result hashes. */
   readonly difficulty?: "standard" | "hard";
+  /** Task subtype (www-clarity §5.5 W16 — Cycle 3's retro-tagging pulled
+   * forward): a REAL task-type grouping ("extraction.tabular",
+   * "classification", "reasoning.numeric", …), unlike `family` which is
+   * corpus provenance. Cross-corpus by design — a demo-rig and a probe-suite
+   * fixture can share a subtype. Like the other three, it is CLASSIFICATION
+   * metadata that never reaches the model and is excluded from the fixture
+   * hash: retro-tagging subtypes must not invalidate published result hashes. */
+  readonly subtype?: string;
   /** For schema probes: the JSON schema + input prompt + expected values
    * (value-accuracy keys with known-correct answers). */
   readonly schema?: object;
@@ -95,6 +103,11 @@ export interface ProbeResult {
    * builder split per-difficulty stats without re-reading the fixtures. Absent
    * on pre-difficulty result files — consumers default those to "standard". */
   readonly fixtureDifficulties?: Record<string, string>;
+  /** fixtureId → task subtype (www-clarity §5.5 W16): lets the probed-layer
+   * builder split per-subtype stats without re-reading the fixtures. Absent on
+   * pre-subtype result files AND for untagged fixtures — consumers roll only
+   * tagged fixtures into by_subtype (no default bucket). */
+  readonly fixtureSubtypes?: Record<string, string>;
   readonly raw: Record<string, readonly ProbeSample[]>; // fixtureId → samples
   readonly stats: readonly FixtureStats[];
   readonly totalCostUsd: number;

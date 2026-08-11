@@ -8,14 +8,48 @@
   "schema": {
     "type": "object",
     "additionalProperties": false,
-    "required": ["summary", "category", "priority", "product_area", "refund_requested", "affected_user_count"],
+    "required": [
+      "summary",
+      "category",
+      "priority",
+      "product_area",
+      "refund_requested",
+      "affected_user_count"
+    ],
     "properties": {
-      "summary": { "type": "string", "minLength": 40 },
-      "category": { "type": "string", "enum": ["bug", "billing", "feature_request", "how_to", "outage"] },
-      "priority": { "type": "string", "enum": ["low", "medium", "high", "urgent"] },
-      "product_area": { "type": "string", "minLength": 3 },
-      "refund_requested": { "type": "boolean" },
-      "affected_user_count": { "type": "integer" }
+      "summary": {
+        "type": "string",
+        "minLength": 40
+      },
+      "category": {
+        "type": "string",
+        "enum": [
+          "bug",
+          "billing",
+          "feature_request",
+          "how_to",
+          "outage"
+        ]
+      },
+      "priority": {
+        "type": "string",
+        "enum": [
+          "low",
+          "medium",
+          "high",
+          "urgent"
+        ]
+      },
+      "product_area": {
+        "type": "string",
+        "minLength": 3
+      },
+      "refund_requested": {
+        "type": "boolean"
+      },
+      "affected_user_count": {
+        "type": "integer"
+      }
     }
   },
   "expectedValues": {
@@ -23,5 +57,6 @@
     "priority": "urgent",
     "refund_requested": false,
     "affected_user_count": 45
-  }
+  },
+  "subtype": "summarize"
 }

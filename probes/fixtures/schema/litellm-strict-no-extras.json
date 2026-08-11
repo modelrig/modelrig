@@ -33,5 +33,6 @@
     "monthly_fee_usd": 12500,
     "auto_renewal": true,
     "termination_notice_days": 90
-  }
+  },
+  "subtype": "structure.strict"
 }

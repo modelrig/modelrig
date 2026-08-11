@@ -45,5 +45,6 @@
     "classifications.0.sentiment": "bullish",
     "classifications.1.sentiment": "bearish",
     "classifications.2.sentiment": "neutral"
-  }
+  },
+  "subtype": "classification"
 }

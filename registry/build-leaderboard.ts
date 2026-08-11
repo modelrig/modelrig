@@ -138,6 +138,12 @@ export interface LeaderboardRow {
    * degrades gracefully. Keys are the same families as `families`. These are
    * DESCRIPTIVE marginal stats for the task-type views — not a RigIndex rank. */
   readonly by_family?: Readonly<Record<string, LeaderboardFamilyStats>>;
+  /** Per-TASK-SUBTYPE measured accuracy + cost (www-clarity §5.5 W16) — the
+   * same shape and the same FAMILY_MIN_N gate as by_family, keyed by real task
+   * types (extraction.tabular, classification, …) instead of provenance.
+   * Present only when the probed layer carries a by_subtype rollup. Still a
+   * DESCRIPTIVE marginal statistic, never a RigIndex rank. */
+  readonly by_subtype?: Readonly<Record<string, LeaderboardFamilyStats>>;
   readonly discrepancies: ReadonlyArray<{ kind: string; message: string }>;
 }
 
@@ -182,6 +188,7 @@ export function toLeaderboardRows(registry: Registry): LeaderboardRow[] {
     const schema = entry.probed?.schema ?? null;
     const hard = schema?.by_difficulty?.["hard"] ?? null;
     const by_family = familyRollup(schema?.by_family);
+    const by_subtype = familyRollup(schema?.by_subtype);
     return {
       model_key: entry.model_key,
       conform_rate: schema?.conform_rate ?? null,
@@ -204,6 +211,7 @@ export function toLeaderboardRows(registry: Registry): LeaderboardRow[] {
           )
         : {},
       ...(by_family ? { by_family } : {}),
+      ...(by_subtype ? { by_subtype } : {}),
       discrepancies: [...entry.discrepancies],
     };
   });

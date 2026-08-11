@@ -9,12 +9,19 @@
   "schema": {
     "type": "object",
     "additionalProperties": false,
-    "required": ["combined_average"],
+    "required": [
+      "combined_average"
+    ],
     "properties": {
-      "combined_average": { "type": "number", "minimum": 0, "maximum": 100 }
+      "combined_average": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 100
+      }
     }
   },
   "expectedValues": {
     "combined_average": 87.5
-  }
+  },
+  "subtype": "reasoning.numeric"
 }

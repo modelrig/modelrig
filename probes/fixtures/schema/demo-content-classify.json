@@ -8,15 +8,39 @@
   "schema": {
     "type": "object",
     "additionalProperties": false,
-    "required": ["topic", "sentiment", "language", "contains_question"],
+    "required": [
+      "topic",
+      "sentiment",
+      "language",
+      "contains_question"
+    ],
     "properties": {
       "topic": {
         "type": "string",
-        "enum": ["sports", "politics", "technology", "business", "health", "entertainment", "science"]
+        "enum": [
+          "sports",
+          "politics",
+          "technology",
+          "business",
+          "health",
+          "entertainment",
+          "science"
+        ]
       },
-      "sentiment": { "type": "string", "enum": ["positive", "neutral", "negative"] },
-      "language": { "type": "string" },
-      "contains_question": { "type": "boolean" }
+      "sentiment": {
+        "type": "string",
+        "enum": [
+          "positive",
+          "neutral",
+          "negative"
+        ]
+      },
+      "language": {
+        "type": "string"
+      },
+      "contains_question": {
+        "type": "boolean"
+      }
     }
   },
   "expectedValues": {
@@ -24,5 +48,6 @@
     "sentiment": "positive",
     "language": "en",
     "contains_question": false
-  }
+  },
+  "subtype": "classification"
 }

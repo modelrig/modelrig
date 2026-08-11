@@ -30,13 +30,19 @@ export function canonicalJson(value: unknown): string {
 }
 
 /** Hash covers the model-relevant fixture content. `domain` (A2), `family`
- * (demo-rig §11.3b) and `difficulty` (discriminating-fixtures §3) are all
- * classification metadata that never reach the model, so all three are
- * excluded — retro-tagging the corpus (a domain, a family, a difficulty) must
- * NOT invalidate published result hashes (the reproducibility contract compares
- * hashes across runs). */
+ * (demo-rig §11.3b), `difficulty` (discriminating-fixtures §3) and `subtype`
+ * (www-clarity §5.5 W16) are all classification metadata that never reach the
+ * model, so all four are excluded — retro-tagging the corpus (a domain, a
+ * family, a difficulty, a subtype) must NOT invalidate published result hashes
+ * (the reproducibility contract compares hashes across runs). */
 export function fixtureHash(fixture: ProbeFixture): string {
-  const { domain: _domain, family: _family, difficulty: _difficulty, ...hashed } = fixture;
+  const {
+    domain: _domain,
+    family: _family,
+    difficulty: _difficulty,
+    subtype: _subtype,
+    ...hashed
+  } = fixture;
   return createHash("sha256").update(canonicalJson(hashed)).digest("hex").slice(0, 16);
 }
 
@@ -73,6 +79,14 @@ function parseFixture(raw: unknown, file: string): ProbeFixture {
       `fixture ${file}: difficulty must be a lowercase token in [${FIXTURE_DIFFICULTIES.join(", ")}] when present`
     );
   }
+  if (
+    raw.subtype !== undefined &&
+    (typeof raw.subtype !== "string" || !/^[a-z0-9][a-z0-9.-]*$/.test(raw.subtype))
+  ) {
+    throw new Error(
+      `fixture ${file}: subtype must be a lowercase dotted token when present (e.g. extraction.tabular|classification|reasoning.numeric)`
+    );
+  }
   if (raw.schema !== undefined && !isRecord(raw.schema)) {
     throw new Error(`fixture ${file}: schema must be an object when present`);
   }
@@ -85,6 +99,7 @@ function parseFixture(raw: unknown, file: string): ProbeFixture {
     domain: raw.domain,
     ...(raw.family !== undefined ? { family: raw.family } : {}),
     ...(raw.difficulty !== undefined ? { difficulty: raw.difficulty as "standard" | "hard" } : {}),
+    ...(raw.subtype !== undefined ? { subtype: raw.subtype } : {}),
     ...(raw.schema !== undefined ? { schema: raw.schema as object } : {}),
     prompt,
     ...(raw.expectedValues !== undefined

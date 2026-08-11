@@ -267,11 +267,15 @@ export function assembleResult(
   const fixtureHashes: Record<string, string> = {};
   const fixtureFamilies: Record<string, string> = {};
   const fixtureDifficulties: Record<string, string> = {};
+  // Subtype has NO default: only tagged fixtures join a by_subtype bucket
+  // (www-clarity §5.5 W16) — an untagged fixture belongs to no task type.
+  const fixtureSubtypes: Record<string, string> = {};
   for (const fixture of fixtures) {
     if (raw[fixture.id] !== undefined) {
       fixtureHashes[fixture.id] = fixtureHash(fixture);
       fixtureFamilies[fixture.id] = fixture.family ?? DEFAULT_FIXTURE_FAMILY;
       fixtureDifficulties[fixture.id] = fixture.difficulty ?? DEFAULT_FIXTURE_DIFFICULTY;
+      if (fixture.subtype !== undefined) fixtureSubtypes[fixture.id] = fixture.subtype;
     }
   }
   const stats = Object.entries(raw).map(([id, samples]) => summarize(id, samples));
@@ -286,6 +290,7 @@ export function assembleResult(
     fixtureHashes,
     fixtureFamilies,
     fixtureDifficulties,
+    ...(Object.keys(fixtureSubtypes).length > 0 ? { fixtureSubtypes } : {}),
     raw,
     stats,
     totalCostUsd,

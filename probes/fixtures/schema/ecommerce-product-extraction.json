@@ -7,49 +7,106 @@
   "schema": {
     "type": "object",
     "additionalProperties": false,
-    "required": ["sku", "name", "color", "pricing", "capacity_persons", "packed_weight_kg", "dimensions_cm", "inventory", "rating"],
+    "required": [
+      "sku",
+      "name",
+      "color",
+      "pricing",
+      "capacity_persons",
+      "packed_weight_kg",
+      "dimensions_cm",
+      "inventory",
+      "rating"
+    ],
     "properties": {
-      "sku": { "type": "string" },
-      "name": { "type": "string" },
-      "color": { "type": "string" },
+      "sku": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "color": {
+        "type": "string"
+      },
       "pricing": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["sale_price", "regular_price", "currency"],
+        "required": [
+          "sale_price",
+          "regular_price",
+          "currency"
+        ],
         "properties": {
-          "sale_price": { "type": "number" },
-          "regular_price": { "type": "number" },
-          "currency": { "type": "string", "enum": ["USD"] }
+          "sale_price": {
+            "type": "number"
+          },
+          "regular_price": {
+            "type": "number"
+          },
+          "currency": {
+            "type": "string",
+            "enum": [
+              "USD"
+            ]
+          }
         }
       },
-      "capacity_persons": { "type": "integer" },
-      "packed_weight_kg": { "type": "number" },
+      "capacity_persons": {
+        "type": "integer"
+      },
+      "packed_weight_kg": {
+        "type": "number"
+      },
       "dimensions_cm": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["floor_length", "floor_width", "peak_height"],
+        "required": [
+          "floor_length",
+          "floor_width",
+          "peak_height"
+        ],
         "properties": {
-          "floor_length": { "type": "number" },
-          "floor_width": { "type": "number" },
-          "peak_height": { "type": "number" }
+          "floor_length": {
+            "type": "number"
+          },
+          "floor_width": {
+            "type": "number"
+          },
+          "peak_height": {
+            "type": "number"
+          }
         }
       },
       "inventory": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["in_stock_units", "ships_in_business_days"],
+        "required": [
+          "in_stock_units",
+          "ships_in_business_days"
+        ],
         "properties": {
-          "in_stock_units": { "type": "integer" },
-          "ships_in_business_days": { "type": "integer" }
+          "in_stock_units": {
+            "type": "integer"
+          },
+          "ships_in_business_days": {
+            "type": "integer"
+          }
         }
       },
       "rating": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["average", "review_count"],
+        "required": [
+          "average",
+          "review_count"
+        ],
         "properties": {
-          "average": { "type": "number" },
-          "review_count": { "type": "integer" }
+          "average": {
+            "type": "number"
+          },
+          "review_count": {
+            "type": "integer"
+          }
         }
       }
     }
@@ -63,5 +120,6 @@
     "dimensions_cm.floor_width": 127,
     "inventory.in_stock_units": 47,
     "rating.review_count": 312
-  }
+  },
+  "subtype": "extraction.tabular"
 }

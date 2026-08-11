@@ -40,6 +40,12 @@ describe("canonicalJson / fixtureHash", () => {
   it("canonicalizes nested structures deterministically", () => {
     expect(canonicalJson({ b: [1, { z: 1, a: 2 }], a: null })).toBe('{"a":null,"b":[1,{"a":2,"z":1}]}');
   });
+
+  it("subtype is metadata — retro-tagging a subtype must not invalidate published hashes (W16)", () => {
+    const bare: ProbeFixture = { id: "x", class: "schema", domain: "general", prompt: "p", source: "s" };
+    const tagged: ProbeFixture = { ...bare, subtype: "extraction.tabular" };
+    expect(fixtureHash(tagged)).toBe(fixtureHash(bare));
+  });
 });
 
 describe("shipped fixture corpus", () => {
@@ -151,6 +157,29 @@ describe("shipped fixture corpus", () => {
       expect(fixture.class, `${fixture.id} hard fixture must be schema-class`).toBe("schema");
       expect(fixture.family, `${fixture.id} hard fixture must declare a family`).toBeDefined();
     }
+  });
+
+  it("www-clarity §5.5 W16: every schema fixture carries a task subtype", () => {
+    // The retro-tag is complete by construction: an untagged schema fixture
+    // would silently fall out of every by_subtype view. New fixtures must pick
+    // a subtype (or add a new one) at authoring time.
+    const schemaFixtures = fixtures.filter((f) => f.class === "schema");
+    for (const fixture of schemaFixtures) {
+      expect(fixture.subtype, `${fixture.id} missing subtype`).toBeDefined();
+    }
+    // The committed grouping (plan §5.5, summarize split per the honesty
+    // review: cz-prose-floor is constrained prose GENERATION, not summarize).
+    const bySubtype = new Map<string, number>();
+    for (const f of schemaFixtures) {
+      bySubtype.set(f.subtype as string, (bySubtype.get(f.subtype as string) ?? 0) + 1);
+    }
+    expect(bySubtype.get("extraction.tabular")).toBe(3);
+    expect(bySubtype.get("classification")).toBe(2);
+    expect(bySubtype.get("structure.strict")).toBe(2);
+    expect(bySubtype.get("reasoning.numeric")).toBe(3);
+    expect(bySubtype.get("qa.docs")).toBe(1);
+    expect(bySubtype.get("summarize")).toBe(1);
+    expect(bySubtype.get("generation.prose")).toBe(1);
   });
 
   it("§6.4 fixture hygiene: no fixture carries an email, phone number, or ticker symbol", () => {

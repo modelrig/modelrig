@@ -103,6 +103,36 @@ discrepancy detectors:
 - `declared_caching_unrealized` — claims prompt caching, zero cached tokens
   observed on repeat calls
 
+## Hard tier
+
+Fixtures carry an optional `difficulty` grade: `standard` (the default) or
+`hard`. It is metadata — excluded from the fixture hash and orthogonal to the
+fixture family, so a probe-suite fixture and a demo-rig fixture can each be
+hard — and results roll up per tier (`by_difficulty`) exactly the way they
+roll up per family. The leaderboard's hard columns read that rollup.
+
+What makes a fixture hard is deliberate. Each hard fixture pulls two or three
+of five design levers, chosen because they are where capable models genuinely
+differ and where json-mode coaching diverges from native strict enforcement:
+
+1. **Constraint-strict schemas** — `minItems`/`maxItems`, regex `pattern`,
+   `format: date-time`, numeric bounds, enums with plausible distractors,
+   deep `additionalProperties: false`.
+2. **Adversarial `additionalProperties: false`** — input that dangles a
+   plausible-but-forbidden field.
+3. **Value accuracy that needs reasoning, not copying** — unit conversion,
+   date arithmetic, cross-field consistency (a total that must reconcile).
+4. **Instruction robustness** — negations, a conflicting secondary
+   instruction, long distractor context before the real task.
+5. **Structural depth** — deeply nested required objects and arrays with
+   per-item required keys.
+
+The standard tier stays comparable across cycles; the hard tier is where
+strong models separate. Stated plainly: the committed hard set is still small
+and weighted toward the reasoning lever — arithmetic-consistency traps are
+what discriminated between strong models in practice — and it broadens with
+the corpus-expansion cycles.
+
 ## Coverage honesty
 
 The v0 corpus is small and **finance-weighted** — it was seeded from our

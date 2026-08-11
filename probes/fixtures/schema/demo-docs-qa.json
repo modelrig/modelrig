@@ -8,16 +8,32 @@
   "schema": {
     "type": "object",
     "additionalProperties": false,
-    "required": ["answer", "envelope_default_usd", "supporting_quote", "answer_in_context"],
+    "required": [
+      "answer",
+      "envelope_default_usd",
+      "supporting_quote",
+      "answer_in_context"
+    ],
     "properties": {
-      "answer": { "type": "string", "minLength": 10 },
-      "envelope_default_usd": { "type": "number" },
-      "supporting_quote": { "type": "string", "minLength": 10 },
-      "answer_in_context": { "type": "boolean" }
+      "answer": {
+        "type": "string",
+        "minLength": 10
+      },
+      "envelope_default_usd": {
+        "type": "number"
+      },
+      "supporting_quote": {
+        "type": "string",
+        "minLength": 10
+      },
+      "answer_in_context": {
+        "type": "boolean"
+      }
     }
   },
   "expectedValues": {
     "envelope_default_usd": 5,
     "answer_in_context": true
-  }
+  },
+  "subtype": "qa.docs"
 }

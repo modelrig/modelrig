@@ -78,5 +78,6 @@
     "guidance.next_quarter_revenue_low_musd": 440,
     "guidance.next_quarter_revenue_high_musd": 470,
     "guidance.confidence": "high"
-  }
+  },
+  "subtype": "structure.strict"
 }

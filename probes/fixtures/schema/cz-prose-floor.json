@@ -28,5 +28,6 @@
   "expectedValues": {
     "revenue": 872.4,
     "revenue_growth_pct": 24.1
-  }
+  },
+  "subtype": "generation.prose"
 }

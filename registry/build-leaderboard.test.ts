@@ -397,6 +397,67 @@ describe("leaderboard rows carry a per-family view (task-type-leaderboards spec 
     expect(classification?.effective_usd_per_1k_conformant).toBeNull(); // no confident price on "—"
   });
 
+  it("emits by_subtype with the SAME rollup + min-n gate as by_family (www-clarity §5.5 W16)", () => {
+    const base = twoFamilyRegistry().models[0];
+    const withSubtype = registryWith([
+      {
+        ...base,
+        probed: {
+          ...base.probed!,
+          schema: {
+            ...base.probed!.schema!,
+            by_subtype: {
+              "extraction.tabular": {
+                samples: FAMILY_MIN_N + 5,
+                conform_rate: 1,
+                conform_ci95: [0.8, 1],
+                value_accuracy_mean: 0.95,
+                native_rung_rate: 1,
+                mean_cost_usd: 0.001,
+              },
+              "qa.docs": {
+                samples: 5, // below the floor → gated
+                conform_rate: 1,
+                conform_ci95: [0.6, 1],
+                value_accuracy_mean: 1,
+                native_rung_rate: 1,
+                mean_cost_usd: 0.001,
+              },
+            },
+          },
+        },
+      },
+    ]);
+    const row = toLeaderboardRows(withSubtype)[0];
+    const tabular = row.by_subtype?.["extraction.tabular"];
+    expect(tabular?.value_accuracy_mean).toBe(0.95);
+    // effective cost = mean_cost_usd / conform_rate * 1000 = 0.001 / 1 * 1000
+    expect(tabular?.effective_usd_per_1k_conformant).toBeCloseTo(1, 6);
+    const qaDocs = row.by_subtype?.["qa.docs"];
+    expect(qaDocs?.samples).toBe(5); // count retained
+    expect(qaDocs?.value_accuracy_mean).toBeNull(); // min-n gated
+    expect(qaDocs?.effective_usd_per_1k_conformant).toBeNull();
+  });
+
+  it("omits by_subtype entirely when the probed layer carries none (legacy results)", () => {
+    const row = toLeaderboardRows(twoFamilyRegistry())[0];
+    expect(row.by_subtype).toBeUndefined();
+  });
+
+  it("the committed leaderboard carries by_subtype on every full 08-10 row (data regression gate)", () => {
+    const committed = JSON.parse(
+      readFileSync(join(__dirname, "leaderboard.json"), "utf8"),
+    ) as Array<{ model_key: string; samples: number; by_subtype?: Record<string, unknown> }>;
+    const fullRuns = committed.filter((row) => row.samples === 65);
+    expect(fullRuns.length).toBeGreaterThanOrEqual(27);
+    for (const row of fullRuns) {
+      expect(
+        Object.keys(row.by_subtype ?? {}).length,
+        `${row.model_key} missing by_subtype`,
+      ).toBeGreaterThanOrEqual(7);
+    }
+  });
+
   it("omits a family the model was not tested on (never a zero row)", () => {
     const row = toLeaderboardRows(twoFamilyRegistry())[0];
     expect(Object.keys(row.by_family ?? {}).sort()).toEqual(["classification", "extraction"]);
