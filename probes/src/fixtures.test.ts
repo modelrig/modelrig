@@ -169,6 +169,13 @@ describe("shipped fixture corpus", () => {
     }
     // The committed grouping (plan §5.5, summarize split per the honesty
     // review: cz-prose-floor is constrained prose GENERATION, not summarize).
+    // Cycle 3 DEEPENED generation.prose with 2 screened survivors
+    // (cand-prose-bounded-window, cand-prose-nested-figures) so it clears the
+    // by_subtype min-n gate (3 fixtures × 5 = 15 ≥ 10). qa.docs and summarize
+    // stayed at 1 fixture: their Cycle-3 candidates were DISCARDED in Stage A
+    // screening (all 5 panel models aced them — short qa/summarize tasks are
+    // saturated for 2026 models; no value-accuracy/conformance spread). They
+    // ship dark (deferred, min-n "—"), never thin — see the Cycle-3 session log.
     const bySubtype = new Map<string, number>();
     for (const f of schemaFixtures) {
       bySubtype.set(f.subtype as string, (bySubtype.get(f.subtype as string) ?? 0) + 1);
@@ -179,7 +186,7 @@ describe("shipped fixture corpus", () => {
     expect(bySubtype.get("reasoning.numeric")).toBe(3);
     expect(bySubtype.get("qa.docs")).toBe(1);
     expect(bySubtype.get("summarize")).toBe(1);
-    expect(bySubtype.get("generation.prose")).toBe(1);
+    expect(bySubtype.get("generation.prose")).toBe(3);
   });
 
   it("§6.4 fixture hygiene: no fixture carries an email, phone number, or ticker symbol", () => {

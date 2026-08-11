@@ -1,0 +1,3250 @@
+{
+  "month": "2026-08",
+  "as_of": "2026-08-11",
+  "listing_status": {
+    "openai": {
+      "ok": true,
+      "count": 128
+    },
+    "anthropic": {
+      "ok": true,
+      "count": 10
+    },
+    "gemini": {
+      "ok": true,
+      "count": 36
+    },
+    "grok": {
+      "ok": false,
+      "count": 0,
+      "note": "403 Forbidden"
+    },
+    "deepseek": {
+      "ok": true,
+      "count": 2
+    },
+    "deepinfra": {
+      "ok": true,
+      "count": 182
+    },
+    "fireworks": {
+      "ok": true,
+      "count": 16
+    }
+  },
+  "candidates": [
+    {
+      "model_key": "anthropic/claude-haiku-4-5-20251001",
+      "provider": "anthropic",
+      "leaf": "claude-haiku-4-5-20251001",
+      "flag": "viable",
+      "pricing": {
+        "key": "claude-haiku-4-5-20251001",
+        "input_usd_per_mtok": 1,
+        "output_usd_per_mtok": 5
+      },
+      "source": "anthropic-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.3135
+    },
+    {
+      "model_key": "anthropic/claude-opus-4-5-20251101",
+      "provider": "anthropic",
+      "leaf": "claude-opus-4-5-20251101",
+      "flag": "viable",
+      "pricing": {
+        "key": "claude-opus-4-5-20251101",
+        "input_usd_per_mtok": 5,
+        "output_usd_per_mtok": 25
+      },
+      "source": "anthropic-listing (2026-08-11)",
+      "estimated_cycle_usd": 1.5675000000000003
+    },
+    {
+      "model_key": "anthropic/claude-opus-4-6",
+      "provider": "anthropic",
+      "leaf": "claude-opus-4-6",
+      "flag": "viable",
+      "pricing": {
+        "key": "claude-opus-4-6",
+        "input_usd_per_mtok": 5,
+        "output_usd_per_mtok": 25
+      },
+      "source": "anthropic-listing (2026-08-11)",
+      "estimated_cycle_usd": 1.5675000000000003
+    },
+    {
+      "model_key": "anthropic/claude-opus-4-7",
+      "provider": "anthropic",
+      "leaf": "claude-opus-4-7",
+      "flag": "viable",
+      "pricing": {
+        "key": "claude-opus-4-7",
+        "input_usd_per_mtok": 5,
+        "output_usd_per_mtok": 25
+      },
+      "source": "anthropic-listing (2026-08-11)",
+      "estimated_cycle_usd": 1.5675000000000003
+    },
+    {
+      "model_key": "anthropic/claude-opus-4-8",
+      "provider": "anthropic",
+      "leaf": "claude-opus-4-8",
+      "flag": "viable",
+      "pricing": {
+        "key": "claude-opus-4-8",
+        "input_usd_per_mtok": 5,
+        "output_usd_per_mtok": 25
+      },
+      "source": "anthropic-listing (2026-08-11)",
+      "estimated_cycle_usd": 1.5675000000000003
+    },
+    {
+      "model_key": "anthropic/claude-sonnet-4-5-20250929",
+      "provider": "anthropic",
+      "leaf": "claude-sonnet-4-5-20250929",
+      "flag": "viable",
+      "pricing": {
+        "key": "claude-sonnet-4-5-20250929",
+        "input_usd_per_mtok": 3,
+        "output_usd_per_mtok": 15
+      },
+      "source": "anthropic-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.9405
+    },
+    {
+      "model_key": "anthropic/claude-sonnet-4-6",
+      "provider": "anthropic",
+      "leaf": "claude-sonnet-4-6",
+      "flag": "viable",
+      "pricing": {
+        "key": "claude-sonnet-4-6",
+        "input_usd_per_mtok": 3,
+        "output_usd_per_mtok": 15
+      },
+      "source": "anthropic-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.9405
+    },
+    {
+      "model_key": "deepinfra/BAAI/bge-base-en-v1.5",
+      "provider": "deepinfra",
+      "leaf": "BAAI/bge-base-en-v1.5",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "deepinfra/BAAI/bge-en-icl",
+      "provider": "deepinfra",
+      "leaf": "BAAI/bge-en-icl",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "deepinfra/BAAI/bge-large-en-v1.5",
+      "provider": "deepinfra",
+      "leaf": "BAAI/bge-large-en-v1.5",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "deepinfra/BAAI/bge-m3",
+      "provider": "deepinfra",
+      "leaf": "BAAI/bge-m3",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "deepinfra/BAAI/bge-m3-multi",
+      "provider": "deepinfra",
+      "leaf": "BAAI/bge-m3-multi",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "deepinfra/ByteDance/Seed-1.8",
+      "provider": "deepinfra",
+      "leaf": "ByteDance/Seed-1.8",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/ByteDance/Seed-1.8",
+        "input_usd_per_mtok": 0.25,
+        "output_usd_per_mtok": 2
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.11549999999999999
+    },
+    {
+      "model_key": "deepinfra/ByteDance/Seed-2.0-code",
+      "provider": "deepinfra",
+      "leaf": "ByteDance/Seed-2.0-code",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/ByteDance/Seed-2.0-code",
+        "input_usd_per_mtok": 0.5,
+        "output_usd_per_mtok": 2.9999999999999996
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.18149999999999997
+    },
+    {
+      "model_key": "deepinfra/ByteDance/Seed-2.0-mini",
+      "provider": "deepinfra",
+      "leaf": "ByteDance/Seed-2.0-mini",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/ByteDance/Seed-2.0-mini",
+        "input_usd_per_mtok": 0.1,
+        "output_usd_per_mtok": 0.4
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.026400000000000003
+    },
+    {
+      "model_key": "deepinfra/ByteDance/Seed-2.0-pro",
+      "provider": "deepinfra",
+      "leaf": "ByteDance/Seed-2.0-pro",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/ByteDance/Seed-2.0-pro",
+        "input_usd_per_mtok": 0.5,
+        "output_usd_per_mtok": 2.9999999999999996
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.18149999999999997
+    },
+    {
+      "model_key": "deepinfra/ByteDance/Seedance-1.5-Pro",
+      "provider": "deepinfra",
+      "leaf": "ByteDance/Seedance-1.5-Pro",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "deepinfra/ByteDance/Seedance-2.0",
+      "provider": "deepinfra",
+      "leaf": "ByteDance/Seedance-2.0",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "deepinfra/ByteDance/Seedream-4",
+      "provider": "deepinfra",
+      "leaf": "ByteDance/Seedream-4",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "deepinfra/Gryphe/MythoMax-L2-13b",
+      "provider": "deepinfra",
+      "leaf": "Gryphe/MythoMax-L2-13b",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/Gryphe/MythoMax-L2-13b",
+        "input_usd_per_mtok": 0.08,
+        "output_usd_per_mtok": 0.09
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.009735
+    },
+    {
+      "model_key": "deepinfra/MiniMaxAI/MiniMax-M2.7",
+      "provider": "deepinfra",
+      "leaf": "MiniMaxAI/MiniMax-M2.7",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/MiniMaxAI/MiniMax-M2.7",
+        "input_usd_per_mtok": 0.25,
+        "output_usd_per_mtok": 1
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.06599999999999999
+    },
+    {
+      "model_key": "deepinfra/MiniMaxAI/MiniMax-M2.7-Turbo",
+      "provider": "deepinfra",
+      "leaf": "MiniMaxAI/MiniMax-M2.7-Turbo",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/MiniMaxAI/MiniMax-M2.7-Turbo",
+        "input_usd_per_mtok": 0.38,
+        "output_usd_per_mtok": 1.7
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.10923
+    },
+    {
+      "model_key": "deepinfra/NousResearch/Hermes-3-Llama-3.1-405B",
+      "provider": "deepinfra",
+      "leaf": "NousResearch/Hermes-3-Llama-3.1-405B",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/NousResearch/Hermes-3-Llama-3.1-405B",
+        "input_usd_per_mtok": 1,
+        "output_usd_per_mtok": 1
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.11549999999999999
+    },
+    {
+      "model_key": "deepinfra/NousResearch/Hermes-3-Llama-3.1-70B",
+      "provider": "deepinfra",
+      "leaf": "NousResearch/Hermes-3-Llama-3.1-70B",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/NousResearch/Hermes-3-Llama-3.1-70B",
+        "input_usd_per_mtok": 0.3,
+        "output_usd_per_mtok": 0.3
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.03464999999999999
+    },
+    {
+      "model_key": "deepinfra/Pixverse/Pixverse-6-T2V",
+      "provider": "deepinfra",
+      "leaf": "Pixverse/Pixverse-6-T2V",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "deepinfra/Pixverse/Pixverse-T2V",
+      "provider": "deepinfra",
+      "leaf": "Pixverse/Pixverse-T2V",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "deepinfra/Pixverse/Pixverse-T2V-HD",
+      "provider": "deepinfra",
+      "leaf": "Pixverse/Pixverse-T2V-HD",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "deepinfra/PrunaAI/p-video",
+      "provider": "deepinfra",
+      "leaf": "PrunaAI/p-video",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "deepinfra/Qwen/Qwen2.5-72B-Instruct",
+      "provider": "deepinfra",
+      "leaf": "Qwen/Qwen2.5-72B-Instruct",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/Qwen/Qwen2.5-72B-Instruct",
+        "input_usd_per_mtok": 0.12,
+        "output_usd_per_mtok": 0.39
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.027225
+    },
+    {
+      "model_key": "deepinfra/Qwen/Qwen3-14B",
+      "provider": "deepinfra",
+      "leaf": "Qwen/Qwen3-14B",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/Qwen/Qwen3-14B",
+        "input_usd_per_mtok": 0.06,
+        "output_usd_per_mtok": 0.24
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.015839999999999996
+    },
+    {
+      "model_key": "deepinfra/Qwen/Qwen3-235B-A22B-Instruct-2507",
+      "provider": "deepinfra",
+      "leaf": "Qwen/Qwen3-235B-A22B-Instruct-2507",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/Qwen/Qwen3-235B-A22B-Instruct-2507",
+        "input_usd_per_mtok": 0.09,
+        "output_usd_per_mtok": 0.6
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.035640000000000005
+    },
+    {
+      "model_key": "deepinfra/Qwen/Qwen3-235B-A22B-Thinking-2507",
+      "provider": "deepinfra",
+      "leaf": "Qwen/Qwen3-235B-A22B-Thinking-2507",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/Qwen/Qwen3-235B-A22B-Thinking-2507",
+        "input_usd_per_mtok": 0.3,
+        "output_usd_per_mtok": 2.9000000000000004
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.16335000000000002
+    },
+    {
+      "model_key": "deepinfra/Qwen/Qwen3-32B",
+      "provider": "deepinfra",
+      "leaf": "Qwen/Qwen3-32B",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/Qwen/Qwen3-32B",
+        "input_usd_per_mtok": 0.09999999999999999,
+        "output_usd_per_mtok": 0.28
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.02046
+    },
+    {
+      "model_key": "deepinfra/Qwen/Qwen3-ASR-0.6B",
+      "provider": "deepinfra",
+      "leaf": "Qwen/Qwen3-ASR-0.6B",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "deepinfra/Qwen/Qwen3-ASR-1.7B",
+      "provider": "deepinfra",
+      "leaf": "Qwen/Qwen3-ASR-1.7B",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "deepinfra/Qwen/Qwen3-Max",
+      "provider": "deepinfra",
+      "leaf": "Qwen/Qwen3-Max",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/Qwen/Qwen3-Max",
+        "input_usd_per_mtok": 1.2,
+        "output_usd_per_mtok": 5.999999999999999
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.3761999999999999
+    },
+    {
+      "model_key": "deepinfra/Qwen/Qwen3-Max-Thinking",
+      "provider": "deepinfra",
+      "leaf": "Qwen/Qwen3-Max-Thinking",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/Qwen/Qwen3-Max-Thinking",
+        "input_usd_per_mtok": 1.2,
+        "output_usd_per_mtok": 5.999999999999999
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.3761999999999999
+    },
+    {
+      "model_key": "deepinfra/Qwen/Qwen3-Next-80B-A3B-Instruct",
+      "provider": "deepinfra",
+      "leaf": "Qwen/Qwen3-Next-80B-A3B-Instruct",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/Qwen/Qwen3-Next-80B-A3B-Instruct",
+        "input_usd_per_mtok": 0.14,
+        "output_usd_per_mtok": 1.4
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.07853999999999998
+    },
+    {
+      "model_key": "deepinfra/Qwen/Qwen3-VL-235B-A22B-Instruct",
+      "provider": "deepinfra",
+      "leaf": "Qwen/Qwen3-VL-235B-A22B-Instruct",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/Qwen/Qwen3-VL-235B-A22B-Instruct",
+        "input_usd_per_mtok": 0.2,
+        "output_usd_per_mtok": 0.8799999999999999
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.05676
+    },
+    {
+      "model_key": "deepinfra/Qwen/Qwen3-VL-30B-A3B-Instruct",
+      "provider": "deepinfra",
+      "leaf": "Qwen/Qwen3-VL-30B-A3B-Instruct",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/Qwen/Qwen3-VL-30B-A3B-Instruct",
+        "input_usd_per_mtok": 0.15,
+        "output_usd_per_mtok": 0.6
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.039599999999999996
+    },
+    {
+      "model_key": "deepinfra/Qwen/Qwen3.5-122B-A10B",
+      "provider": "deepinfra",
+      "leaf": "Qwen/Qwen3.5-122B-A10B",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/Qwen/Qwen3.5-122B-A10B",
+        "input_usd_per_mtok": 0.29,
+        "output_usd_per_mtok": 2.4
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.13793999999999998
+    },
+    {
+      "model_key": "deepinfra/Qwen/Qwen3.5-27B",
+      "provider": "deepinfra",
+      "leaf": "Qwen/Qwen3.5-27B",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/Qwen/Qwen3.5-27B",
+        "input_usd_per_mtok": 0.26,
+        "output_usd_per_mtok": 2.5999999999999996
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.14586
+    },
+    {
+      "model_key": "deepinfra/Qwen/Qwen3.5-35B-A3B",
+      "provider": "deepinfra",
+      "leaf": "Qwen/Qwen3.5-35B-A3B",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/Qwen/Qwen3.5-35B-A3B",
+        "input_usd_per_mtok": 0.14,
+        "output_usd_per_mtok": 1
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.058739999999999994
+    },
+    {
+      "model_key": "deepinfra/Qwen/Qwen3.5-397B-A17B",
+      "provider": "deepinfra",
+      "leaf": "Qwen/Qwen3.5-397B-A17B",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/Qwen/Qwen3.5-397B-A17B",
+        "input_usd_per_mtok": 0.45,
+        "output_usd_per_mtok": 2.9999999999999996
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.1782
+    },
+    {
+      "model_key": "deepinfra/Qwen/Qwen3.5-9B",
+      "provider": "deepinfra",
+      "leaf": "Qwen/Qwen3.5-9B",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/Qwen/Qwen3.5-9B",
+        "input_usd_per_mtok": 0.1,
+        "output_usd_per_mtok": 0.15
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.014025000000000001
+    },
+    {
+      "model_key": "deepinfra/Qwen/Qwen3.6-27B",
+      "provider": "deepinfra",
+      "leaf": "Qwen/Qwen3.6-27B",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/Qwen/Qwen3.6-27B",
+        "input_usd_per_mtok": 0.32,
+        "output_usd_per_mtok": 3.2
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.17952
+    },
+    {
+      "model_key": "deepinfra/Qwen/Qwen3.6-35B-A3B",
+      "provider": "deepinfra",
+      "leaf": "Qwen/Qwen3.6-35B-A3B",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/Qwen/Qwen3.6-35B-A3B",
+        "input_usd_per_mtok": 0.1,
+        "output_usd_per_mtok": 0.95
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.053625
+    },
+    {
+      "model_key": "deepinfra/Qwen/Qwen3.7-Max",
+      "provider": "deepinfra",
+      "leaf": "Qwen/Qwen3.7-Max",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/Qwen/Qwen3.7-Max",
+        "input_usd_per_mtok": 2.5,
+        "output_usd_per_mtok": 7.5
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.53625
+    },
+    {
+      "model_key": "deepinfra/Qwen/Qwen3.8-Max",
+      "provider": "deepinfra",
+      "leaf": "Qwen/Qwen3.8-Max",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/Qwen/Qwen3.8-Max",
+        "input_usd_per_mtok": 1.6500000000000001,
+        "output_usd_per_mtok": 4.9510000000000005
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.3539745
+    },
+    {
+      "model_key": "deepinfra/ResembleAI/chatterbox-multilingual",
+      "provider": "deepinfra",
+      "leaf": "ResembleAI/chatterbox-multilingual",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "deepinfra/ResembleAI/chatterbox-turbo",
+      "provider": "deepinfra",
+      "leaf": "ResembleAI/chatterbox-turbo",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "deepinfra/Sao10K/L3-8B-Lunaris-v1-Turbo",
+      "provider": "deepinfra",
+      "leaf": "Sao10K/L3-8B-Lunaris-v1-Turbo",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/Sao10K/L3-8B-Lunaris-v1-Turbo",
+        "input_usd_per_mtok": 0.04,
+        "output_usd_per_mtok": 0.049999999999999996
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.005115
+    },
+    {
+      "model_key": "deepinfra/Sao10K/L3.1-70B-Euryale-v2.2",
+      "provider": "deepinfra",
+      "leaf": "Sao10K/L3.1-70B-Euryale-v2.2",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/Sao10K/L3.1-70B-Euryale-v2.2",
+        "input_usd_per_mtok": 0.65,
+        "output_usd_per_mtok": 0.75
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.08002500000000001
+    },
+    {
+      "model_key": "deepinfra/Wan-AI/Wan2.2-T2V-A14B",
+      "provider": "deepinfra",
+      "leaf": "Wan-AI/Wan2.2-T2V-A14B",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "deepinfra/Wan-AI/Wan2.6-T2I",
+      "provider": "deepinfra",
+      "leaf": "Wan-AI/Wan2.6-T2I",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "deepinfra/Wan-AI/Wan2.6-T2V",
+      "provider": "deepinfra",
+      "leaf": "Wan-AI/Wan2.6-T2V",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "deepinfra/XiaomiMiMo/MiMo-V2.5",
+      "provider": "deepinfra",
+      "leaf": "XiaomiMiMo/MiMo-V2.5",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/XiaomiMiMo/MiMo-V2.5",
+        "input_usd_per_mtok": 0.4,
+        "output_usd_per_mtok": 2
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.12539999999999998
+    },
+    {
+      "model_key": "deepinfra/XiaomiMiMo/MiMo-V2.5-Pro",
+      "provider": "deepinfra",
+      "leaf": "XiaomiMiMo/MiMo-V2.5-Pro",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/XiaomiMiMo/MiMo-V2.5-Pro",
+        "input_usd_per_mtok": 1,
+        "output_usd_per_mtok": 2.9999999999999996
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.2145
+    },
+    {
+      "model_key": "deepinfra/anthropic/claude-fable-5",
+      "provider": "deepinfra",
+      "leaf": "anthropic/claude-fable-5",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/anthropic/claude-fable-5",
+        "input_usd_per_mtok": 10,
+        "output_usd_per_mtok": 50
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 3.1350000000000007
+    },
+    {
+      "model_key": "deepinfra/anthropic/claude-haiku-4-5",
+      "provider": "deepinfra",
+      "leaf": "anthropic/claude-haiku-4-5",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/anthropic/claude-haiku-4-5",
+        "input_usd_per_mtok": 1,
+        "output_usd_per_mtok": 5
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.3135
+    },
+    {
+      "model_key": "deepinfra/anthropic/claude-opus-4-7",
+      "provider": "deepinfra",
+      "leaf": "anthropic/claude-opus-4-7",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/anthropic/claude-opus-4-7",
+        "input_usd_per_mtok": 5,
+        "output_usd_per_mtok": 25
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 1.5675000000000003
+    },
+    {
+      "model_key": "deepinfra/anthropic/claude-opus-4-8",
+      "provider": "deepinfra",
+      "leaf": "anthropic/claude-opus-4-8",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/anthropic/claude-opus-4-8",
+        "input_usd_per_mtok": 5,
+        "output_usd_per_mtok": 25
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 1.5675000000000003
+    },
+    {
+      "model_key": "deepinfra/anthropic/claude-opus-5",
+      "provider": "deepinfra",
+      "leaf": "anthropic/claude-opus-5",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/anthropic/claude-opus-5",
+        "input_usd_per_mtok": 5,
+        "output_usd_per_mtok": 25
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 1.5675000000000003
+    },
+    {
+      "model_key": "deepinfra/anthropic/claude-sonnet-4-6",
+      "provider": "deepinfra",
+      "leaf": "anthropic/claude-sonnet-4-6",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/anthropic/claude-sonnet-4-6",
+        "input_usd_per_mtok": 2.9999999999999996,
+        "output_usd_per_mtok": 15
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.9405
+    },
+    {
+      "model_key": "deepinfra/anthropic/claude-sonnet-5",
+      "provider": "deepinfra",
+      "leaf": "anthropic/claude-sonnet-5",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/anthropic/claude-sonnet-5",
+        "input_usd_per_mtok": 2,
+        "output_usd_per_mtok": 10
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.627
+    },
+    {
+      "model_key": "deepinfra/deepseek-ai/DeepSeek-R1-0528",
+      "provider": "deepinfra",
+      "leaf": "deepseek-ai/DeepSeek-R1-0528",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/deepseek-ai/DeepSeek-R1-0528",
+        "input_usd_per_mtok": 0.5,
+        "output_usd_per_mtok": 2.1500000000000004
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.139425
+    },
+    {
+      "model_key": "deepinfra/deepseek-ai/DeepSeek-V3",
+      "provider": "deepinfra",
+      "leaf": "deepseek-ai/DeepSeek-V3",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/deepseek-ai/DeepSeek-V3",
+        "input_usd_per_mtok": 0.38,
+        "output_usd_per_mtok": 0.8899999999999999
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.06913499999999999
+    },
+    {
+      "model_key": "deepinfra/deepseek-ai/DeepSeek-V3-0324",
+      "provider": "deepinfra",
+      "leaf": "deepseek-ai/DeepSeek-V3-0324",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/deepseek-ai/DeepSeek-V3-0324",
+        "input_usd_per_mtok": 0.25,
+        "output_usd_per_mtok": 0.88
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.06006
+    },
+    {
+      "model_key": "deepinfra/deepseek-ai/DeepSeek-V3.1",
+      "provider": "deepinfra",
+      "leaf": "deepseek-ai/DeepSeek-V3.1",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/deepseek-ai/DeepSeek-V3.1",
+        "input_usd_per_mtok": 0.27,
+        "output_usd_per_mtok": 1
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.06732
+    },
+    {
+      "model_key": "deepinfra/deepseek-ai/DeepSeek-V3.1-Terminus",
+      "provider": "deepinfra",
+      "leaf": "deepseek-ai/DeepSeek-V3.1-Terminus",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/deepseek-ai/DeepSeek-V3.1-Terminus",
+        "input_usd_per_mtok": 0.27,
+        "output_usd_per_mtok": 1
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.06732
+    },
+    {
+      "model_key": "deepinfra/deepseek-ai/DeepSeek-V3.2",
+      "provider": "deepinfra",
+      "leaf": "deepseek-ai/DeepSeek-V3.2",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/deepseek-ai/DeepSeek-V3.2",
+        "input_usd_per_mtok": 0.26,
+        "output_usd_per_mtok": 0.38
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.03597
+    },
+    {
+      "model_key": "deepinfra/deepseek-ai/DeepSeek-V4-Flash",
+      "provider": "deepinfra",
+      "leaf": "deepseek-ai/DeepSeek-V4-Flash",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/deepseek-ai/DeepSeek-V4-Flash",
+        "input_usd_per_mtok": 0.09,
+        "output_usd_per_mtok": 0.18
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.01485
+    },
+    {
+      "model_key": "deepinfra/deepseek-ai/DeepSeek-V4-Flash-0731",
+      "provider": "deepinfra",
+      "leaf": "deepseek-ai/DeepSeek-V4-Flash-0731",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/deepseek-ai/DeepSeek-V4-Flash-0731",
+        "input_usd_per_mtok": 0.09,
+        "output_usd_per_mtok": 0.18
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.01485
+    },
+    {
+      "model_key": "deepinfra/deepseek-ai/DeepSeek-V4-Pro",
+      "provider": "deepinfra",
+      "leaf": "deepseek-ai/DeepSeek-V4-Pro",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/deepseek-ai/DeepSeek-V4-Pro",
+        "input_usd_per_mtok": 1.2999999999999998,
+        "output_usd_per_mtok": 2.5999999999999996
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.21449999999999997
+    },
+    {
+      "model_key": "deepinfra/google/gemini-1.5-flash",
+      "provider": "deepinfra",
+      "leaf": "google/gemini-1.5-flash",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/google/gemini-1.5-flash",
+        "input_usd_per_mtok": 0.075,
+        "output_usd_per_mtok": 0.3
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.019799999999999998
+    },
+    {
+      "model_key": "deepinfra/google/gemini-1.5-flash-8b",
+      "provider": "deepinfra",
+      "leaf": "google/gemini-1.5-flash-8b",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/google/gemini-1.5-flash-8b",
+        "input_usd_per_mtok": 0.0375,
+        "output_usd_per_mtok": 0.15
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.009899999999999999
+    },
+    {
+      "model_key": "deepinfra/google/gemini-2.5-flash",
+      "provider": "deepinfra",
+      "leaf": "google/gemini-2.5-flash",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/google/gemini-2.5-flash",
+        "input_usd_per_mtok": 0.3,
+        "output_usd_per_mtok": 2.5
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.14355
+    },
+    {
+      "model_key": "deepinfra/google/gemini-2.5-pro",
+      "provider": "deepinfra",
+      "leaf": "google/gemini-2.5-pro",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/google/gemini-2.5-pro",
+        "input_usd_per_mtok": 1.25,
+        "output_usd_per_mtok": 10
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.5775
+    },
+    {
+      "model_key": "deepinfra/google/gemini-3.1-flash-lite",
+      "provider": "deepinfra",
+      "leaf": "google/gemini-3.1-flash-lite",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/google/gemini-3.1-flash-lite",
+        "input_usd_per_mtok": 0.25,
+        "output_usd_per_mtok": 1.4999999999999998
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.09074999999999998
+    },
+    {
+      "model_key": "deepinfra/google/gemini-3.1-pro",
+      "provider": "deepinfra",
+      "leaf": "google/gemini-3.1-pro",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/google/gemini-3.1-pro",
+        "input_usd_per_mtok": 2,
+        "output_usd_per_mtok": 11.999999999999998
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.7259999999999999
+    },
+    {
+      "model_key": "deepinfra/google/gemini-3.5-flash",
+      "provider": "deepinfra",
+      "leaf": "google/gemini-3.5-flash",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/google/gemini-3.5-flash",
+        "input_usd_per_mtok": 1.4999999999999998,
+        "output_usd_per_mtok": 9
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.5445
+    },
+    {
+      "model_key": "deepinfra/google/gemma-3-12b-it",
+      "provider": "deepinfra",
+      "leaf": "google/gemma-3-12b-it",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/google/gemma-3-12b-it",
+        "input_usd_per_mtok": 0.049999999999999996,
+        "output_usd_per_mtok": 0.09999999999999999
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.008249999999999999
+    },
+    {
+      "model_key": "deepinfra/google/gemma-3-27b-it",
+      "provider": "deepinfra",
+      "leaf": "google/gemma-3-27b-it",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/google/gemma-3-27b-it",
+        "input_usd_per_mtok": 0.09,
+        "output_usd_per_mtok": 0.16
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.01386
+    },
+    {
+      "model_key": "deepinfra/google/gemma-3-4b-it",
+      "provider": "deepinfra",
+      "leaf": "google/gemma-3-4b-it",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/google/gemma-3-4b-it",
+        "input_usd_per_mtok": 0.04,
+        "output_usd_per_mtok": 0.08
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.0066
+    },
+    {
+      "model_key": "deepinfra/google/gemma-4-26B-A4B-it",
+      "provider": "deepinfra",
+      "leaf": "google/gemma-4-26B-A4B-it",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/google/gemma-4-26B-A4B-it",
+        "input_usd_per_mtok": 0.07,
+        "output_usd_per_mtok": 0.33999999999999997
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.021449999999999997
+    },
+    {
+      "model_key": "deepinfra/google/gemma-4-31B-it-Ultra",
+      "provider": "deepinfra",
+      "leaf": "google/gemma-4-31B-it-Ultra",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/google/gemma-4-31B-it-Ultra",
+        "input_usd_per_mtok": 0.27,
+        "output_usd_per_mtok": 0.76
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.05544
+    },
+    {
+      "model_key": "deepinfra/google/gemma-4-31B-it-turbo",
+      "provider": "deepinfra",
+      "leaf": "google/gemma-4-31B-it-turbo",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/google/gemma-4-31B-it-turbo",
+        "input_usd_per_mtok": 0.09,
+        "output_usd_per_mtok": 0.33999999999999997
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.02277
+    },
+    {
+      "model_key": "deepinfra/google/gemma-4-E4B-it",
+      "provider": "deepinfra",
+      "leaf": "google/gemma-4-E4B-it",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/google/gemma-4-E4B-it",
+        "input_usd_per_mtok": 0.02,
+        "output_usd_per_mtok": 0.1
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.00627
+    },
+    {
+      "model_key": "deepinfra/google/nano-banana-2",
+      "provider": "deepinfra",
+      "leaf": "google/nano-banana-2",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "deepinfra/google/nano-banana-2-lite",
+      "provider": "deepinfra",
+      "leaf": "google/nano-banana-2-lite",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "deepinfra/google/nano-banana-pro",
+      "provider": "deepinfra",
+      "leaf": "google/nano-banana-pro",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "deepinfra/hexgrad/Kokoro-82M",
+      "provider": "deepinfra",
+      "leaf": "hexgrad/Kokoro-82M",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "deepinfra/inclusionAI/Ling-3.0-flash",
+      "provider": "deepinfra",
+      "leaf": "inclusionAI/Ling-3.0-flash",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/inclusionAI/Ling-3.0-flash",
+        "input_usd_per_mtok": 0.045,
+        "output_usd_per_mtok": 0.1
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.00792
+    },
+    {
+      "model_key": "deepinfra/intfloat/e5-base-v2",
+      "provider": "deepinfra",
+      "leaf": "intfloat/e5-base-v2",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "deepinfra/intfloat/e5-large-v2",
+      "provider": "deepinfra",
+      "leaf": "intfloat/e5-large-v2",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "deepinfra/intfloat/multilingual-e5-large",
+      "provider": "deepinfra",
+      "leaf": "intfloat/multilingual-e5-large",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "deepinfra/intfloat/multilingual-e5-large-instruct",
+      "provider": "deepinfra",
+      "leaf": "intfloat/multilingual-e5-large-instruct",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
+      "provider": "deepinfra",
+      "leaf": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
+        "input_usd_per_mtok": 0.13,
+        "output_usd_per_mtok": 0.39
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.027885000000000004
+    },
+    {
+      "model_key": "deepinfra/meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo",
+      "provider": "deepinfra",
+      "leaf": "meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo",
+        "input_usd_per_mtok": 0.09999999999999999,
+        "output_usd_per_mtok": 0.28
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.02046
+    },
+    {
+      "model_key": "deepinfra/meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo",
+      "provider": "deepinfra",
+      "leaf": "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo",
+        "input_usd_per_mtok": 0.02,
+        "output_usd_per_mtok": 0.03
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.0028049999999999998
+    },
+    {
+      "model_key": "deepinfra/microsoft/phi-4",
+      "provider": "deepinfra",
+      "leaf": "microsoft/phi-4",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/microsoft/phi-4",
+        "input_usd_per_mtok": 0.07,
+        "output_usd_per_mtok": 0.14
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.011550000000000001
+    },
+    {
+      "model_key": "deepinfra/mistralai/Mistral-Nemo-Instruct-2407",
+      "provider": "deepinfra",
+      "leaf": "mistralai/Mistral-Nemo-Instruct-2407",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/mistralai/Mistral-Nemo-Instruct-2407",
+        "input_usd_per_mtok": 0.02,
+        "output_usd_per_mtok": 0.04
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.0033
+    },
+    {
+      "model_key": "deepinfra/mistralai/Mistral-Small-24B-Instruct-2501",
+      "provider": "deepinfra",
+      "leaf": "mistralai/Mistral-Small-24B-Instruct-2501",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/mistralai/Mistral-Small-24B-Instruct-2501",
+        "input_usd_per_mtok": 0.049999999999999996,
+        "output_usd_per_mtok": 0.08
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.007260000000000001
+    },
+    {
+      "model_key": "deepinfra/mistralai/Voxtral-Mini-3B-2507",
+      "provider": "deepinfra",
+      "leaf": "mistralai/Voxtral-Mini-3B-2507",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "deepinfra/mistralai/Voxtral-Small-24B-2507",
+      "provider": "deepinfra",
+      "leaf": "mistralai/Voxtral-Small-24B-2507",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "deepinfra/moonshotai/Kimi-K2.5",
+      "provider": "deepinfra",
+      "leaf": "moonshotai/Kimi-K2.5",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/moonshotai/Kimi-K2.5",
+        "input_usd_per_mtok": 0.45,
+        "output_usd_per_mtok": 2.25
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.141075
+    },
+    {
+      "model_key": "deepinfra/moonshotai/Kimi-K3",
+      "provider": "deepinfra",
+      "leaf": "moonshotai/Kimi-K3",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/moonshotai/Kimi-K3",
+        "input_usd_per_mtok": 2.8499999999999996,
+        "output_usd_per_mtok": 14.25
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.8934750000000001
+    },
+    {
+      "model_key": "deepinfra/nvidia/Cosmos3-Nano",
+      "provider": "deepinfra",
+      "leaf": "nvidia/Cosmos3-Nano",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "deepinfra/nvidia/Cosmos3-Super",
+      "provider": "deepinfra",
+      "leaf": "nvidia/Cosmos3-Super",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "deepinfra/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+      "provider": "deepinfra",
+      "leaf": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+        "input_usd_per_mtok": 0.08499999999999999,
+        "output_usd_per_mtok": 0.4
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.025410000000000002
+    },
+    {
+      "model_key": "deepinfra/nvidia/Nemotron-3-Nano-30B-A3B",
+      "provider": "deepinfra",
+      "leaf": "nvidia/Nemotron-3-Nano-30B-A3B",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/nvidia/Nemotron-3-Nano-30B-A3B",
+        "input_usd_per_mtok": 0.05,
+        "output_usd_per_mtok": 0.2
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.013200000000000002
+    },
+    {
+      "model_key": "deepinfra/nvidia/Nemotron-3.5-ASR-Streaming-Multilingual-0.6b",
+      "provider": "deepinfra",
+      "leaf": "nvidia/Nemotron-3.5-ASR-Streaming-Multilingual-0.6b",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "deepinfra/nvidia/Nemotron-Content-Safety-3.5",
+      "provider": "deepinfra",
+      "leaf": "nvidia/Nemotron-Content-Safety-3.5",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/nvidia/Nemotron-Content-Safety-3.5",
+        "input_usd_per_mtok": 0.2,
+        "output_usd_per_mtok": 0.2
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.023100000000000002
+    },
+    {
+      "model_key": "deepinfra/openai/gpt-oss-120b-Turbo",
+      "provider": "deepinfra",
+      "leaf": "openai/gpt-oss-120b-Turbo",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/openai/gpt-oss-120b-Turbo",
+        "input_usd_per_mtok": 0.15,
+        "output_usd_per_mtok": 0.6
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.039599999999999996
+    },
+    {
+      "model_key": "deepinfra/openai/gpt-oss-120b-Ultra",
+      "provider": "deepinfra",
+      "leaf": "openai/gpt-oss-120b-Ultra",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/openai/gpt-oss-120b-Ultra",
+        "input_usd_per_mtok": 0.2,
+        "output_usd_per_mtok": 0.95
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.060225
+    },
+    {
+      "model_key": "deepinfra/openai/gpt-oss-20b",
+      "provider": "deepinfra",
+      "leaf": "openai/gpt-oss-20b",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/openai/gpt-oss-20b",
+        "input_usd_per_mtok": 0.04,
+        "output_usd_per_mtok": 0.15
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.010065000000000001
+    },
+    {
+      "model_key": "deepinfra/sentence-transformers/all-MiniLM-L12-v2",
+      "provider": "deepinfra",
+      "leaf": "sentence-transformers/all-MiniLM-L12-v2",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "deepinfra/sentence-transformers/all-MiniLM-L6-v2",
+      "provider": "deepinfra",
+      "leaf": "sentence-transformers/all-MiniLM-L6-v2",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "deepinfra/sentence-transformers/all-mpnet-base-v2",
+      "provider": "deepinfra",
+      "leaf": "sentence-transformers/all-mpnet-base-v2",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "deepinfra/sentence-transformers/clip-ViT-B-32",
+      "provider": "deepinfra",
+      "leaf": "sentence-transformers/clip-ViT-B-32",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "deepinfra/sentence-transformers/clip-ViT-B-32-multilingual-v1",
+      "provider": "deepinfra",
+      "leaf": "sentence-transformers/clip-ViT-B-32-multilingual-v1",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "deepinfra/sentence-transformers/multi-qa-mpnet-base-dot-v1",
+      "provider": "deepinfra",
+      "leaf": "sentence-transformers/multi-qa-mpnet-base-dot-v1",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "deepinfra/sentence-transformers/paraphrase-MiniLM-L6-v2",
+      "provider": "deepinfra",
+      "leaf": "sentence-transformers/paraphrase-MiniLM-L6-v2",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "deepinfra/sesame/csm-1b",
+      "provider": "deepinfra",
+      "leaf": "sesame/csm-1b",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "deepinfra/shibing624/text2vec-base-chinese",
+      "provider": "deepinfra",
+      "leaf": "shibing624/text2vec-base-chinese",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "deepinfra/stepfun-ai/Step-3.7-Flash",
+      "provider": "deepinfra",
+      "leaf": "stepfun-ai/Step-3.7-Flash",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/stepfun-ai/Step-3.7-Flash",
+        "input_usd_per_mtok": 0.2,
+        "output_usd_per_mtok": 1.15
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.07012499999999999
+    },
+    {
+      "model_key": "deepinfra/tencent/Hy3",
+      "provider": "deepinfra",
+      "leaf": "tencent/Hy3",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/tencent/Hy3",
+        "input_usd_per_mtok": 0.14,
+        "output_usd_per_mtok": 0.58
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.037950000000000005
+    },
+    {
+      "model_key": "deepinfra/thenlper/gte-base",
+      "provider": "deepinfra",
+      "leaf": "thenlper/gte-base",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "deepinfra/thenlper/gte-large",
+      "provider": "deepinfra",
+      "leaf": "thenlper/gte-large",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "deepinfra/thinkingmachines/Inkling",
+      "provider": "deepinfra",
+      "leaf": "thinkingmachines/Inkling",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/thinkingmachines/Inkling",
+        "input_usd_per_mtok": 0.95,
+        "output_usd_per_mtok": 4.05
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.263175
+    },
+    {
+      "model_key": "deepinfra/thinkingmachines/Inkling-Small",
+      "provider": "deepinfra",
+      "leaf": "thinkingmachines/Inkling-Small",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/thinkingmachines/Inkling-Small",
+        "input_usd_per_mtok": 0.45,
+        "output_usd_per_mtok": 1.2
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.0891
+    },
+    {
+      "model_key": "deepinfra/zai-org/GLM-4.6",
+      "provider": "deepinfra",
+      "leaf": "zai-org/GLM-4.6",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/zai-org/GLM-4.6",
+        "input_usd_per_mtok": 0.5,
+        "output_usd_per_mtok": 2
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.13199999999999998
+    },
+    {
+      "model_key": "deepinfra/zai-org/GLM-4.7",
+      "provider": "deepinfra",
+      "leaf": "zai-org/GLM-4.7",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/zai-org/GLM-4.7",
+        "input_usd_per_mtok": 0.4,
+        "output_usd_per_mtok": 1.75
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.113025
+    },
+    {
+      "model_key": "deepinfra/zai-org/GLM-4.7-Flash",
+      "provider": "deepinfra",
+      "leaf": "zai-org/GLM-4.7-Flash",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/zai-org/GLM-4.7-Flash",
+        "input_usd_per_mtok": 0.060000000000000005,
+        "output_usd_per_mtok": 0.4
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.023760000000000003
+    },
+    {
+      "model_key": "deepinfra/zai-org/GLM-5",
+      "provider": "deepinfra",
+      "leaf": "zai-org/GLM-5",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/zai-org/GLM-5",
+        "input_usd_per_mtok": 0.6,
+        "output_usd_per_mtok": 2.08
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.14256
+    },
+    {
+      "model_key": "deepinfra/zai-org/GLM-5.1",
+      "provider": "deepinfra",
+      "leaf": "zai-org/GLM-5.1",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepinfra/zai-org/GLM-5.1",
+        "input_usd_per_mtok": 1.05,
+        "output_usd_per_mtok": 3.5
+      },
+      "source": "deepinfra-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.24255
+    },
+    {
+      "model_key": "deepseek/deepseek-v4-flash",
+      "provider": "deepseek",
+      "leaf": "deepseek-v4-flash",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepseek/deepseek-v4-flash",
+        "input_usd_per_mtok": 0.14,
+        "output_usd_per_mtok": 0.28
+      },
+      "source": "deepseek-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.023100000000000002
+    },
+    {
+      "model_key": "deepseek/deepseek-v4-pro",
+      "provider": "deepseek",
+      "leaf": "deepseek-v4-pro",
+      "flag": "viable",
+      "pricing": {
+        "key": "deepseek/deepseek-v4-pro",
+        "input_usd_per_mtok": 0.435,
+        "output_usd_per_mtok": 0.87
+      },
+      "source": "deepseek-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.071775
+    },
+    {
+      "model_key": "fireworks/deepseek-v4-flash",
+      "provider": "fireworks",
+      "leaf": "deepseek-v4-flash",
+      "flag": "viable",
+      "pricing": {
+        "key": "fireworks_ai/accounts/fireworks/models/deepseek-v4-flash",
+        "input_usd_per_mtok": 0.14,
+        "output_usd_per_mtok": 0.28
+      },
+      "source": "fireworks-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.023100000000000002
+    },
+    {
+      "model_key": "fireworks/deepseek-v4-flash-0731",
+      "provider": "fireworks",
+      "leaf": "deepseek-v4-flash-0731",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "fireworks-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "fireworks/deepseek-v4-pro",
+      "provider": "fireworks",
+      "leaf": "deepseek-v4-pro",
+      "flag": "viable",
+      "pricing": {
+        "key": "fireworks_ai/accounts/fireworks/models/deepseek-v4-pro",
+        "input_usd_per_mtok": 1.74,
+        "output_usd_per_mtok": 3.48
+      },
+      "source": "fireworks-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.2871
+    },
+    {
+      "model_key": "fireworks/gpt-oss-20b",
+      "provider": "fireworks",
+      "leaf": "gpt-oss-20b",
+      "flag": "viable",
+      "pricing": {
+        "key": "fireworks_ai/accounts/fireworks/models/gpt-oss-20b",
+        "input_usd_per_mtok": 0.07,
+        "output_usd_per_mtok": 0.3
+      },
+      "source": "fireworks-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.01947
+    },
+    {
+      "model_key": "fireworks/inkling",
+      "provider": "fireworks",
+      "leaf": "inkling",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "fireworks-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "fireworks/kimi-k2p6",
+      "provider": "fireworks",
+      "leaf": "kimi-k2p6",
+      "flag": "viable",
+      "pricing": {
+        "key": "fireworks_ai/accounts/fireworks/models/kimi-k2p6",
+        "input_usd_per_mtok": 0.95,
+        "output_usd_per_mtok": 4
+      },
+      "source": "fireworks-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.2607
+    },
+    {
+      "model_key": "fireworks/kimi-k2p7-code",
+      "provider": "fireworks",
+      "leaf": "kimi-k2p7-code",
+      "flag": "viable",
+      "pricing": {
+        "key": "fireworks_ai/accounts/fireworks/models/kimi-k2p7-code",
+        "input_usd_per_mtok": 0.95,
+        "output_usd_per_mtok": 4
+      },
+      "source": "fireworks-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.2607
+    },
+    {
+      "model_key": "fireworks/minimax-m2p7",
+      "provider": "fireworks",
+      "leaf": "minimax-m2p7",
+      "flag": "viable",
+      "pricing": {
+        "key": "fireworks_ai/accounts/fireworks/models/minimax-m2p7",
+        "input_usd_per_mtok": 0.3,
+        "output_usd_per_mtok": 1.2
+      },
+      "source": "fireworks-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.07919999999999999
+    },
+    {
+      "model_key": "fireworks/minimax-m3",
+      "provider": "fireworks",
+      "leaf": "minimax-m3",
+      "flag": "viable",
+      "pricing": {
+        "key": "fireworks_ai/accounts/fireworks/models/minimax-m3",
+        "input_usd_per_mtok": 0.3,
+        "output_usd_per_mtok": 1.2
+      },
+      "source": "fireworks-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.07919999999999999
+    },
+    {
+      "model_key": "fireworks/nemotron-3-ultra-nvfp4",
+      "provider": "fireworks",
+      "leaf": "nemotron-3-ultra-nvfp4",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "fireworks-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "fireworks/qwen3p7-plus",
+      "provider": "fireworks",
+      "leaf": "qwen3p7-plus",
+      "flag": "viable",
+      "pricing": {
+        "key": "fireworks_ai/accounts/fireworks/models/qwen3p7-plus",
+        "input_usd_per_mtok": 0.39999999999999997,
+        "output_usd_per_mtok": 1.5999999999999999
+      },
+      "source": "fireworks-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.10559999999999999
+    },
+    {
+      "model_key": "gemini/antigravity-preview-05-2026",
+      "provider": "gemini",
+      "leaf": "antigravity-preview-05-2026",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "gemini-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "gemini/deep-research-max-preview-04-2026",
+      "provider": "gemini",
+      "leaf": "deep-research-max-preview-04-2026",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "gemini-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "gemini/deep-research-preview-04-2026",
+      "provider": "gemini",
+      "leaf": "deep-research-preview-04-2026",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "gemini-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "gemini/deep-research-pro-preview-12-2025",
+      "provider": "gemini",
+      "leaf": "deep-research-pro-preview-12-2025",
+      "flag": "viable",
+      "pricing": {
+        "key": "gemini/deep-research-pro-preview-12-2025",
+        "input_usd_per_mtok": 2,
+        "output_usd_per_mtok": 12
+      },
+      "source": "gemini-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.726
+    },
+    {
+      "model_key": "gemini/gemini-2.5-computer-use-preview-10-2025",
+      "provider": "gemini",
+      "leaf": "gemini-2.5-computer-use-preview-10-2025",
+      "flag": "viable",
+      "pricing": {
+        "key": "gemini/gemini-2.5-computer-use-preview-10-2025",
+        "input_usd_per_mtok": 1.25,
+        "output_usd_per_mtok": 10
+      },
+      "source": "gemini-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.5775
+    },
+    {
+      "model_key": "gemini/gemini-2.5-flash-lite",
+      "provider": "gemini",
+      "leaf": "gemini-2.5-flash-lite",
+      "flag": "viable",
+      "pricing": {
+        "key": "gemini/gemini-2.5-flash-lite",
+        "input_usd_per_mtok": 0.09999999999999999,
+        "output_usd_per_mtok": 0.39999999999999997
+      },
+      "source": "gemini-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.026399999999999996
+    },
+    {
+      "model_key": "gemini/gemini-2.5-pro",
+      "provider": "gemini",
+      "leaf": "gemini-2.5-pro",
+      "flag": "viable",
+      "pricing": {
+        "key": "gemini/gemini-2.5-pro",
+        "input_usd_per_mtok": 1.25,
+        "output_usd_per_mtok": 10
+      },
+      "source": "gemini-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.5775
+    },
+    {
+      "model_key": "gemini/gemini-3.1-flash-lite-preview",
+      "provider": "gemini",
+      "leaf": "gemini-3.1-flash-lite-preview",
+      "flag": "viable",
+      "pricing": {
+        "key": "gemini/gemini-3.1-flash-lite-preview",
+        "input_usd_per_mtok": 0.25,
+        "output_usd_per_mtok": 1.5
+      },
+      "source": "gemini-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.09075
+    },
+    {
+      "model_key": "gemini/gemini-3.1-pro-preview-customtools",
+      "provider": "gemini",
+      "leaf": "gemini-3.1-pro-preview-customtools",
+      "flag": "viable",
+      "pricing": {
+        "key": "gemini/gemini-3.1-pro-preview-customtools",
+        "input_usd_per_mtok": 2,
+        "output_usd_per_mtok": 12
+      },
+      "source": "gemini-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.726
+    },
+    {
+      "model_key": "gemini/gemini-3.5-flash",
+      "provider": "gemini",
+      "leaf": "gemini-3.5-flash",
+      "flag": "viable",
+      "pricing": {
+        "key": "gemini/gemini-3.5-flash",
+        "input_usd_per_mtok": 1.5,
+        "output_usd_per_mtok": 9
+      },
+      "source": "gemini-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.5445
+    },
+    {
+      "model_key": "gemini/gemini-3.5-flash-lite",
+      "provider": "gemini",
+      "leaf": "gemini-3.5-flash-lite",
+      "flag": "viable",
+      "pricing": {
+        "key": "gemini/gemini-3.5-flash-lite",
+        "input_usd_per_mtok": 0.3,
+        "output_usd_per_mtok": 2.5
+      },
+      "source": "gemini-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.14355
+    },
+    {
+      "model_key": "gemini/gemini-3.6-flash",
+      "provider": "gemini",
+      "leaf": "gemini-3.6-flash",
+      "flag": "viable",
+      "pricing": {
+        "key": "gemini/gemini-3.6-flash",
+        "input_usd_per_mtok": 1.5,
+        "output_usd_per_mtok": 7.5
+      },
+      "source": "gemini-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.47025
+    },
+    {
+      "model_key": "gemini/gemini-flash-latest",
+      "provider": "gemini",
+      "leaf": "gemini-flash-latest",
+      "flag": "viable",
+      "pricing": {
+        "key": "gemini/gemini-flash-latest",
+        "input_usd_per_mtok": 0.3,
+        "output_usd_per_mtok": 2.5
+      },
+      "source": "gemini-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.14355
+    },
+    {
+      "model_key": "gemini/gemini-flash-lite-latest",
+      "provider": "gemini",
+      "leaf": "gemini-flash-lite-latest",
+      "flag": "viable",
+      "pricing": {
+        "key": "gemini/gemini-flash-lite-latest",
+        "input_usd_per_mtok": 0.09999999999999999,
+        "output_usd_per_mtok": 0.39999999999999997
+      },
+      "source": "gemini-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.026399999999999996
+    },
+    {
+      "model_key": "gemini/gemini-omni-flash-preview",
+      "provider": "gemini",
+      "leaf": "gemini-omni-flash-preview",
+      "flag": "viable",
+      "pricing": {
+        "key": "gemini/gemini-omni-flash-preview",
+        "input_usd_per_mtok": 1.5,
+        "output_usd_per_mtok": 9
+      },
+      "source": "gemini-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.5445
+    },
+    {
+      "model_key": "gemini/gemini-pro-latest",
+      "provider": "gemini",
+      "leaf": "gemini-pro-latest",
+      "flag": "viable",
+      "pricing": {
+        "key": "gemini/gemini-pro-latest",
+        "input_usd_per_mtok": 1.25,
+        "output_usd_per_mtok": 10
+      },
+      "source": "gemini-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.5775
+    },
+    {
+      "model_key": "gemini/gemini-robotics-er-1.6-preview",
+      "provider": "gemini",
+      "leaf": "gemini-robotics-er-1.6-preview",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "gemini-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "gemini/gemini-robotics-er-2-preview",
+      "provider": "gemini",
+      "leaf": "gemini-robotics-er-2-preview",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "gemini-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "gemini/gemma-4-26b-a4b-it",
+      "provider": "gemini",
+      "leaf": "gemma-4-26b-a4b-it",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "gemini-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "gemini/gemma-4-31b-it",
+      "provider": "gemini",
+      "leaf": "gemma-4-31b-it",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "gemini-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "gemini/lyria-3-clip-preview",
+      "provider": "gemini",
+      "leaf": "lyria-3-clip-preview",
+      "flag": "viable",
+      "pricing": {
+        "key": "gemini/lyria-3-clip-preview",
+        "input_usd_per_mtok": 0,
+        "output_usd_per_mtok": 0
+      },
+      "source": "gemini-listing (2026-08-11)",
+      "estimated_cycle_usd": 0
+    },
+    {
+      "model_key": "gemini/lyria-3-pro-preview",
+      "provider": "gemini",
+      "leaf": "lyria-3-pro-preview",
+      "flag": "viable",
+      "pricing": {
+        "key": "gemini/lyria-3-pro-preview",
+        "input_usd_per_mtok": 0,
+        "output_usd_per_mtok": 0
+      },
+      "source": "gemini-listing (2026-08-11)",
+      "estimated_cycle_usd": 0
+    },
+    {
+      "model_key": "gemini/nano-banana-pro-preview",
+      "provider": "gemini",
+      "leaf": "nano-banana-pro-preview",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "gemini-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "openai/babbage-002",
+      "provider": "openai",
+      "leaf": "babbage-002",
+      "flag": "viable",
+      "pricing": {
+        "key": "babbage-002",
+        "input_usd_per_mtok": 0.39999999999999997,
+        "output_usd_per_mtok": 0.39999999999999997
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.0462
+    },
+    {
+      "model_key": "openai/chat-latest",
+      "provider": "openai",
+      "leaf": "chat-latest",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "openai/computer-use-preview",
+      "provider": "openai",
+      "leaf": "computer-use-preview",
+      "flag": "viable",
+      "pricing": {
+        "key": "computer-use-preview",
+        "input_usd_per_mtok": 3,
+        "output_usd_per_mtok": 12
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.7919999999999999
+    },
+    {
+      "model_key": "openai/davinci-002",
+      "provider": "openai",
+      "leaf": "davinci-002",
+      "flag": "viable",
+      "pricing": {
+        "key": "davinci-002",
+        "input_usd_per_mtok": 2,
+        "output_usd_per_mtok": 2
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.23099999999999998
+    },
+    {
+      "model_key": "openai/gpt-3.5-turbo",
+      "provider": "openai",
+      "leaf": "gpt-3.5-turbo",
+      "flag": "viable",
+      "pricing": {
+        "key": "gpt-3.5-turbo",
+        "input_usd_per_mtok": 0.5,
+        "output_usd_per_mtok": 1.5
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.10725
+    },
+    {
+      "model_key": "openai/gpt-3.5-turbo-0125",
+      "provider": "openai",
+      "leaf": "gpt-3.5-turbo-0125",
+      "flag": "viable",
+      "pricing": {
+        "key": "gpt-3.5-turbo-0125",
+        "input_usd_per_mtok": 0.5,
+        "output_usd_per_mtok": 1.5
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.10725
+    },
+    {
+      "model_key": "openai/gpt-3.5-turbo-1106",
+      "provider": "openai",
+      "leaf": "gpt-3.5-turbo-1106",
+      "flag": "viable",
+      "pricing": {
+        "key": "gpt-3.5-turbo-1106",
+        "input_usd_per_mtok": 1,
+        "output_usd_per_mtok": 2
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.165
+    },
+    {
+      "model_key": "openai/gpt-3.5-turbo-16k",
+      "provider": "openai",
+      "leaf": "gpt-3.5-turbo-16k",
+      "flag": "viable",
+      "pricing": {
+        "key": "gpt-3.5-turbo-16k",
+        "input_usd_per_mtok": 3,
+        "output_usd_per_mtok": 4
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.39599999999999996
+    },
+    {
+      "model_key": "openai/gpt-3.5-turbo-instruct",
+      "provider": "openai",
+      "leaf": "gpt-3.5-turbo-instruct",
+      "flag": "viable",
+      "pricing": {
+        "key": "gpt-3.5-turbo-instruct",
+        "input_usd_per_mtok": 1.5,
+        "output_usd_per_mtok": 2
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.19799999999999998
+    },
+    {
+      "model_key": "openai/gpt-3.5-turbo-instruct-0914",
+      "provider": "openai",
+      "leaf": "gpt-3.5-turbo-instruct-0914",
+      "flag": "viable",
+      "pricing": {
+        "key": "gpt-3.5-turbo-instruct-0914",
+        "input_usd_per_mtok": 1.5,
+        "output_usd_per_mtok": 2
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.19799999999999998
+    },
+    {
+      "model_key": "openai/gpt-4",
+      "provider": "openai",
+      "leaf": "gpt-4",
+      "flag": "viable",
+      "pricing": {
+        "key": "gpt-4",
+        "input_usd_per_mtok": 30,
+        "output_usd_per_mtok": 60
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 4.95
+    },
+    {
+      "model_key": "openai/gpt-4-0613",
+      "provider": "openai",
+      "leaf": "gpt-4-0613",
+      "flag": "viable",
+      "pricing": {
+        "key": "gpt-4-0613",
+        "input_usd_per_mtok": 30,
+        "output_usd_per_mtok": 60
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 4.95
+    },
+    {
+      "model_key": "openai/gpt-4-turbo",
+      "provider": "openai",
+      "leaf": "gpt-4-turbo",
+      "flag": "viable",
+      "pricing": {
+        "key": "gpt-4-turbo",
+        "input_usd_per_mtok": 10,
+        "output_usd_per_mtok": 30
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 2.145
+    },
+    {
+      "model_key": "openai/gpt-4.1",
+      "provider": "openai",
+      "leaf": "gpt-4.1",
+      "flag": "viable",
+      "pricing": {
+        "key": "gpt-4.1",
+        "input_usd_per_mtok": 2,
+        "output_usd_per_mtok": 8
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.5279999999999999
+    },
+    {
+      "model_key": "openai/gpt-4.1-mini",
+      "provider": "openai",
+      "leaf": "gpt-4.1-mini",
+      "flag": "viable",
+      "pricing": {
+        "key": "gpt-4.1-mini",
+        "input_usd_per_mtok": 0.39999999999999997,
+        "output_usd_per_mtok": 1.5999999999999999
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.10559999999999999
+    },
+    {
+      "model_key": "openai/gpt-4.1-nano",
+      "provider": "openai",
+      "leaf": "gpt-4.1-nano",
+      "flag": "viable",
+      "pricing": {
+        "key": "gpt-4.1-nano",
+        "input_usd_per_mtok": 0.09999999999999999,
+        "output_usd_per_mtok": 0.39999999999999997
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.026399999999999996
+    },
+    {
+      "model_key": "openai/gpt-4o",
+      "provider": "openai",
+      "leaf": "gpt-4o",
+      "flag": "viable",
+      "pricing": {
+        "key": "gpt-4o",
+        "input_usd_per_mtok": 2.5,
+        "output_usd_per_mtok": 10
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.66
+    },
+    {
+      "model_key": "openai/gpt-4o-mini",
+      "provider": "openai",
+      "leaf": "gpt-4o-mini",
+      "flag": "viable",
+      "pricing": {
+        "key": "gpt-4o-mini",
+        "input_usd_per_mtok": 0.15,
+        "output_usd_per_mtok": 0.6
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.039599999999999996
+    },
+    {
+      "model_key": "openai/gpt-4o-mini-search-preview",
+      "provider": "openai",
+      "leaf": "gpt-4o-mini-search-preview",
+      "flag": "viable",
+      "pricing": {
+        "key": "gpt-4o-mini-search-preview",
+        "input_usd_per_mtok": 0.15,
+        "output_usd_per_mtok": 0.6
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.039599999999999996
+    },
+    {
+      "model_key": "openai/gpt-4o-search-preview",
+      "provider": "openai",
+      "leaf": "gpt-4o-search-preview",
+      "flag": "viable",
+      "pricing": {
+        "key": "gpt-4o-search-preview",
+        "input_usd_per_mtok": 2.5,
+        "output_usd_per_mtok": 10
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.66
+    },
+    {
+      "model_key": "openai/gpt-5",
+      "provider": "openai",
+      "leaf": "gpt-5",
+      "flag": "viable",
+      "pricing": {
+        "key": "gpt-5",
+        "input_usd_per_mtok": 1.25,
+        "output_usd_per_mtok": 10
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.5775
+    },
+    {
+      "model_key": "openai/gpt-5-chat-latest",
+      "provider": "openai",
+      "leaf": "gpt-5-chat-latest",
+      "flag": "viable",
+      "pricing": {
+        "key": "gpt-5-chat-latest",
+        "input_usd_per_mtok": 1.25,
+        "output_usd_per_mtok": 10
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.5775
+    },
+    {
+      "model_key": "openai/gpt-5-codex",
+      "provider": "openai",
+      "leaf": "gpt-5-codex",
+      "flag": "viable",
+      "pricing": {
+        "key": "gpt-5-codex",
+        "input_usd_per_mtok": 1.25,
+        "output_usd_per_mtok": 10
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.5775
+    },
+    {
+      "model_key": "openai/gpt-5-nano",
+      "provider": "openai",
+      "leaf": "gpt-5-nano",
+      "flag": "viable",
+      "pricing": {
+        "key": "gpt-5-nano",
+        "input_usd_per_mtok": 0.049999999999999996,
+        "output_usd_per_mtok": 0.39999999999999997
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.0231
+    },
+    {
+      "model_key": "openai/gpt-5-pro",
+      "provider": "openai",
+      "leaf": "gpt-5-pro",
+      "flag": "viable",
+      "pricing": {
+        "key": "gpt-5-pro",
+        "input_usd_per_mtok": 15,
+        "output_usd_per_mtok": 120
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 6.93
+    },
+    {
+      "model_key": "openai/gpt-5-search-api",
+      "provider": "openai",
+      "leaf": "gpt-5-search-api",
+      "flag": "viable",
+      "pricing": {
+        "key": "gpt-5-search-api",
+        "input_usd_per_mtok": 1.25,
+        "output_usd_per_mtok": 10
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.5775
+    },
+    {
+      "model_key": "openai/gpt-5.1",
+      "provider": "openai",
+      "leaf": "gpt-5.1",
+      "flag": "viable",
+      "pricing": {
+        "key": "gpt-5.1",
+        "input_usd_per_mtok": 1.25,
+        "output_usd_per_mtok": 10
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.5775
+    },
+    {
+      "model_key": "openai/gpt-5.1-chat-latest",
+      "provider": "openai",
+      "leaf": "gpt-5.1-chat-latest",
+      "flag": "viable",
+      "pricing": {
+        "key": "gpt-5.1-chat-latest",
+        "input_usd_per_mtok": 1.25,
+        "output_usd_per_mtok": 10
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.5775
+    },
+    {
+      "model_key": "openai/gpt-5.1-codex",
+      "provider": "openai",
+      "leaf": "gpt-5.1-codex",
+      "flag": "viable",
+      "pricing": {
+        "key": "gpt-5.1-codex",
+        "input_usd_per_mtok": 1.25,
+        "output_usd_per_mtok": 10
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.5775
+    },
+    {
+      "model_key": "openai/gpt-5.1-codex-max",
+      "provider": "openai",
+      "leaf": "gpt-5.1-codex-max",
+      "flag": "viable",
+      "pricing": {
+        "key": "gpt-5.1-codex-max",
+        "input_usd_per_mtok": 1.25,
+        "output_usd_per_mtok": 10
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.5775
+    },
+    {
+      "model_key": "openai/gpt-5.1-codex-mini",
+      "provider": "openai",
+      "leaf": "gpt-5.1-codex-mini",
+      "flag": "viable",
+      "pricing": {
+        "key": "gpt-5.1-codex-mini",
+        "input_usd_per_mtok": 0.25,
+        "output_usd_per_mtok": 2
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.11549999999999999
+    },
+    {
+      "model_key": "openai/gpt-5.2-chat-latest",
+      "provider": "openai",
+      "leaf": "gpt-5.2-chat-latest",
+      "flag": "viable",
+      "pricing": {
+        "key": "gpt-5.2-chat-latest",
+        "input_usd_per_mtok": 1.75,
+        "output_usd_per_mtok": 14
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.8085
+    },
+    {
+      "model_key": "openai/gpt-5.2-codex",
+      "provider": "openai",
+      "leaf": "gpt-5.2-codex",
+      "flag": "viable",
+      "pricing": {
+        "key": "gpt-5.2-codex",
+        "input_usd_per_mtok": 1.75,
+        "output_usd_per_mtok": 14
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.8085
+    },
+    {
+      "model_key": "openai/gpt-5.2-pro",
+      "provider": "openai",
+      "leaf": "gpt-5.2-pro",
+      "flag": "viable",
+      "pricing": {
+        "key": "gpt-5.2-pro",
+        "input_usd_per_mtok": 21,
+        "output_usd_per_mtok": 168
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 9.702
+    },
+    {
+      "model_key": "openai/gpt-5.3-chat-latest",
+      "provider": "openai",
+      "leaf": "gpt-5.3-chat-latest",
+      "flag": "viable",
+      "pricing": {
+        "key": "gpt-5.3-chat-latest",
+        "input_usd_per_mtok": 1.75,
+        "output_usd_per_mtok": 14
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.8085
+    },
+    {
+      "model_key": "openai/gpt-5.3-codex",
+      "provider": "openai",
+      "leaf": "gpt-5.3-codex",
+      "flag": "viable",
+      "pricing": {
+        "key": "gpt-5.3-codex",
+        "input_usd_per_mtok": 1.75,
+        "output_usd_per_mtok": 14
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.8085
+    },
+    {
+      "model_key": "openai/gpt-5.4-pro",
+      "provider": "openai",
+      "leaf": "gpt-5.4-pro",
+      "flag": "viable",
+      "pricing": {
+        "key": "gpt-5.4-pro",
+        "input_usd_per_mtok": 30,
+        "output_usd_per_mtok": 180
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 10.89
+    },
+    {
+      "model_key": "openai/gpt-5.5-pro",
+      "provider": "openai",
+      "leaf": "gpt-5.5-pro",
+      "flag": "viable",
+      "pricing": {
+        "key": "gpt-5.5-pro",
+        "input_usd_per_mtok": 30,
+        "output_usd_per_mtok": 180
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 10.89
+    },
+    {
+      "model_key": "openai/gpt-5.6-luna",
+      "provider": "openai",
+      "leaf": "gpt-5.6-luna",
+      "flag": "viable",
+      "pricing": {
+        "key": "gpt-5.6-luna",
+        "input_usd_per_mtok": 0.19999999999999998,
+        "output_usd_per_mtok": 1.2
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.0726
+    },
+    {
+      "model_key": "openai/gpt-5.6-sol",
+      "provider": "openai",
+      "leaf": "gpt-5.6-sol",
+      "flag": "viable",
+      "pricing": {
+        "key": "gpt-5.6-sol",
+        "input_usd_per_mtok": 5,
+        "output_usd_per_mtok": 30
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 1.8150000000000002
+    },
+    {
+      "model_key": "openai/gpt-5.6-terra",
+      "provider": "openai",
+      "leaf": "gpt-5.6-terra",
+      "flag": "viable",
+      "pricing": {
+        "key": "gpt-5.6-terra",
+        "input_usd_per_mtok": 2,
+        "output_usd_per_mtok": 12
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.726
+    },
+    {
+      "model_key": "openai/o1",
+      "provider": "openai",
+      "leaf": "o1",
+      "flag": "viable",
+      "pricing": {
+        "key": "o1",
+        "input_usd_per_mtok": 15,
+        "output_usd_per_mtok": 60
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 3.9600000000000004
+    },
+    {
+      "model_key": "openai/o1-pro",
+      "provider": "openai",
+      "leaf": "o1-pro",
+      "flag": "viable",
+      "pricing": {
+        "key": "o1-pro",
+        "input_usd_per_mtok": 150,
+        "output_usd_per_mtok": 600
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 39.6
+    },
+    {
+      "model_key": "openai/o3",
+      "provider": "openai",
+      "leaf": "o3",
+      "flag": "viable",
+      "pricing": {
+        "key": "o3",
+        "input_usd_per_mtok": 2,
+        "output_usd_per_mtok": 8
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.5279999999999999
+    },
+    {
+      "model_key": "openai/o3-mini",
+      "provider": "openai",
+      "leaf": "o3-mini",
+      "flag": "viable",
+      "pricing": {
+        "key": "o3-mini",
+        "input_usd_per_mtok": 1.1,
+        "output_usd_per_mtok": 4.4
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.2904
+    },
+    {
+      "model_key": "openai/o4-mini",
+      "provider": "openai",
+      "leaf": "o4-mini",
+      "flag": "viable",
+      "pricing": {
+        "key": "o4-mini",
+        "input_usd_per_mtok": 1.1,
+        "output_usd_per_mtok": 4.4
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.2904
+    },
+    {
+      "model_key": "openai/o4-mini-deep-research",
+      "provider": "openai",
+      "leaf": "o4-mini-deep-research",
+      "flag": "viable",
+      "pricing": {
+        "key": "o4-mini-deep-research",
+        "input_usd_per_mtok": 2,
+        "output_usd_per_mtok": 8
+      },
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": 0.5279999999999999
+    },
+    {
+      "model_key": "openai/sora-2",
+      "provider": "openai",
+      "leaf": "sora-2",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    },
+    {
+      "model_key": "openai/sora-2-pro",
+      "provider": "openai",
+      "leaf": "sora-2-pro",
+      "flag": "unpriced",
+      "pricing": null,
+      "source": "openai-listing (2026-08-11)",
+      "estimated_cycle_usd": null,
+      "note": "listed but no pricing-map entry resolves — enrollment blocked, fail-closed (dev-rule P6)"
+    }
+  ],
+  "excluded": [
+    {
+      "model_key": "deepinfra/Bria/Bria-3.2",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "deepinfra/Bria/Bria-3.2-vector",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "deepinfra/Bria/blur_background",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "deepinfra/Bria/erase_foreground",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "deepinfra/Bria/expand",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "deepinfra/Bria/fibo",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "deepinfra/Bria/fibo_edit",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "deepinfra/Bria/remove_background",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "deepinfra/PrunaAI/p-image",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "deepinfra/Qwen/Qwen-Image-Edit",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "deepinfra/Qwen/Qwen-Image-Max",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "deepinfra/Qwen/Qwen3-Embedding-0.6B",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "deepinfra/Qwen/Qwen3-Embedding-4B",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "deepinfra/Qwen/Qwen3-Embedding-8B",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "deepinfra/Qwen/Qwen3-TTS",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "deepinfra/Qwen/Qwen3-TTS-VoiceDesign",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "deepinfra/XiaomiMiMo/MiMo-V2.5-tts",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "deepinfra/XiaomiMiMo/MiMo-V2.5-tts-voicedesign",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "deepinfra/black-forest-labs/FLUX-1-Redux-dev",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "deepinfra/black-forest-labs/FLUX-1-dev",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "deepinfra/black-forest-labs/FLUX-1-schnell",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "deepinfra/black-forest-labs/FLUX-1.1-pro",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "deepinfra/black-forest-labs/FLUX-2-dev",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "deepinfra/black-forest-labs/FLUX-2-klein-4b",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "deepinfra/black-forest-labs/FLUX-2-klein-9b",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "deepinfra/black-forest-labs/FLUX-2-max",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "deepinfra/black-forest-labs/FLUX-2-pro",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "deepinfra/black-forest-labs/FLUX.1-Kontext-dev",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "deepinfra/bosonai/HiggsAudioV2.5",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "deepinfra/google/embeddinggemma-300m",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "deepinfra/google/gemini-3-pro-image",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "deepinfra/google/veo-3.1",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "deepinfra/google/veo-3.1-fast",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "deepinfra/inworld-ai/realtime-tts-1.5-max",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "deepinfra/inworld-ai/realtime-tts-1.5-mini",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "deepinfra/inworld-ai/realtime-tts-2",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "deepinfra/meta-llama/Llama-Guard-4-12B",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "deepinfra/nvidia/llama-nemotron-embed-vl-1b-v2",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "deepinfra/openai/whisper-large-v3",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "deepinfra/openai/whisper-large-v3-turbo",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "deepinfra/stabilityai/sdxl-turbo",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "fireworks/qwen3-embedding-8b",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "fireworks/qwen3-reranker-8b",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "gemini/gemini-2.5-flash-image",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "gemini/gemini-2.5-flash-preview-tts",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "gemini/gemini-2.5-pro-preview-tts",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "gemini/gemini-3-pro-image",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "gemini/gemini-3-pro-image-preview",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "gemini/gemini-3.1-flash-image",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "gemini/gemini-3.1-flash-image-preview",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "gemini/gemini-3.1-flash-lite-image",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "gemini/gemini-3.1-flash-tts-preview",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "openai/chatgpt-image-latest",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "openai/computer-use-preview-2025-03-11",
+      "reason": "dated-snapshot-dup"
+    },
+    {
+      "model_key": "openai/gpt-4-turbo-2024-04-09",
+      "reason": "dated-snapshot-dup"
+    },
+    {
+      "model_key": "openai/gpt-4.1-2025-04-14",
+      "reason": "dated-snapshot-dup"
+    },
+    {
+      "model_key": "openai/gpt-4.1-mini-2025-04-14",
+      "reason": "dated-snapshot-dup"
+    },
+    {
+      "model_key": "openai/gpt-4.1-nano-2025-04-14",
+      "reason": "dated-snapshot-dup"
+    },
+    {
+      "model_key": "openai/gpt-4o-2024-05-13",
+      "reason": "dated-snapshot-dup"
+    },
+    {
+      "model_key": "openai/gpt-4o-2024-08-06",
+      "reason": "dated-snapshot-dup"
+    },
+    {
+      "model_key": "openai/gpt-4o-2024-11-20",
+      "reason": "dated-snapshot-dup"
+    },
+    {
+      "model_key": "openai/gpt-4o-mini-2024-07-18",
+      "reason": "dated-snapshot-dup"
+    },
+    {
+      "model_key": "openai/gpt-4o-mini-search-preview-2025-03-11",
+      "reason": "dated-snapshot-dup"
+    },
+    {
+      "model_key": "openai/gpt-4o-mini-transcribe",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "openai/gpt-4o-mini-transcribe-2025-03-20",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "openai/gpt-4o-mini-transcribe-2025-12-15",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "openai/gpt-4o-mini-tts",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "openai/gpt-4o-mini-tts-2025-03-20",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "openai/gpt-4o-mini-tts-2025-12-15",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "openai/gpt-4o-search-preview-2025-03-11",
+      "reason": "dated-snapshot-dup"
+    },
+    {
+      "model_key": "openai/gpt-4o-transcribe",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "openai/gpt-4o-transcribe-diarize",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "openai/gpt-5-2025-08-07",
+      "reason": "dated-snapshot-dup"
+    },
+    {
+      "model_key": "openai/gpt-5-mini-2025-08-07",
+      "reason": "dated-snapshot-dup"
+    },
+    {
+      "model_key": "openai/gpt-5-nano-2025-08-07",
+      "reason": "dated-snapshot-dup"
+    },
+    {
+      "model_key": "openai/gpt-5-pro-2025-10-06",
+      "reason": "dated-snapshot-dup"
+    },
+    {
+      "model_key": "openai/gpt-5-search-api-2025-10-14",
+      "reason": "dated-snapshot-dup"
+    },
+    {
+      "model_key": "openai/gpt-5.1-2025-11-13",
+      "reason": "dated-snapshot-dup"
+    },
+    {
+      "model_key": "openai/gpt-5.2-2025-12-11",
+      "reason": "dated-snapshot-dup"
+    },
+    {
+      "model_key": "openai/gpt-5.2-pro-2025-12-11",
+      "reason": "dated-snapshot-dup"
+    },
+    {
+      "model_key": "openai/gpt-5.4-2026-03-05",
+      "reason": "dated-snapshot-dup"
+    },
+    {
+      "model_key": "openai/gpt-5.4-mini-2026-03-17",
+      "reason": "dated-snapshot-dup"
+    },
+    {
+      "model_key": "openai/gpt-5.4-nano-2026-03-17",
+      "reason": "dated-snapshot-dup"
+    },
+    {
+      "model_key": "openai/gpt-5.4-pro-2026-03-05",
+      "reason": "dated-snapshot-dup"
+    },
+    {
+      "model_key": "openai/gpt-5.5-2026-04-23",
+      "reason": "dated-snapshot-dup"
+    },
+    {
+      "model_key": "openai/gpt-5.5-pro-2026-04-23",
+      "reason": "dated-snapshot-dup"
+    },
+    {
+      "model_key": "openai/gpt-audio",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "openai/gpt-audio-1.5",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "openai/gpt-audio-2025-08-28",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "openai/gpt-audio-mini",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "openai/gpt-audio-mini-2025-10-06",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "openai/gpt-audio-mini-2025-12-15",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "openai/gpt-image-1",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "openai/gpt-image-1-mini",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "openai/gpt-image-1.5",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "openai/gpt-image-2",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "openai/gpt-image-2-2026-04-21",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "openai/gpt-live-transcribe",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "openai/gpt-realtime",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "openai/gpt-realtime-1.5",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "openai/gpt-realtime-2",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "openai/gpt-realtime-2.1",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "openai/gpt-realtime-2.1-mini",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "openai/gpt-realtime-2025-08-28",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "openai/gpt-realtime-mini",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "openai/gpt-realtime-mini-2025-12-15",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "openai/gpt-realtime-translate",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "openai/gpt-realtime-whisper",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "openai/gpt-transcribe",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "openai/o1-2024-12-17",
+      "reason": "dated-snapshot-dup"
+    },
+    {
+      "model_key": "openai/o1-pro-2025-03-19",
+      "reason": "dated-snapshot-dup"
+    },
+    {
+      "model_key": "openai/o3-2025-04-16",
+      "reason": "dated-snapshot-dup"
+    },
+    {
+      "model_key": "openai/o3-mini-2025-01-31",
+      "reason": "dated-snapshot-dup"
+    },
+    {
+      "model_key": "openai/o4-mini-2025-04-16",
+      "reason": "dated-snapshot-dup"
+    },
+    {
+      "model_key": "openai/o4-mini-deep-research-2025-06-26",
+      "reason": "dated-snapshot-dup"
+    },
+    {
+      "model_key": "openai/omni-moderation-2024-09-26",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "openai/omni-moderation-latest",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "openai/text-embedding-3-large",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "openai/text-embedding-3-small",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "openai/text-embedding-ada-002",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "openai/tts-1",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "openai/tts-1-1106",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "openai/tts-1-hd",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "openai/tts-1-hd-1106",
+      "reason": "non-text-role"
+    },
+    {
+      "model_key": "openai/whisper-1",
+      "reason": "non-text-role"
+    }
+  ],
+  "retirement_candidates": [],
+  "summary": {
+    "viable": 164,
+    "unpriced": 57,
+    "excluded": 125,
+    "retirement_candidates": 0,
+    "providers_listed": 6,
+    "providers_unavailable": 1
+  }
+}

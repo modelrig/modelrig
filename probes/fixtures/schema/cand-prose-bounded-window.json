@@ -1,0 +1,36 @@
+{
+  "id": "cand-prose-bounded-window",
+  "class": "schema",
+  "domain": "finance",
+  "family": "probe-suite",
+  "difficulty": "hard",
+  "subtype": "generation.prose",
+  "source": "contributed:cycle3-subtypes (synthetic company, no personal data)",
+  "prompt": "You are an equity analyst. Using ONLY the facts below, write a growth assessment in the `narrative` field. The narrative MUST be at least 400 characters and MUST NOT exceed 700 characters — stay inside that window. Also extract the three figures exactly as numbers (no currency symbols): last-year revenue in millions, revenue growth percent, and operating margin percent.\n\nFACTS (synthetic):\nCobalt Robotics grew revenue 31.8% last year to 640.2 million dollars, driven by warehouse-automation contracts. Operating margin turned positive for the first time, reaching 4.2%. The company added two large logistics customers and expects continued double-digit growth.",
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["narrative", "revenue", "revenue_growth_pct", "operating_margin_pct"],
+    "properties": {
+      "narrative": {
+        "type": "string",
+        "minLength": 400,
+        "maxLength": 700
+      },
+      "revenue": {
+        "type": "number"
+      },
+      "revenue_growth_pct": {
+        "type": "number"
+      },
+      "operating_margin_pct": {
+        "type": "number"
+      }
+    }
+  },
+  "expectedValues": {
+    "revenue": 640.2,
+    "revenue_growth_pct": 31.8,
+    "operating_margin_pct": 4.2
+  }
+}

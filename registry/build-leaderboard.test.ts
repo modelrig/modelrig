@@ -444,11 +444,15 @@ describe("leaderboard rows carry a per-family view (task-type-leaderboards spec 
     expect(row.by_subtype).toBeUndefined();
   });
 
-  it("the committed leaderboard carries by_subtype on every full 08-10 row (data regression gate)", () => {
+  it("the committed leaderboard carries by_subtype on every full cycle-003 row (data regression gate)", () => {
+    // A full run is now 15 fixtures × 5 = 75 samples (Cycle 3 added 2
+    // generation.prose survivors to the 13-fixture corpus; the prior gate
+    // pinned 65 = 13 × 5). Grok models kept their cycle-002 data (contaminated
+    // this cycle, out-of-credits) at a smaller sample count and are excluded.
     const committed = JSON.parse(
       readFileSync(join(__dirname, "leaderboard.json"), "utf8"),
     ) as Array<{ model_key: string; samples: number; by_subtype?: Record<string, unknown> }>;
-    const fullRuns = committed.filter((row) => row.samples === 65);
+    const fullRuns = committed.filter((row) => row.samples === 75);
     expect(fullRuns.length).toBeGreaterThanOrEqual(27);
     for (const row of fullRuns) {
       expect(

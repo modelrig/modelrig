@@ -1,0 +1,46 @@
+{
+  "id": "cand-prose-nested-figures",
+  "class": "schema",
+  "domain": "finance",
+  "family": "probe-suite",
+  "difficulty": "hard",
+  "subtype": "generation.prose",
+  "source": "contributed:cycle3-subtypes (synthetic company, no personal data)",
+  "prompt": "You are an equity analyst. Using ONLY the facts below, write an assessment of at least 500 characters in the `narrative` field. Then fill the required nested `metrics` object exactly: `prior_revenue` and `current_revenue` are the two revenue figures in millions (numbers, no symbols), and `metrics.customers` lists the named customers as an array of strings.\n\nFACTS (synthetic):\nMeridian Devices grew revenue from 300.0 million dollars to 372.0 million dollars over the past year. The growth was concentrated in two accounts: Northwind Logistics and Cedar Health. The company reinvested the gains into a second production line.",
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["narrative", "metrics"],
+    "properties": {
+      "narrative": {
+        "type": "string",
+        "minLength": 500
+      },
+      "metrics": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["prior_revenue", "current_revenue", "customers"],
+        "properties": {
+          "prior_revenue": {
+            "type": "number"
+          },
+          "current_revenue": {
+            "type": "number"
+          },
+          "customers": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "expectedValues": {
+    "metrics.prior_revenue": 300.0,
+    "metrics.current_revenue": 372.0
+  }
+}
