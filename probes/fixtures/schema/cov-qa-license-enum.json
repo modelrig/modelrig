@@ -1,0 +1,29 @@
+{
+  "id": "cov-qa-license-enum",
+  "class": "schema",
+  "domain": "technical",
+  "family": "probe-suite",
+  "difficulty": "standard",
+  "subtype": "qa.docs",
+  "notes": "coverage fixture — saturated at authoring (all Stage-A panel models 100%); reinstated for node coverage, architect ruling 2026-08-11",
+  "source": "contributed:cycle3-subtypes (synthetic public-domain doc excerpt, no personal data)",
+  "prompt": "Answer the question using ONLY the documentation excerpt below. The excerpt names two different licenses for two different things — return the one the question asks about, using the schema's enum exactly (do not invent a label). Return ONLY the fields the schema defines; add no extra keys.\n\nDOCUMENTATION EXCERPT (synthetic):\n\"The probe code is released under Apache-2.0. The published leaderboard data is released separately under CC-BY-4.0, so anyone may reuse the numbers with attribution.\"\n\nQUESTION: Under which license is the published DATA released?",
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["data_license", "answer_in_context"],
+    "properties": {
+      "data_license": {
+        "type": "string",
+        "enum": ["Apache-2.0", "CC-BY-4.0", "MIT", "proprietary"]
+      },
+      "answer_in_context": {
+        "type": "boolean"
+      }
+    }
+  },
+  "expectedValues": {
+    "data_license": "CC-BY-4.0",
+    "answer_in_context": true
+  }
+}

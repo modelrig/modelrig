@@ -1,0 +1,371 @@
+{
+  "modelKey": "deepinfra/meta-llama/Llama-4-Scout-17B-16E-Instruct",
+  "class": "schema",
+  "date": "2026-08-13T01:49:36.435Z",
+  "harnessVersion": "0.0.1",
+  "fixtureHashes": {
+    "cov-qa-distractor-number": "8d51f9735593256b",
+    "cov-qa-license-enum": "850cfc65a5691219",
+    "cov-summarize-count-disambig": "7e5300d61ea20061",
+    "cov-summarize-negation-refund": "a7b263edce1bef0a"
+  },
+  "fixtureFamilies": {
+    "cov-qa-distractor-number": "probe-suite",
+    "cov-qa-license-enum": "probe-suite",
+    "cov-summarize-count-disambig": "probe-suite",
+    "cov-summarize-negation-refund": "probe-suite"
+  },
+  "fixtureDifficulties": {
+    "cov-qa-distractor-number": "standard",
+    "cov-qa-license-enum": "standard",
+    "cov-summarize-count-disambig": "standard",
+    "cov-summarize-negation-refund": "standard"
+  },
+  "fixtureSubtypes": {
+    "cov-qa-distractor-number": "qa.docs",
+    "cov-qa-license-enum": "qa.docs",
+    "cov-summarize-count-disambig": "summarize",
+    "cov-summarize-negation-refund": "summarize"
+  },
+  "raw": {
+    "cov-qa-distractor-number": [
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 342,
+        "tokensOut": 40,
+        "costUsd": 0.00003936,
+        "latencyMs": 669,
+        "failureClass": null,
+        "rung": "json_mode"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 342,
+        "tokensOut": 40,
+        "costUsd": 0.00003936,
+        "latencyMs": 1058,
+        "failureClass": null,
+        "rung": "json_mode"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 342,
+        "tokensOut": 40,
+        "costUsd": 0.00003936,
+        "latencyMs": 692,
+        "failureClass": null,
+        "rung": "json_mode"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 342,
+        "tokensOut": 40,
+        "costUsd": 0.00003936,
+        "latencyMs": 993,
+        "failureClass": null,
+        "rung": "json_mode"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 342,
+        "tokensOut": 40,
+        "costUsd": 0.00003936,
+        "latencyMs": 669,
+        "failureClass": null,
+        "rung": "json_mode"
+      }
+    ],
+    "cov-qa-license-enum": [
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 285,
+        "tokensOut": 20,
+        "costUsd": 0.000028800000000000002,
+        "latencyMs": 579,
+        "failureClass": null,
+        "rung": "json_mode"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 285,
+        "tokensOut": 20,
+        "costUsd": 0.000028800000000000002,
+        "latencyMs": 364,
+        "failureClass": null,
+        "rung": "json_mode"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 285,
+        "tokensOut": 20,
+        "costUsd": 0.000028800000000000002,
+        "latencyMs": 467,
+        "failureClass": null,
+        "rung": "json_mode"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 285,
+        "tokensOut": 20,
+        "costUsd": 0.000028800000000000002,
+        "latencyMs": 1658,
+        "failureClass": null,
+        "rung": "json_mode"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 285,
+        "tokensOut": 20,
+        "costUsd": 0.000028800000000000002,
+        "latencyMs": 521,
+        "failureClass": null,
+        "rung": "json_mode"
+      }
+    ],
+    "cov-summarize-count-disambig": [
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 359,
+        "tokensOut": 44,
+        "costUsd": 0.00004192,
+        "latencyMs": 879,
+        "failureClass": null,
+        "rung": "json_mode"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 359,
+        "tokensOut": 43,
+        "costUsd": 0.00004162,
+        "latencyMs": 667,
+        "failureClass": null,
+        "rung": "json_mode"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 359,
+        "tokensOut": 57,
+        "costUsd": 0.00004582,
+        "latencyMs": 1108,
+        "failureClass": null,
+        "rung": "json_mode"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 359,
+        "tokensOut": 41,
+        "costUsd": 0.00004102,
+        "latencyMs": 1127,
+        "failureClass": null,
+        "rung": "json_mode"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 359,
+        "tokensOut": 53,
+        "costUsd": 0.00004462,
+        "latencyMs": 919,
+        "failureClass": null,
+        "rung": "json_mode"
+      }
+    ],
+    "cov-summarize-negation-refund": [
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 344,
+        "tokensOut": 57,
+        "costUsd": 0.00004462,
+        "latencyMs": 1108,
+        "failureClass": null,
+        "rung": "json_mode"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 344,
+        "tokensOut": 52,
+        "costUsd": 0.00004312,
+        "latencyMs": 856,
+        "failureClass": null,
+        "rung": "json_mode"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 344,
+        "tokensOut": 56,
+        "costUsd": 0.000044319999999999996,
+        "latencyMs": 901,
+        "failureClass": null,
+        "rung": "json_mode"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 344,
+        "tokensOut": 56,
+        "costUsd": 0.000044319999999999996,
+        "latencyMs": 1403,
+        "failureClass": null,
+        "rung": "json_mode"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 344,
+        "tokensOut": 45,
+        "costUsd": 0.00004102,
+        "latencyMs": 1054,
+        "failureClass": null,
+        "rung": "json_mode"
+      }
+    ]
+  },
+  "stats": [
+    {
+      "fixtureId": "cov-qa-distractor-number",
+      "samples": 5,
+      "parseRate": 1,
+      "conformRate": 1,
+      "valueAccuracyMean": 1,
+      "conformCi95": [
+        0.5655175352168251,
+        1
+      ],
+      "meanCostUsd": 0.00003936
+    },
+    {
+      "fixtureId": "cov-qa-license-enum",
+      "samples": 5,
+      "parseRate": 1,
+      "conformRate": 1,
+      "valueAccuracyMean": 1,
+      "conformCi95": [
+        0.5655175352168251,
+        1
+      ],
+      "meanCostUsd": 0.000028800000000000002
+    },
+    {
+      "fixtureId": "cov-summarize-count-disambig",
+      "samples": 5,
+      "parseRate": 1,
+      "conformRate": 1,
+      "valueAccuracyMean": 1,
+      "conformCi95": [
+        0.5655175352168251,
+        1
+      ],
+      "meanCostUsd": 0.000042999999999999995
+    },
+    {
+      "fixtureId": "cov-summarize-negation-refund",
+      "samples": 5,
+      "parseRate": 1,
+      "conformRate": 1,
+      "valueAccuracyMean": 1,
+      "conformCi95": [
+        0.5655175352168251,
+        1
+      ],
+      "meanCostUsd": 0.00004348
+    }
+  ],
+  "totalCostUsd": 0.0007732
+}

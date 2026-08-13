@@ -1,0 +1,371 @@
+{
+  "modelKey": "openai/gpt-5.4",
+  "class": "schema",
+  "date": "2026-08-13T02:21:49.684Z",
+  "harnessVersion": "0.0.1",
+  "fixtureHashes": {
+    "cov-qa-distractor-number": "8d51f9735593256b",
+    "cov-qa-license-enum": "850cfc65a5691219",
+    "cov-summarize-count-disambig": "7e5300d61ea20061",
+    "cov-summarize-negation-refund": "a7b263edce1bef0a"
+  },
+  "fixtureFamilies": {
+    "cov-qa-distractor-number": "probe-suite",
+    "cov-qa-license-enum": "probe-suite",
+    "cov-summarize-count-disambig": "probe-suite",
+    "cov-summarize-negation-refund": "probe-suite"
+  },
+  "fixtureDifficulties": {
+    "cov-qa-distractor-number": "standard",
+    "cov-qa-license-enum": "standard",
+    "cov-summarize-count-disambig": "standard",
+    "cov-summarize-negation-refund": "standard"
+  },
+  "fixtureSubtypes": {
+    "cov-qa-distractor-number": "qa.docs",
+    "cov-qa-license-enum": "qa.docs",
+    "cov-summarize-count-disambig": "summarize",
+    "cov-summarize-negation-refund": "summarize"
+  },
+  "raw": {
+    "cov-qa-distractor-number": [
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 233,
+        "tokensOut": 43,
+        "costUsd": 0.0012275,
+        "latencyMs": 949,
+        "failureClass": null,
+        "rung": "native"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 233,
+        "tokensOut": 43,
+        "costUsd": 0.0012275,
+        "latencyMs": 1025,
+        "failureClass": null,
+        "rung": "native"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 233,
+        "tokensOut": 43,
+        "costUsd": 0.0012275,
+        "latencyMs": 5328,
+        "failureClass": null,
+        "rung": "native"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 233,
+        "tokensOut": 59,
+        "costUsd": 0.0014675,
+        "latencyMs": 1123,
+        "failureClass": null,
+        "rung": "native"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 233,
+        "tokensOut": 43,
+        "costUsd": 0.0012275,
+        "latencyMs": 824,
+        "failureClass": null,
+        "rung": "native"
+      }
+    ],
+    "cov-qa-license-enum": [
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 192,
+        "tokensOut": 27,
+        "costUsd": 0.0008850000000000002,
+        "latencyMs": 881,
+        "failureClass": null,
+        "rung": "native"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 192,
+        "tokensOut": 27,
+        "costUsd": 0.0008850000000000002,
+        "latencyMs": 962,
+        "failureClass": null,
+        "rung": "native"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 192,
+        "tokensOut": 27,
+        "costUsd": 0.0008850000000000002,
+        "latencyMs": 860,
+        "failureClass": null,
+        "rung": "native"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 192,
+        "tokensOut": 27,
+        "costUsd": 0.0008850000000000002,
+        "latencyMs": 882,
+        "failureClass": null,
+        "rung": "native"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 192,
+        "tokensOut": 27,
+        "costUsd": 0.0008850000000000002,
+        "latencyMs": 818,
+        "failureClass": null,
+        "rung": "native"
+      }
+    ],
+    "cov-summarize-count-disambig": [
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 252,
+        "tokensOut": 67,
+        "costUsd": 0.0016350000000000002,
+        "latencyMs": 1226,
+        "failureClass": null,
+        "rung": "native"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 252,
+        "tokensOut": 67,
+        "costUsd": 0.0016350000000000002,
+        "latencyMs": 1412,
+        "failureClass": null,
+        "rung": "native"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 252,
+        "tokensOut": 67,
+        "costUsd": 0.0016350000000000002,
+        "latencyMs": 1153,
+        "failureClass": null,
+        "rung": "native"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 252,
+        "tokensOut": 77,
+        "costUsd": 0.0017850000000000001,
+        "latencyMs": 1329,
+        "failureClass": null,
+        "rung": "native"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 252,
+        "tokensOut": 69,
+        "costUsd": 0.0016650000000000002,
+        "latencyMs": 1253,
+        "failureClass": null,
+        "rung": "native"
+      }
+    ],
+    "cov-summarize-negation-refund": [
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 237,
+        "tokensOut": 79,
+        "costUsd": 0.0017775,
+        "latencyMs": 1224,
+        "failureClass": null,
+        "rung": "native"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 237,
+        "tokensOut": 76,
+        "costUsd": 0.0017325,
+        "latencyMs": 1153,
+        "failureClass": null,
+        "rung": "native"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 237,
+        "tokensOut": 74,
+        "costUsd": 0.0017025,
+        "latencyMs": 1425,
+        "failureClass": null,
+        "rung": "native"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 237,
+        "tokensOut": 63,
+        "costUsd": 0.0015375,
+        "latencyMs": 1704,
+        "failureClass": null,
+        "rung": "native"
+      },
+      {
+        "parseOk": true,
+        "schemaConform": true,
+        "valueAccuracy": 1,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": null,
+        "tokensIn": 237,
+        "tokensOut": 63,
+        "costUsd": 0.0015375,
+        "latencyMs": 1098,
+        "failureClass": null,
+        "rung": "native"
+      }
+    ]
+  },
+  "stats": [
+    {
+      "fixtureId": "cov-qa-distractor-number",
+      "samples": 5,
+      "parseRate": 1,
+      "conformRate": 1,
+      "valueAccuracyMean": 1,
+      "conformCi95": [
+        0.5655175352168251,
+        1
+      ],
+      "meanCostUsd": 0.0012755000000000002
+    },
+    {
+      "fixtureId": "cov-qa-license-enum",
+      "samples": 5,
+      "parseRate": 1,
+      "conformRate": 1,
+      "valueAccuracyMean": 1,
+      "conformCi95": [
+        0.5655175352168251,
+        1
+      ],
+      "meanCostUsd": 0.0008850000000000002
+    },
+    {
+      "fixtureId": "cov-summarize-count-disambig",
+      "samples": 5,
+      "parseRate": 1,
+      "conformRate": 1,
+      "valueAccuracyMean": 1,
+      "conformCi95": [
+        0.5655175352168251,
+        1
+      ],
+      "meanCostUsd": 0.0016710000000000002
+    },
+    {
+      "fixtureId": "cov-summarize-negation-refund",
+      "samples": 5,
+      "parseRate": 1,
+      "conformRate": 1,
+      "valueAccuracyMean": 1,
+      "conformCi95": [
+        0.5655175352168251,
+        1
+      ],
+      "meanCostUsd": 0.0016575
+    }
+  ],
+  "totalCostUsd": 0.027445000000000004
+}

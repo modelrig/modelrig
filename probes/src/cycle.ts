@@ -101,7 +101,11 @@ export interface CycleEstimate {
 /** Project cycle cost from the registry pricing map — reported BEFORE any
  * spend (mission gate; anything approaching the ceiling means stop and say so).
  * Unpriced and unreachable models contribute $0 and are named, not hidden. */
-export function estimateCycleCost(plan: CyclePlan, keys: ProbesConfig["keys"]): CycleEstimate {
+export function estimateCycleCost(
+  plan: CyclePlan,
+  keys: ProbesConfig["keys"],
+  fixturesDir?: string,
+): CycleEstimate {
   const fixturesByClass = new Map<ProbeClass, ReturnType<typeof loadFixtures>>();
   const perModel: ModelCostEstimate[] = [];
   const unpriced: string[] = [];
@@ -131,7 +135,7 @@ export function estimateCycleCost(plan: CyclePlan, keys: ProbesConfig["keys"]): 
     for (const cls of job.classes) {
       let fixtures = fixturesByClass.get(cls);
       if (fixtures === undefined) {
-        fixtures = loadFixtures(cls);
+        fixtures = fixturesDir !== undefined ? loadFixtures(cls, fixturesDir) : loadFixtures(cls);
         fixturesByClass.set(cls, fixtures);
       }
       const outTokens = ASSUMED_OUTPUT_TOKENS[cls];
@@ -209,6 +213,11 @@ export interface RunCycleOptions {
   /** Injectable for hermetic tests; defaults to the real network runProbe. */
   readonly runProbeImpl?: typeof runProbe;
   readonly now?: () => Date;
+  /** Restrict the run to fixtures under this dir (a SUPPLEMENTAL run — e.g.
+   * cycle-003b's coverage fixtures only). Defaults to the full committed
+   * corpus. The probed-layer builder COMPOSES the supplemental result with the
+   * prior full run, so this never drops the base fixtures. */
+  readonly fixturesDir?: string;
 }
 
 /** Execute the cycle under the hard ceiling. Never throws for a single model's
@@ -257,7 +266,8 @@ export async function runCycle(plan: CyclePlan, opts: RunCycleOptions): Promise<
       }
       const envelope = Math.min(plan.perModelEnvelopeUsd - modelSpent, remainingTotal);
       if (envelope <= 0) break;
-      const fixtures = loadFixtures(cls);
+      const fixtures =
+        opts.fixturesDir !== undefined ? loadFixtures(cls, opts.fixturesDir) : loadFixtures(cls);
       if (fixtures.length === 0) continue;
       try {
         const cfg = { modelKey: job.modelKey, samplesPerFixture: plan.samples, envelopeUsd: envelope };

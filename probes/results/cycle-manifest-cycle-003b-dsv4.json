@@ -1,0 +1,50 @@
+{
+  "cycle": "cycle-003b-dsv4",
+  "date": "2026-08-13T01:46:29.764Z",
+  "samples": 5,
+  "cycleCeilingUsd": 25,
+  "projectedUsd": 0.05759775,
+  "totalSpentUsd": 0.042715318400000014,
+  "ceilingReached": false,
+  "counts": {
+    "probed": 2,
+    "partial": 0,
+    "contaminated": 0,
+    "skipped-unpriced": 0,
+    "skipped-unreachable": 0,
+    "not-probed-this-cycle": 0,
+    "failed": 0
+  },
+  "models": [
+    {
+      "modelKey": "deepseek/deepseek-v4-flash",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 95,
+          "costUsd": 0.007233934400000005,
+          "failureRate": 0,
+          "resultPath": "results/deepseek-deepseek-v4-flash/schema-2026-08-13.json"
+        }
+      ],
+      "costUsd": 0.007233934400000005
+    },
+    {
+      "modelKey": "deepseek/deepseek-v4-pro",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 95,
+          "costUsd": 0.03548138400000001,
+          "failureRate": 0.010526315789473684,
+          "resultPath": "results/deepseek-deepseek-v4-pro/schema-2026-08-13.json"
+        }
+      ],
+      "costUsd": 0.03548138400000001
+    }
+  ]
+}

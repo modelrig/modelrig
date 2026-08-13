@@ -30,17 +30,19 @@ export function canonicalJson(value: unknown): string {
 }
 
 /** Hash covers the model-relevant fixture content. `domain` (A2), `family`
- * (demo-rig §11.3b), `difficulty` (discriminating-fixtures §3) and `subtype`
- * (www-clarity §5.5 W16) are all classification metadata that never reach the
- * model, so all four are excluded — retro-tagging the corpus (a domain, a
- * family, a difficulty, a subtype) must NOT invalidate published result hashes
- * (the reproducibility contract compares hashes across runs). */
+ * (demo-rig §11.3b), `difficulty` (discriminating-fixtures §3), `subtype`
+ * (www-clarity §5.5 W16) and `notes` (coverage follow-ups) are all
+ * classification/authoring metadata that never reach the model, so all five are
+ * excluded — retro-tagging the corpus (a domain, a family, a difficulty, a
+ * subtype, a note) must NOT invalidate published result hashes (the
+ * reproducibility contract compares hashes across runs). */
 export function fixtureHash(fixture: ProbeFixture): string {
   const {
     domain: _domain,
     family: _family,
     difficulty: _difficulty,
     subtype: _subtype,
+    notes: _notes,
     ...hashed
   } = fixture;
   return createHash("sha256").update(canonicalJson(hashed)).digest("hex").slice(0, 16);
@@ -87,6 +89,9 @@ function parseFixture(raw: unknown, file: string): ProbeFixture {
       `fixture ${file}: subtype must be a lowercase dotted token when present (e.g. extraction.tabular|classification|reasoning.numeric)`
     );
   }
+  if (raw.notes !== undefined && typeof raw.notes !== "string") {
+    throw new Error(`fixture ${file}: notes must be a string when present`);
+  }
   if (raw.schema !== undefined && !isRecord(raw.schema)) {
     throw new Error(`fixture ${file}: schema must be an object when present`);
   }
@@ -100,6 +105,7 @@ function parseFixture(raw: unknown, file: string): ProbeFixture {
     ...(raw.family !== undefined ? { family: raw.family } : {}),
     ...(raw.difficulty !== undefined ? { difficulty: raw.difficulty as "standard" | "hard" } : {}),
     ...(raw.subtype !== undefined ? { subtype: raw.subtype } : {}),
+    ...(raw.notes !== undefined ? { notes: raw.notes as string } : {}),
     ...(raw.schema !== undefined ? { schema: raw.schema as object } : {}),
     prompt,
     ...(raw.expectedValues !== undefined

@@ -1,6 +1,6 @@
 {
   "anthropic/claude-fable-5": {
-    "as_of": "2026-08-11T08:39:16.920Z",
+    "as_of": "2026-08-13T03:22:21.844Z",
     "source": "litellm-pricing-map(pinned)+adapter-static",
     "pricing": {
       "input_usd_per_mtok": 10,
@@ -18,7 +18,7 @@
       "batch_discount": null,
       "modality": null,
       "source": "litellm-snapshot",
-      "as_of": "2026-08-11T08:39:16.920Z",
+      "as_of": "2026-08-13T03:22:21.844Z",
       "basis": "base · standard tier · text"
     },
     "flags": {
@@ -30,7 +30,7 @@
     }
   },
   "anthropic/claude-haiku-4-5": {
-    "as_of": "2026-08-11T08:39:16.920Z",
+    "as_of": "2026-08-13T03:22:21.844Z",
     "source": "litellm-pricing-map(pinned)+adapter-static",
     "pricing": {
       "input_usd_per_mtok": 1,
@@ -48,7 +48,7 @@
       "batch_discount": null,
       "modality": null,
       "source": "litellm-snapshot",
-      "as_of": "2026-08-11T08:39:16.920Z",
+      "as_of": "2026-08-13T03:22:21.844Z",
       "basis": "base · standard tier · text"
     },
     "flags": {
@@ -60,7 +60,7 @@
     }
   },
   "anthropic/claude-opus-5": {
-    "as_of": "2026-08-11T08:39:16.920Z",
+    "as_of": "2026-08-13T03:22:21.844Z",
     "source": "litellm-pricing-map(pinned)+adapter-static",
     "pricing": {
       "input_usd_per_mtok": 5,
@@ -78,7 +78,7 @@
       "batch_discount": null,
       "modality": null,
       "source": "litellm-snapshot",
-      "as_of": "2026-08-11T08:39:16.920Z",
+      "as_of": "2026-08-13T03:22:21.844Z",
       "basis": "base · standard tier · text"
     },
     "flags": {
@@ -90,7 +90,7 @@
     }
   },
   "anthropic/claude-sonnet-5": {
-    "as_of": "2026-08-11T08:39:16.920Z",
+    "as_of": "2026-08-13T03:22:21.844Z",
     "source": "litellm-pricing-map(pinned)+adapter-static",
     "pricing": {
       "input_usd_per_mtok": 2,
@@ -108,7 +108,7 @@
       "batch_discount": null,
       "modality": null,
       "source": "litellm-snapshot",
-      "as_of": "2026-08-11T08:39:16.920Z",
+      "as_of": "2026-08-13T03:22:21.844Z",
       "basis": "base · standard tier · text"
     },
     "flags": {
@@ -120,7 +120,7 @@
     }
   },
   "deepinfra/MiniMaxAI/MiniMax-M3": {
-    "as_of": "2026-08-11T08:39:16.920Z",
+    "as_of": "2026-08-13T03:22:21.844Z",
     "source": "litellm-pricing-map(pinned)+adapter-static",
     "pricing": {
       "input_usd_per_mtok": 0.28,
@@ -138,7 +138,7 @@
       "batch_discount": null,
       "modality": null,
       "source": "litellm-snapshot",
-      "as_of": "2026-08-11T08:39:16.920Z",
+      "as_of": "2026-08-13T03:22:21.844Z",
       "basis": "base · standard tier · text"
     },
     "flags": {
@@ -150,7 +150,7 @@
     }
   },
   "deepinfra/Qwen/Qwen3-30B-A3B": {
-    "as_of": "2026-08-11T08:39:16.920Z",
+    "as_of": "2026-08-13T03:22:21.844Z",
     "source": "litellm-pricing-map(pinned)+adapter-static",
     "pricing": {
       "input_usd_per_mtok": 0.08,
@@ -168,7 +168,7 @@
       "batch_discount": null,
       "modality": null,
       "source": "litellm-snapshot",
-      "as_of": "2026-08-11T08:39:16.920Z",
+      "as_of": "2026-08-13T03:22:21.844Z",
       "basis": "base · standard tier · text"
     },
     "flags": {
@@ -180,7 +180,7 @@
     }
   },
   "deepinfra/Qwen/Qwen3-Coder-480B-A35B-Instruct-Turbo": {
-    "as_of": "2026-08-11T08:39:16.920Z",
+    "as_of": "2026-08-13T03:22:21.844Z",
     "source": "litellm-pricing-map(pinned)+adapter-static",
     "pricing": {
       "input_usd_per_mtok": 0.29,
@@ -198,7 +198,7 @@
       "batch_discount": null,
       "modality": null,
       "source": "litellm-snapshot",
-      "as_of": "2026-08-11T08:39:16.920Z",
+      "as_of": "2026-08-13T03:22:21.844Z",
       "basis": "base · standard tier · text"
     },
     "flags": {
@@ -210,7 +210,7 @@
     }
   },
   "deepinfra/google/gemma-4-31B-it": {
-    "as_of": "2026-08-11T08:39:16.920Z",
+    "as_of": "2026-08-13T03:22:21.844Z",
     "source": "litellm-pricing-map(pinned)+adapter-static",
     "pricing": {
       "input_usd_per_mtok": 0.13,
@@ -228,7 +228,7 @@
       "batch_discount": null,
       "modality": null,
       "source": "litellm-snapshot",
-      "as_of": "2026-08-11T08:39:16.920Z",
+      "as_of": "2026-08-13T03:22:21.844Z",
       "basis": "base · standard tier · text"
     },
     "flags": {
@@ -240,7 +240,7 @@
     }
   },
   "deepinfra/meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8": {
-    "as_of": "2026-08-11T08:39:16.920Z",
+    "as_of": "2026-08-13T03:22:21.844Z",
     "source": "litellm-pricing-map(pinned)+adapter-static",
     "pricing": {
       "input_usd_per_mtok": 0.15,
@@ -258,7 +258,7 @@
       "batch_discount": null,
       "modality": null,
       "source": "litellm-snapshot",
-      "as_of": "2026-08-11T08:39:16.920Z",
+      "as_of": "2026-08-13T03:22:21.844Z",
       "basis": "base · standard tier · text"
     },
     "flags": {
@@ -270,7 +270,7 @@
     }
   },
   "deepinfra/meta-llama/Llama-4-Scout-17B-16E-Instruct": {
-    "as_of": "2026-08-11T08:39:16.920Z",
+    "as_of": "2026-08-13T03:22:21.844Z",
     "source": "litellm-pricing-map(pinned)+adapter-static",
     "pricing": {
       "input_usd_per_mtok": 0.08,
@@ -288,7 +288,7 @@
       "batch_discount": null,
       "modality": null,
       "source": "litellm-snapshot",
-      "as_of": "2026-08-11T08:39:16.920Z",
+      "as_of": "2026-08-13T03:22:21.844Z",
       "basis": "base · standard tier · text"
     },
     "flags": {
@@ -300,7 +300,7 @@
     }
   },
   "deepinfra/mistralai/Mistral-Small-3.2-24B-Instruct-2506": {
-    "as_of": "2026-08-11T08:39:16.920Z",
+    "as_of": "2026-08-13T03:22:21.844Z",
     "source": "litellm-pricing-map(pinned)+adapter-static",
     "pricing": {
       "input_usd_per_mtok": 0.075,
@@ -318,7 +318,7 @@
       "batch_discount": null,
       "modality": null,
       "source": "litellm-snapshot",
-      "as_of": "2026-08-11T08:39:16.920Z",
+      "as_of": "2026-08-13T03:22:21.844Z",
       "basis": "base · standard tier · text"
     },
     "flags": {
@@ -330,7 +330,7 @@
     }
   },
   "deepinfra/moonshotai/Kimi-K2.6": {
-    "as_of": "2026-08-11T08:39:16.920Z",
+    "as_of": "2026-08-13T03:22:21.844Z",
     "source": "litellm-pricing-map(pinned)+adapter-static",
     "pricing": {
       "input_usd_per_mtok": 0.7499999999999999,
@@ -348,7 +348,7 @@
       "batch_discount": null,
       "modality": null,
       "source": "litellm-snapshot",
-      "as_of": "2026-08-11T08:39:16.920Z",
+      "as_of": "2026-08-13T03:22:21.844Z",
       "basis": "base · standard tier · text"
     },
     "flags": {
@@ -360,7 +360,7 @@
     }
   },
   "deepinfra/moonshotai/Kimi-K2.7-Code": {
-    "as_of": "2026-08-11T08:39:16.920Z",
+    "as_of": "2026-08-13T03:22:21.844Z",
     "source": "litellm-pricing-map(pinned)+adapter-static",
     "pricing": {
       "input_usd_per_mtok": 0.6799999999999999,
@@ -378,7 +378,7 @@
       "batch_discount": null,
       "modality": null,
       "source": "litellm-snapshot",
-      "as_of": "2026-08-11T08:39:16.920Z",
+      "as_of": "2026-08-13T03:22:21.844Z",
       "basis": "base · standard tier · text"
     },
     "flags": {
@@ -390,7 +390,7 @@
     }
   },
   "deepinfra/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B": {
-    "as_of": "2026-08-11T08:39:16.920Z",
+    "as_of": "2026-08-13T03:22:21.844Z",
     "source": "litellm-pricing-map(pinned)+adapter-static",
     "pricing": {
       "input_usd_per_mtok": 0.5,
@@ -408,7 +408,7 @@
       "batch_discount": null,
       "modality": null,
       "source": "litellm-snapshot",
-      "as_of": "2026-08-11T08:39:16.920Z",
+      "as_of": "2026-08-13T03:22:21.844Z",
       "basis": "base · standard tier · text"
     },
     "flags": {
@@ -420,7 +420,7 @@
     }
   },
   "deepinfra/openai/gpt-oss-120b": {
-    "as_of": "2026-08-11T08:39:16.920Z",
+    "as_of": "2026-08-13T03:22:21.844Z",
     "source": "litellm-pricing-map(pinned)+adapter-static",
     "pricing": {
       "input_usd_per_mtok": 0.049999999999999996,
@@ -438,7 +438,7 @@
       "batch_discount": null,
       "modality": null,
       "source": "litellm-snapshot",
-      "as_of": "2026-08-11T08:39:16.920Z",
+      "as_of": "2026-08-13T03:22:21.844Z",
       "basis": "base · standard tier · text"
     },
     "flags": {
@@ -450,7 +450,7 @@
     }
   },
   "deepinfra/zai-org/GLM-5.2": {
-    "as_of": "2026-08-11T08:39:16.920Z",
+    "as_of": "2026-08-13T03:22:21.844Z",
     "source": "litellm-pricing-map(pinned)+adapter-static",
     "pricing": {
       "input_usd_per_mtok": 0.7499999999999999,
@@ -468,7 +468,7 @@
       "batch_discount": null,
       "modality": null,
       "source": "litellm-snapshot",
-      "as_of": "2026-08-11T08:39:16.920Z",
+      "as_of": "2026-08-13T03:22:21.844Z",
       "basis": "base · standard tier · text"
     },
     "flags": {
@@ -480,7 +480,7 @@
     }
   },
   "deepseek/deepseek-chat": {
-    "as_of": "2026-08-11T08:39:16.920Z",
+    "as_of": "2026-08-13T03:22:21.844Z",
     "source": "litellm-pricing-map(pinned)+adapter-static",
     "pricing": {
       "input_usd_per_mtok": 0.28,
@@ -498,7 +498,7 @@
       "batch_discount": null,
       "modality": null,
       "source": "litellm-snapshot",
-      "as_of": "2026-08-11T08:39:16.920Z",
+      "as_of": "2026-08-13T03:22:21.844Z",
       "basis": "base · standard tier · text"
     },
     "flags": {
@@ -510,7 +510,7 @@
     }
   },
   "deepseek/deepseek-reasoner": {
-    "as_of": "2026-08-11T08:39:16.920Z",
+    "as_of": "2026-08-13T03:22:21.844Z",
     "source": "litellm-pricing-map(pinned)+adapter-static",
     "pricing": {
       "input_usd_per_mtok": 0.28,
@@ -528,7 +528,67 @@
       "batch_discount": null,
       "modality": null,
       "source": "litellm-snapshot",
-      "as_of": "2026-08-11T08:39:16.920Z",
+      "as_of": "2026-08-13T03:22:21.844Z",
+      "basis": "base · standard tier · text"
+    },
+    "flags": {
+      "supports_response_schema": true,
+      "supports_web_search": null,
+      "supports_prompt_caching": true,
+      "adapter_structured_native": false,
+      "adapter_grounded_native": false
+    }
+  },
+  "deepseek/deepseek-v4-flash": {
+    "as_of": "2026-08-13T03:22:21.844Z",
+    "source": "litellm-pricing-map(pinned)+adapter-static",
+    "pricing": {
+      "input_usd_per_mtok": 0.14,
+      "output_usd_per_mtok": 0.28,
+      "cached_input_usd_per_mtok": 0.0028
+    },
+    "pricing_v2": {
+      "base": {
+        "input": 1.4e-7,
+        "output": 2.8e-7,
+        "cache_read": 2.8e-9
+      },
+      "tiers": null,
+      "context_bands": null,
+      "batch_discount": null,
+      "modality": null,
+      "source": "litellm-snapshot",
+      "as_of": "2026-08-13T03:22:21.844Z",
+      "basis": "base · standard tier · text"
+    },
+    "flags": {
+      "supports_response_schema": true,
+      "supports_web_search": null,
+      "supports_prompt_caching": true,
+      "adapter_structured_native": false,
+      "adapter_grounded_native": false
+    }
+  },
+  "deepseek/deepseek-v4-pro": {
+    "as_of": "2026-08-13T03:22:21.844Z",
+    "source": "litellm-pricing-map(pinned)+adapter-static",
+    "pricing": {
+      "input_usd_per_mtok": 0.435,
+      "output_usd_per_mtok": 0.87,
+      "cached_input_usd_per_mtok": 0.003625
+    },
+    "pricing_v2": {
+      "base": {
+        "input": 4.35e-7,
+        "output": 8.7e-7,
+        "cache_read": 3.625e-9
+      },
+      "tiers": null,
+      "context_bands": null,
+      "batch_discount": null,
+      "modality": null,
+      "source": "litellm-snapshot",
+      "as_of": "2026-08-13T03:22:21.844Z",
       "basis": "base · standard tier · text"
     },
     "flags": {
@@ -540,7 +600,7 @@
     }
   },
   "fireworks/glm-5p2": {
-    "as_of": "2026-08-11T08:39:16.920Z",
+    "as_of": "2026-08-13T03:22:21.844Z",
     "source": "litellm-pricing-map(pinned)+adapter-static",
     "pricing": {
       "input_usd_per_mtok": 1.4,
@@ -558,7 +618,7 @@
       "batch_discount": null,
       "modality": null,
       "source": "litellm-snapshot",
-      "as_of": "2026-08-11T08:39:16.920Z",
+      "as_of": "2026-08-13T03:22:21.844Z",
       "basis": "base · standard tier · text"
     },
     "flags": {
@@ -570,7 +630,7 @@
     }
   },
   "fireworks/gpt-oss-120b": {
-    "as_of": "2026-08-11T08:39:16.920Z",
+    "as_of": "2026-08-13T03:22:21.844Z",
     "source": "litellm-pricing-map(pinned)+adapter-static",
     "pricing": {
       "input_usd_per_mtok": 0.15,
@@ -588,7 +648,7 @@
       "batch_discount": null,
       "modality": null,
       "source": "litellm-snapshot",
-      "as_of": "2026-08-11T08:39:16.920Z",
+      "as_of": "2026-08-13T03:22:21.844Z",
       "basis": "base · standard tier · text"
     },
     "flags": {
@@ -600,7 +660,7 @@
     }
   },
   "fireworks/kimi-k3": {
-    "as_of": "2026-08-11T08:39:16.920Z",
+    "as_of": "2026-08-13T03:22:21.844Z",
     "source": "litellm-pricing-map(pinned)+adapter-static",
     "pricing": {
       "input_usd_per_mtok": 3,
@@ -632,7 +692,7 @@
     }
   },
   "gemini/gemini-2.5-flash": {
-    "as_of": "2026-08-11T08:39:16.920Z",
+    "as_of": "2026-08-13T03:22:21.844Z",
     "source": "litellm-pricing-map(pinned)+adapter-static",
     "pricing": {
       "input_usd_per_mtok": 0.3,
@@ -650,7 +710,7 @@
       "batch_discount": null,
       "modality": null,
       "source": "litellm-snapshot",
-      "as_of": "2026-08-11T08:39:16.920Z",
+      "as_of": "2026-08-13T03:22:21.844Z",
       "basis": "base · standard tier · text"
     },
     "flags": {
@@ -662,7 +722,7 @@
     }
   },
   "gemini/gemini-3-flash-preview": {
-    "as_of": "2026-08-11T08:39:16.920Z",
+    "as_of": "2026-08-13T03:22:21.844Z",
     "source": "litellm-pricing-map(pinned)+adapter-static",
     "pricing": {
       "input_usd_per_mtok": 0.5,
@@ -680,7 +740,7 @@
       "batch_discount": null,
       "modality": null,
       "source": "litellm-snapshot",
-      "as_of": "2026-08-11T08:39:16.920Z",
+      "as_of": "2026-08-13T03:22:21.844Z",
       "basis": "base · standard tier · text"
     },
     "flags": {
@@ -692,7 +752,7 @@
     }
   },
   "gemini/gemini-3.1-flash-lite": {
-    "as_of": "2026-08-11T08:39:16.920Z",
+    "as_of": "2026-08-13T03:22:21.844Z",
     "source": "litellm-pricing-map(pinned)+adapter-static",
     "pricing": {
       "input_usd_per_mtok": 0.25,
@@ -710,7 +770,7 @@
       "batch_discount": null,
       "modality": null,
       "source": "litellm-snapshot",
-      "as_of": "2026-08-11T08:39:16.920Z",
+      "as_of": "2026-08-13T03:22:21.844Z",
       "basis": "base · standard tier · text"
     },
     "flags": {
@@ -722,7 +782,7 @@
     }
   },
   "gemini/gemini-3.1-pro-preview": {
-    "as_of": "2026-08-11T08:39:16.920Z",
+    "as_of": "2026-08-13T03:22:21.844Z",
     "source": "litellm-pricing-map(pinned)+adapter-static",
     "pricing": {
       "input_usd_per_mtok": 2,
@@ -740,7 +800,7 @@
       "batch_discount": null,
       "modality": null,
       "source": "litellm-snapshot",
-      "as_of": "2026-08-11T08:39:16.920Z",
+      "as_of": "2026-08-13T03:22:21.844Z",
       "basis": "base · standard tier · text"
     },
     "flags": {
@@ -752,7 +812,7 @@
     }
   },
   "grok/grok-4-1-fast": {
-    "as_of": "2026-08-11T08:39:16.920Z",
+    "as_of": "2026-08-13T03:22:21.844Z",
     "source": "litellm-pricing-map(pinned)+adapter-static",
     "pricing": {
       "input_usd_per_mtok": 0.19999999999999998,
@@ -770,7 +830,7 @@
       "batch_discount": null,
       "modality": null,
       "source": "litellm-snapshot",
-      "as_of": "2026-08-11T08:39:16.920Z",
+      "as_of": "2026-08-13T03:22:21.844Z",
       "basis": "base · standard tier · text"
     },
     "flags": {
@@ -782,7 +842,7 @@
     }
   },
   "grok/grok-4.3": {
-    "as_of": "2026-08-11T08:39:16.920Z",
+    "as_of": "2026-08-13T03:22:21.844Z",
     "source": "litellm-pricing-map(pinned)+adapter-static",
     "pricing": {
       "input_usd_per_mtok": 1.25,
@@ -800,7 +860,7 @@
       "batch_discount": null,
       "modality": null,
       "source": "litellm-snapshot",
-      "as_of": "2026-08-11T08:39:16.920Z",
+      "as_of": "2026-08-13T03:22:21.844Z",
       "basis": "base · standard tier · text"
     },
     "flags": {
@@ -812,7 +872,7 @@
     }
   },
   "grok/grok-4.5": {
-    "as_of": "2026-08-11T08:39:16.920Z",
+    "as_of": "2026-08-13T03:22:21.844Z",
     "source": "litellm-pricing-map(pinned)+adapter-static",
     "pricing": {
       "input_usd_per_mtok": 2,
@@ -830,7 +890,7 @@
       "batch_discount": null,
       "modality": null,
       "source": "litellm-snapshot",
-      "as_of": "2026-08-11T08:39:16.920Z",
+      "as_of": "2026-08-13T03:22:21.844Z",
       "basis": "base · standard tier · text"
     },
     "flags": {
@@ -842,7 +902,7 @@
     }
   },
   "openai/gpt-5-mini": {
-    "as_of": "2026-08-11T08:39:16.920Z",
+    "as_of": "2026-08-13T03:22:21.844Z",
     "source": "litellm-pricing-map(pinned)+adapter-static",
     "pricing": {
       "input_usd_per_mtok": 0.25,
@@ -860,7 +920,7 @@
       "batch_discount": null,
       "modality": null,
       "source": "litellm-snapshot",
-      "as_of": "2026-08-11T08:39:16.920Z",
+      "as_of": "2026-08-13T03:22:21.844Z",
       "basis": "base · standard tier · text"
     },
     "flags": {
@@ -872,7 +932,7 @@
     }
   },
   "openai/gpt-5.2": {
-    "as_of": "2026-08-11T08:39:16.920Z",
+    "as_of": "2026-08-13T03:22:21.844Z",
     "source": "litellm-pricing-map(pinned)+adapter-static",
     "pricing": {
       "input_usd_per_mtok": 1.75,
@@ -890,7 +950,7 @@
       "batch_discount": null,
       "modality": null,
       "source": "litellm-snapshot",
-      "as_of": "2026-08-11T08:39:16.920Z",
+      "as_of": "2026-08-13T03:22:21.844Z",
       "basis": "base · standard tier · text"
     },
     "flags": {
@@ -902,7 +962,7 @@
     }
   },
   "openai/gpt-5.4": {
-    "as_of": "2026-08-11T08:39:16.920Z",
+    "as_of": "2026-08-13T03:22:21.844Z",
     "source": "litellm-pricing-map(pinned)+adapter-static",
     "pricing": {
       "input_usd_per_mtok": 2.5,
@@ -920,7 +980,7 @@
       "batch_discount": null,
       "modality": null,
       "source": "litellm-snapshot",
-      "as_of": "2026-08-11T08:39:16.920Z",
+      "as_of": "2026-08-13T03:22:21.844Z",
       "basis": "base · standard tier · text"
     },
     "flags": {
@@ -932,7 +992,7 @@
     }
   },
   "openai/gpt-5.4-mini": {
-    "as_of": "2026-08-11T08:39:16.920Z",
+    "as_of": "2026-08-13T03:22:21.844Z",
     "source": "litellm-pricing-map(pinned)+adapter-static",
     "pricing": {
       "input_usd_per_mtok": 0.75,
@@ -950,7 +1010,7 @@
       "batch_discount": null,
       "modality": null,
       "source": "litellm-snapshot",
-      "as_of": "2026-08-11T08:39:16.920Z",
+      "as_of": "2026-08-13T03:22:21.844Z",
       "basis": "base · standard tier · text"
     },
     "flags": {
@@ -962,7 +1022,7 @@
     }
   },
   "openai/gpt-5.4-nano": {
-    "as_of": "2026-08-11T08:39:16.920Z",
+    "as_of": "2026-08-13T03:22:21.844Z",
     "source": "litellm-pricing-map(pinned)+adapter-static",
     "pricing": {
       "input_usd_per_mtok": 0.19999999999999998,
@@ -980,7 +1040,7 @@
       "batch_discount": null,
       "modality": null,
       "source": "litellm-snapshot",
-      "as_of": "2026-08-11T08:39:16.920Z",
+      "as_of": "2026-08-13T03:22:21.844Z",
       "basis": "base · standard tier · text"
     },
     "flags": {
@@ -992,7 +1052,7 @@
     }
   },
   "openai/gpt-5.5": {
-    "as_of": "2026-08-11T08:39:16.920Z",
+    "as_of": "2026-08-13T03:22:21.844Z",
     "source": "litellm-pricing-map(pinned)+adapter-static",
     "pricing": {
       "input_usd_per_mtok": 5,
@@ -1010,11 +1070,41 @@
       "batch_discount": null,
       "modality": null,
       "source": "litellm-snapshot",
-      "as_of": "2026-08-11T08:39:16.920Z",
+      "as_of": "2026-08-13T03:22:21.844Z",
       "basis": "base · standard tier · text"
     },
     "flags": {
       "supports_response_schema": true,
+      "supports_web_search": true,
+      "supports_prompt_caching": true,
+      "adapter_structured_native": true,
+      "adapter_grounded_native": false
+    }
+  },
+  "openai/gpt-5.5-pro": {
+    "as_of": "2026-08-13T03:22:21.844Z",
+    "source": "litellm-pricing-map(pinned)+adapter-static",
+    "pricing": {
+      "input_usd_per_mtok": 30,
+      "output_usd_per_mtok": 180,
+      "cached_input_usd_per_mtok": 3
+    },
+    "pricing_v2": {
+      "base": {
+        "input": 0.00003,
+        "output": 0.00018,
+        "cache_read": 0.000003
+      },
+      "tiers": null,
+      "context_bands": null,
+      "batch_discount": null,
+      "modality": null,
+      "source": "litellm-snapshot",
+      "as_of": "2026-08-13T03:22:21.844Z",
+      "basis": "base · standard tier · text"
+    },
+    "flags": {
+      "supports_response_schema": false,
       "supports_web_search": true,
       "supports_prompt_caching": true,
       "adapter_structured_native": true,

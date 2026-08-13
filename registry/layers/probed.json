@@ -1,18 +1,18 @@
 {
   "anthropic/claude-fable-5": {
-    "as_of": "2026-08-11T02:33:53.953Z",
+    "as_of": "2026-08-13T01:39:57.003Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 75,
+      "samples": 95,
       "parse_rate": 1,
-      "conform_rate": 0.92,
+      "conform_rate": 0.9263157894736842,
       "conform_ci95": [
-        0.8362520966647771,
-        0.9628198756496662
+        0.8556431471175041,
+        0.9638510303909453
       ],
-      "value_accuracy_mean": 0.9133333333333333,
+      "value_accuracy_mean": 0.9263157894736842,
       "native_rung_rate": 1,
-      "mean_cost_usd": 0.019143999999999984,
+      "mean_cost_usd": 0.018270526315789456,
       "by_family": {
         "demo-rig": {
           "samples": 20,
@@ -26,15 +26,15 @@
           "mean_cost_usd": 0.015677500000000004
         },
         "probe-suite": {
-          "samples": 55,
-          "conform_rate": 0.9818181818181818,
+          "samples": 75,
+          "conform_rate": 0.9733333333333334,
           "conform_ci95": [
-            0.903942239378376,
-            0.9967832195451589
+            0.9078851181224086,
+            0.9926563109938686
           ],
-          "value_accuracy_mean": 0.9727272727272728,
+          "value_accuracy_mean": 0.9733333333333334,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.020404545454545446
+          "mean_cost_usd": 0.01896199999999999
         }
       },
       "by_difficulty": {
@@ -50,15 +50,15 @@
           "mean_cost_usd": 0.01697
         },
         "standard": {
-          "samples": 50,
-          "conform_rate": 0.9,
+          "samples": 70,
+          "conform_rate": 0.9142857142857143,
           "conform_ci95": [
-            0.7863976856252035,
-            0.9565242350681096
+            0.8253432750766051,
+            0.9601233303548878
           ],
-          "value_accuracy_mean": 0.89,
+          "value_accuracy_mean": 0.9142857142857143,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.020231
+          "mean_cost_usd": 0.018734999999999984
         }
       },
       "by_subtype": {
@@ -96,15 +96,15 @@
           "mean_cost_usd": 0.031573333333333335
         },
         "qa.docs": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.017390000000000003
+          "mean_cost_usd": 0.015006666666666672
         },
         "reasoning.numeric": {
           "samples": 15,
@@ -129,15 +129,15 @@
           "mean_cost_usd": 0.017455000000000002
         },
         "summarize": {
-          "samples": 5,
-          "conform_rate": 0,
+          "samples": 15,
+          "conform_rate": 0.6,
           "conform_ci95": [
-            0,
-            0.43448246478317476
+            0.357468301206246,
+            0.8017550385865841
           ],
-          "value_accuracy_mean": 0,
+          "value_accuracy_mean": 0.6333333333333333,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.01002
+          "mean_cost_usd": 0.014123333333333331
         }
       }
     },
@@ -149,19 +149,19 @@
     "caching": null
   },
   "anthropic/claude-haiku-4-5": {
-    "as_of": "2026-08-11T02:37:20.050Z",
+    "as_of": "2026-08-13T01:41:06.840Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 75,
+      "samples": 95,
       "parse_rate": 1,
       "conform_rate": 1,
       "conform_ci95": [
-        0.9512761575171942,
+        0.9611351464605271,
         1
       ],
-      "value_accuracy_mean": 0.8266666666666667,
+      "value_accuracy_mean": 0.8631578947368421,
       "native_rung_rate": 1,
-      "mean_cost_usd": 0.0018230000000000008,
+      "mean_cost_usd": 0.001737684210526318,
       "by_family": {
         "demo-rig": {
           "samples": 20,
@@ -175,15 +175,15 @@
           "mean_cost_usd": 0.0016550000000000002
         },
         "probe-suite": {
-          "samples": 55,
+          "samples": 75,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9347150988829137,
+            0.9512761575171942,
             1
           ],
-          "value_accuracy_mean": 0.7636363636363637,
+          "value_accuracy_mean": 0.8266666666666667,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.0018840909090909093
+          "mean_cost_usd": 0.001759733333333335
         }
       },
       "by_difficulty": {
@@ -199,15 +199,15 @@
           "mean_cost_usd": 0.0015600000000000002
         },
         "standard": {
-          "samples": 50,
+          "samples": 70,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9479769375897331,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.0019545
+          "mean_cost_usd": 0.001801142857142858
         }
       },
       "by_subtype": {
@@ -245,15 +245,15 @@
           "mean_cost_usd": 0.002694
         },
         "qa.docs": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.001533
+          "mean_cost_usd": 0.0014
         },
         "reasoning.numeric": {
           "samples": 15,
@@ -278,15 +278,15 @@
           "mean_cost_usd": 0.0017159999999999999
         },
         "summarize": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.001744
+          "mean_cost_usd": 0.0015826666666666667
         }
       }
     },
@@ -302,19 +302,19 @@
     }
   },
   "anthropic/claude-opus-5": {
-    "as_of": "2026-08-11T02:46:14.481Z",
+    "as_of": "2026-08-13T01:42:18.531Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 75,
+      "samples": 95,
       "parse_rate": 1,
       "conform_rate": 1,
       "conform_ci95": [
-        0.9512761575171942,
+        0.9611351464605271,
         1
       ],
-      "value_accuracy_mean": 0.9666666666666667,
+      "value_accuracy_mean": 0.9736842105263158,
       "native_rung_rate": 1,
-      "mean_cost_usd": 0.010262,
+      "mean_cost_usd": 0.009727631578947373,
       "by_family": {
         "demo-rig": {
           "samples": 20,
@@ -328,15 +328,15 @@
           "mean_cost_usd": 0.0091975
         },
         "probe-suite": {
-          "samples": 55,
+          "samples": 75,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9347150988829137,
+            0.9512761575171942,
             1
           ],
-          "value_accuracy_mean": 0.9545454545454546,
+          "value_accuracy_mean": 0.9666666666666667,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.010649090909090917
+          "mean_cost_usd": 0.009869000000000005
         }
       },
       "by_difficulty": {
@@ -352,15 +352,15 @@
           "mean_cost_usd": 0.009336999999999998
         },
         "standard": {
-          "samples": 50,
+          "samples": 70,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9479769375897331,
             1
           ],
-          "value_accuracy_mean": 0.95,
+          "value_accuracy_mean": 0.9642857142857143,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.010724500000000005
+          "mean_cost_usd": 0.009867142857142854
         }
       },
       "by_subtype": {
@@ -398,15 +398,15 @@
           "mean_cost_usd": 0.017478333333333332
         },
         "qa.docs": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.009015
+          "mean_cost_usd": 0.0075966666666666665
         },
         "reasoning.numeric": {
           "samples": 15,
@@ -431,15 +431,15 @@
           "mean_cost_usd": 0.008707499999999998
         },
         "summarize": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.010164999999999999
+          "mean_cost_usd": 0.009095
         }
       }
     },
@@ -451,19 +451,19 @@
     "caching": null
   },
   "anthropic/claude-sonnet-5": {
-    "as_of": "2026-08-11T02:51:42.374Z",
+    "as_of": "2026-08-13T01:43:12.399Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 75,
+      "samples": 95,
       "parse_rate": 1,
-      "conform_rate": 0.9466666666666667,
+      "conform_rate": 0.9578947368421052,
       "conform_ci95": [
-        0.8707401284620144,
-        0.9790665722533456
+        0.8966912227790326,
+        0.9835062271374501
       ],
-      "value_accuracy_mean": 0.9488888888888888,
+      "value_accuracy_mean": 0.9596491228070176,
       "native_rung_rate": 1,
-      "mean_cost_usd": 0.004275333333333331,
+      "mean_cost_usd": 0.004046421052631579,
       "by_family": {
         "demo-rig": {
           "samples": 20,
@@ -477,15 +477,15 @@
           "mean_cost_usd": 0.0036949999999999995
         },
         "probe-suite": {
-          "samples": 55,
-          "conform_rate": 0.9272727272727272,
+          "samples": 75,
+          "conform_rate": 0.9466666666666667,
           "conform_ci95": [
-            0.8274005992784393,
-            0.9713559397669594
+            0.8707401284620144,
+            0.9790665722533456
           ],
-          "value_accuracy_mean": 0.9303030303030303,
+          "value_accuracy_mean": 0.948888888888889,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.004486363636363636
+          "mean_cost_usd": 0.004140133333333334
         }
       },
       "by_difficulty": {
@@ -501,15 +501,15 @@
           "mean_cost_usd": 0.0038719999999999987
         },
         "standard": {
-          "samples": 50,
+          "samples": 70,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9479769375897331,
             1
           ],
-          "value_accuracy_mean": 0.95,
+          "value_accuracy_mean": 0.9642857142857143,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.004476999999999998
+          "mean_cost_usd": 0.004108714285714284
         }
       },
       "by_subtype": {
@@ -547,15 +547,15 @@
           "mean_cost_usd": 0.007459999999999999
         },
         "qa.docs": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.0034659999999999995
+          "mean_cost_usd": 0.0030826666666666667
         },
         "reasoning.numeric": {
           "samples": 15,
@@ -580,15 +580,15 @@
           "mean_cost_usd": 0.003619
         },
         "summarize": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.003998
+          "mean_cost_usd": 0.0036560000000000004
         }
       }
     },
@@ -604,19 +604,19 @@
     }
   },
   "deepinfra/MiniMaxAI/MiniMax-M3": {
-    "as_of": "2026-08-11T03:09:39.953Z",
+    "as_of": "2026-08-13T01:44:35.633Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 75,
+      "samples": 95,
       "parse_rate": 1,
       "conform_rate": 1,
       "conform_ci95": [
-        0.9512761575171942,
+        0.9611351464605271,
         1
       ],
       "value_accuracy_mean": 1,
       "native_rung_rate": 0,
-      "mean_cost_usd": 0.0008759600000000003,
+      "mean_cost_usd": 0.000767783157894737,
       "by_family": {
         "demo-rig": {
           "samples": 20,
@@ -630,15 +630,15 @@
           "mean_cost_usd": 0.000345125
         },
         "probe-suite": {
-          "samples": 55,
+          "samples": 75,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9347150988829137,
+            0.9512761575171942,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.0010689909090909092
+          "mean_cost_usd": 0.000880492
         }
       },
       "by_difficulty": {
@@ -654,15 +654,15 @@
           "mean_cost_usd": 0.0017148960000000003
         },
         "standard": {
-          "samples": 50,
+          "samples": 70,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9479769375897331,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.0004564919999999998
+          "mean_cost_usd": 0.00042952857142857133
         }
       },
       "by_subtype": {
@@ -700,15 +700,15 @@
           "mean_cost_usd": 0.002900920000000001
         },
         "qa.docs": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.00040784
+          "mean_cost_usd": 0.0003300200000000001
         },
         "reasoning.numeric": {
           "samples": 15,
@@ -733,15 +733,15 @@
           "mean_cost_usd": 0.00043493000000000004
         },
         "summarize": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.00040597999999999996
+          "mean_cost_usd": 0.00042407999999999996
         }
       }
     },
@@ -757,19 +757,19 @@
     }
   },
   "deepinfra/Qwen/Qwen3-30B-A3B": {
-    "as_of": "2026-08-11T03:14:23.268Z",
+    "as_of": "2026-08-13T01:45:24.747Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 75,
+      "samples": 95,
       "parse_rate": 1,
-      "conform_rate": 0.9733333333333334,
+      "conform_rate": 0.9789473684210527,
       "conform_ci95": [
-        0.9078851181224086,
-        0.9926563109938686
+        0.9264588050529105,
+        0.9942074931355945
       ],
-      "value_accuracy_mean": 0.9733333333333334,
+      "value_accuracy_mean": 0.9789473684210527,
       "native_rung_rate": 0,
-      "mean_cost_usd": 0.00016951306666666661,
+      "mean_cost_usd": 0.00015878084210526315,
       "by_family": {
         "demo-rig": {
           "samples": 20,
@@ -783,15 +783,15 @@
           "mean_cost_usd": 0.000122721
         },
         "probe-suite": {
-          "samples": 55,
-          "conform_rate": 0.9636363636363636,
+          "samples": 75,
+          "conform_rate": 0.9733333333333334,
           "conform_ci95": [
-            0.8767653602534898,
-            0.9899704587106665
+            0.9078851181224086,
+            0.9926563109938686
           ],
-          "value_accuracy_mean": 0.9636363636363636,
+          "value_accuracy_mean": 0.9733333333333334,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.00018652836363636357
+          "mean_cost_usd": 0.00016839679999999997
         }
       },
       "by_difficulty": {
@@ -807,15 +807,15 @@
           "mean_cost_usd": 0.0002005952
         },
         "standard": {
-          "samples": 50,
+          "samples": 70,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9479769375897331,
             1
           ],
-          "value_accuracy_mean": 0.96,
+          "value_accuracy_mean": 0.9714285714285714,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.00015397199999999994
+          "mean_cost_usd": 0.00014384714285714284
         }
       },
       "by_subtype": {
@@ -853,15 +853,15 @@
           "mean_cost_usd": 0.0002799813333333333
         },
         "qa.docs": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.000107434
+          "mean_cost_usd": 0.00010689666666666667
         },
         "reasoning.numeric": {
           "samples": 15,
@@ -886,15 +886,15 @@
           "mean_cost_usd": 0.000147444
         },
         "summarize": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.00015313599999999998
+          "mean_cost_usd": 0.00013800666666666665
         }
       }
     },
@@ -910,19 +910,19 @@
     }
   },
   "deepinfra/Qwen/Qwen3-Coder-480B-A35B-Instruct-Turbo": {
-    "as_of": "2026-08-11T03:18:18.311Z",
+    "as_of": "2026-08-13T01:45:39.151Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 75,
+      "samples": 95,
       "parse_rate": 1,
-      "conform_rate": 0.9333333333333333,
+      "conform_rate": 0.9473684210526315,
       "conform_ci95": [
-        0.8532493994143954,
-        0.9711899371005063
+        0.882651138829621,
+        0.9773118869508504
       ],
-      "value_accuracy_mean": 0.9366666666666666,
+      "value_accuracy_mean": 0.95,
       "native_rung_rate": 0,
-      "mean_cost_usd": 0.00022812333333333337,
+      "mean_cost_usd": 0.0002130484210526316,
       "by_family": {
         "demo-rig": {
           "samples": 20,
@@ -936,15 +936,15 @@
           "mean_cost_usd": 0.00017909500000000002
         },
         "probe-suite": {
-          "samples": 55,
-          "conform_rate": 0.9090909090909091,
+          "samples": 75,
+          "conform_rate": 0.9333333333333333,
           "conform_ci95": [
-            0.8042250541602005,
-            0.9605418449258196
+            0.8532493994143954,
+            0.9711899371005063
           ],
-          "value_accuracy_mean": 0.9181818181818182,
+          "value_accuracy_mean": 0.94,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.00024595181818181814
+          "mean_cost_usd": 0.00022210266666666668
         }
       },
       "by_difficulty": {
@@ -960,15 +960,15 @@
           "mean_cost_usd": 0.00021855799999999988
         },
         "standard": {
-          "samples": 50,
+          "samples": 70,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9479769375897331,
             1
           ],
-          "value_accuracy_mean": 0.985,
+          "value_accuracy_mean": 0.9892857142857143,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.00023290600000000014
+          "mean_cost_usd": 0.0002110807142857143
         }
       },
       "by_subtype": {
@@ -1006,15 +1006,15 @@
           "mean_cost_usd": 0.0004123633333333332
         },
         "qa.docs": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.00018297999999999999
+          "mean_cost_usd": 0.00015608333333333332
         },
         "reasoning.numeric": {
           "samples": 15,
@@ -1039,15 +1039,15 @@
           "mean_cost_usd": 0.00019910499999999999
         },
         "summarize": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
-          "value_accuracy_mean": 0.95,
+          "value_accuracy_mean": 0.9833333333333333,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.00019195
+          "mean_cost_usd": 0.00017758333333333339
         }
       }
     },
@@ -1063,19 +1063,19 @@
     }
   },
   "deepinfra/google/gemma-4-31B-it": {
-    "as_of": "2026-08-11T04:01:04.773Z",
+    "as_of": "2026-08-13T01:49:04.746Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 75,
-      "parse_rate": 0.9866666666666667,
-      "conform_rate": 0.9866666666666667,
+      "samples": 95,
+      "parse_rate": 0.9894736842105263,
+      "conform_rate": 0.9894736842105263,
       "conform_ci95": [
-        0.9282663444557845,
-        0.9976424488609515
+        0.9427612985868637,
+        0.9981394237376521
       ],
-      "value_accuracy_mean": 0.9662162162162162,
+      "value_accuracy_mean": 0.973404255319149,
       "native_rung_rate": 0,
-      "mean_cost_usd": 0.00008595853333333335,
+      "mean_cost_usd": 0.00008098968421052635,
       "by_family": {
         "demo-rig": {
           "samples": 20,
@@ -1089,15 +1089,15 @@
           "mean_cost_usd": 0.00007639700000000002
         },
         "probe-suite": {
-          "samples": 55,
-          "conform_rate": 0.9818181818181818,
+          "samples": 75,
+          "conform_rate": 0.9866666666666667,
           "conform_ci95": [
-            0.903942239378376,
-            0.9967832195451589
+            0.9282663444557845,
+            0.9976424488609515
           ],
-          "value_accuracy_mean": 0.9537037037037037,
+          "value_accuracy_mean": 0.9662162162162162,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.00008943545454545465
+          "mean_cost_usd": 0.00008221440000000004
         }
       },
       "by_difficulty": {
@@ -1113,15 +1113,15 @@
           "mean_cost_usd": 0.0000702728
         },
         "standard": {
-          "samples": 50,
+          "samples": 70,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9479769375897331,
             1
           ],
-          "value_accuracy_mean": 0.95,
+          "value_accuracy_mean": 0.9642857142857143,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.00009380140000000006
+          "mean_cost_usd": 0.00008481714285714285
         }
       },
       "by_subtype": {
@@ -1159,15 +1159,15 @@
           "mean_cost_usd": 0.00011780333333333334
         },
         "qa.docs": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.00007086399999999999
+          "mean_cost_usd": 0.000061776
         },
         "reasoning.numeric": {
           "samples": 15,
@@ -1192,15 +1192,15 @@
           "mean_cost_usd": 0.00008335799999999998
         },
         "summarize": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.00008208400000000001
+          "mean_cost_usd": 0.00007234866666666666
         }
       }
     },
@@ -1212,19 +1212,19 @@
     }
   },
   "deepinfra/meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8": {
-    "as_of": "2026-08-11T04:02:58.969Z",
+    "as_of": "2026-08-13T01:49:18.729Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 75,
-      "parse_rate": 0.8,
-      "conform_rate": 0.7466666666666667,
+      "samples": 95,
+      "parse_rate": 0.8421052631578947,
+      "conform_rate": 0.8,
       "conform_ci95": [
-        0.6378967313440042,
-        0.8313995063644785
+        0.7086265584527134,
+        0.8680545294236028
       ],
       "value_accuracy_mean": 1,
       "native_rung_rate": 0,
-      "mean_cost_usd": 0.00012691600000000003,
+      "mean_cost_usd": 0.0001159957894736842,
       "by_family": {
         "demo-rig": {
           "samples": 20,
@@ -1238,15 +1238,15 @@
           "mean_cost_usd": 0.00008536500000000001
         },
         "probe-suite": {
-          "samples": 55,
-          "conform_rate": 0.6545454545454545,
+          "samples": 75,
+          "conform_rate": 0.7466666666666667,
           "conform_ci95": [
-            0.5225390350756162,
-            0.7663729045791027
+            0.6378967313440042,
+            0.8313995063644785
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.00014202545454545447
+          "mean_cost_usd": 0.000124164
         }
       },
       "by_difficulty": {
@@ -1262,15 +1262,15 @@
           "mean_cost_usd": 0.00016990799999999997
         },
         "standard": {
-          "samples": 50,
+          "samples": 70,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9479769375897331,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.00010541999999999994
+          "mean_cost_usd": 0.00009674142857142852
         }
       },
       "by_subtype": {
@@ -1308,15 +1308,15 @@
           "mean_cost_usd": 0.00016816
         },
         "qa.docs": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.00008127
+          "mean_cost_usd": 0.00006883999999999998
         },
         "reasoning.numeric": {
           "samples": 15,
@@ -1341,15 +1341,15 @@
           "mean_cost_usd": 0.0000849
         },
         "summarize": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.00010283999999999998
+          "mean_cost_usd": 0.00009258999999999999
         }
       }
     },
@@ -1365,19 +1365,19 @@
     }
   },
   "deepinfra/meta-llama/Llama-4-Scout-17B-16E-Instruct": {
-    "as_of": "2026-08-11T04:06:07.397Z",
+    "as_of": "2026-08-13T01:49:36.435Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 75,
-      "parse_rate": 0.9333333333333333,
-      "conform_rate": 0.9333333333333333,
+      "samples": 95,
+      "parse_rate": 0.9473684210526315,
+      "conform_rate": 0.9473684210526315,
       "conform_ci95": [
-        0.8532493994143954,
-        0.9711899371005063
+        0.882651138829621,
+        0.9773118869508504
       ],
       "value_accuracy_mean": 1,
       "native_rung_rate": 0,
-      "mean_cost_usd": 0.00005967599999999993,
+      "mean_cost_usd": 0.00005525157894736837,
       "by_family": {
         "demo-rig": {
           "samples": 20,
@@ -1391,15 +1391,15 @@
           "mean_cost_usd": 0.00004567000000000001
         },
         "probe-suite": {
-          "samples": 55,
-          "conform_rate": 0.9090909090909091,
+          "samples": 75,
+          "conform_rate": 0.9333333333333333,
           "conform_ci95": [
-            0.8042250541602005,
-            0.9605418449258196
+            0.8532493994143954,
+            0.9711899371005063
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.00006476909090909091
+          "mean_cost_usd": 0.00005780666666666662
         }
       },
       "by_difficulty": {
@@ -1415,15 +1415,15 @@
           "mean_cost_usd": 0.00006616000000000003
         },
         "standard": {
-          "samples": 50,
+          "samples": 70,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9479769375897331,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.000056433999999999995
+          "mean_cost_usd": 0.00005135571428571428
         }
       },
       "by_subtype": {
@@ -1461,15 +1461,15 @@
           "mean_cost_usd": 0.00009096666666666666
         },
         "qa.docs": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.00004568
+          "mean_cost_usd": 0.00003794666666666667
         },
         "reasoning.numeric": {
           "samples": 15,
@@ -1494,15 +1494,15 @@
           "mean_cost_usd": 0.00004498999999999999
         },
         "summarize": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.00004904
+          "mean_cost_usd": 0.00004517333333333332
         }
       }
     },
@@ -1518,19 +1518,19 @@
     }
   },
   "deepinfra/mistralai/Mistral-Small-3.2-24B-Instruct-2506": {
-    "as_of": "2026-08-11T04:15:26.993Z",
+    "as_of": "2026-08-13T01:49:56.815Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 75,
+      "samples": 95,
       "parse_rate": 1,
-      "conform_rate": 0.9333333333333333,
+      "conform_rate": 0.9473684210526315,
       "conform_ci95": [
-        0.8532493994143954,
-        0.9711899371005063
+        0.882651138829621,
+        0.9773118869508504
       ],
-      "value_accuracy_mean": 0.8666666666666667,
+      "value_accuracy_mean": 0.8947368421052632,
       "native_rung_rate": 0,
-      "mean_cost_usd": 0.00004914066666666663,
+      "mean_cost_usd": 0.000046082368421052635,
       "by_family": {
         "demo-rig": {
           "samples": 20,
@@ -1544,15 +1544,15 @@
           "mean_cost_usd": 0.000040198749999999995
         },
         "probe-suite": {
-          "samples": 55,
-          "conform_rate": 0.9090909090909091,
+          "samples": 75,
+          "conform_rate": 0.9333333333333333,
           "conform_ci95": [
-            0.8042250541602005,
-            0.9605418449258196
+            0.8532493994143954,
+            0.9711899371005063
           ],
-          "value_accuracy_mean": 0.8181818181818182,
+          "value_accuracy_mean": 0.8666666666666667,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.00005239227272727269
+          "mean_cost_usd": 0.00004765133333333331
         }
       },
       "by_difficulty": {
@@ -1568,15 +1568,15 @@
           "mean_cost_usd": 0.000046529000000000015
         },
         "standard": {
-          "samples": 50,
+          "samples": 70,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9479769375897331,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.00005044649999999998
+          "mean_cost_usd": 0.0000459228571428571
         }
       },
       "by_subtype": {
@@ -1614,15 +1614,15 @@
           "mean_cost_usd": 0.00008391333333333331
         },
         "qa.docs": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.000037925
+          "mean_cost_usd": 0.00003366666666666667
         },
         "reasoning.numeric": {
           "samples": 15,
@@ -1647,15 +1647,15 @@
           "mean_cost_usd": 0.000041687500000000004
         },
         "summarize": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.000042935
+          "mean_cost_usd": 0.00003943833333333334
         }
       }
     },
@@ -1671,19 +1671,19 @@
     }
   },
   "deepinfra/moonshotai/Kimi-K2.6": {
-    "as_of": "2026-08-11T05:38:14.796Z",
+    "as_of": "2026-08-13T01:59:44.700Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 75,
-      "parse_rate": 0.96,
-      "conform_rate": 0.96,
+      "samples": 95,
+      "parse_rate": 0.968421052631579,
+      "conform_rate": 0.968421052631579,
       "conform_ci95": [
-        0.8888701291759625,
-        0.9863039357398561
+        0.9112290135269181,
+        0.9892028605255756
       ],
       "value_accuracy_mean": 1,
       "native_rung_rate": 0,
-      "mean_cost_usd": 0.0032181666666666656,
+      "mean_cost_usd": 0.003206242105263156,
       "by_family": {
         "demo-rig": {
           "samples": 20,
@@ -1697,15 +1697,15 @@
           "mean_cost_usd": 0.0029475125
         },
         "probe-suite": {
-          "samples": 55,
-          "conform_rate": 0.9636363636363636,
+          "samples": 75,
+          "conform_rate": 0.9733333333333334,
           "conform_ci95": [
-            0.8767653602534898,
-            0.9899704587106665
+            0.9078851181224086,
+            0.9926563109938686
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.0033165863636363626
+          "mean_cost_usd": 0.0032752366666666645
         }
       },
       "by_difficulty": {
@@ -1721,15 +1721,15 @@
           "mean_cost_usd": 0.0037690499999999995
         },
         "standard": {
-          "samples": 50,
-          "conform_rate": 0.98,
+          "samples": 70,
+          "conform_rate": 0.9857142857142858,
           "conform_ci95": [
-            0.8950455641036219,
-            0.9964607407283539
+            0.9234181286879168,
+            0.9974737535421097
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.0029427249999999993
+          "mean_cost_usd": 0.003005239285714284
         }
       },
       "by_subtype": {
@@ -1767,15 +1767,15 @@
           "mean_cost_usd": 0.006697766666666665
         },
         "qa.docs": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.0023692999999999995
+          "mean_cost_usd": 0.0021437166666666663
         },
         "reasoning.numeric": {
           "samples": 15,
@@ -1800,15 +1800,15 @@
           "mean_cost_usd": 0.002182575
         },
         "summarize": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.0038560499999999998
+          "mean_cost_usd": 0.004146766666666666
         }
       }
     },
@@ -1824,19 +1824,19 @@
     }
   },
   "deepinfra/moonshotai/Kimi-K2.7-Code": {
-    "as_of": "2026-08-11T05:47:30.624Z",
+    "as_of": "2026-08-13T02:00:45.697Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 75,
+      "samples": 95,
       "parse_rate": 1,
       "conform_rate": 1,
       "conform_ci95": [
-        0.9512761575171942,
+        0.9611351464605271,
         1
       ],
       "value_accuracy_mean": 1,
       "native_rung_rate": 0,
-      "mean_cost_usd": 0.001541106666666666,
+      "mean_cost_usd": 0.0014407052631578944,
       "by_family": {
         "demo-rig": {
           "samples": 20,
@@ -1850,15 +1850,15 @@
           "mean_cost_usd": 0.0010642
         },
         "probe-suite": {
-          "samples": 55,
+          "samples": 75,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9347150988829137,
+            0.9512761575171942,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.0017145272727272724
+          "mean_cost_usd": 0.0015411066666666665
         }
       },
       "by_difficulty": {
@@ -1874,15 +1874,15 @@
           "mean_cost_usd": 0.002193136
         },
         "standard": {
-          "samples": 50,
+          "samples": 70,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9479769375897331,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.001215092
+          "mean_cost_usd": 0.00117198
         }
       },
       "by_subtype": {
@@ -1920,15 +1920,15 @@
           "mean_cost_usd": 0.00386716
         },
         "qa.docs": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.0012906400000000002
+          "mean_cost_usd": 0.0010936666666666666
         },
         "reasoning.numeric": {
           "samples": 15,
@@ -1953,15 +1953,15 @@
           "mean_cost_usd": 0.00095336
         },
         "summarize": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.0013402800000000001
+          "mean_cost_usd": 0.00120224
         }
       }
     },
@@ -1977,19 +1977,19 @@
     }
   },
   "deepinfra/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B": {
-    "as_of": "2026-08-11T05:59:15.568Z",
+    "as_of": "2026-08-13T02:01:49.213Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 75,
+      "samples": 95,
       "parse_rate": 1,
       "conform_rate": 1,
       "conform_ci95": [
-        0.9512761575171942,
+        0.9611351464605271,
         1
       ],
       "value_accuracy_mean": 1,
       "native_rung_rate": 0,
-      "mean_cost_usd": 0.001322038666666666,
+      "mean_cost_usd": 0.0012310694736842106,
       "by_family": {
         "demo-rig": {
           "samples": 20,
@@ -2003,15 +2003,15 @@
           "mean_cost_usd": 0.0009831150000000001
         },
         "probe-suite": {
-          "samples": 55,
+          "samples": 75,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9347150988829137,
+            0.9512761575171942,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.001445283636363636
+          "mean_cost_usd": 0.0012971906666666667
         }
       },
       "by_difficulty": {
@@ -2027,15 +2027,15 @@
           "mean_cost_usd": 0.0016776560000000002
         },
         "standard": {
-          "samples": 50,
+          "samples": 70,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9479769375897331,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.0011442300000000004
+          "mean_cost_usd": 0.0010715742857142854
         }
       },
       "by_subtype": {
@@ -2073,15 +2073,15 @@
           "mean_cost_usd": 0.0026875266666666667
         },
         "qa.docs": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.0008802800000000001
+          "mean_cost_usd": 0.0008278066666666667
         },
         "reasoning.numeric": {
           "samples": 15,
@@ -2106,15 +2106,15 @@
           "mean_cost_usd": 0.0009518700000000002
         },
         "summarize": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.00116456
+          "mean_cost_usd": 0.0010403866666666667
         }
       }
     },
@@ -2130,19 +2130,19 @@
     }
   },
   "deepinfra/openai/gpt-oss-120b": {
-    "as_of": "2026-08-11T06:07:45.111Z",
+    "as_of": "2026-08-13T02:07:31.137Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 75,
+      "samples": 95,
       "parse_rate": 1,
-      "conform_rate": 0.96,
+      "conform_rate": 0.968421052631579,
       "conform_ci95": [
-        0.8888701291759625,
-        0.9863039357398561
+        0.9112290135269181,
+        0.9892028605255756
       ],
       "value_accuracy_mean": 1,
       "native_rung_rate": 0,
-      "mean_cost_usd": 0.00018557399999999987,
+      "mean_cost_usd": 0.0001800810526315789,
       "by_family": {
         "demo-rig": {
           "samples": 20,
@@ -2156,15 +2156,15 @@
           "mean_cost_usd": 0.00013161000000000005
         },
         "probe-suite": {
-          "samples": 55,
-          "conform_rate": 0.9454545454545454,
+          "samples": 75,
+          "conform_rate": 0.96,
           "conform_ci95": [
-            0.8514693945594621,
-            0.9812767844453155
+            0.8888701291759625,
+            0.9863039357398561
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.00020519727272727266
+          "mean_cost_usd": 0.00019300666666666655
         }
       },
       "by_difficulty": {
@@ -2180,15 +2180,15 @@
           "mean_cost_usd": 0.00023666200000000006
         },
         "standard": {
-          "samples": 50,
+          "samples": 70,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9479769375897331,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.00016003
+          "mean_cost_usd": 0.00015987357142857134
         }
       },
       "by_subtype": {
@@ -2226,15 +2226,15 @@
           "mean_cost_usd": 0.0003715000000000001
         },
         "qa.docs": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.00010400000000000001
+          "mean_cost_usd": 0.00011296666666666663
         },
         "reasoning.numeric": {
           "samples": 15,
@@ -2259,15 +2259,15 @@
           "mean_cost_usd": 0.000147045
         },
         "summarize": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.00019195
+          "mean_cost_usd": 0.00019832666666666675
         }
       }
     },
@@ -2283,19 +2283,19 @@
     }
   },
   "deepinfra/zai-org/GLM-5.2": {
-    "as_of": "2026-08-11T07:22:50.471Z",
+    "as_of": "2026-08-13T02:09:24.926Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 75,
-      "parse_rate": 0.9333333333333333,
-      "conform_rate": 0.92,
+      "samples": 95,
+      "parse_rate": 0.9473684210526315,
+      "conform_rate": 0.9368421052631579,
       "conform_ci95": [
-        0.8362520966647771,
-        0.9628198756496662
+        0.8689934899993075,
+        0.970735111645153
       ],
       "value_accuracy_mean": 1,
       "native_rung_rate": 0,
-      "mean_cost_usd": 0.001513814,
+      "mean_cost_usd": 0.001349632105263158,
       "by_family": {
         "demo-rig": {
           "samples": 20,
@@ -2309,15 +2309,15 @@
           "mean_cost_usd": 0.0011046824999999998
         },
         "probe-suite": {
-          "samples": 55,
-          "conform_rate": 0.9272727272727272,
+          "samples": 75,
+          "conform_rate": 0.9466666666666667,
           "conform_ci95": [
-            0.8274005992784393,
-            0.9713559397669594
+            0.8707401284620144,
+            0.9790665722533456
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.0016625890909090907
+          "mean_cost_usd": 0.0014149520000000001
         }
       },
       "by_difficulty": {
@@ -2333,15 +2333,15 @@
           "mean_cost_usd": 0.001681266
         },
         "standard": {
-          "samples": 50,
-          "conform_rate": 0.92,
+          "samples": 70,
+          "conform_rate": 0.9428571428571428,
           "conform_ci95": [
-            0.8116175308165717,
-            0.968450485911407
+            0.8620804952516177,
+            0.9775562208992887
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.001430088
+          "mean_cost_usd": 0.0012311914285714285
         }
       },
       "by_subtype": {
@@ -2379,15 +2379,15 @@
           "mean_cost_usd": 0.0030457499999999994
         },
         "qa.docs": {
-          "samples": 5,
-          "conform_rate": 0.6,
+          "samples": 15,
+          "conform_rate": 0.8666666666666667,
           "conform_ci95": [
-            0.2307242812760128,
-            0.882379225767352
+            0.6211801716767764,
+            0.9626387408969346
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.00040248000000000004
+          "mean_cost_usd": 0.0005145699999999999
         },
         "reasoning.numeric": {
           "samples": 15,
@@ -2412,15 +2412,15 @@
           "mean_cost_usd": 0.001386885
         },
         "summarize": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.0011425499999999998
+          "mean_cost_usd": 0.0009790399999999998
         }
       }
     },
@@ -2436,19 +2436,19 @@
     }
   },
   "deepseek/deepseek-chat": {
-    "as_of": "2026-08-11T07:25:02.197Z",
+    "as_of": "2026-08-13T02:09:50.089Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 75,
+      "samples": 95,
       "parse_rate": 1,
-      "conform_rate": 0.9333333333333333,
+      "conform_rate": 0.9473684210526315,
       "conform_ci95": [
-        0.8532493994143954,
-        0.9711899371005063
+        0.882651138829621,
+        0.9773118869508504
       ],
-      "value_accuracy_mean": 0.9333333333333333,
+      "value_accuracy_mean": 0.9473684210526315,
       "native_rung_rate": 0,
-      "mean_cost_usd": 0.00007024005333333332,
+      "mean_cost_usd": 0.00006833738947368419,
       "by_family": {
         "demo-rig": {
           "samples": 20,
@@ -2462,15 +2462,15 @@
           "mean_cost_usd": 0.000045269
         },
         "probe-suite": {
-          "samples": 55,
-          "conform_rate": 0.9090909090909091,
+          "samples": 75,
+          "conform_rate": 0.9333333333333333,
           "conform_ci95": [
-            0.8042250541602005,
-            0.9605418449258196
+            0.8532493994143954,
+            0.9711899371005063
           ],
-          "value_accuracy_mean": 0.9090909090909091,
+          "value_accuracy_mean": 0.9333333333333333,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.00007932043636363637
+          "mean_cost_usd": 0.00007448895999999998
         }
       },
       "by_difficulty": {
@@ -2486,15 +2486,15 @@
           "mean_cost_usd": 0.00007983136000000004
         },
         "standard": {
-          "samples": 50,
+          "samples": 70,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9479769375897331,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.00006544440000000002
+          "mean_cost_usd": 0.00006423239999999999
         }
       },
       "by_subtype": {
@@ -2532,15 +2532,15 @@
           "mean_cost_usd": 0.00016510293333333334
         },
         "qa.docs": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.00005910800000000001
+          "mean_cost_usd": 0.00005279493333333333
         },
         "reasoning.numeric": {
           "samples": 15,
@@ -2565,15 +2565,15 @@
           "mean_cost_usd": 0.00004522
         },
         "summarize": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.000044687999999999996
+          "mean_cost_usd": 0.00006340693333333334
         }
       }
     },
@@ -2589,19 +2589,19 @@
     }
   },
   "deepseek/deepseek-reasoner": {
-    "as_of": "2026-08-11T07:28:18.201Z",
+    "as_of": "2026-08-13T02:10:43.686Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 75,
+      "samples": 95,
       "parse_rate": 1,
-      "conform_rate": 0.9466666666666667,
+      "conform_rate": 0.9578947368421052,
       "conform_ci95": [
-        0.8707401284620144,
-        0.9790665722533456
+        0.8966912227790326,
+        0.9835062271374501
       ],
       "value_accuracy_mean": 1,
       "native_rung_rate": 0,
-      "mean_cost_usd": 0.0001253530133333334,
+      "mean_cost_usd": 0.0001229662736842106,
       "by_family": {
         "demo-rig": {
           "samples": 20,
@@ -2615,15 +2615,15 @@
           "mean_cost_usd": 0.00009481499999999998
         },
         "probe-suite": {
-          "samples": 55,
-          "conform_rate": 0.9272727272727272,
+          "samples": 75,
+          "conform_rate": 0.9466666666666667,
           "conform_ci95": [
-            0.8274005992784393,
-            0.9713559397669594
+            0.8707401284620144,
+            0.9790665722533456
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.0001364577454545455
+          "mean_cost_usd": 0.00013047328000000006
         }
       },
       "by_difficulty": {
@@ -2639,15 +2639,15 @@
           "mean_cost_usd": 0.00013102544000000003
         },
         "standard": {
-          "samples": 50,
+          "samples": 70,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9479769375897331,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.00012251679999999998
+          "mean_cost_usd": 0.00012008800000000006
         }
       },
       "by_subtype": {
@@ -2685,15 +2685,15 @@
           "mean_cost_usd": 0.00024298773333333339
         },
         "qa.docs": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.000078204
+          "mean_cost_usd": 0.00007916533333333334
         },
         "reasoning.numeric": {
           "samples": 15,
@@ -2718,15 +2718,15 @@
           "mean_cost_usd": 0.00009917600000000001
         },
         "summarize": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.00011115999999999999
+          "mean_cost_usd": 0.00013597733333333334
         }
       }
     },
@@ -2741,20 +2741,310 @@
       "mean_cached_tokens": 2816
     }
   },
-  "fireworks/glm-5p2": {
-    "as_of": "2026-08-11T07:44:26.254Z",
+  "deepseek/deepseek-v4-flash": {
+    "as_of": "2026-08-13T03:28:59.887Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 75,
+      "samples": 95,
+      "parse_rate": 1,
+      "conform_rate": 0.9473684210526315,
+      "conform_ci95": [
+        0.882651138829621,
+        0.9773118869508504
+      ],
+      "value_accuracy_mean": 1,
+      "native_rung_rate": 0,
+      "mean_cost_usd": 0.0000731967157894737,
+      "by_family": {
+        "demo-rig": {
+          "samples": 20,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8388748419471806,
+            1
+          ],
+          "value_accuracy_mean": 1,
+          "native_rung_rate": 0,
+          "mean_cost_usd": 0.0000527716
+        },
+        "probe-suite": {
+          "samples": 75,
+          "conform_rate": 0.9333333333333333,
+          "conform_ci95": [
+            0.8532493994143954,
+            0.9711899371005063
+          ],
+          "value_accuracy_mean": 1,
+          "native_rung_rate": 0,
+          "mean_cost_usd": 0.00007864341333333338
+        }
+      },
+      "by_difficulty": {
+        "hard": {
+          "samples": 25,
+          "conform_rate": 0.8,
+          "conform_ci95": [
+            0.6086904963045967,
+            0.9113941531319742
+          ],
+          "value_accuracy_mean": 1,
+          "native_rung_rate": 0,
+          "mean_cost_usd": 0.00006943104
+        },
+        "standard": {
+          "samples": 70,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.9479769375897331,
+            1
+          ],
+          "value_accuracy_mean": 1,
+          "native_rung_rate": 0,
+          "mean_cost_usd": 0.00007454160000000002
+        }
+      },
+      "by_subtype": {
+        "classification": {
+          "samples": 10,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "value_accuracy_mean": 1,
+          "native_rung_rate": 0,
+          "mean_cost_usd": 0.00004307800000000001
+        },
+        "extraction.tabular": {
+          "samples": 15,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.7961166989641515,
+            1
+          ],
+          "value_accuracy_mean": 1,
+          "native_rung_rate": 0,
+          "mean_cost_usd": 0.00007980746666666666
+        },
+        "generation.prose": {
+          "samples": 15,
+          "conform_rate": 0.6666666666666666,
+          "conform_ci95": [
+            0.41713547738519774,
+            0.8482367556028526
+          ],
+          "value_accuracy_mean": 1,
+          "native_rung_rate": 0,
+          "mean_cost_usd": 0.0001458258666666667
+        },
+        "qa.docs": {
+          "samples": 15,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.7961166989641515,
+            1
+          ],
+          "value_accuracy_mean": 1,
+          "native_rung_rate": 0,
+          "mean_cost_usd": 0.00004019306666666667
+        },
+        "reasoning.numeric": {
+          "samples": 15,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.7961166989641515,
+            1
+          ],
+          "value_accuracy_mean": 1,
+          "native_rung_rate": 0,
+          "mean_cost_usd": 0.000038048266666666666
+        },
+        "structure.strict": {
+          "samples": 10,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "value_accuracy_mean": 1,
+          "native_rung_rate": 0,
+          "mean_cost_usd": 0.00005894
+        },
+        "summarize": {
+          "samples": 15,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.7961166989641515,
+            1
+          ],
+          "value_accuracy_mean": 1,
+          "native_rung_rate": 0,
+          "mean_cost_usd": 0.0000916925333333333
+        }
+      }
+    },
+    "grounding": null,
+    "caching": null
+  },
+  "deepseek/deepseek-v4-pro": {
+    "as_of": "2026-08-13T01:46:29.761Z",
+    "source": "modelrig-probes@0.0.1",
+    "schema": {
+      "samples": 95,
+      "parse_rate": 0.9894736842105263,
+      "conform_rate": 0.9789473684210527,
+      "conform_ci95": [
+        0.9264588050529105,
+        0.9942074931355945
+      ],
+      "value_accuracy_mean": 1,
+      "native_rung_rate": 0,
+      "mean_cost_usd": 0.00037348825263157907,
+      "by_family": {
+        "demo-rig": {
+          "samples": 20,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8388748419471806,
+            1
+          ],
+          "value_accuracy_mean": 1,
+          "native_rung_rate": 0,
+          "mean_cost_usd": 0.00022347980000000006
+        },
+        "probe-suite": {
+          "samples": 75,
+          "conform_rate": 0.9733333333333334,
+          "conform_ci95": [
+            0.9078851181224086,
+            0.9926563109938686
+          ],
+          "value_accuracy_mean": 1,
+          "native_rung_rate": 0,
+          "mean_cost_usd": 0.00041349050666666677
+        }
+      },
+      "by_difficulty": {
+        "hard": {
+          "samples": 25,
+          "conform_rate": 0.92,
+          "conform_ci95": [
+            0.7503389104960468,
+            0.9777795987151524
+          ],
+          "value_accuracy_mean": 1,
+          "native_rung_rate": 0,
+          "mean_cost_usd": 0.0006162639199999999
+        },
+        "standard": {
+          "samples": 70,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.9479769375897331,
+            1
+          ],
+          "value_accuracy_mean": 1,
+          "native_rung_rate": 0,
+          "mean_cost_usd": 0.00028678265714285724
+        }
+      },
+      "by_subtype": {
+        "classification": {
+          "samples": 10,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "value_accuracy_mean": 1,
+          "native_rung_rate": 0,
+          "mean_cost_usd": 0.0001442605
+        },
+        "extraction.tabular": {
+          "samples": 15,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.7961166989641515,
+            1
+          ],
+          "value_accuracy_mean": 1,
+          "native_rung_rate": 0,
+          "mean_cost_usd": 0.0002933910666666667
+        },
+        "generation.prose": {
+          "samples": 15,
+          "conform_rate": 0.8666666666666667,
+          "conform_ci95": [
+            0.6211801716767764,
+            0.9626387408969346
+          ],
+          "value_accuracy_mean": 1,
+          "native_rung_rate": 0,
+          "mean_cost_usd": 0.0011774986
+        },
+        "qa.docs": {
+          "samples": 15,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.7961166989641515,
+            1
+          ],
+          "value_accuracy_mean": 1,
+          "native_rung_rate": 0,
+          "mean_cost_usd": 0.00020630986666666672
+        },
+        "reasoning.numeric": {
+          "samples": 15,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.7961166989641515,
+            1
+          ],
+          "value_accuracy_mean": 1,
+          "native_rung_rate": 0,
+          "mean_cost_usd": 0.00017037113333333336
+        },
+        "structure.strict": {
+          "samples": 10,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "value_accuracy_mean": 1,
+          "native_rung_rate": 0,
+          "mean_cost_usd": 0.00022321300000000002
+        },
+        "summarize": {
+          "samples": 15,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.7961166989641515,
+            1
+          ],
+          "value_accuracy_mean": 1,
+          "native_rung_rate": 0,
+          "mean_cost_usd": 0.0002728726
+        }
+      }
+    },
+    "grounding": null,
+    "caching": null
+  },
+  "fireworks/glm-5p2": {
+    "as_of": "2026-08-13T02:12:40.386Z",
+    "source": "modelrig-probes@0.0.1",
+    "schema": {
+      "samples": 95,
       "parse_rate": 1,
       "conform_rate": 1,
       "conform_ci95": [
-        0.9512761575171942,
+        0.9611351464605271,
         1
       ],
       "value_accuracy_mean": 1,
       "native_rung_rate": 0,
-      "mean_cost_usd": 0.0031282194666666656,
+      "mean_cost_usd": 0.00275049347368421,
       "by_family": {
         "demo-rig": {
           "samples": 20,
@@ -2768,15 +3058,15 @@
           "mean_cost_usd": 0.002291191
         },
         "probe-suite": {
-          "samples": 55,
+          "samples": 75,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9347150988829137,
+            0.9512761575171942,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.003432593454545453
+          "mean_cost_usd": 0.002872974133333332
         }
       },
       "by_difficulty": {
@@ -2792,15 +3082,15 @@
           "mean_cost_usd": 0.003974779999999999
         },
         "standard": {
-          "samples": 50,
+          "samples": 70,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9479769375897331,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.0027049392
+          "mean_cost_usd": 0.002313248285714286
         }
       },
       "by_subtype": {
@@ -2838,15 +3128,15 @@
           "mean_cost_usd": 0.007344509333333332
         },
         "qa.docs": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.001406808
+          "mean_cost_usd": 0.0011642533333333335
         },
         "reasoning.numeric": {
           "samples": 15,
@@ -2871,15 +3161,15 @@
           "mean_cost_usd": 0.0024990000000000004
         },
         "summarize": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.0022736680000000004
+          "mean_cost_usd": 0.001841266666666667
         }
       }
     },
@@ -2895,19 +3185,19 @@
     }
   },
   "fireworks/gpt-oss-120b": {
-    "as_of": "2026-08-11T07:49:21.267Z",
+    "as_of": "2026-08-13T02:13:19.579Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 75,
+      "samples": 95,
       "parse_rate": 1,
       "conform_rate": 1,
       "conform_ci95": [
-        0.9512761575171942,
+        0.9611351464605271,
         1
       ],
-      "value_accuracy_mean": 0.99,
+      "value_accuracy_mean": 0.9921052631578947,
       "native_rung_rate": 0,
-      "mean_cost_usd": 0.0003448134,
+      "mean_cost_usd": 0.0003255074210526315,
       "by_family": {
         "demo-rig": {
           "samples": 20,
@@ -2921,15 +3211,15 @@
           "mean_cost_usd": 0.00022535475000000005
         },
         "probe-suite": {
-          "samples": 55,
+          "samples": 75,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9347150988829137,
+            0.9512761575171942,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.000388252909090909
+          "mean_cost_usd": 0.0003522147999999999
         }
       },
       "by_difficulty": {
@@ -2945,15 +3235,15 @@
           "mean_cost_usd": 0.0005553024000000002
         },
         "standard": {
-          "samples": 50,
+          "samples": 70,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9479769375897331,
             1
           ],
-          "value_accuracy_mean": 0.985,
+          "value_accuracy_mean": 0.9892857142857143,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.0002395688999999999
+          "mean_cost_usd": 0.00024343778571428573
         }
       },
       "by_subtype": {
@@ -2991,15 +3281,15 @@
           "mean_cost_usd": 0.0009219880000000001
         },
         "qa.docs": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.000207726
+          "mean_cost_usd": 0.000180687
         },
         "reasoning.numeric": {
           "samples": 15,
@@ -3024,15 +3314,15 @@
           "mean_cost_usd": 0.000195336
         },
         "summarize": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
-          "value_accuracy_mean": 0.85,
+          "value_accuracy_mean": 0.95,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.00034022999999999996
+          "mean_cost_usd": 0.00033944499999999996
         }
       }
     },
@@ -3048,19 +3338,19 @@
     }
   },
   "fireworks/kimi-k3": {
-    "as_of": "2026-08-11T07:58:10.660Z",
+    "as_of": "2026-08-13T02:15:16.959Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 75,
+      "samples": 95,
       "parse_rate": 1,
-      "conform_rate": 0.9733333333333334,
+      "conform_rate": 0.9789473684210527,
       "conform_ci95": [
-        0.9078851181224086,
-        0.9926563109938686
+        0.9264588050529105,
+        0.9942074931355945
       ],
-      "value_accuracy_mean": 0.9933333333333333,
+      "value_accuracy_mean": 0.9947368421052631,
       "native_rung_rate": 0,
-      "mean_cost_usd": 0.004596747999999998,
+      "mean_cost_usd": 0.004265194736842104,
       "by_family": {
         "demo-rig": {
           "samples": 20,
@@ -3074,15 +3364,15 @@
           "mean_cost_usd": 0.0031118400000000003
         },
         "probe-suite": {
-          "samples": 55,
-          "conform_rate": 0.9636363636363636,
+          "samples": 75,
+          "conform_rate": 0.9733333333333334,
           "conform_ci95": [
-            0.8767653602534898,
-            0.9899704587106665
+            0.9078851181224086,
+            0.9926563109938686
           ],
-          "value_accuracy_mean": 0.990909090909091,
+          "value_accuracy_mean": 0.9933333333333333,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.005136714545454544
+          "mean_cost_usd": 0.004572755999999998
         }
       },
       "by_difficulty": {
@@ -3098,15 +3388,15 @@
           "mean_cost_usd": 0.005798364
         },
         "standard": {
-          "samples": 50,
+          "samples": 70,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9479769375897331,
             1
           ],
-          "value_accuracy_mean": 0.99,
+          "value_accuracy_mean": 0.9928571428571429,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.003995940000000002
+          "mean_cost_usd": 0.003717634285714285
         }
       },
       "by_subtype": {
@@ -3144,15 +3434,15 @@
           "mean_cost_usd": 0.010355679999999999
         },
         "qa.docs": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.00457164
+          "mean_cost_usd": 0.0030880400000000002
         },
         "reasoning.numeric": {
           "samples": 15,
@@ -3177,15 +3467,15 @@
           "mean_cost_usd": 0.0031126799999999996
         },
         "summarize": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 0,
-          "mean_cost_usd": 0.00293532
+          "mean_cost_usd": 0.0034434400000000003
         }
       }
     },
@@ -3201,19 +3491,19 @@
     }
   },
   "gemini/gemini-2.5-flash": {
-    "as_of": "2026-08-11T08:01:35.532Z",
+    "as_of": "2026-08-13T02:15:49.863Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 75,
+      "samples": 95,
       "parse_rate": 1,
-      "conform_rate": 0.9333333333333333,
+      "conform_rate": 0.9473684210526315,
       "conform_ci95": [
-        0.8532493994143954,
-        0.9711899371005063
+        0.882651138829621,
+        0.9773118869508504
       ],
       "value_accuracy_mean": 1,
       "native_rung_rate": 1,
-      "mean_cost_usd": 0.0013340042666666666,
+      "mean_cost_usd": 0.0011971665263157893,
       "by_family": {
         "demo-rig": {
           "samples": 20,
@@ -3227,15 +3517,15 @@
           "mean_cost_usd": 0.0007712000000000001
         },
         "probe-suite": {
-          "samples": 55,
-          "conform_rate": 0.9090909090909091,
+          "samples": 75,
+          "conform_rate": 0.9333333333333333,
           "conform_ci95": [
-            0.8042250541602005,
-            0.9605418449258196
+            0.8532493994143954,
+            0.9711899371005063
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.0015386603636363637
+          "mean_cost_usd": 0.0013107575999999998
         }
       },
       "by_difficulty": {
@@ -3251,15 +3541,15 @@
           "mean_cost_usd": 0.00158522
         },
         "standard": {
-          "samples": 50,
+          "samples": 70,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9479769375897331,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.0012083963999999997
+          "mean_cost_usd": 0.0010585759999999997
         }
       },
       "by_subtype": {
@@ -3297,15 +3587,15 @@
           "mean_cost_usd": 0.002880366666666667
         },
         "qa.docs": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.0006458000000000001
+          "mean_cost_usd": 0.0005718666666666667
         },
         "reasoning.numeric": {
           "samples": 15,
@@ -3330,15 +3620,15 @@
           "mean_cost_usd": 0.00086145
         },
         "summarize": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.0011579000000000001
+          "mean_cost_usd": 0.0009414
         }
       }
     },
@@ -3354,19 +3644,19 @@
     }
   },
   "gemini/gemini-3-flash-preview": {
-    "as_of": "2026-08-11T08:06:52.680Z",
+    "as_of": "2026-08-13T02:16:46.965Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 75,
+      "samples": 95,
       "parse_rate": 1,
-      "conform_rate": 0.9733333333333334,
+      "conform_rate": 0.9789473684210527,
       "conform_ci95": [
-        0.9078851181224086,
-        0.9926563109938686
+        0.9264588050529105,
+        0.9942074931355945
       ],
       "value_accuracy_mean": 1,
       "native_rung_rate": 1,
-      "mean_cost_usd": 0.0028769133333333323,
+      "mean_cost_usd": 0.00263147894736842,
       "by_family": {
         "demo-rig": {
           "samples": 20,
@@ -3380,15 +3670,15 @@
           "mean_cost_usd": 0.0021102250000000003
         },
         "probe-suite": {
-          "samples": 55,
-          "conform_rate": 0.9636363636363636,
+          "samples": 75,
+          "conform_rate": 0.9733333333333334,
           "conform_ci95": [
-            0.8767653602534898,
-            0.9899704587106665
+            0.9078851181224086,
+            0.9926563109938686
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.0031557090909090893
+          "mean_cost_usd": 0.0027704799999999988
         }
       },
       "by_difficulty": {
@@ -3404,15 +3694,15 @@
           "mean_cost_usd": 0.003931960000000001
         },
         "standard": {
-          "samples": 50,
+          "samples": 70,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9479769375897331,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.0023493900000000002
+          "mean_cost_usd": 0.0021670214285714287
         }
       },
       "by_subtype": {
@@ -3450,15 +3740,15 @@
           "mean_cost_usd": 0.006228966666666667
         },
         "qa.docs": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.0019664
+          "mean_cost_usd": 0.0016100333333333332
         },
         "reasoning.numeric": {
           "samples": 15,
@@ -3483,15 +3773,15 @@
           "mean_cost_usd": 0.0019733500000000005
         },
         "summarize": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.002813
+          "mean_cost_usd": 0.0022645666666666667
         }
       }
     },
@@ -3507,19 +3797,19 @@
     }
   },
   "gemini/gemini-3.1-flash-lite": {
-    "as_of": "2026-08-11T08:07:58.428Z",
+    "as_of": "2026-08-13T02:17:01.231Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 75,
+      "samples": 95,
       "parse_rate": 1,
-      "conform_rate": 0.9333333333333333,
+      "conform_rate": 0.9473684210526315,
       "conform_ci95": [
-        0.8532493994143954,
-        0.9711899371005063
+        0.882651138829621,
+        0.9773118869508504
       ],
       "value_accuracy_mean": 1,
       "native_rung_rate": 1,
-      "mean_cost_usd": 0.0002211566666666664,
+      "mean_cost_usd": 0.00019961315789473663,
       "by_family": {
         "demo-rig": {
           "samples": 20,
@@ -3533,15 +3823,15 @@
           "mean_cost_usd": 0.00015961249999999998
         },
         "probe-suite": {
-          "samples": 55,
-          "conform_rate": 0.9090909090909091,
+          "samples": 75,
+          "conform_rate": 0.9333333333333333,
           "conform_ci95": [
-            0.8042250541602005,
-            0.9605418449258196
+            0.8532493994143954,
+            0.9711899371005063
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.0002435363636363636
+          "mean_cost_usd": 0.00021027999999999995
         }
       },
       "by_difficulty": {
@@ -3557,15 +3847,15 @@
           "mean_cost_usd": 0.00019262000000000004
         },
         "standard": {
-          "samples": 50,
+          "samples": 70,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9479769375897331,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.00023542500000000013
+          "mean_cost_usd": 0.00020211071428571432
         }
       },
       "by_subtype": {
@@ -3603,15 +3893,15 @@
           "mean_cost_usd": 0.0004301833333333333
         },
         "qa.docs": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.0001465
+          "mean_cost_usd": 0.00011991666666666665
         },
         "reasoning.numeric": {
           "samples": 15,
@@ -3636,15 +3926,15 @@
           "mean_cost_usd": 0.00020127499999999997
         },
         "summarize": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.0001708
+          "mean_cost_usd": 0.00014428333333333333
         }
       }
     },
@@ -3660,19 +3950,19 @@
     }
   },
   "gemini/gemini-3.1-pro-preview": {
-    "as_of": "2026-08-11T08:18:57.837Z",
+    "as_of": "2026-08-13T02:19:11.279Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 75,
+      "samples": 95,
       "parse_rate": 1,
       "conform_rate": 1,
       "conform_ci95": [
-        0.9512761575171942,
+        0.9611351464605271,
         1
       ],
       "value_accuracy_mean": 1,
       "native_rung_rate": 1,
-      "mean_cost_usd": 0.012916613333333334,
+      "mean_cost_usd": 0.011945073684210532,
       "by_family": {
         "demo-rig": {
           "samples": 20,
@@ -3686,15 +3976,15 @@
           "mean_cost_usd": 0.0093667
         },
         "probe-suite": {
-          "samples": 55,
+          "samples": 75,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9347150988829137,
+            0.9512761575171942,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.014207490909090906
+          "mean_cost_usd": 0.012632639999999999
         }
       },
       "by_difficulty": {
@@ -3710,15 +4000,15 @@
           "mean_cost_usd": 0.016604800000000003
         },
         "standard": {
-          "samples": 50,
+          "samples": 70,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9479769375897331,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.011072519999999997
+          "mean_cost_usd": 0.010280885714285712
         }
       },
       "by_subtype": {
@@ -3756,15 +4046,15 @@
           "mean_cost_usd": 0.03134786666666667
         },
         "qa.docs": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.0112136
+          "mean_cost_usd": 0.008573733333333333
         },
         "reasoning.numeric": {
           "samples": 15,
@@ -3789,15 +4079,15 @@
           "mean_cost_usd": 0.009655
         },
         "summarize": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.011103200000000002
+          "mean_cost_usd": 0.009934266666666667
         }
       }
     },
@@ -4107,19 +4397,19 @@
     }
   },
   "openai/gpt-5-mini": {
-    "as_of": "2026-08-11T08:25:46.550Z",
+    "as_of": "2026-08-13T02:20:59.725Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 75,
+      "samples": 95,
       "parse_rate": 1,
       "conform_rate": 1,
       "conform_ci95": [
-        0.9512761575171942,
+        0.9611351464605271,
         1
       ],
       "value_accuracy_mean": 1,
       "native_rung_rate": 1,
-      "mean_cost_usd": 0.0009401133333333335,
+      "mean_cost_usd": 0.0008796315789473687,
       "by_family": {
         "demo-rig": {
           "samples": 20,
@@ -4133,15 +4423,15 @@
           "mean_cost_usd": 0.0005306
         },
         "probe-suite": {
-          "samples": 55,
+          "samples": 75,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9347150988829137,
+            0.9512761575171942,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.0010890272727272728
+          "mean_cost_usd": 0.0009727066666666669
         }
       },
       "by_difficulty": {
@@ -4157,15 +4447,15 @@
           "mean_cost_usd": 0.0013853099999999998
         },
         "standard": {
-          "samples": 50,
+          "samples": 70,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9479769375897331,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.000717515
+          "mean_cost_usd": 0.0006990321428571428
         }
       },
       "by_subtype": {
@@ -4203,15 +4493,15 @@
           "mean_cost_usd": 0.0024409500000000003
         },
         "qa.docs": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.00060785
+          "mean_cost_usd": 0.0006020333333333332
         },
         "reasoning.numeric": {
           "samples": 15,
@@ -4236,15 +4526,15 @@
           "mean_cost_usd": 0.000669625
         },
         "summarize": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.0006321499999999999
+          "mean_cost_usd": 0.0006817333333333333
         }
       }
     },
@@ -4260,19 +4550,19 @@
     }
   },
   "openai/gpt-5.2": {
-    "as_of": "2026-08-11T08:28:16.877Z",
+    "as_of": "2026-08-13T02:21:23.044Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 75,
+      "samples": 95,
       "parse_rate": 1,
       "conform_rate": 1,
       "conform_ci95": [
-        0.9512761575171942,
+        0.9611351464605271,
         1
       ],
       "value_accuracy_mean": 1,
       "native_rung_rate": 1,
-      "mean_cost_usd": 0.0016794866666666659,
+      "mean_cost_usd": 0.0015689578947368414,
       "by_family": {
         "demo-rig": {
           "samples": 20,
@@ -4286,15 +4576,15 @@
           "mean_cost_usd": 0.0013272
         },
         "probe-suite": {
-          "samples": 55,
+          "samples": 75,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9347150988829137,
+            0.9512761575171942,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.0018075909090909089
+          "mean_cost_usd": 0.0016334266666666666
         }
       },
       "by_difficulty": {
@@ -4310,15 +4600,15 @@
           "mean_cost_usd": 0.00140189
         },
         "standard": {
-          "samples": 50,
+          "samples": 70,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9479769375897331,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.0018182850000000002
+          "mean_cost_usd": 0.0016286249999999992
         }
       },
       "by_subtype": {
@@ -4356,15 +4646,15 @@
           "mean_cost_usd": 0.003488916666666667
         },
         "qa.docs": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.00149975
+          "mean_cost_usd": 0.0011491666666666666
         },
         "reasoning.numeric": {
           "samples": 15,
@@ -4389,15 +4679,15 @@
           "mean_cost_usd": 0.001327375
         },
         "summarize": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.00156905
+          "mean_cost_usd": 0.0014130666666666667
         }
       }
     },
@@ -4413,19 +4703,19 @@
     }
   },
   "openai/gpt-5.4": {
-    "as_of": "2026-08-11T08:30:54.877Z",
+    "as_of": "2026-08-13T02:21:49.684Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 75,
+      "samples": 95,
       "parse_rate": 1,
       "conform_rate": 1,
       "conform_ci95": [
-        0.9512761575171942,
+        0.9611351464605271,
         1
       ],
       "value_accuracy_mean": 1,
       "native_rung_rate": 1,
-      "mean_cost_usd": 0.0019058666666666676,
+      "mean_cost_usd": 0.0017935263157894737,
       "by_family": {
         "demo-rig": {
           "samples": 20,
@@ -4439,15 +4729,15 @@
           "mean_cost_usd": 0.0015279999999999998
         },
         "probe-suite": {
-          "samples": 55,
+          "samples": 75,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9347150988829137,
+            0.9512761575171942,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.0020432727272727265
+          "mean_cost_usd": 0.001864333333333333
         }
       },
       "by_difficulty": {
@@ -4463,15 +4753,15 @@
           "mean_cost_usd": 0.0017025
         },
         "standard": {
-          "samples": 50,
+          "samples": 70,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9479769375897331,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.0020075500000000003
+          "mean_cost_usd": 0.0018260357142857147
         }
       },
       "by_subtype": {
@@ -4509,15 +4799,15 @@
           "mean_cost_usd": 0.003777833333333333
         },
         "qa.docs": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.0015075000000000002
+          "mean_cost_usd": 0.0012226666666666668
         },
         "reasoning.numeric": {
           "samples": 15,
@@ -4542,15 +4832,15 @@
           "mean_cost_usd": 0.0015512500000000001
         },
         "summarize": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.0019045
+          "mean_cost_usd": 0.0017443333333333334
         }
       }
     },
@@ -4566,19 +4856,19 @@
     }
   },
   "openai/gpt-5.4-mini": {
-    "as_of": "2026-08-11T08:32:17.007Z",
+    "as_of": "2026-08-13T02:22:08.590Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 75,
+      "samples": 95,
       "parse_rate": 1,
       "conform_rate": 1,
       "conform_ci95": [
-        0.9512761575171942,
+        0.9611351464605271,
         1
       ],
-      "value_accuracy_mean": 0.9866666666666667,
+      "value_accuracy_mean": 0.9894736842105263,
       "native_rung_rate": 1,
-      "mean_cost_usd": 0.0005592199999999998,
+      "mean_cost_usd": 0.0005293421052631574,
       "by_family": {
         "demo-rig": {
           "samples": 20,
@@ -4592,15 +4882,15 @@
           "mean_cost_usd": 0.00044535
         },
         "probe-suite": {
-          "samples": 55,
+          "samples": 75,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9347150988829137,
+            0.9512761575171942,
             1
           ],
-          "value_accuracy_mean": 0.9818181818181818,
+          "value_accuracy_mean": 0.9866666666666667,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.0006006272727272724
+          "mean_cost_usd": 0.0005517399999999997
         }
       },
       "by_difficulty": {
@@ -4616,15 +4906,15 @@
           "mean_cost_usd": 0.0004938299999999999
         },
         "standard": {
-          "samples": 50,
+          "samples": 70,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9479769375897331,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.0005919150000000003
+          "mean_cost_usd": 0.0005420249999999997
         }
       },
       "by_subtype": {
@@ -4662,15 +4952,15 @@
           "mean_cost_usd": 0.00108265
         },
         "qa.docs": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.00039375
+          "mean_cost_usd": 0.00036200000000000007
         },
         "reasoning.numeric": {
           "samples": 15,
@@ -4695,15 +4985,15 @@
           "mean_cost_usd": 0.0004653750000000001
         },
         "summarize": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.0005776500000000001
+          "mean_cost_usd": 0.0005182
         }
       }
     },
@@ -4719,19 +5009,19 @@
     }
   },
   "openai/gpt-5.4-nano": {
-    "as_of": "2026-08-11T08:33:56.794Z",
+    "as_of": "2026-08-13T02:22:23.417Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 75,
+      "samples": 95,
       "parse_rate": 1,
       "conform_rate": 1,
       "conform_ci95": [
-        0.9512761575171942,
+        0.9611351464605271,
         1
       ],
-      "value_accuracy_mean": 0.88,
+      "value_accuracy_mean": 0.9052631578947369,
       "native_rung_rate": 1,
-      "mean_cost_usd": 0.00016321333333333345,
+      "mean_cost_usd": 0.00015228947368421065,
       "by_family": {
         "demo-rig": {
           "samples": 20,
@@ -4745,15 +5035,15 @@
           "mean_cost_usd": 0.00013368750000000002
         },
         "probe-suite": {
-          "samples": 55,
+          "samples": 75,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9347150988829137,
+            0.9512761575171942,
             1
           ],
-          "value_accuracy_mean": 0.8363636363636363,
+          "value_accuracy_mean": 0.88,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.0001739500000000002
+          "mean_cost_usd": 0.00015725000000000024
         }
       },
       "by_difficulty": {
@@ -4769,15 +5059,15 @@
           "mean_cost_usd": 0.00012351999999999996
         },
         "standard": {
-          "samples": 50,
+          "samples": 70,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9479769375897331,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.00018306000000000003
+          "mean_cost_usd": 0.00016256428571428578
         }
       },
       "by_subtype": {
@@ -4815,15 +5105,15 @@
           "mean_cost_usd": 0.00031056666666666666
         },
         "qa.docs": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.00015005000000000002
+          "mean_cost_usd": 0.00011393333333333332
         },
         "reasoning.numeric": {
           "samples": 15,
@@ -4848,15 +5138,15 @@
           "mean_cost_usd": 0.00015254999999999997
         },
         "summarize": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.0001487
+          "mean_cost_usd": 0.00013408333333333336
         }
       }
     },
@@ -4872,19 +5162,19 @@
     }
   },
   "openai/gpt-5.5": {
-    "as_of": "2026-08-11T08:38:34.360Z",
+    "as_of": "2026-08-13T02:23:01.384Z",
     "source": "modelrig-probes@0.0.1",
     "schema": {
-      "samples": 75,
+      "samples": 95,
       "parse_rate": 1,
       "conform_rate": 1,
       "conform_ci95": [
-        0.9512761575171942,
+        0.9611351464605271,
         1
       ],
       "value_accuracy_mean": 1,
       "native_rung_rate": 1,
-      "mean_cost_usd": 0.004976800000000001,
+      "mean_cost_usd": 0.0047012105263157895,
       "by_family": {
         "demo-rig": {
           "samples": 20,
@@ -4898,15 +5188,15 @@
           "mean_cost_usd": 0.0035302499999999995
         },
         "probe-suite": {
-          "samples": 55,
+          "samples": 75,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9347150988829137,
+            0.9512761575171942,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.005502818181818182
+          "mean_cost_usd": 0.005013466666666666
         }
       },
       "by_difficulty": {
@@ -4922,15 +5212,15 @@
           "mean_cost_usd": 0.0059008
         },
         "standard": {
-          "samples": 50,
+          "samples": 70,
           "conform_rate": 1,
           "conform_ci95": [
-            0.9286524008666414,
+            0.9479769375897331,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.004514800000000002
+          "mean_cost_usd": 0.004272785714285716
         }
       },
       "by_subtype": {
@@ -4968,15 +5258,15 @@
           "mean_cost_usd": 0.010289333333333334
         },
         "qa.docs": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.0030150000000000003
+          "mean_cost_usd": 0.002893000000000001
         },
         "reasoning.numeric": {
           "samples": 15,
@@ -5001,15 +5291,15 @@
           "mean_cost_usd": 0.003621
         },
         "summarize": {
-          "samples": 5,
+          "samples": 15,
           "conform_rate": 1,
           "conform_ci95": [
-            0.5655175352168251,
+            0.7961166989641515,
             1
           ],
           "value_accuracy_mean": 1,
           "native_rung_rate": 1,
-          "mean_cost_usd": 0.005355
+          "mean_cost_usd": 0.0047873333333333335
         }
       }
     },
@@ -5022,6 +5312,159 @@
       "samples": 5,
       "cache_hit_rate": 1,
       "mean_cached_tokens": 1792
+    }
+  },
+  "openai/gpt-5.5-pro": {
+    "as_of": "2026-08-13T03:21:49.744Z",
+    "source": "modelrig-probes@0.0.1",
+    "schema": {
+      "samples": 95,
+      "parse_rate": 1,
+      "conform_rate": 1,
+      "conform_ci95": [
+        0.9611351464605271,
+        1
+      ],
+      "value_accuracy_mean": 1,
+      "native_rung_rate": 1,
+      "mean_cost_usd": 0.04996547368421055,
+      "by_family": {
+        "demo-rig": {
+          "samples": 20,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8388748419471806,
+            1
+          ],
+          "value_accuracy_mean": 1,
+          "native_rung_rate": 1,
+          "mean_cost_usd": 0.03703949999999999
+        },
+        "probe-suite": {
+          "samples": 75,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.9512761575171942,
+            1
+          ],
+          "value_accuracy_mean": 1,
+          "native_rung_rate": 1,
+          "mean_cost_usd": 0.05341240000000001
+        }
+      },
+      "by_difficulty": {
+        "hard": {
+          "samples": 25,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.8668077490609515,
+            0.9999999999999999
+          ],
+          "value_accuracy_mean": 1,
+          "native_rung_rate": 1,
+          "mean_cost_usd": 0.07138800000000001
+        },
+        "standard": {
+          "samples": 70,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.9479769375897331,
+            1
+          ],
+          "value_accuracy_mean": 1,
+          "native_rung_rate": 1,
+          "mean_cost_usd": 0.04231457142857142
+        }
+      },
+      "by_subtype": {
+        "classification": {
+          "samples": 10,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "value_accuracy_mean": 1,
+          "native_rung_rate": 1,
+          "mean_cost_usd": 0.029232000000000008
+        },
+        "extraction.tabular": {
+          "samples": 15,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.7961166989641515,
+            1
+          ],
+          "value_accuracy_mean": 1,
+          "native_rung_rate": 1,
+          "mean_cost_usd": 0.04623800000000001
+        },
+        "generation.prose": {
+          "samples": 15,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.7961166989641515,
+            1
+          ],
+          "value_accuracy_mean": 1,
+          "native_rung_rate": 1,
+          "mean_cost_usd": 0.13136800000000004
+        },
+        "qa.docs": {
+          "samples": 15,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.7961166989641515,
+            1
+          ],
+          "value_accuracy_mean": 1,
+          "native_rung_rate": 1,
+          "mean_cost_usd": 0.032042
+        },
+        "reasoning.numeric": {
+          "samples": 15,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.7961166989641515,
+            1
+          ],
+          "value_accuracy_mean": 1,
+          "native_rung_rate": 1,
+          "mean_cost_usd": 0.025824
+        },
+        "structure.strict": {
+          "samples": 10,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "value_accuracy_mean": 1,
+          "native_rung_rate": 1,
+          "mean_cost_usd": 0.031161
+        },
+        "summarize": {
+          "samples": 15,
+          "conform_rate": 1,
+          "conform_ci95": [
+            0.7961166989641515,
+            1
+          ],
+          "value_accuracy_mean": 1,
+          "native_rung_rate": 1,
+          "mean_cost_usd": 0.040714
+        }
+      }
+    },
+    "grounding": {
+      "samples": 15,
+      "grounded_rate": 0,
+      "mean_citations": 0
+    },
+    "caching": {
+      "samples": 5,
+      "cache_hit_rate": 0,
+      "mean_cached_tokens": 0
     }
   }
 }

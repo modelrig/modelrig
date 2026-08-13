@@ -1,0 +1,40 @@
+{
+  "campaign": "cycle-003b-2026-08",
+  "status": "AUTHORED for the coverage follow-ups supplemental run (architect 2026-08-11). Estimate-gated, HARD $25 total ceiling. Two enrollments + one coverage top-up; composes with cycle-003 via mergeSchemaResults.",
+  "created": "2026-08-11",
+  "source": "coverage follow-ups mission Steps 2+4. DeepSeek alias evidence + v4 callability verified 2026-08-11 (live models list + a call to each; API echoes model=deepseek-v4-flash for the chat/reasoner aliases).",
+  "run_design": {
+    "cov_topup": "The 4 reinstated coverage fixtures (cov-qa-*, cov-summarize-*) run across the EXISTING 34 board models, schema-only, via `cycle --fixtures <cov-only-dir>`. build-probed's mergeSchemaResults composes them with each model's cycle-003 15-fixture schema (existing numbers unchanged; qa.docs + summarize reach n=15). Grok stays contaminated/out-of-credits → its dark nodes stay dark, honestly.",
+    "deepseek_v4": "deepseek/deepseek-v4-flash + deepseek/deepseek-v4-pro (the provider's current LISTED models) run the FULL schema corpus (19 fixtures) as new first-class rows, ~$0.5. Their declared entries auto-generate from the pinned pricing map (v4-flash 0.14/0.28, v4-pro 0.435/0.87 per Mtok) + adapter flags; callNotes carry the alias mapping.",
+    "gpt_5_5_pro": "openai/gpt-5.5-pro runs SEPARATELY (Step 3) via the new Responses-API adapter, full 3 classes, $10 per-model envelope — see its own manifest."
+  },
+  "deepseek_alias_resolution": {
+    "verified": "2026-08-11",
+    "finding": "DeepSeek's /models lists only deepseek-v4-flash + deepseek-v4-pro. The classic deepseek-chat and deepseek-reasoner are rolling ALIASES that both currently resolve to deepseek-v4-flash (chat = default, reasoner = reasoning mode). BOTH ARE ALIVE, not retired — the roster-sweep retirement flag was already suppressed by the recently-probed guard (they probed clean in cycle-003). Rows are NEVER deleted; kept with the alias callNote.",
+    "action": "no retirement; enroll the two listed v4 models as first-class rows alongside the aliases."
+  },
+  "targets": [
+    {
+      "provider": "deepseek",
+      "model": "deepseek-v4-flash",
+      "family": "DeepSeek V4",
+      "pricing_usd_per_mtok": { "input": 0.14, "output": 0.28 },
+      "classes": ["schema"],
+      "note": "current listed model; the deepseek-chat/reasoner aliases resolve here"
+    },
+    {
+      "provider": "deepseek",
+      "model": "deepseek-v4-pro",
+      "family": "DeepSeek V4",
+      "pricing_usd_per_mtok": { "input": 0.435, "output": 0.87 },
+      "classes": ["schema"],
+      "note": "current listed model"
+    }
+  ],
+  "runbook": [
+    "1. cov top-up: build a scratch dir with only the 4 cov-*.json under schema/, then `cycle --results results --fixtures <scratch> --out results --cycle cycle-003b --ceiling 25 --per-model 5 --samples 5 --manifest results/cycle-manifest-cycle-003b.json --estimate-only 1` (log), then run.",
+    "2. deepseek-v4: `cycle --plan <dsv4-schema-plan> --out results --cycle cycle-003b-dsv4 --ceiling 25 --samples 5 --manifest results/cycle-manifest-cycle-003b-dsv4.json --estimate-only 1` (log), then run (full corpus, schema-only).",
+    "3. gpt-5.5-pro: Step-3 run, $10 envelope, its own manifest.",
+    "4. Rebuild + refresh snapshots; expect 37 rows (34 + gpt-5.5-pro + 2 deepseek-v4), qa.docs/summarize lit."
+  ]
+}

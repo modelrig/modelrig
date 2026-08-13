@@ -46,6 +46,12 @@ describe("canonicalJson / fixtureHash", () => {
     const tagged: ProbeFixture = { ...bare, subtype: "extraction.tabular" };
     expect(fixtureHash(tagged)).toBe(fixtureHash(bare));
   });
+
+  it("notes is metadata — adding a coverage note must not invalidate published hashes", () => {
+    const bare: ProbeFixture = { id: "x", class: "schema", domain: "general", prompt: "p", source: "s" };
+    const noted: ProbeFixture = { ...bare, notes: "coverage fixture — saturated at authoring" };
+    expect(fixtureHash(noted)).toBe(fixtureHash(bare));
+  });
 });
 
 describe("shipped fixture corpus", () => {
@@ -169,13 +175,11 @@ describe("shipped fixture corpus", () => {
     }
     // The committed grouping (plan §5.5, summarize split per the honesty
     // review: cz-prose-floor is constrained prose GENERATION, not summarize).
-    // Cycle 3 DEEPENED generation.prose with 2 screened survivors
-    // (cand-prose-bounded-window, cand-prose-nested-figures) so it clears the
-    // by_subtype min-n gate (3 fixtures × 5 = 15 ≥ 10). qa.docs and summarize
-    // stayed at 1 fixture: their Cycle-3 candidates were DISCARDED in Stage A
-    // screening (all 5 panel models aced them — short qa/summarize tasks are
-    // saturated for 2026 models; no value-accuracy/conformance spread). They
-    // ship dark (deferred, min-n "—"), never thin — see the Cycle-3 session log.
+    // Cycle 3 deepened generation.prose with 2 screened survivors. The coverage
+    // follow-ups (architect ruling 2026-08-11) then lit qa.docs + summarize by
+    // REINSTATING 2 discarded Stage-A candidates each as difficulty:standard
+    // COVERAGE fixtures (cov-*, saturated at authoring — see their `notes`), so
+    // each dark node reaches 1 existing + 2 coverage = 3 fixtures (n=15 ≥ 10).
     const bySubtype = new Map<string, number>();
     for (const f of schemaFixtures) {
       bySubtype.set(f.subtype as string, (bySubtype.get(f.subtype as string) ?? 0) + 1);
@@ -184,9 +188,22 @@ describe("shipped fixture corpus", () => {
     expect(bySubtype.get("classification")).toBe(2);
     expect(bySubtype.get("structure.strict")).toBe(2);
     expect(bySubtype.get("reasoning.numeric")).toBe(3);
-    expect(bySubtype.get("qa.docs")).toBe(1);
-    expect(bySubtype.get("summarize")).toBe(1);
+    expect(bySubtype.get("qa.docs")).toBe(3);
+    expect(bySubtype.get("summarize")).toBe(3);
     expect(bySubtype.get("generation.prose")).toBe(3);
+  });
+
+  it("coverage follow-ups: reinstated cov-* fixtures are standard-tier and carry the saturation note", () => {
+    // The Stage-A discard verdicts stay recorded (session log); these are
+    // deliberately NON-discriminating coverage fixtures, marked as such so the
+    // discriminating-fixtures discipline stays undiluted.
+    const coverage = fixtures.filter((f) => f.id.startsWith("cov-"));
+    expect(coverage.length).toBe(4); // 2 qa.docs + 2 summarize
+    for (const f of coverage) {
+      expect(f.difficulty ?? "standard", `${f.id} must be standard-tier`).toBe("standard");
+      expect(f.notes, `${f.id} must carry a coverage note`).toMatch(/coverage fixture/i);
+      expect(["qa.docs", "summarize"]).toContain(f.subtype);
+    }
   });
 
   it("§6.4 fixture hygiene: no fixture carries an email, phone number, or ticker symbol", () => {

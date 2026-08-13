@@ -1,0 +1,36 @@
+{
+  "id": "cov-summarize-count-disambig",
+  "class": "schema",
+  "domain": "general",
+  "family": "probe-suite",
+  "difficulty": "standard",
+  "subtype": "summarize",
+  "notes": "coverage fixture — saturated at authoring (all Stage-A panel models 100%); reinstated for node coverage, architect ruling 2026-08-11",
+  "source": "contributed:cycle3-subtypes (synthetic ticket, no personal data)",
+  "prompt": "You triage inbound support tickets. Read the ticket and return the required JSON. `summary` is a one- or two-sentence neutral paraphrase. `category` uses the schema's enum. `affected_user_count` is the number of users the ticket says are ACTUALLY affected by the problem — not the total number of seats the customer owns. `refund_requested` is true ONLY if the customer explicitly asks for money back.\n\nTICKET (synthetic):\nSubject: Reporting export failing for our finance team\nBody: We have 200 seats provisioned across the company, but this problem only affects the 37 people in our finance department — none of them can export reports since this morning. It is blocking our quarter-end close. We are not asking for any money back, we just need it fixed today.",
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["summary", "category", "affected_user_count", "refund_requested"],
+    "properties": {
+      "summary": {
+        "type": "string",
+        "minLength": 40
+      },
+      "category": {
+        "type": "string",
+        "enum": ["bug", "billing", "feature_request", "how_to", "outage"]
+      },
+      "affected_user_count": {
+        "type": "integer"
+      },
+      "refund_requested": {
+        "type": "boolean"
+      }
+    }
+  },
+  "expectedValues": {
+    "affected_user_count": 37,
+    "refund_requested": false
+  }
+}

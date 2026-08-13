@@ -11,8 +11,18 @@ import { createDeepSeekCaller } from "./vendor/deepseek";
 import { createGeminiCaller } from "./vendor/gemini";
 import { createOpenAICaller } from "./vendor/openai";
 import { createOpenAICompatibleCaller, OPENAI_COMPAT_HOSTS } from "./vendor/openai-compatible";
+import { createOpenAIResponsesCaller } from "./vendor/openai-responses";
 import { createXaiCaller } from "./vendor/xai";
 import type { ProbeCaller, ProbeProviderId } from "./vendor/types";
+
+/** OpenAI models that are Responses-API ONLY — v1/chat/completions returns
+ * "This is not a chat model" for them. The Pro tier of the GPT-5 / o-series
+ * families all ship this way (verified 2026-08-11: gpt-5.5-pro). A model that
+ * does NOT match here uses chat-completions exactly as before — fail-closed to
+ * the established path, so a new non-Pro model is never mis-routed. */
+export function isOpenAIResponsesOnly(model: string): boolean {
+  return model.endsWith("-pro");
+}
 
 const SUPPORTED_PROVIDERS: ReadonlySet<string> = new Set([
   "gemini",
@@ -48,7 +58,9 @@ export function resolveModel(modelKey: string, keys: ProbesConfig["keys"]): Prob
       return createGeminiCaller(model, keys.gemini);
     case "openai":
       if (!keys.openai) throw new Error("OPENAI_API_KEY is not set");
-      return createOpenAICaller(model, keys.openai);
+      return isOpenAIResponsesOnly(model)
+        ? createOpenAIResponsesCaller(model, keys.openai)
+        : createOpenAICaller(model, keys.openai);
     case "deepseek":
       if (!keys.deepseek) throw new Error("DEEPSEEK_API_KEY is not set");
       return createDeepSeekCaller(model, keys.deepseek);

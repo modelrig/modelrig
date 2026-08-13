@@ -60,6 +60,28 @@ export function loadFixtureSubtypes(
   return out;
 }
 
+/** Ids of the fixtures CURRENTLY in the schema corpus (fixtures/schema/*.json),
+ * WITHOUT the retired-id map — the allow-list mergeSchemaResults uses to pull a
+ * fixture forward from an older result file, so a retired id is never
+ * resurrected. Distinct from loadFixtureSubtypes (which includes retired ids to
+ * TAG samples already present). */
+export function loadCurrentSchemaFixtureIds(
+  fixturesDir: string = DEFAULT_FIXTURES_DIR
+): Set<string> {
+  const ids = new Set<string>();
+  const dir = join(fixturesDir, "schema");
+  if (!existsSync(dir)) return ids;
+  for (const file of readdirSync(dir).filter((f) => f.endsWith(".json"))) {
+    try {
+      const fixture = JSON.parse(readFileSync(join(dir, file), "utf8")) as { id?: string };
+      if (typeof fixture.id === "string") ids.add(fixture.id);
+    } catch {
+      // malformed fixture — the loader's problem, not this map's
+    }
+  }
+  return ids;
+}
+
 export function loadResultFiles(resultsDir: string): ProbeResultFile[] {
   const results: ProbeResultFile[] = [];
   let dirs: string[] = [];
@@ -113,9 +135,13 @@ function main(): void {
     byModel.set(result.modelKey, list);
   }
 
+  // The live schema corpus — so a supplemental run (e.g. cycle-003b's coverage
+  // fixtures) COMPOSES with the prior full cycle instead of replacing it, while
+  // a retired id in an old file is never pulled forward.
+  const currentSchemaIds = loadCurrentSchemaFixtureIds();
   const layers: Record<string, ProbedLayer> = {};
   for (const [modelKey, results] of [...byModel.entries()].sort()) {
-    const layer = buildProbedLayer(results);
+    const layer = buildProbedLayer(results, currentSchemaIds);
     if (layer !== null) layers[modelKey] = layer;
   }
   mkdirSync(dirname(out), { recursive: true });

@@ -1,0 +1,36 @@
+{
+  "id": "cov-qa-distractor-number",
+  "class": "schema",
+  "domain": "general",
+  "family": "probe-suite",
+  "difficulty": "standard",
+  "subtype": "qa.docs",
+  "notes": "coverage fixture — saturated at authoring (all Stage-A panel models 100%); reinstated for node coverage, architect ruling 2026-08-11",
+  "source": "contributed:cycle3-subtypes (synthetic public-domain doc excerpt, no personal data)",
+  "prompt": "Answer the question using ONLY the documentation excerpt below. The excerpt gives two different dollar figures — read carefully and return the one the question asks for, not the other. Return the required JSON. `ceiling_usd` is the whole-cycle ceiling; `envelope_usd` is the per-run per-model envelope; `supporting_quote` is a verbatim span from the excerpt that establishes the ceiling.\n\nDOCUMENTATION EXCERPT (synthetic):\n\"Each model run stops when its accrued spend crosses the per-run envelope, whose default is 5 US dollars per model. Separately, a whole probe cycle refuses to start if its projected total would exceed the cycle ceiling of 25 US dollars.\"\n\nQUESTION: What is the whole-cycle ceiling, in US dollars?",
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["ceiling_usd", "envelope_usd", "supporting_quote", "answer_in_context"],
+    "properties": {
+      "ceiling_usd": {
+        "type": "number"
+      },
+      "envelope_usd": {
+        "type": "number"
+      },
+      "supporting_quote": {
+        "type": "string",
+        "minLength": 10
+      },
+      "answer_in_context": {
+        "type": "boolean"
+      }
+    }
+  },
+  "expectedValues": {
+    "ceiling_usd": 25,
+    "envelope_usd": 5,
+    "answer_in_context": true
+  }
+}

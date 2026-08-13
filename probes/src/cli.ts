@@ -152,6 +152,10 @@ async function cmdCycle(flags: Flags): Promise<number> {
   const outDir = flags.named.get("out") ?? config.outDir;
   const resultsDir = flags.named.get("results") ?? outDir;
   const campaignPath = flags.named.get("campaign");
+  // --fixtures <dir> restricts the run to a SUPPLEMENTAL fixture set (e.g.
+  // cycle-003b's coverage fixtures only); the probed-layer builder composes it
+  // with the prior full run. Omit for the full committed corpus.
+  const fixturesDir = flags.named.get("fixtures");
   if (!Number.isFinite(ceiling) || ceiling <= 0) throw new Error("--ceiling must be positive");
 
   // --plan <file> runs a pre-authored plan verbatim (targeted re-runs,
@@ -170,8 +174,9 @@ async function cmdCycle(flags: Flags): Promise<number> {
   const planOut = flags.named.get("plan-out");
   if (planOut !== undefined) writeFileSync(planOut, `${JSON.stringify(plan, null, 2)}\n`);
 
-  const estimate = estimateCycleCost(plan, config.keys);
+  const estimate = estimateCycleCost(plan, config.keys, fixturesDir);
   console.log(`\n=== cycle ${cycle}: cost projection (BEFORE running) ===`);
+  if (fixturesDir !== undefined) console.log(`fixtures: SUPPLEMENTAL set from ${fixturesDir}`);
   console.log(`jobs: ${plan.jobs.length} · priced+reachable: ${estimate.pricedReachableModels} · samples/fixture: ${samples}`);
   for (const m of estimate.perModel) {
     if (m.skipReason) {
@@ -196,7 +201,12 @@ async function cmdCycle(flags: Flags): Promise<number> {
     return 2;
   }
 
-  const manifest = await runCycle(plan, { outDir, keys: config.keys, projectedUsd: estimate.projectedUsd });
+  const manifest = await runCycle(plan, {
+    outDir,
+    keys: config.keys,
+    projectedUsd: estimate.projectedUsd,
+    ...(fixturesDir !== undefined ? { fixturesDir } : {}),
+  });
   const manifestPath = flags.named.get("manifest") ?? join(outDir, `cycle-manifest-${cycle}.json`);
   writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`);
   console.log(`\n=== cycle ${cycle} complete ===`);

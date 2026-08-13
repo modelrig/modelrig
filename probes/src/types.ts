@@ -37,6 +37,12 @@ export interface ProbeFixture {
    * metadata that never reaches the model and is excluded from the fixture
    * hash: retro-tagging subtypes must not invalidate published result hashes. */
   readonly subtype?: string;
+  /** Free-text authoring note (coverage follow-ups 2026-08-11): why a fixture
+   * is in the corpus, e.g. a COVERAGE fixture reinstated after screening found
+   * it non-discriminating (saturated). Like the other classification metadata
+   * it never reaches the model and is EXCLUDED from the fixture hash, so adding
+   * a note to an existing fixture does not invalidate published result hashes. */
+  readonly notes?: string;
   /** For schema probes: the JSON schema + input prompt + expected values
    * (value-accuracy keys with known-correct answers). */
   readonly schema?: object;
