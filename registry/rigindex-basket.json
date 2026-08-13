@@ -1,0 +1,9 @@
+{
+  "version": "2026-Q3",
+  "comment": "The dated RigIndex anchor basket (stop2-architect-review §1; eval-methodology §4.1). Basket membership is DATA, versioned here — never code. Re-basing is a loud versioned event publishing both series in parallel for one cycle, never a silent edit.",
+  "members": [
+    "anthropic/claude-fable-5",
+    "openai/gpt-5.5",
+    "anthropic/claude-opus-5"
+  ]
+}

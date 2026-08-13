@@ -1,0 +1,4298 @@
+{
+  "as_of": "2026-08-13T03:28:59.887Z",
+  "source": "modelrig-probes@0.0.1+rigindex-v1 (probe-derived, single source)",
+  "basket_version": "2026-Q3",
+  "basket_members": [
+    "anthropic/claude-fable-5",
+    "openai/gpt-5.5",
+    "anthropic/claude-opus-5"
+  ],
+  "bootstrap": {
+    "reps": 200,
+    "seed": 20260813,
+    "method": "hierarchical-fixture-then-per-model-fixture-sample"
+  },
+  "subtypes": {
+    "classification": {
+      "state": "all-tie",
+      "state_detail": "all measured models tie on this task type — no rank distinguishable (34 models, n=340 distinct outcomes)",
+      "tiers": 1,
+      "models": {
+        "anthropic/claude-fable-5": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1725,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1725,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "anthropic/claude-haiku-4-5": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1725,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1725,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "anthropic/claude-opus-5": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1725,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1725,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "anthropic/claude-sonnet-5": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1725,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1725,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/MiniMaxAI/MiniMax-M3": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1725,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1725,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/Qwen/Qwen3-30B-A3B": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1725,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1725,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/Qwen/Qwen3-Coder-480B-A35B-Instruct-Turbo": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1725,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1725,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/google/gemma-4-31B-it": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1725,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1725,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1725,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1725,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/meta-llama/Llama-4-Scout-17B-16E-Instruct": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1725,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1725,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/mistralai/Mistral-Small-3.2-24B-Instruct-2506": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1725,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1725,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/moonshotai/Kimi-K2.6": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1725,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1725,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/moonshotai/Kimi-K2.7-Code": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1725,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1725,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1725,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1725,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/openai/gpt-oss-120b": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1725,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1725,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/zai-org/GLM-5.2": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1725,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1725,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepseek/deepseek-chat": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1725,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1725,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepseek/deepseek-reasoner": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1725,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1725,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepseek/deepseek-v4-flash": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1725,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1725,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepseek/deepseek-v4-pro": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1725,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1725,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "fireworks/glm-5p2": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1725,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1725,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "fireworks/gpt-oss-120b": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1725,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1725,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "fireworks/kimi-k3": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1725,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1725,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "gemini/gemini-2.5-flash": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1725,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1725,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "gemini/gemini-3-flash-preview": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1725,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1725,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "gemini/gemini-3.1-flash-lite": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1725,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1725,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "gemini/gemini-3.1-pro-preview": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1725,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1725,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "grok/grok-4-1-fast": {
+          "score": null,
+          "ci95": null,
+          "tier": null,
+          "distinct_n": 5,
+          "pair_count": 900,
+          "fixtures": 1,
+          "provenance": {
+            "probe_derived_pairs": 900,
+            "community_pairs": 0
+          },
+          "gated": true,
+          "gate_reason": "insufficient data (n=5, need ≥10 distinct outcomes); insufficient fixtures (1, need ≥2)"
+        },
+        "grok/grok-4.3": {
+          "score": null,
+          "ci95": null,
+          "tier": null,
+          "distinct_n": 5,
+          "pair_count": 900,
+          "fixtures": 1,
+          "provenance": {
+            "probe_derived_pairs": 900,
+            "community_pairs": 0
+          },
+          "gated": true,
+          "gate_reason": "insufficient data (n=5, need ≥10 distinct outcomes); insufficient fixtures (1, need ≥2)"
+        },
+        "grok/grok-4.5": {
+          "score": null,
+          "ci95": null,
+          "tier": null,
+          "distinct_n": 5,
+          "pair_count": 900,
+          "fixtures": 1,
+          "provenance": {
+            "probe_derived_pairs": 900,
+            "community_pairs": 0
+          },
+          "gated": true,
+          "gate_reason": "insufficient data (n=5, need ≥10 distinct outcomes); insufficient fixtures (1, need ≥2)"
+        },
+        "openai/gpt-5-mini": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1725,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1725,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5.2": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1725,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1725,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5.4": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1725,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1725,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5.4-mini": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1725,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1725,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5.4-nano": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1725,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1725,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5.5": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1725,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1725,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5.5-pro": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1725,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1725,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        }
+      }
+    },
+    "extraction.tabular": {
+      "state": "all-tie",
+      "state_detail": "all measured models tie on this task type — no rank distinguishable (37 models, n=540 distinct outcomes)",
+      "tiers": 1,
+      "models": {
+        "anthropic/claude-fable-5": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2625,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2625,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "anthropic/claude-haiku-4-5": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2625,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2625,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "anthropic/claude-opus-5": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2625,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2625,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "anthropic/claude-sonnet-5": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2625,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2625,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/MiniMaxAI/MiniMax-M3": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2625,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2625,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/Qwen/Qwen3-30B-A3B": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2625,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2625,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/Qwen/Qwen3-Coder-480B-A35B-Instruct-Turbo": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2625,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2625,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/google/gemma-4-31B-it": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2625,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2625,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2625,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2625,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/meta-llama/Llama-4-Scout-17B-16E-Instruct": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2625,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2625,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/mistralai/Mistral-Small-3.2-24B-Instruct-2506": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2625,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2625,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/moonshotai/Kimi-K2.6": {
+          "score": 88.15319764170162,
+          "ci95": [
+            44.07420771142781,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2625,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2625,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/moonshotai/Kimi-K2.7-Code": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2625,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2625,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2625,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2625,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/openai/gpt-oss-120b": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2625,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2625,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/zai-org/GLM-5.2": {
+          "score": 75.90434166827448,
+          "ci95": [
+            41.604201703133654,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2625,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2625,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepseek/deepseek-chat": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2625,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2625,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepseek/deepseek-reasoner": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2625,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2625,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepseek/deepseek-v4-flash": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2625,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2625,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepseek/deepseek-v4-pro": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2625,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2625,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "fireworks/glm-5p2": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2625,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2625,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "fireworks/gpt-oss-120b": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2625,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2625,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "fireworks/kimi-k3": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2625,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2625,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "gemini/gemini-2.5-flash": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2625,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2625,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "gemini/gemini-3-flash-preview": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2625,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2625,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "gemini/gemini-3.1-flash-lite": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2625,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2625,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "gemini/gemini-3.1-pro-preview": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2625,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2625,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "grok/grok-4-1-fast": {
+          "score": 99.99985185718621,
+          "ci95": [
+            98.48096274377515,
+            101.53475992850309
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1800,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1800,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "grok/grok-4.3": {
+          "score": 99.99985185718621,
+          "ci95": [
+            98.48096274377515,
+            101.53475992850309
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1800,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1800,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "grok/grok-4.5": {
+          "score": 99.99985185718621,
+          "ci95": [
+            98.48096274377515,
+            101.53475992850309
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1800,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1800,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5-mini": {
+          "score": 99.99999999999999,
+          "ci95": [
+            99.99999999999997,
+            100.00000000000003
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2625,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2625,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5.2": {
+          "score": 99.99999999999999,
+          "ci95": [
+            99.99999999999997,
+            100.00000000000003
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2625,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2625,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5.4": {
+          "score": 99.99999999999999,
+          "ci95": [
+            99.99999999999997,
+            100.00000000000003
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2625,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2625,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5.4-mini": {
+          "score": 99.99999999999999,
+          "ci95": [
+            99.99999999999997,
+            100.00000000000003
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2625,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2625,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5.4-nano": {
+          "score": 99.99999999999999,
+          "ci95": [
+            99.99999999999997,
+            100.00000000000003
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2625,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2625,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5.5": {
+          "score": 99.99999999999999,
+          "ci95": [
+            99.99999999999997,
+            100.00000000000003
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2625,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2625,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5.5-pro": {
+          "score": 99.99999999999999,
+          "ci95": [
+            99.99999999999997,
+            100.00000000000003
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2625,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2625,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        }
+      }
+    },
+    "generation.prose": {
+      "state": "all-tie",
+      "state_detail": "all measured models tie on this task type — no rank distinguishable (34 models, n=510 distinct outcomes)",
+      "tiers": 1,
+      "models": {
+        "anthropic/claude-fable-5": {
+          "score": 105.90603093604516,
+          "ci95": [
+            74.2114965303292,
+            274.9472102397885
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2550,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2550,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "anthropic/claude-haiku-4-5": {
+          "score": 140.267017481847,
+          "ci95": [
+            100,
+            442.65616952721064
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2550,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2550,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "anthropic/claude-opus-5": {
+          "score": 67.31684374185826,
+          "ci95": [
+            7.398133380735946,
+            114.54595919771761
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2550,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2550,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "anthropic/claude-sonnet-5": {
+          "score": 36.82898377117179,
+          "ci95": [
+            7.398133380735946,
+            81.29038015647457
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2550,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2550,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/MiniMaxAI/MiniMax-M3": {
+          "score": 140.267017481847,
+          "ci95": [
+            100,
+            442.65616952721064
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2550,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2550,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/Qwen/Qwen3-30B-A3B": {
+          "score": 59.204218992887704,
+          "ci95": [
+            20.103274240427883,
+            121.94344689360571
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2550,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2550,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/Qwen/Qwen3-Coder-480B-A35B-Instruct-Turbo": {
+          "score": 61.476433928680876,
+          "ci95": [
+            5.083484018960883,
+            274.94721023978855
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2550,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2550,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/google/gemma-4-31B-it": {
+          "score": 58.46114628077551,
+          "ci95": [
+            7.398133380735946,
+            114.52058501146767
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2550,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2550,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8": {
+          "score": 81.98469902952516,
+          "ci95": [
+            11.035576239689656,
+            442.65616952721064
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2550,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2550,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/meta-llama/Llama-4-Scout-17B-16E-Instruct": {
+          "score": 140.267017481847,
+          "ci95": [
+            100,
+            442.65616952721064
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2550,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2550,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/mistralai/Mistral-Small-3.2-24B-Instruct-2506": {
+          "score": 71.54911606415241,
+          "ci95": [
+            5.083484018960883,
+            442.65616952721064
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2550,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2550,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/moonshotai/Kimi-K2.6": {
+          "score": 107.16096382455677,
+          "ci95": [
+            35.909310682198125,
+            442.65616952721064
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2550,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2550,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/moonshotai/Kimi-K2.7-Code": {
+          "score": 140.267017481847,
+          "ci95": [
+            100,
+            442.65616952721064
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2550,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2550,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B": {
+          "score": 140.267017481847,
+          "ci95": [
+            100,
+            442.65616952721064
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2550,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2550,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/openai/gpt-oss-120b": {
+          "score": 93.76628342628486,
+          "ci95": [
+            21.368825634160707,
+            442.65616952721064
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2550,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2550,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/zai-org/GLM-5.2": {
+          "score": 107.16096382455677,
+          "ci95": [
+            35.31995058264089,
+            442.65616952721064
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2550,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2550,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepseek/deepseek-chat": {
+          "score": 71.54911606415241,
+          "ci95": [
+            5.083484018960883,
+            442.65616952721064
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2550,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2550,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepseek/deepseek-reasoner": {
+          "score": 81.98469902952516,
+          "ci95": [
+            20.62407771801906,
+            442.65616952721064
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2550,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2550,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepseek/deepseek-v4-flash": {
+          "score": 71.54911606415241,
+          "ci95": [
+            5.083484018960883,
+            442.65616952721064
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2550,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2550,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepseek/deepseek-v4-pro": {
+          "score": 107.16096382455677,
+          "ci95": [
+            35.18451133884561,
+            442.65616952721064
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2550,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2550,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "fireworks/glm-5p2": {
+          "score": 140.267017481847,
+          "ci95": [
+            100,
+            442.65616952721064
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2550,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2550,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "fireworks/gpt-oss-120b": {
+          "score": 140.267017481847,
+          "ci95": [
+            100,
+            442.65616952721064
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2550,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2550,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "fireworks/kimi-k3": {
+          "score": 92.6662039226303,
+          "ci95": [
+            30.892400286634828,
+            223.22117812835126
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2550,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2550,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "gemini/gemini-2.5-flash": {
+          "score": 71.5491160641524,
+          "ci95": [
+            5.083484018960884,
+            442.65616952721064
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2550,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2550,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "gemini/gemini-3-flash-preview": {
+          "score": 107.16096382455677,
+          "ci95": [
+            42.498022851595756,
+            442.65616952721064
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2550,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2550,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "gemini/gemini-3.1-flash-lite": {
+          "score": 71.5491160641524,
+          "ci95": [
+            5.083484018960884,
+            442.65616952721064
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2550,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2550,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "gemini/gemini-3.1-pro-preview": {
+          "score": 140.267017481847,
+          "ci95": [
+            100,
+            442.65616952721064
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2550,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2550,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "grok/grok-4-1-fast": {
+          "score": null,
+          "ci95": null,
+          "tier": null,
+          "distinct_n": 5,
+          "pair_count": 900,
+          "fixtures": 1,
+          "provenance": {
+            "probe_derived_pairs": 900,
+            "community_pairs": 0
+          },
+          "gated": true,
+          "gate_reason": "insufficient data (n=5, need ≥10 distinct outcomes); insufficient fixtures (1, need ≥2)"
+        },
+        "grok/grok-4.3": {
+          "score": null,
+          "ci95": null,
+          "tier": null,
+          "distinct_n": 5,
+          "pair_count": 900,
+          "fixtures": 1,
+          "provenance": {
+            "probe_derived_pairs": 900,
+            "community_pairs": 0
+          },
+          "gated": true,
+          "gate_reason": "insufficient data (n=5, need ≥10 distinct outcomes); insufficient fixtures (1, need ≥2)"
+        },
+        "grok/grok-4.5": {
+          "score": null,
+          "ci95": null,
+          "tier": null,
+          "distinct_n": 5,
+          "pair_count": 900,
+          "fixtures": 1,
+          "provenance": {
+            "probe_derived_pairs": 900,
+            "community_pairs": 0
+          },
+          "gated": true,
+          "gate_reason": "insufficient data (n=5, need ≥10 distinct outcomes); insufficient fixtures (1, need ≥2)"
+        },
+        "openai/gpt-5-mini": {
+          "score": 140.267017481847,
+          "ci95": [
+            100,
+            442.65616952721064
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2550,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2550,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5.2": {
+          "score": 140.267017481847,
+          "ci95": [
+            100,
+            442.65616952721064
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2550,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2550,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5.4": {
+          "score": 140.267017481847,
+          "ci95": [
+            100,
+            442.65616952721064
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2550,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2550,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5.4-mini": {
+          "score": 140.267017481847,
+          "ci95": [
+            100,
+            442.65616952721064
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2550,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2550,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5.4-nano": {
+          "score": 140.267017481847,
+          "ci95": [
+            100,
+            442.65616952721064
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2550,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2550,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5.5": {
+          "score": 140.267017481847,
+          "ci95": [
+            100,
+            442.65616952721064
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2550,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2550,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5.5-pro": {
+          "score": 140.267017481847,
+          "ci95": [
+            100,
+            442.65616952721064
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2550,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2550,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        }
+      }
+    },
+    "qa.docs": {
+      "state": "rank",
+      "state_detail": null,
+      "tiers": 2,
+      "models": {
+        "anthropic/claude-fable-5": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "anthropic/claude-haiku-4-5": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "anthropic/claude-opus-5": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "anthropic/claude-sonnet-5": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/MiniMaxAI/MiniMax-M3": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/Qwen/Qwen3-30B-A3B": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/Qwen/Qwen3-Coder-480B-A35B-Instruct-Turbo": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/google/gemma-4-31B-it": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/meta-llama/Llama-4-Scout-17B-16E-Instruct": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/mistralai/Mistral-Small-3.2-24B-Instruct-2506": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/moonshotai/Kimi-K2.6": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/moonshotai/Kimi-K2.7-Code": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/openai/gpt-oss-120b": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/zai-org/GLM-5.2": {
+          "score": 76.47612326855264,
+          "ci95": [
+            42.86802513891802,
+            100
+          ],
+          "tier": 2,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepseek/deepseek-chat": {
+          "score": 100,
+          "ci95": [
+            99.99999999999999,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepseek/deepseek-reasoner": {
+          "score": 100,
+          "ci95": [
+            99.99999999999999,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepseek/deepseek-v4-flash": {
+          "score": 100,
+          "ci95": [
+            99.99999999999999,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepseek/deepseek-v4-pro": {
+          "score": 100,
+          "ci95": [
+            99.99999999999999,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "fireworks/glm-5p2": {
+          "score": 100,
+          "ci95": [
+            99.99999999999999,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "fireworks/gpt-oss-120b": {
+          "score": 100,
+          "ci95": [
+            99.99999999999999,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "fireworks/kimi-k3": {
+          "score": 100,
+          "ci95": [
+            99.99999999999999,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "gemini/gemini-2.5-flash": {
+          "score": 100,
+          "ci95": [
+            99.99999999999999,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "gemini/gemini-3-flash-preview": {
+          "score": 100,
+          "ci95": [
+            99.99999999999999,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "gemini/gemini-3.1-flash-lite": {
+          "score": 100,
+          "ci95": [
+            99.99999999999999,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "gemini/gemini-3.1-pro-preview": {
+          "score": 100,
+          "ci95": [
+            99.99999999999999,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5-mini": {
+          "score": 100,
+          "ci95": [
+            99.99999999999999,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5.2": {
+          "score": 100,
+          "ci95": [
+            99.99999999999999,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5.4": {
+          "score": 100,
+          "ci95": [
+            99.99999999999999,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5.4-mini": {
+          "score": 100,
+          "ci95": [
+            99.99999999999999,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5.4-nano": {
+          "score": 100,
+          "ci95": [
+            99.99999999999999,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5.5": {
+          "score": 100,
+          "ci95": [
+            99.99999999999999,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5.5-pro": {
+          "score": 100,
+          "ci95": [
+            99.99999999999999,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        }
+      }
+    },
+    "reasoning.numeric": {
+      "state": "rank",
+      "state_detail": null,
+      "tiers": 2,
+      "models": {
+        "anthropic/claude-fable-5": {
+          "score": 100.00000000000001,
+          "ci95": [
+            99.99999999999999,
+            100.00000000000001
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "anthropic/claude-haiku-4-5": {
+          "score": 8.456022242695685,
+          "ci95": [
+            0.8624953060424039,
+            22.804123425168687
+          ],
+          "tier": 2,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "anthropic/claude-opus-5": {
+          "score": 100.00000000000001,
+          "ci95": [
+            99.99999999999999,
+            100.00000000000001
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "anthropic/claude-sonnet-5": {
+          "score": 100.00000000000001,
+          "ci95": [
+            99.99999999999999,
+            100.00000000000001
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/MiniMaxAI/MiniMax-M3": {
+          "score": 100.00000000000001,
+          "ci95": [
+            99.99999999999999,
+            100.00000000000001
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/Qwen/Qwen3-30B-A3B": {
+          "score": 100.00000000000001,
+          "ci95": [
+            99.99999999999999,
+            100.00000000000001
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/Qwen/Qwen3-Coder-480B-A35B-Instruct-Turbo": {
+          "score": 55.780349118273485,
+          "ci95": [
+            16.879731512417802,
+            100.00000000000001
+          ],
+          "tier": 2,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/google/gemma-4-31B-it": {
+          "score": 100.00000000000001,
+          "ci95": [
+            99.99999999999999,
+            100.00000000000001
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8": {
+          "score": 3.233610843488788,
+          "ci95": [
+            0.8624953060424037,
+            3.8122853455269987
+          ],
+          "tier": 2,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/meta-llama/Llama-4-Scout-17B-16E-Instruct": {
+          "score": 47.87279221750869,
+          "ci95": [
+            2.0356747452797164,
+            100.00000000000001
+          ],
+          "tier": 2,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/mistralai/Mistral-Small-3.2-24B-Instruct-2506": {
+          "score": 19.367258115329914,
+          "ci95": [
+            1.4778399701931422,
+            100
+          ],
+          "tier": 2,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/moonshotai/Kimi-K2.6": {
+          "score": 100.00000000000001,
+          "ci95": [
+            99.99999999999997,
+            100.00000000000003
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/moonshotai/Kimi-K2.7-Code": {
+          "score": 100.00000000000001,
+          "ci95": [
+            99.99999999999997,
+            100.00000000000003
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B": {
+          "score": 100.00000000000001,
+          "ci95": [
+            99.99999999999997,
+            100.00000000000003
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/openai/gpt-oss-120b": {
+          "score": 100.00000000000001,
+          "ci95": [
+            99.99999999999997,
+            100.00000000000003
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/zai-org/GLM-5.2": {
+          "score": 100.00000000000001,
+          "ci95": [
+            99.99999999999997,
+            100.00000000000003
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepseek/deepseek-chat": {
+          "score": 47.87279221750869,
+          "ci95": [
+            2.0356747452797164,
+            100.00000000000001
+          ],
+          "tier": 2,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepseek/deepseek-reasoner": {
+          "score": 100.00000000000001,
+          "ci95": [
+            99.99999999999997,
+            100.00000000000003
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepseek/deepseek-v4-flash": {
+          "score": 100.00000000000001,
+          "ci95": [
+            99.99999999999997,
+            100.00000000000003
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepseek/deepseek-v4-pro": {
+          "score": 100.00000000000001,
+          "ci95": [
+            99.99999999999997,
+            100.00000000000003
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "fireworks/glm-5p2": {
+          "score": 100.00000000000001,
+          "ci95": [
+            99.99999999999997,
+            100.00000000000003
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "fireworks/gpt-oss-120b": {
+          "score": 100.00000000000001,
+          "ci95": [
+            99.99999999999997,
+            100.00000000000003
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "fireworks/kimi-k3": {
+          "score": 100.00000000000001,
+          "ci95": [
+            99.99999999999997,
+            100.00000000000003
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "gemini/gemini-2.5-flash": {
+          "score": 100.00000000000001,
+          "ci95": [
+            99.99999999999997,
+            100.00000000000003
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "gemini/gemini-3-flash-preview": {
+          "score": 100.00000000000001,
+          "ci95": [
+            99.99999999999997,
+            100.00000000000003
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "gemini/gemini-3.1-flash-lite": {
+          "score": 100.00000000000001,
+          "ci95": [
+            99.99999999999997,
+            100.00000000000003
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "gemini/gemini-3.1-pro-preview": {
+          "score": 100.00000000000001,
+          "ci95": [
+            99.99999999999997,
+            100.00000000000003
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5-mini": {
+          "score": 100.00000000000001,
+          "ci95": [
+            99.99999999999997,
+            100.00000000000003
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5.2": {
+          "score": 100.00000000000001,
+          "ci95": [
+            99.99999999999997,
+            100.00000000000003
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5.4": {
+          "score": 100.00000000000001,
+          "ci95": [
+            99.99999999999997,
+            100.00000000000003
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5.4-mini": {
+          "score": 86.53615833117627,
+          "ci95": [
+            39.14475891837947,
+            100.00000000000001
+          ],
+          "tier": 2,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5.4-nano": {
+          "score": 23.89683376497652,
+          "ci95": [
+            1.5700733869190637,
+            64.07695211264954
+          ],
+          "tier": 2,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5.5": {
+          "score": 100.00000000000001,
+          "ci95": [
+            99.99999999999997,
+            100.00000000000003
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5.5-pro": {
+          "score": 100.00000000000001,
+          "ci95": [
+            99.99999999999997,
+            100.00000000000003
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        }
+      }
+    },
+    "structure.strict": {
+      "state": "all-tie",
+      "state_detail": "all measured models tie on this task type — no rank distinguishable (37 models, n=370 distinct outcomes)",
+      "tiers": 1,
+      "models": {
+        "anthropic/claude-fable-5": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1800,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1800,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "anthropic/claude-haiku-4-5": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1800,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1800,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "anthropic/claude-opus-5": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1800,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1800,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "anthropic/claude-sonnet-5": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1800,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1800,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/MiniMaxAI/MiniMax-M3": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1800,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1800,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/Qwen/Qwen3-30B-A3B": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1800,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1800,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/Qwen/Qwen3-Coder-480B-A35B-Instruct-Turbo": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1800,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1800,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/google/gemma-4-31B-it": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1800,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1800,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1800,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1800,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/meta-llama/Llama-4-Scout-17B-16E-Instruct": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1800,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1800,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/mistralai/Mistral-Small-3.2-24B-Instruct-2506": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1800,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1800,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/moonshotai/Kimi-K2.6": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1800,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1800,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/moonshotai/Kimi-K2.7-Code": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1800,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1800,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1800,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1800,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/openai/gpt-oss-120b": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1800,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1800,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/zai-org/GLM-5.2": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1800,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1800,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepseek/deepseek-chat": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1800,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1800,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepseek/deepseek-reasoner": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1800,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1800,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepseek/deepseek-v4-flash": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1800,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1800,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepseek/deepseek-v4-pro": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1800,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1800,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "fireworks/glm-5p2": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1800,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1800,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "fireworks/gpt-oss-120b": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1800,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1800,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "fireworks/kimi-k3": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1800,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1800,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "gemini/gemini-2.5-flash": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1800,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1800,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "gemini/gemini-3-flash-preview": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1800,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1800,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "gemini/gemini-3.1-flash-lite": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1800,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1800,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "gemini/gemini-3.1-pro-preview": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1800,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1800,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "grok/grok-4-1-fast": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1800,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1800,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "grok/grok-4.3": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1800,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1800,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "grok/grok-4.5": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1800,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1800,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5-mini": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1800,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1800,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5.2": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1800,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1800,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5.4": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1800,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1800,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5.4-mini": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1800,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1800,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5.4-nano": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1800,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1800,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5.5": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1800,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1800,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5.5-pro": {
+          "score": 100,
+          "ci95": [
+            100,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 10,
+          "pair_count": 1800,
+          "fixtures": 2,
+          "provenance": {
+            "probe_derived_pairs": 1800,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        }
+      }
+    },
+    "summarize": {
+      "state": "all-tie",
+      "state_detail": "all measured models tie on this task type — no rank distinguishable (34 models, n=510 distinct outcomes)",
+      "tiers": 1,
+      "models": {
+        "anthropic/claude-fable-5": {
+          "score": 56.220286131479895,
+          "ci95": [
+            0.24409042771229256,
+            100
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "anthropic/claude-haiku-4-5": {
+          "score": 133.36856372846356,
+          "ci95": [
+            100,
+            2024.0657953562716
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "anthropic/claude-opus-5": {
+          "score": 133.36856372846356,
+          "ci95": [
+            100,
+            2024.0657953562716
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "anthropic/claude-sonnet-5": {
+          "score": 133.36856372846356,
+          "ci95": [
+            100,
+            2024.0657953562716
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/MiniMaxAI/MiniMax-M3": {
+          "score": 133.36856372846356,
+          "ci95": [
+            100,
+            2024.0657953562716
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/Qwen/Qwen3-30B-A3B": {
+          "score": 133.36856372846356,
+          "ci95": [
+            100,
+            2024.0657953562716
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/Qwen/Qwen3-Coder-480B-A35B-Instruct-Turbo": {
+          "score": 117.08631619841212,
+          "ci95": [
+            85.45957058822341,
+            1327.860825805155
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/google/gemma-4-31B-it": {
+          "score": 133.36856372846356,
+          "ci95": [
+            100,
+            2024.0657953562716
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8": {
+          "score": 133.36856372846356,
+          "ci95": [
+            100,
+            2024.0657953562716
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/meta-llama/Llama-4-Scout-17B-16E-Instruct": {
+          "score": 133.36856372846356,
+          "ci95": [
+            100,
+            2024.0657953562716
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/mistralai/Mistral-Small-3.2-24B-Instruct-2506": {
+          "score": 133.36856372846356,
+          "ci95": [
+            100,
+            2024.0657953562716
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/moonshotai/Kimi-K2.6": {
+          "score": 133.36856372846356,
+          "ci95": [
+            100,
+            2024.0657953562716
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/moonshotai/Kimi-K2.7-Code": {
+          "score": 133.36856372846356,
+          "ci95": [
+            100,
+            2024.0657953562716
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B": {
+          "score": 133.36856372846356,
+          "ci95": [
+            100,
+            2024.0657953562716
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/openai/gpt-oss-120b": {
+          "score": 133.36856372846356,
+          "ci95": [
+            100,
+            2024.0657953562716
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/zai-org/GLM-5.2": {
+          "score": 133.36856372846356,
+          "ci95": [
+            100,
+            2024.0657953562716
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepseek/deepseek-chat": {
+          "score": 133.36856372846356,
+          "ci95": [
+            100,
+            2024.0657953562716
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepseek/deepseek-reasoner": {
+          "score": 133.36856372846356,
+          "ci95": [
+            100,
+            2024.0657953562716
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepseek/deepseek-v4-flash": {
+          "score": 133.36856372846356,
+          "ci95": [
+            100,
+            2024.0657953562716
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepseek/deepseek-v4-pro": {
+          "score": 133.36856372846356,
+          "ci95": [
+            100,
+            2024.0657953562716
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "fireworks/glm-5p2": {
+          "score": 133.36856372846356,
+          "ci95": [
+            100,
+            2024.0657953562716
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "fireworks/gpt-oss-120b": {
+          "score": 89.92574019339033,
+          "ci95": [
+            55.112374029725345,
+            508.91284311740156
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "fireworks/kimi-k3": {
+          "score": 133.36856372846356,
+          "ci95": [
+            100,
+            2024.0657953562716
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "gemini/gemini-2.5-flash": {
+          "score": 133.36856372846356,
+          "ci95": [
+            100,
+            2024.0657953562716
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "gemini/gemini-3-flash-preview": {
+          "score": 133.36856372846356,
+          "ci95": [
+            100,
+            2024.0657953562716
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "gemini/gemini-3.1-flash-lite": {
+          "score": 133.36856372846356,
+          "ci95": [
+            100,
+            2024.0657953562716
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "gemini/gemini-3.1-pro-preview": {
+          "score": 133.36856372846356,
+          "ci95": [
+            100,
+            2024.0657953562716
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5-mini": {
+          "score": 133.36856372846356,
+          "ci95": [
+            100,
+            2024.0657953562716
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5.2": {
+          "score": 133.36856372846356,
+          "ci95": [
+            100,
+            2024.0657953562716
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5.4": {
+          "score": 133.36856372846356,
+          "ci95": [
+            100,
+            2024.0657953562716
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5.4-mini": {
+          "score": 133.36856372846356,
+          "ci95": [
+            100,
+            2024.0657953562716
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5.4-nano": {
+          "score": 133.36856372846356,
+          "ci95": [
+            100,
+            2024.0657953562716
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5.5": {
+          "score": 133.36856372846356,
+          "ci95": [
+            100,
+            2024.0657953562716
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "openai/gpt-5.5-pro": {
+          "score": 133.36856372846356,
+          "ci95": [
+            100,
+            2024.0657953562716
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        }
+      }
+    }
+  }
+}
