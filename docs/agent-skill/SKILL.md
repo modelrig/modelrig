@@ -48,13 +48,38 @@ Codex, and anywhere else skills load. It deliberately holds almost no facts.
 - **Compare on effective cost of conformance,** not list price. A model at half
   the price that conforms two-thirds as often is not cheaper.
 
-## Migrating a repo
+## Just want to see your runs first? (observe, no migration)
 
-`npx modelrig init [path]` scans for provider call sites and drafts a route
-bundle for each, plus a `MIGRATION.md` mapping call site → route → the
-replacement `rig.run` line. It writes only under `modelrig/routes/drafts/` and
-**never edits source** — applying the diff is the human's decision, one call
-site at a time.
+Before migrating anything, you can just **watch** an existing pipeline. ModelRig
+records each run as a run → step → artifact chain you click through in the
+console — no routes moved, no model calls rerouted, and with the flag off the
+pipeline behaves byte-for-byte as before. Scaffold it:
+`npx modelrig observe [path] --scope <one pipeline>` writes a self-contained
+`record-step` seam and an `OBSERVE.md` whose wiring is emitted as diffs you
+apply. The instrumentation is a code-level SDK seam (no zero-code observe), but
+you no longer hand-write it — see <https://modelrig.dev/instrumentation.html>
+and set `MODELRIG_ARTIFACTS=1`. Observing the runs in the console needs a free
+account + key from <https://app.modelrig.ai> — the one step a human has to do
+(console login to mint the key), so plan the handoff rather than stalling on it.
+
+## Migrating a repo — the T0–T2 playbook
+
+When you import this skill to migrate a codebase, **fetch the canonical
+playbook** and follow it: <https://modelrig.dev/migration-playbook.html>. It is
+a four-tier autonomy ladder — T0 gateway-pointing and T1 instrumentation are
+behaviour-preserving (apply after a plan review); T2 route extraction replaces a
+direct provider call with `rig.run()` **always same-model**, and is
+behaviour-affecting, so the agent *proposes* it, proves it with
+`modelrig verify-swap` (shadow-equivalence), embeds the report in the PR, does
+**one call site per PR**, and a **human merges**. Model optimization (T3) is
+never the skill's job.
+
+The machinery underneath: `npx modelrig init [path] [--scope <glob>]` scans for
+provider call sites and drafts a route bundle for each, plus a `MIGRATION.md`
+mapping call site → route → the replacement `rig.run` line. It writes only under
+`modelrig/routes/drafts/` and **never edits source** — applying the diff is the
+human's decision, one call site at a time. The replaced call is **deleted** (not
+commented out) with a one-line breadcrumb; rollback is `git revert`.
 
 ## What ModelRig is, in three sentences
 

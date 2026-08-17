@@ -51,8 +51,15 @@ never written back to captures.
 
 ```bash
 modelrig bakeoff --route example.support_summarize \
-  --variants default,cheap,scaffolded --replay-last 50
+  --variants default,cheap,scaffolded --replay-last 50 --budget-usd 5
 ```
+
+`--budget-usd <n>` sets the spend envelope **per replay variant** (decision 3 —
+an explicit cost ceiling on a bake-off). When a variant's replay pass breaches
+it, the pass stops **typed** at that point: the breaching sample is recorded with
+`failureClass: budget_exhausted` and the **partial** result set stands and is
+reported as partial — a bake-off never silently spends past its envelope. Omitted
+⇒ a sane default cap. (`--envelope` is a kept alias for the same knob.)
 
 `default` is the route's base config. Output: the matrix on stdout, an
 artifact JSON under `.modelrig/bakeoffs/`, and (when the Supabase sink is
