@@ -85,11 +85,12 @@ to Lane C.
 Inventory the LLM call sites and classify the codebase (naive vs. router layer).
 Present which lane you chose and why. See "Call-site scope" for what counts.
 
-### ⏸ C2 — Caching & grounding inventory (the stop-gate)
+### ⏸ C2 — Caching, grounding & sampling inventory (the stop-gate)
 
-**Before writing any route,** grep the target for provider caching and
-provider-native grounding — the two behaviours that vanish *silently* on a naive
-migration (a cost regression and a quality regression that only telemetry reveals).
+**Before writing any route,** grep the target for provider caching,
+provider-native grounding, **and explicit sampling parameters** — the three
+behaviours that vanish *silently* on a naive migration (a cost regression, a
+quality regression, and a consistency regression that only telemetry reveals).
 Search for:
 
 ```
@@ -97,6 +98,9 @@ cachedContent        # Gemini explicit cache resource
 cache_control        # Anthropic marker cache
 prompt_cache_key     # OpenAI / Grok key-hint cache
 cached_tokens | cache_read | cachedContentTokenCount   # cache usage in responses
+temperature | top_p | topP | max_output_tokens | maxOutputTokens | max_tokens
+                     # explicit sampling — a classifier at temperature 0.1 is a
+                     # deliberate choice, not a default
 ```
 
 **Any hit is a STOP-gate.** The route must carry the corresponding surface:
@@ -107,11 +111,37 @@ cached_tokens | cache_read | cachedContentTokenCount   # cache usage in response
   but never manages the resource; a long job still needs the customer's TTL
   heartbeat. Full mechanics: [Caching lifecycle](https://modelrig.dev/caching-lifecycle.html).
 - **Grounding** → `require: [grounded]` plus the route's grounding mode.
+- **Sampling** → **not yet expressible on a route** (as of 2026-08-20): the
+  route surface carries no `temperature`/`top_p`/`max_output_tokens`, and the
+  adapters use their own defaults — a migrated call does NOT inherit the
+  original's sampling. If the original sets them deliberately (classification
+  and extraction calls almost always do), this is a STOP-gate: report it as a
+  named behaviour change and hold that call site until the sampling surface
+  ships. (Tracked as CE-6; this paragraph is replaced by the knob when it
+  lands.)
 
 If a surface cannot express what the code does yet, **report the gap and the
 quantified cost/quality delta — never migrate past it silently.** Present the
 inventory results and the decision (carry the handle, or a named, quantified
 regression). Silent is the only forbidden outcome.
+
+### The rig lifecycle (learned the hard way in the first Phase-0 swap)
+
+- **Create once, close always.** One rig per server process (module singleton);
+  per-invocation for one-shot jobs — and a one-shot caller MUST
+  `await rig.close()` before exit, or telemetry rows are lost and the SDK's
+  timers keep the process alive.
+- **`tags` is required**, and every tag key must be declared as a
+  `dimensions[].key` in `rig.yaml` (tag-safe `[A-Za-z0-9_]{1,64}`). An example
+  that shows `tags: { run_id }` assumes a `run_id` dimension exists.
+- **`result.output` is already parsed and schema-validated** — delete the old
+  call site's `JSON.parse` and fence-stripping rather than keeping both.
+- **Routes resolve from `./modelrig/routes` relative to the process CWD.** In a
+  monorepo, place `modelrig/` at the app root and run from there, or set
+  `MODELRIG_ROUTES_DIR` to an absolute path.
+- **Load-checking needs one key.** `createRig` fail-closes keyless ("no
+  serveable candidate") — set any single provider key to smoke the bundle load.
+  (A keyless `modelrig validate` is tracked as a CE-6 deliverable.)
 
 ### Package manager (detect, don't assume)
 
@@ -135,6 +165,34 @@ C3 (ratify the proposed candidate list) and C4 (tests + diff + the week-one
 cache-hit-rate/cost panel comparison) are the Tier 2 gates below — the human
 merges on a green report. A zero cache-hit rate on a route that cached before
 migration is a regression; say so at C4.
+
+**C3 — unprobed models are SERVABLE (ruled 2026-08-20).** Probes gate
+*claims*, not *serving*: any model an adapter can reach may be a candidate,
+probed or not. Pin the model production uses today as candidate #1 — always,
+including models the registry has never probed — and **never silently
+substitute a probed sibling for the one production runs.** What UNPROBED
+actually means for a candidate (present these at C3, they are the honest
+cost of no evidence, not a punishment):
+
+- `json: native` may NOT be claimed for it (that is a probed-capability
+  claim; the emulation ladder serves structure instead);
+- no leaderboard standing, no bake-off priors, no declared-vs-probed
+  discrepancy protection;
+- pricing may be missing until the next pricing sweep — an unpriced model
+  charges budget envelopes at the conservative rate (never rides free).
+
+Flag each unprobed candidate UNPROBED in the C3 presentation and offer the
+follow-ups: request a probe (probe-request page — customer traffic on a
+model is exactly how it earns a place in the next probe cycle), and/or a
+probed sibling as candidate #2 for the fallback slot.
+
+**C4 decision — JSON-mode originals.** If the original call used mime-type
+JSON plus app-side validation, declaring a `schema:` on the route is an
+UPGRADE, not identity: the provider then enforces the schema and ModelRig's
+repair ladder engages. Usually the right call — but it is a deliberate
+behaviour change, so present it at C4 as one ("schema enforcement added"),
+or set `policy.json: json_mode` with `schema: null` for closest identity.
+Which wins is the human's ratification, never a silent default.
 
 ### ⏸ C5 — Keys & billing handoff (the setup a human must finish)
 
