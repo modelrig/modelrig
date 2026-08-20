@@ -136,6 +136,64 @@ cache-hit-rate/cost panel comparison) are the Tier 2 gates below — the human
 merges on a green report. A zero cache-hit rate on a route that cached before
 migration is a regression; say so at C4.
 
+### ⏸ C5 — Keys & billing handoff (the setup a human must finish)
+
+Everything above an agent does; placing **keys** and a **payment method** is the
+one part it must hand to a human. Do not stall on it and do not do it for them —
+present exactly what to place where, for the lane you chose at C1.
+
+**The hard rule (non-negotiable): you never touch a key VALUE.** Not read beyond
+an existence check, not print, not paste into the console, not put in a manifest.
+Humans place keys directly. You check only whether a key EXISTS, by NAME:
+
+```bash
+# Existence only — prints the NAME and whether it is set, never the value.
+for v in GEMINI_API_KEY OPENAI_API_KEY ANTHROPIC_API_KEY; do
+  test -n "${!v}" && echo "$v: set" || echo "$v: MISSING"
+done
+```
+
+Inventory the providers your written routes actually use (from the ratified
+candidates), then present lane-aware instructions:
+
+- **SDK lane (Lane A/B):** keys stay in the customer's own env. List the exact
+  env var each provider needs and which are missing. Say plainly: in the SDK
+  lane **ModelRig never receives your provider key** — the key stays in your env
+  and calls go direct to the provider.
+- **Hosted lane:** keys go in the console vault at **app.modelrig.ai → Keys**
+  (`/vault`), placed by the human through the console form.
+
+State the pricing fact at this decision point: **BYOK is 1,000,000 free requests
+per month** (you bring the provider key; ModelRig meters, at zero per-request fee
+up to that ceiling). A payment method (app.modelrig.ai → Billing) is only needed
+for metered usage beyond the free tier.
+
+**Then, and only if `MODELRIG_API_KEY` is set,** offer to pre-fill the human's
+console checklist with a **metadata-only** manifest — provider NAMES and booleans,
+never a key. Show the EXACT payload first and require an explicit yes:
+
+```bash
+# SHOW this to the human, ask "send this to pre-fill your console checklist?
+# (metadata only — no keys)", and send ONLY on an explicit yes.
+curl -sS https://api.modelrig.ai/v1/setup-needs \
+  -H "authorization: Bearer $MODELRIG_API_KEY" \
+  -H "content-type: application/json" \
+  -d '{
+    "manifest_version": 1,
+    "lane": "sdk",
+    "providers": [{ "provider": "gemini", "has_env_key": true }],
+    "routes_count": 2,
+    "needs": ["provider_key:gemini", "billing_card"],
+    "notes": null
+  }'
+```
+
+The server rejects any manifest carrying a secret-shaped value (400 + a teaching
+error) — a backstop, not a licence to send one. **If `MODELRIG_API_KEY` is not
+set, do not send anything** — print the instructions above and stop. On the
+human's next console login, the "Finish your setup" card shows the same items
+with live done/pending states (a key placed in the vault flips its item to done).
+
 ---
 
 ## Tier 0 — Gateway pointing (transport-only)

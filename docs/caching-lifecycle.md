@@ -13,11 +13,21 @@
 The headline, up top so you cannot miss it:
 
 > **Long cached runs need a TTL heartbeat, and your code owns it.** A cache
-> resource has a lifetime. A multi-hour pipeline outlives the provider's default
-> TTL. ModelRig will **not** refresh or recreate your cache for you — by design
+> resource has a lifetime. A multi-hour pipeline outlives whatever TTL you set.
+> ModelRig will **not** refresh or recreate your cache for you — by design
 > (see "Who owns what"). If your job runs longer than the TTL, your code must
-> refresh or recreate the resource, or every call after expiry silently pays the
-> full uncached price.
+> refresh or recreate the resource. Otherwise the first call after expiry fails
+> `cache_invalid` (ModelRig retries it without the handle — correct result,
+> full price) and every call after pays uncached. The run keeps succeeding;
+> the failure mode is **cost**, and the miss-streak alert is how you notice.
+
+Terms this page leans on: a **route** (also called a task — the named unit
+`rig.run("my.task")` serves, defined in a route-bundle YAML) lists **candidate**
+models it may dispatch to, in order. Shapes and options:
+[route bundles](route-bundles.html) · [quickstart](quickstart.html). The
+migration protocol that sends you here — including the **C2 caching inventory**
+you run before writing any route — is the
+[migration playbook](migration-playbook.html).
 
 ## The three caching regimes
 
@@ -62,16 +72,45 @@ only how you *reference* the handle at call time. The full lifecycle, in order:
   `provider` is **required** — the handle names a Gemini resource, so ModelRig
   applies it only to Gemini candidates. A fallback candidate on another provider
   dispatches *without* the handle (an uncached correct call beats handing a
-  provider an identifier it would reject). On the Lane-B `runRaw` seam the same
-  field rides on the raw input: `rig.runRaw({ provider, model, …, cache: { key } })`.
-- **Run a TTL heartbeat for long jobs.** This is the load-bearing one. The cache
-  has a default TTL (Gemini's is best-effort and undocumented — treat it as
-  short). A pipeline that runs for hours will cross it. **ModelRig does not refresh
-  or recreate the resource** — so your code must: extend the TTL on a timer, or
-  recreate the resource and swap the handle you pass in. Without a heartbeat, the
-  first call after expiry gets a `cache_invalid` failure (ModelRig then retries
-  that candidate *without* the handle — a correct but full-price call), and every
-  call after pays uncached.
+  provider an identifier it would reject). If losing the cache on fallback is
+  unacceptable for your economics, pin the route: a route whose candidates are
+  all the one Gemini model never falls elsewhere. On the Lane-B `runRaw` seam
+  the same field rides on the raw input:
+  `rig.runRaw({ provider, model, …, cache: { key } })`.
+
+  **You do not need to empty your route's template when you pass a handle.**
+  When `cache.key` is set on a Gemini dispatch, ModelRig automatically drops
+  `systemInstruction` and `tools` from the request — the API requires it, and
+  the adapter handles it. The flip side is load-bearing: the dispatched request
+  then carries **only what the cache contains**, so the resource must have been
+  created *with* the system content and tools the task depends on. A handle
+  whose cache lacks your system prompt does not error — it answers without it.
+- **Run a TTL heartbeat for long jobs.** This is the load-bearing one. An
+  explicit `cachedContents` TTL is **yours to set at create time** (`ttl` —
+  Google's documented default is 1 hour; storage bills per token-hour while it
+  lives). Only the *implicit* cache's lifetime is best-effort and undocumented.
+  A pipeline that runs for hours will cross whatever you set. **ModelRig does
+  not refresh or recreate the resource** — so your code must: extend the TTL on
+  a timer, or recreate the resource and swap the handle you pass in. The whole
+  heartbeat is one SDK call on an interval:
+
+  ```ts
+  // Gemini SDK: extend the TTL while the job runs (interval << ttl)
+  const beat = setInterval(
+    () => ai.caches.update({ name: handle, config: { ttl: "3600s" } }),
+    20 * 60_000,
+  );
+  // clearInterval(beat) + ai.caches.delete({ name: handle }) when the job ends
+  ```
+
+  `cache.key` is read fresh on every `rig.run` call, so recreating the resource
+  and swapping the variable you pass takes effect on the next call — no restart.
+  Without a heartbeat, the first call after expiry gets a `cache_invalid`
+  failure (ModelRig then retries that candidate *without* the handle — a
+  correct but full-price call), and every call after pays uncached. The drop
+  lasts for that candidate's retries **within the run**; a later `rig.run`
+  call tries the handle again (and fails the same way if it is still expired) —
+  when a handle is gone, recreate it or stop passing it.
 - **Recreate on any change.** A cache is bound to its exact content. Change the
   system template, the tool schema, or the corpus by even one token and the old
   handle no longer matches your new prefix — create a fresh resource and pass the
@@ -128,11 +167,18 @@ on real traffic. After your first production runs:
   before migration and now shows a **zero hit rate is a regression** — say so, and
   find which of the invalidators above you tripped.
 - **Compare cost before and after.** A cached 170K-token prompt at ~98% hit is a
-  large bill; if the after-cost jumped, the cache is not engaging.
-- **Trust the miss-streak alert as the net, not the plan.** ModelRig's `cache:
-  auto` guard and the miss-streak alert catch what your inventory missed — but they
-  are the backstop, not a substitute for passing the handle correctly in the first
-  place.
+  large *saving* on every call; if the after-cost jumped, the cache is not
+  engaging and you are paying the bill it used to avoid.
+- **Check the route actually opted in.** Anthropic's marker regime does nothing
+  without `cache: auto` on the route — a route that forgot the opt-in silently
+  gets zero caching, which is exactly the regression class this page exists to
+  prevent.
+- **Trust the miss-streak alert as the net, not the plan.** The miss-streak
+  alert is the console health signal that fires when a cache-opted route's
+  recent calls all report zero cached tokens; together with the `cache: auto`
+  stamping guard it catches what your C2 caching inventory (migration playbook)
+  missed — but they are the backstop, not a substitute for passing the handle
+  correctly in the first place.
 
 ## Who owns what (the design line)
 
@@ -149,3 +195,12 @@ on real traffic. After your first production runs:
 Managed cache lifecycle (ModelRig creating and heartbeating the resource for you)
 is deliberately *not* in v1 — it is revisited only if it offers real customer
 value over you owning the resource you already understand.
+
+## Where to go next
+
+- [Migration playbook](migration-playbook.html) — the checkpoint protocol,
+  including the C2 caching inventory this page backstops.
+- [Route bundles](route-bundles.html) and [quickstart](quickstart.html) — route,
+  candidate, and `rig.run` option shapes.
+- Google's context-caching reference (create / update / delete, TTL semantics):
+  https://ai.google.dev/gemini-api/docs/caching — the API your heartbeat calls.
