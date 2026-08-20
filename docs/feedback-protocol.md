@@ -7,6 +7,10 @@ coverage** — the evidence level that decides how much confidence a swap
 proposal carries. The protocol is deliberately open: any tool that emits
 rows in this shape can participate in the loop.
 
+Every row is **org-scoped** — it lands in the organization its credential names,
+and a verdict attached to a run renders on that [run's page](run-verdicts.md#on-the-run-page)
+in the console alongside the run's verdicts.
+
 ## The call
 
 ```ts
@@ -20,8 +24,9 @@ rig.feedback({ episode: run_id }, { verdict: "down", score: 0.2, note: "CAGR off
 
 The write is synchronous and local (SQLite) — never a network call, never a
 failure your path can see. The cloud mirror rides the telemetry exporter's
-normal cadence. Over HTTP: `POST /feedback` on modelrig-server with the same
-fields (`{inferenceId | episode, verdict, score?, note?, source?}`).
+normal cadence. To post judgment from a surface that isn't running the SDK — an
+end user clicking thumbs-down in your web app — use the
+[HTTP endpoint](#from-a-non-sdk-surface-http) below.
 
 ## The row
 
@@ -39,6 +44,27 @@ fields (`{inferenceId | episode, verdict, score?, note?, source?}`).
 Exactly one of `inference_id`/`episode_key` is typically set (both-null is
 rejected). Feedback that matches no known inference or episode attaches to
 nothing — attribution is never guessed.
+
+## From a non-SDK surface (HTTP)
+
+When the judgment originates somewhere the SDK doesn't run — an end user in your
+web app, a review tool written in another language — post it to
+`POST /v1/feedback` on modelrig-server:
+
+```bash
+curl -X POST https://api.modelrig.ai/v1/feedback \
+  -H "Authorization: Bearer $MODELRIG_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"episode": "run-123", "verdict": "down", "score": 0.2, "note": "CAGR off by 10x", "source": "app-user"}'
+```
+
+- **Authenticated, never public.** The request carries a `rig_sk_` key holding
+  the `feedback` scope; there is no unauthenticated feedback endpoint.
+- **The org rides the key, not the body.** Which organization the row belongs to
+  is resolved from the credential — you cannot file a verdict into another org's
+  corpus, and any org named in the body is ignored by construction.
+- **Same fields as the SDK call:** `{inferenceId | episode, verdict: "up"|"down", score?, note?, source?}`. A missing or invalid verdict, or a target naming neither an inference nor an episode, is a `422` — rejected before authorization runs.
+- **Response:** `{ id, ts, org_id }` — the stored row's id, its timestamp, and the org it landed in.
 
 ## The ladder (rungs 0–1 today)
 

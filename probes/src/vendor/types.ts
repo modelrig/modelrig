@@ -32,6 +32,13 @@ export interface ProbeCallRequest {
   readonly timeoutMs: number;
   /** Provider-native web grounding (gemini googleSearch). */
   readonly grounding?: boolean;
+  /** Caching probe only: mark the fixed prefix cacheable on providers whose
+   * caching is documented as EXPLICIT OPT-IN (anthropic cache_control).
+   * Implicit-caching providers ignore it — their default path IS the
+   * documented path. Never set outside the caching probe class: opt-in
+   * writes can carry a surcharge, which would contaminate cost measurement
+   * in the other probe classes. */
+  readonly cacheHint?: boolean;
 }
 
 export interface ProbeUsage {

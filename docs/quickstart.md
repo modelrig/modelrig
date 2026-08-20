@@ -1,12 +1,84 @@
-# ModelRig quickstart — define a route, call `rig.run()`
+# ModelRig quickstart — see, prove, and save on every model call
 
-ModelRig turns each LLM task into a **versioned route file** (prompt template +
-JSON schema + candidate models + policy) and one call:
-`rig.run("task.name", {input, tags})`. You get schema-validated output with
-cost/tokens/tier recorded against your tags — and no possibility of a request
-being served by a model you didn't authorize.
+ModelRig is the operating layer for your AI workstream. Each LLM task becomes a
+**versioned route file** (prompt template + JSON schema + candidate models +
+policy) that you call with one line — `rig.run("task.name", {input, tags})` —
+and three things happen at once:
 
-## 1. Install
+- **See** — the run lands in an **inspectable artifact store** (runs → steps →
+  artifacts, lineaged and integrity-hashed; see the
+  [instrumentation guide](instrumentation.md)), with cost/tokens/tier and a
+  verdict recorded against your tags.
+- **Prove** — you get schema-validated output, served only by a model you
+  authorized, and you can replay that traffic against cheaper candidates in a
+  bake-off before you change anything.
+- **Save** — a winning candidate is a change to your YAML you review; nothing
+  swaps a model on its own, and your routes are always YAML in your git.
+
+The rest of this page is Step 0 (two minutes, once), then the two ways to
+instrument your project — point your coding agent at it, or do it by hand.
+
+## Step 0 — create your org and key (two minutes, human-only)
+
+Account setup stays human: your coding agent never creates accounts, signs in,
+or holds credentials. Once, up front:
+
+1. Sign up and create your organization at
+   [app.modelrig.ai](https://app.modelrig.ai) — email and an org name is the
+   whole form.
+2. Issue an API key in the console (the `rig_sk_…` value is shown once — copy it).
+3. Export it beside your provider keys: `MODELRIG_API_KEY=rig_sk_…`.
+
+That key is the only ModelRig credential your app ever holds — never a database
+URL, never a service-role key. Provider keys never leave your process.
+
+**No account needed for the open lane:** with only your provider keys set,
+routes, probes and telemetry run entirely on your machine — the hosted console
+and synced telemetry are what the key unlocks. You can add it later.
+
+There are two ways your calls are keyed and billed, and you pick per route:
+
+- **Bring your own keys (BYOK).** Your provider keys stay in your environment;
+  ModelRig routes to the provider directly. The first 1,000,000 requests each
+  month are free, then a flat 2% of list price.
+- **Managed keys.** ModelRig fronts the provider's inference cost, so managed
+  calls are provider cost + 2% from the first request — no key for you to hold.
+
+Same flat 2% margin either way; your negotiated provider discounts stay yours.
+
+## Point your coding agent at it
+
+The fastest migration is the one your agent performs. From inside your project,
+paste this into Claude Code, Codex, or Cursor:
+
+```
+Migrate this project to ModelRig routes (https://modelrig.dev).
+
+0. If MODELRIG_API_KEY is not set and I want hosted telemetry, STOP and ask me
+   to create an org and issue a rig_sk_ key at https://app.modelrig.ai. Never
+   create accounts, sign in, or handle credentials yourself. Without the key,
+   proceed in local-only mode — that is fully supported.
+1. Read https://modelrig.dev/quickstart.html and
+   https://modelrig.dev/route-bundles.html.
+2. Find every place this codebase calls an LLM API directly.
+3. For each call site, define a route bundle YAML (schema, candidate models,
+   policy, prompt template) and replace the direct call with
+   rig.run("<route.name>"). Keep prompt and schema semantics unchanged.
+4. Before naming any model capability, check the probed registry — declared
+   flags and probed behavior differ; trust the probed layer.
+5. Run the project's existing tests and report every file you changed.
+```
+
+Your agent reads the docs, finds your LLM call sites, and turns them into
+routes. It **won't** create accounts, sign in, or touch your API keys (those
+stay in the environment you set in Step 0), and it swaps call sites to
+`rig.run()` without changing prompt or schema semantics — same model, human-
+reviewed. The full autonomy ladder and same-model guarantees are in the
+[migration playbook](migration-playbook.md).
+
+## Or set it up by hand
+
+### 1. Install
 
 ```bash
 pnpm add modelrig      # or npm i modelrig — Node >= 20
@@ -40,7 +112,7 @@ in the console at [app.modelrig.ai](https://app.modelrig.ai) and is the only
 ModelRig credential your app ever holds — never a database URL, never a
 service-role key.
 
-## 2. Define a route bundle
+### 2. Define a route bundle
 
 One YAML file per route under `modelrig/routes/`:
 
@@ -83,7 +155,7 @@ CRITICAL: respond with a single JSON object, no markdown fences.
 Variables must be declared in `prompt.variables`; referencing an undeclared
 variable fails at load time, not at run time.
 
-## 3. Call it
+### 3. Call it
 
 ```ts
 const rig = createRig(loadConfigFromEnv());
@@ -103,7 +175,7 @@ result.meta.attemptsByClass;   // retries consumed, per failure class
 rig.close();
 ```
 
-## 4. When it fails, it fails typed
+## When it fails, it fails typed
 
 ```ts
 import { RigFailureError } from "modelrig";
@@ -130,7 +202,7 @@ key never burns backoff time. Failures that still billed tokens (refusals,
 truncations) carry their token usage, so envelopes and telemetry account the
 real spend.
 
-## 5. Where the telemetry goes
+## Where the telemetry goes
 
 Every attempt (not just every run) writes one row to package-owned SQLite,
 tagged with your `tags`. If the Supabase sink is configured (the Supabase URL
@@ -140,7 +212,14 @@ fire-and-forget, queue-on-failure; the inference path never blocks on it.
 Inspect live rows in Supabase Studio or the console (see
 [staging.md](./staging.md)).
 
-## 6. When it doesn't work
+Telemetry says what happened; **verdicts** say whether it was good. Attach a
+thumbs up/down to a call or a whole run with `rig.feedback(...)` — from the SDK
+or over HTTP for a non-SDK surface (see the
+[feedback protocol](feedback-protocol.md)) — and every run gets an automatic
+`run-outcome@v1` verdict, with an explicit, bounded model judge available when
+you want one (see [run verdicts](run-verdicts.md)).
+
+## When it doesn't work
 
 The first three failures below stop the bundle loading; the fourth lets it load
 and then misbehave, so it is the one to watch for. The full list, in the

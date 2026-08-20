@@ -1,0 +1,1068 @@
+{
+  "cycle": "cycle-004",
+  "date": "2026-08-19T14:17:09.966Z",
+  "samples": 5,
+  "cycleCeilingUsd": 30,
+  "projectedUsd": 24.009679999999996,
+  "totalSpentUsd": 15.088465951999993,
+  "ceilingReached": false,
+  "counts": {
+    "probed": 29,
+    "partial": 5,
+    "contaminated": 0,
+    "skipped-unpriced": 0,
+    "skipped-unreachable": 0,
+    "not-probed-this-cycle": 0,
+    "failed": 0
+  },
+  "models": [
+    {
+      "modelKey": "anthropic/claude-fable-5",
+      "status": "partial",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 95,
+          "costUsd": 1.7382999999999984,
+          "failureRate": 0,
+          "resultPath": "results/anthropic-claude-fable-5/schema-2026-08-18.json"
+        },
+        {
+          "cls": "grounding",
+          "status": "probed",
+          "samples": 15,
+          "costUsd": 0.41755000000000003,
+          "failureRate": 0,
+          "resultPath": "results/anthropic-claude-fable-5/grounding-2026-08-18.json"
+        },
+        {
+          "cls": "caching",
+          "status": "contaminated",
+          "samples": 5,
+          "costUsd": 0,
+          "failureRate": 1
+        }
+      ],
+      "costUsd": 2.1558499999999983
+    },
+    {
+      "modelKey": "anthropic/claude-haiku-4-5",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 95,
+          "costUsd": 0.16968000000000003,
+          "failureRate": 0,
+          "resultPath": "results/anthropic-claude-haiku-4-5/schema-2026-08-18.json"
+        },
+        {
+          "cls": "grounding",
+          "status": "probed",
+          "samples": 15,
+          "costUsd": 0.018690000000000002,
+          "failureRate": 0,
+          "resultPath": "results/anthropic-claude-haiku-4-5/grounding-2026-08-18.json"
+        },
+        {
+          "cls": "caching",
+          "status": "probed",
+          "samples": 5,
+          "costUsd": 0.033694999999999996,
+          "failureRate": 0,
+          "resultPath": "results/anthropic-claude-haiku-4-5/caching-2026-08-18.json"
+        }
+      ],
+      "costUsd": 0.22206500000000004
+    },
+    {
+      "modelKey": "anthropic/claude-opus-5",
+      "status": "partial",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 95,
+          "costUsd": 0.9122800000000003,
+          "failureRate": 0.010526315789473684,
+          "resultPath": "results/anthropic-claude-opus-5/schema-2026-08-18.json"
+        },
+        {
+          "cls": "grounding",
+          "status": "probed",
+          "samples": 15,
+          "costUsd": 0.3631,
+          "failureRate": 0,
+          "resultPath": "results/anthropic-claude-opus-5/grounding-2026-08-18.json"
+        },
+        {
+          "cls": "caching",
+          "status": "contaminated",
+          "samples": 5,
+          "costUsd": 0,
+          "failureRate": 1
+        }
+      ],
+      "costUsd": 1.2753800000000002
+    },
+    {
+      "modelKey": "anthropic/claude-sonnet-5",
+      "status": "partial",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 95,
+          "costUsd": 0.3794600000000001,
+          "failureRate": 0,
+          "resultPath": "results/anthropic-claude-sonnet-5/schema-2026-08-18.json"
+        },
+        {
+          "cls": "grounding",
+          "status": "probed",
+          "samples": 15,
+          "costUsd": 0.06958,
+          "failureRate": 0,
+          "resultPath": "results/anthropic-claude-sonnet-5/grounding-2026-08-18.json"
+        },
+        {
+          "cls": "caching",
+          "status": "contaminated",
+          "samples": 5,
+          "costUsd": 0.006705999999999999,
+          "failureRate": 1
+        }
+      ],
+      "costUsd": 0.4634410000000001
+    },
+    {
+      "modelKey": "deepinfra/MiniMaxAI/MiniMax-M3",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 95,
+          "costUsd": 0.06549569999999998,
+          "failureRate": 0,
+          "resultPath": "results/deepinfra-MiniMaxAI-MiniMax-M3/schema-2026-08-18.json"
+        },
+        {
+          "cls": "grounding",
+          "status": "probed",
+          "samples": 15,
+          "costUsd": 0.008445,
+          "failureRate": 0,
+          "resultPath": "results/deepinfra-MiniMaxAI-MiniMax-M3/grounding-2026-08-18.json"
+        },
+        {
+          "cls": "caching",
+          "status": "probed",
+          "samples": 5,
+          "costUsd": 0.009693,
+          "failureRate": 0,
+          "resultPath": "results/deepinfra-MiniMaxAI-MiniMax-M3/caching-2026-08-18.json"
+        }
+      ],
+      "costUsd": 0.08363369999999998
+    },
+    {
+      "modelKey": "deepinfra/Qwen/Qwen3-30B-A3B",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 95,
+          "costUsd": 0.015693179999999998,
+          "failureRate": 0,
+          "resultPath": "results/deepinfra-Qwen-Qwen3-30B-A3B/schema-2026-08-18.json"
+        },
+        {
+          "cls": "grounding",
+          "status": "probed",
+          "samples": 15,
+          "costUsd": 0.00449217,
+          "failureRate": 0,
+          "resultPath": "results/deepinfra-Qwen-Qwen3-30B-A3B/grounding-2026-08-18.json"
+        },
+        {
+          "cls": "caching",
+          "status": "probed",
+          "samples": 5,
+          "costUsd": 0.00281745,
+          "failureRate": 0,
+          "resultPath": "results/deepinfra-Qwen-Qwen3-30B-A3B/caching-2026-08-18.json"
+        }
+      ],
+      "costUsd": 0.023002799999999997
+    },
+    {
+      "modelKey": "deepinfra/Qwen/Qwen3-Coder-480B-A35B-Instruct-Turbo",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 95,
+          "costUsd": 0.020459200000000007,
+          "failureRate": 0,
+          "resultPath": "results/deepinfra-Qwen-Qwen3-Coder-480B-A35B-Instruct-Turbo/schema-2026-08-18.json"
+        },
+        {
+          "cls": "grounding",
+          "status": "probed",
+          "samples": 15,
+          "costUsd": 0.0031501000000000003,
+          "failureRate": 0,
+          "resultPath": "results/deepinfra-Qwen-Qwen3-Coder-480B-A35B-Instruct-Turbo/grounding-2026-08-18.json"
+        },
+        {
+          "cls": "caching",
+          "status": "probed",
+          "samples": 5,
+          "costUsd": 0.0085603,
+          "failureRate": 0,
+          "resultPath": "results/deepinfra-Qwen-Qwen3-Coder-480B-A35B-Instruct-Turbo/caching-2026-08-18.json"
+        }
+      ],
+      "costUsd": 0.032169600000000007
+    },
+    {
+      "modelKey": "deepinfra/google/gemma-4-31B-it",
+      "status": "partial",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 95,
+          "costUsd": 0.007808540000000004,
+          "failureRate": 0,
+          "resultPath": "results/deepinfra-google-gemma-4-31B-it/schema-2026-08-18.json"
+        },
+        {
+          "cls": "grounding",
+          "status": "contaminated",
+          "samples": 15,
+          "costUsd": 0.000247,
+          "failureRate": 0.7333333333333333
+        },
+        {
+          "cls": "caching",
+          "status": "probed",
+          "samples": 5,
+          "costUsd": 0.00377442,
+          "failureRate": 0,
+          "resultPath": "results/deepinfra-google-gemma-4-31B-it/caching-2026-08-18.json"
+        }
+      ],
+      "costUsd": 0.011892660000000005
+    },
+    {
+      "modelKey": "deepinfra/meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 95,
+          "costUsd": 0.0110718,
+          "failureRate": 0,
+          "resultPath": "results/deepinfra-meta-llama-Llama-4-Maverick-17B-128E-Instruct-FP8/schema-2026-08-18.json"
+        },
+        {
+          "cls": "grounding",
+          "status": "probed",
+          "samples": 15,
+          "costUsd": 0.00221175,
+          "failureRate": 0,
+          "resultPath": "results/deepinfra-meta-llama-Llama-4-Maverick-17B-128E-Instruct-FP8/grounding-2026-08-18.json"
+        },
+        {
+          "cls": "caching",
+          "status": "probed",
+          "samples": 5,
+          "costUsd": 0.004347,
+          "failureRate": 0,
+          "resultPath": "results/deepinfra-meta-llama-Llama-4-Maverick-17B-128E-Instruct-FP8/caching-2026-08-18.json"
+        }
+      ],
+      "costUsd": 0.017630550000000002
+    },
+    {
+      "modelKey": "deepinfra/meta-llama/Llama-4-Scout-17B-16E-Instruct",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 95,
+          "costUsd": 0.005295399999999992,
+          "failureRate": 0,
+          "resultPath": "results/deepinfra-meta-llama-Llama-4-Scout-17B-16E-Instruct/schema-2026-08-18.json"
+        },
+        {
+          "cls": "grounding",
+          "status": "probed",
+          "samples": 15,
+          "costUsd": 0.0008067999999999998,
+          "failureRate": 0,
+          "resultPath": "results/deepinfra-meta-llama-Llama-4-Scout-17B-16E-Instruct/grounding-2026-08-18.json"
+        },
+        {
+          "cls": "caching",
+          "status": "probed",
+          "samples": 5,
+          "costUsd": 0.0023184,
+          "failureRate": 0,
+          "resultPath": "results/deepinfra-meta-llama-Llama-4-Scout-17B-16E-Instruct/caching-2026-08-18.json"
+        }
+      ],
+      "costUsd": 0.008420599999999992
+    },
+    {
+      "modelKey": "deepinfra/mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 95,
+          "costUsd": 0.004393225,
+          "failureRate": 0,
+          "resultPath": "results/deepinfra-mistralai-Mistral-Small-3.2-24B-Instruct-2506/schema-2026-08-18.json"
+        },
+        {
+          "cls": "grounding",
+          "status": "probed",
+          "samples": 15,
+          "costUsd": 0.00025594999999999996,
+          "failureRate": 0,
+          "resultPath": "results/deepinfra-mistralai-Mistral-Small-3.2-24B-Instruct-2506/grounding-2026-08-18.json"
+        },
+        {
+          "cls": "caching",
+          "status": "probed",
+          "samples": 5,
+          "costUsd": 0.0022789999999999998,
+          "failureRate": 0,
+          "resultPath": "results/deepinfra-mistralai-Mistral-Small-3.2-24B-Instruct-2506/caching-2026-08-18.json"
+        }
+      ],
+      "costUsd": 0.006928174999999999
+    },
+    {
+      "modelKey": "deepinfra/moonshotai/Kimi-K2.6",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 95,
+          "costUsd": 0.3427679999999998,
+          "failureRate": 0,
+          "resultPath": "results/deepinfra-moonshotai-Kimi-K2.6/schema-2026-08-19.json"
+        },
+        {
+          "cls": "grounding",
+          "status": "probed",
+          "samples": 15,
+          "costUsd": 0.0399895,
+          "failureRate": 0,
+          "resultPath": "results/deepinfra-moonshotai-Kimi-K2.6/grounding-2026-08-19.json"
+        },
+        {
+          "cls": "caching",
+          "status": "probed",
+          "samples": 5,
+          "costUsd": 0.029507,
+          "failureRate": 0,
+          "resultPath": "results/deepinfra-moonshotai-Kimi-K2.6/caching-2026-08-19.json"
+        }
+      ],
+      "costUsd": 0.4122644999999998
+    },
+    {
+      "modelKey": "deepinfra/moonshotai/Kimi-K2.7-Code",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 95,
+          "costUsd": 0.14886219999999997,
+          "failureRate": 0,
+          "resultPath": "results/deepinfra-moonshotai-Kimi-K2.7-Code/schema-2026-08-19.json"
+        },
+        {
+          "cls": "grounding",
+          "status": "probed",
+          "samples": 15,
+          "costUsd": 0.011592639999999998,
+          "failureRate": 0.06666666666666667,
+          "resultPath": "results/deepinfra-moonshotai-Kimi-K2.7-Code/grounding-2026-08-19.json"
+        },
+        {
+          "cls": "caching",
+          "status": "probed",
+          "samples": 5,
+          "costUsd": 0.024377999999999997,
+          "failureRate": 0,
+          "resultPath": "results/deepinfra-moonshotai-Kimi-K2.7-Code/caching-2026-08-19.json"
+        }
+      ],
+      "costUsd": 0.18483283999999994
+    },
+    {
+      "modelKey": "deepinfra/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 95,
+          "costUsd": 0.11279360000000002,
+          "failureRate": 0,
+          "resultPath": "results/deepinfra-nvidia-NVIDIA-Nemotron-3-Ultra-550B-A55B/schema-2026-08-19.json"
+        },
+        {
+          "cls": "grounding",
+          "status": "probed",
+          "samples": 15,
+          "costUsd": 0.08652260000000002,
+          "failureRate": 0.2,
+          "resultPath": "results/deepinfra-nvidia-NVIDIA-Nemotron-3-Ultra-550B-A55B/grounding-2026-08-19.json"
+        },
+        {
+          "cls": "caching",
+          "status": "probed",
+          "samples": 5,
+          "costUsd": 0.018091000000000003,
+          "failureRate": 0,
+          "resultPath": "results/deepinfra-nvidia-NVIDIA-Nemotron-3-Ultra-550B-A55B/caching-2026-08-19.json"
+        }
+      ],
+      "costUsd": 0.21740720000000005
+    },
+    {
+      "modelKey": "deepinfra/openai/gpt-oss-120b",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 95,
+          "costUsd": 0.0160367,
+          "failureRate": 0,
+          "resultPath": "results/deepinfra-openai-gpt-oss-120b/schema-2026-08-19.json"
+        },
+        {
+          "cls": "grounding",
+          "status": "probed",
+          "samples": 15,
+          "costUsd": 0.006793899999999999,
+          "failureRate": 0.13333333333333333,
+          "resultPath": "results/deepinfra-openai-gpt-oss-120b/grounding-2026-08-19.json"
+        },
+        {
+          "cls": "caching",
+          "status": "probed",
+          "samples": 5,
+          "costUsd": 0.001905,
+          "failureRate": 0,
+          "resultPath": "results/deepinfra-openai-gpt-oss-120b/caching-2026-08-19.json"
+        }
+      ],
+      "costUsd": 0.0247356
+    },
+    {
+      "modelKey": "deepinfra/zai-org/GLM-5.2",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 95,
+          "costUsd": 0.17301794999999998,
+          "failureRate": 0,
+          "resultPath": "results/deepinfra-zai-org-GLM-5.2/schema-2026-08-19.json"
+        },
+        {
+          "cls": "grounding",
+          "status": "probed",
+          "samples": 15,
+          "costUsd": 0.023651099999999994,
+          "failureRate": 0,
+          "resultPath": "results/deepinfra-zai-org-GLM-5.2/grounding-2026-08-19.json"
+        },
+        {
+          "cls": "caching",
+          "status": "probed",
+          "samples": 5,
+          "costUsd": 0.023850599999999996,
+          "failureRate": 0,
+          "resultPath": "results/deepinfra-zai-org-GLM-5.2/caching-2026-08-19.json"
+        }
+      ],
+      "costUsd": 0.22051964999999996
+    },
+    {
+      "modelKey": "deepseek/deepseek-chat",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 95,
+          "costUsd": 0.0075381879999999995,
+          "failureRate": 0,
+          "resultPath": "results/deepseek-deepseek-chat/schema-2026-08-19.json"
+        },
+        {
+          "cls": "grounding",
+          "status": "probed",
+          "samples": 15,
+          "costUsd": 0.00145754,
+          "failureRate": 0,
+          "resultPath": "results/deepseek-deepseek-chat/grounding-2026-08-19.json"
+        },
+        {
+          "cls": "caching",
+          "status": "probed",
+          "samples": 5,
+          "costUsd": 0.0019019560000000002,
+          "failureRate": 0,
+          "resultPath": "results/deepseek-deepseek-chat/caching-2026-08-19.json"
+        }
+      ],
+      "costUsd": 0.010897684
+    },
+    {
+      "modelKey": "deepseek/deepseek-reasoner",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 95,
+          "costUsd": 0.013328783999999998,
+          "failureRate": 0,
+          "resultPath": "results/deepseek-deepseek-reasoner/schema-2026-08-19.json"
+        },
+        {
+          "cls": "grounding",
+          "status": "probed",
+          "samples": 15,
+          "costUsd": 0.0029424079999999992,
+          "failureRate": 0,
+          "resultPath": "results/deepseek-deepseek-reasoner/grounding-2026-08-19.json"
+        },
+        {
+          "cls": "caching",
+          "status": "probed",
+          "samples": 5,
+          "costUsd": 0.00129752,
+          "failureRate": 0,
+          "resultPath": "results/deepseek-deepseek-reasoner/caching-2026-08-19.json"
+        }
+      ],
+      "costUsd": 0.017568711999999997
+    },
+    {
+      "modelKey": "deepseek/deepseek-v4-flash",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 95,
+          "costUsd": 0.008432368,
+          "failureRate": 0,
+          "resultPath": "results/deepseek-deepseek-v4-flash/schema-2026-08-19.json"
+        },
+        {
+          "cls": "grounding",
+          "status": "probed",
+          "samples": 15,
+          "costUsd": 0.0011952360000000001,
+          "failureRate": 0,
+          "resultPath": "results/deepseek-deepseek-v4-flash/grounding-2026-08-19.json"
+        },
+        {
+          "cls": "caching",
+          "status": "probed",
+          "samples": 5,
+          "costUsd": 0.00044564800000000004,
+          "failureRate": 0,
+          "resultPath": "results/deepseek-deepseek-v4-flash/caching-2026-08-19.json"
+        }
+      ],
+      "costUsd": 0.010073252000000001
+    },
+    {
+      "modelKey": "deepseek/deepseek-v4-pro",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 95,
+          "costUsd": 0.038016563999999996,
+          "failureRate": 0,
+          "resultPath": "results/deepseek-deepseek-v4-pro/schema-2026-08-19.json"
+        },
+        {
+          "cls": "grounding",
+          "status": "probed",
+          "samples": 15,
+          "costUsd": 0.018357783000000003,
+          "failureRate": 0,
+          "resultPath": "results/deepseek-deepseek-v4-pro/grounding-2026-08-19.json"
+        },
+        {
+          "cls": "caching",
+          "status": "probed",
+          "samples": 5,
+          "costUsd": 0.002521782,
+          "failureRate": 0,
+          "resultPath": "results/deepseek-deepseek-v4-pro/caching-2026-08-19.json"
+        }
+      ],
+      "costUsd": 0.058896129
+    },
+    {
+      "modelKey": "fireworks/glm-5p2",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 95,
+          "costUsd": 0.26249729999999993,
+          "failureRate": 0,
+          "resultPath": "results/fireworks-glm-5p2/schema-2026-08-19.json"
+        },
+        {
+          "cls": "grounding",
+          "status": "probed",
+          "samples": 15,
+          "costUsd": 0.03904640000000001,
+          "failureRate": 0,
+          "resultPath": "results/fireworks-glm-5p2/grounding-2026-08-19.json"
+        },
+        {
+          "cls": "caching",
+          "status": "probed",
+          "samples": 5,
+          "costUsd": 0.01276994,
+          "failureRate": 0,
+          "resultPath": "results/fireworks-glm-5p2/caching-2026-08-19.json"
+        }
+      ],
+      "costUsd": 0.31431363999999995
+    },
+    {
+      "modelKey": "fireworks/gpt-oss-120b",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 95,
+          "costUsd": 0.025033995,
+          "failureRate": 0,
+          "resultPath": "results/fireworks-gpt-oss-120b/schema-2026-08-19.json"
+        },
+        {
+          "cls": "grounding",
+          "status": "probed",
+          "samples": 15,
+          "costUsd": 0.009901065,
+          "failureRate": 0.2,
+          "resultPath": "results/fireworks-gpt-oss-120b/grounding-2026-08-19.json"
+        },
+        {
+          "cls": "caching",
+          "status": "probed",
+          "samples": 5,
+          "costUsd": 0.00238383,
+          "failureRate": 0,
+          "resultPath": "results/fireworks-gpt-oss-120b/caching-2026-08-19.json"
+        }
+      ],
+      "costUsd": 0.03731889000000001
+    },
+    {
+      "modelKey": "fireworks/kimi-k3",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 95,
+          "costUsd": 0.4741587,
+          "failureRate": 0,
+          "resultPath": "results/fireworks-kimi-k3/schema-2026-08-19.json"
+        },
+        {
+          "cls": "grounding",
+          "status": "probed",
+          "samples": 15,
+          "costUsd": 0.14291340000000002,
+          "failureRate": 0,
+          "resultPath": "results/fireworks-kimi-k3/grounding-2026-08-19.json"
+        },
+        {
+          "cls": "caching",
+          "status": "probed",
+          "samples": 5,
+          "costUsd": 0.033138,
+          "failureRate": 0,
+          "resultPath": "results/fireworks-kimi-k3/caching-2026-08-19.json"
+        }
+      ],
+      "costUsd": 0.6502101
+    },
+    {
+      "modelKey": "gemini/gemini-2.5-flash",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 95,
+          "costUsd": 0.11530582000000002,
+          "failureRate": 0,
+          "resultPath": "results/gemini-gemini-2.5-flash/schema-2026-08-19.json"
+        },
+        {
+          "cls": "grounding",
+          "status": "probed",
+          "samples": 15,
+          "costUsd": 0.029206040000000006,
+          "failureRate": 0,
+          "resultPath": "results/gemini-gemini-2.5-flash/grounding-2026-08-19.json"
+        },
+        {
+          "cls": "caching",
+          "status": "probed",
+          "samples": 5,
+          "costUsd": 0.010513179999999999,
+          "failureRate": 0,
+          "resultPath": "results/gemini-gemini-2.5-flash/caching-2026-08-19.json"
+        }
+      ],
+      "costUsd": 0.15502504000000003
+    },
+    {
+      "modelKey": "gemini/gemini-3-flash-preview",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 95,
+          "costUsd": 0.24522949999999996,
+          "failureRate": 0,
+          "resultPath": "results/gemini-gemini-3-flash-preview/schema-2026-08-19.json"
+        },
+        {
+          "cls": "grounding",
+          "status": "probed",
+          "samples": 15,
+          "costUsd": 0.08250144999999998,
+          "failureRate": 0,
+          "resultPath": "results/gemini-gemini-3-flash-preview/grounding-2026-08-19.json"
+        },
+        {
+          "cls": "caching",
+          "status": "probed",
+          "samples": 5,
+          "costUsd": 0.020211,
+          "failureRate": 0,
+          "resultPath": "results/gemini-gemini-3-flash-preview/caching-2026-08-19.json"
+        }
+      ],
+      "costUsd": 0.34794194999999994
+    },
+    {
+      "modelKey": "gemini/gemini-3.1-flash-lite",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 95,
+          "costUsd": 0.018673749999999985,
+          "failureRate": 0,
+          "resultPath": "results/gemini-gemini-3.1-flash-lite/schema-2026-08-19.json"
+        },
+        {
+          "cls": "grounding",
+          "status": "probed",
+          "samples": 15,
+          "costUsd": 0.0083825,
+          "failureRate": 0,
+          "resultPath": "results/gemini-gemini-3.1-flash-lite/grounding-2026-08-19.json"
+        },
+        {
+          "cls": "caching",
+          "status": "probed",
+          "samples": 5,
+          "costUsd": 0.007449,
+          "failureRate": 0,
+          "resultPath": "results/gemini-gemini-3.1-flash-lite/caching-2026-08-19.json"
+        }
+      ],
+      "costUsd": 0.03450524999999998
+    },
+    {
+      "modelKey": "gemini/gemini-3.1-pro-preview",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 95,
+          "costUsd": 1.098038,
+          "failureRate": 0,
+          "resultPath": "results/gemini-gemini-3.1-pro-preview/schema-2026-08-19.json"
+        },
+        {
+          "cls": "grounding",
+          "status": "probed",
+          "samples": 15,
+          "costUsd": 0.5233826,
+          "failureRate": 0,
+          "resultPath": "results/gemini-gemini-3.1-pro-preview/grounding-2026-08-19.json"
+        },
+        {
+          "cls": "caching",
+          "status": "probed",
+          "samples": 5,
+          "costUsd": 0.09765599999999999,
+          "failureRate": 0,
+          "resultPath": "results/gemini-gemini-3.1-pro-preview/caching-2026-08-19.json"
+        }
+      ],
+      "costUsd": 1.7190766
+    },
+    {
+      "modelKey": "openai/gpt-5-mini",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 95,
+          "costUsd": 0.09948699999999999,
+          "failureRate": 0,
+          "resultPath": "results/openai-gpt-5-mini/schema-2026-08-19.json"
+        },
+        {
+          "cls": "grounding",
+          "status": "probed",
+          "samples": 15,
+          "costUsd": 0.020413249999999997,
+          "failureRate": 0,
+          "resultPath": "results/openai-gpt-5-mini/grounding-2026-08-19.json"
+        },
+        {
+          "cls": "caching",
+          "status": "probed",
+          "samples": 5,
+          "costUsd": 0.0041423,
+          "failureRate": 0,
+          "resultPath": "results/openai-gpt-5-mini/caching-2026-08-19.json"
+        }
+      ],
+      "costUsd": 0.12404254999999999
+    },
+    {
+      "modelKey": "openai/gpt-5.2",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 95,
+          "costUsd": 0.14937299999999992,
+          "failureRate": 0,
+          "resultPath": "results/openai-gpt-5.2/schema-2026-08-19.json"
+        },
+        {
+          "cls": "grounding",
+          "status": "probed",
+          "samples": 15,
+          "costUsd": 0.017382750000000002,
+          "failureRate": 0,
+          "resultPath": "results/openai-gpt-5.2/grounding-2026-08-19.json"
+        },
+        {
+          "cls": "caching",
+          "status": "probed",
+          "samples": 5,
+          "costUsd": 0.0223125,
+          "failureRate": 0,
+          "resultPath": "results/openai-gpt-5.2/caching-2026-08-19.json"
+        }
+      ],
+      "costUsd": 0.18906824999999994
+    },
+    {
+      "modelKey": "openai/gpt-5.4",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 95,
+          "costUsd": 0.17159999999999997,
+          "failureRate": 0,
+          "resultPath": "results/openai-gpt-5.4/schema-2026-08-19.json"
+        },
+        {
+          "cls": "grounding",
+          "status": "probed",
+          "samples": 15,
+          "costUsd": 0.028152500000000007,
+          "failureRate": 0,
+          "resultPath": "results/openai-gpt-5.4/grounding-2026-08-19.json"
+        },
+        {
+          "cls": "caching",
+          "status": "probed",
+          "samples": 5,
+          "costUsd": 0.038427,
+          "failureRate": 0,
+          "resultPath": "results/openai-gpt-5.4/caching-2026-08-19.json"
+        }
+      ],
+      "costUsd": 0.2381795
+    },
+    {
+      "modelKey": "openai/gpt-5.4-mini",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 95,
+          "costUsd": 0.049873499999999966,
+          "failureRate": 0,
+          "resultPath": "results/openai-gpt-5.4-mini/schema-2026-08-19.json"
+        },
+        {
+          "cls": "grounding",
+          "status": "probed",
+          "samples": 15,
+          "costUsd": 0.00859425,
+          "failureRate": 0,
+          "resultPath": "results/openai-gpt-5.4-mini/grounding-2026-08-19.json"
+        },
+        {
+          "cls": "caching",
+          "status": "probed",
+          "samples": 5,
+          "costUsd": 0.008413200000000003,
+          "failureRate": 0,
+          "resultPath": "results/openai-gpt-5.4-mini/caching-2026-08-19.json"
+        }
+      ],
+      "costUsd": 0.06688094999999997
+    },
+    {
+      "modelKey": "openai/gpt-5.4-nano",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 95,
+          "costUsd": 0.014252500000000006,
+          "failureRate": 0,
+          "resultPath": "results/openai-gpt-5.4-nano/schema-2026-08-19.json"
+        },
+        {
+          "cls": "grounding",
+          "status": "probed",
+          "samples": 15,
+          "costUsd": 0.00293325,
+          "failureRate": 0,
+          "resultPath": "results/openai-gpt-5.4-nano/grounding-2026-08-19.json"
+        },
+        {
+          "cls": "caching",
+          "status": "probed",
+          "samples": 5,
+          "costUsd": 0.0038248300000000004,
+          "failureRate": 0,
+          "resultPath": "results/openai-gpt-5.4-nano/caching-2026-08-19.json"
+        }
+      ],
+      "costUsd": 0.021010580000000008
+    },
+    {
+      "modelKey": "openai/gpt-5.5",
+      "status": "probed",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 95,
+          "costUsd": 0.44498999999999983,
+          "failureRate": 0,
+          "resultPath": "results/openai-gpt-5.5/schema-2026-08-19.json"
+        },
+        {
+          "cls": "grounding",
+          "status": "probed",
+          "samples": 15,
+          "costUsd": 0.078685,
+          "failureRate": 0,
+          "resultPath": "results/openai-gpt-5.5/grounding-2026-08-19.json"
+        },
+        {
+          "cls": "caching",
+          "status": "probed",
+          "samples": 5,
+          "costUsd": 0.09055800000000001,
+          "failureRate": 0,
+          "resultPath": "results/openai-gpt-5.5/caching-2026-08-19.json"
+        }
+      ],
+      "costUsd": 0.6142329999999999
+    },
+    {
+      "modelKey": "openai/gpt-5.5-pro",
+      "status": "partial",
+      "classes": [
+        {
+          "cls": "schema",
+          "status": "probed",
+          "samples": 95,
+          "costUsd": 5.018519999999998,
+          "failureRate": 0,
+          "resultPath": "results/openai-gpt-5.5-pro/schema-2026-08-19.json"
+        },
+        {
+          "cls": "grounding",
+          "status": "contaminated",
+          "samples": 15,
+          "costUsd": 0.10053000000000001,
+          "failureRate": 0.9333333333333333
+        },
+        {
+          "cls": "caching",
+          "status": "contaminated",
+          "samples": 5,
+          "costUsd": 0,
+          "failureRate": 1
+        }
+      ],
+      "costUsd": 5.119049999999998
+    }
+  ]
+}

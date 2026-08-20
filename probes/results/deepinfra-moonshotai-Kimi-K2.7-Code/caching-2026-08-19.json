@@ -1,0 +1,96 @@
+{
+  "modelKey": "deepinfra/moonshotai/Kimi-K2.7-Code",
+  "class": "caching",
+  "date": "2026-08-19T01:14:46.362Z",
+  "harnessVersion": "0.0.1",
+  "fixtureHashes": {
+    "long-prefix-repeat": "28595a700e587856"
+  },
+  "fixtureFamilies": {
+    "long-prefix-repeat": "probe-suite"
+  },
+  "fixtureDifficulties": {
+    "long-prefix-repeat": "standard"
+  },
+  "raw": {
+    "long-prefix-repeat": [
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2784,
+        "tokensIn": 2804,
+        "tokensOut": 169,
+        "costUsd": 0.004772239999999999,
+        "latencyMs": 6231,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2784,
+        "tokensIn": 2804,
+        "tokensOut": 160,
+        "costUsd": 0.0048708399999999995,
+        "latencyMs": 11450,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2784,
+        "tokensIn": 2804,
+        "tokensOut": 148,
+        "costUsd": 0.00487424,
+        "latencyMs": 7552,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2784,
+        "tokensIn": 2804,
+        "tokensOut": 176,
+        "costUsd": 0.004942239999999999,
+        "latencyMs": 8454,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2784,
+        "tokensIn": 2804,
+        "tokensOut": 164,
+        "costUsd": 0.00491844,
+        "latencyMs": 6121,
+        "failureClass": null
+      }
+    ]
+  },
+  "stats": [
+    {
+      "fixtureId": "long-prefix-repeat",
+      "samples": 5,
+      "parseRate": 1,
+      "conformRate": null,
+      "valueAccuracyMean": null,
+      "conformCi95": null,
+      "meanCostUsd": 0.004875599999999999
+    }
+  ],
+  "totalCostUsd": 0.024377999999999997
+}

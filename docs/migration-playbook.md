@@ -48,6 +48,96 @@ lands. But *observing your runs in the console* (Tier 1's payoff) does need it.
 
 ---
 
+## Before the ladder — which lane, and the two inventories
+
+The autonomy ladder (T0–T2) is *how* you migrate one call site. **The lane is
+which strategy fits the whole codebase** — decided once, up front, from the shape
+of the code. Get this wrong and you either over-engineer a naive app or try to
+externalize a routing engine that already exists. You (the coding agent) work the
+lane assessment and the inventories yourself, then **stop at the checkpoints** (⏸)
+and present to your human.
+
+### The three lanes
+
+- **Lane A — naive call sites.** Static prompts, a fixed model per call, no
+  provider abstraction. This is the greenfield case the ladder was written for:
+  extract routes (Tier 2), replace call sites with `rig.run`. First route in under
+  an hour.
+- **Lane B — an existing router / orchestrator.** The code already has a provider
+  abstraction, runtime-assembled prompts, and env- or logic-resolved model choice
+  (a `callProvider(provider, prompt, model)` dispatcher is the tell). **Do not
+  write per-task routes for this.** Migrate ONE naive call site as a reference
+  route, then integrate the router at the **`rig.runRaw` adapter seam** — replace
+  the dispatcher's body with `rig.runRaw({ provider, model, … })`. ModelRig
+  provides telemetry, fallback, and accounting; your code keeps prompt assembly and
+  cache lifecycle. BYOK, zero-margin, no route externalization.
+- **Lane C — full route migration of a Lane-B system.** Externalizing a dynamic
+  prompt assembler into route templates is a scoped *project* (prompt
+  externalization), never an onboarding step. Recognize it, name it, and leave it
+  for later.
+
+The lane picks which tiers apply: Lane A runs the full T0→T2 ladder; Lane B stops
+at the `runRaw` seam (T0/T1 plus the one reference route) and defers T2-for-everything
+to Lane C.
+
+### ⏸ C1 — Fit assessment (present the verdict + lane)
+
+Inventory the LLM call sites and classify the codebase (naive vs. router layer).
+Present which lane you chose and why. See "Call-site scope" for what counts.
+
+### ⏸ C2 — Caching & grounding inventory (the stop-gate)
+
+**Before writing any route,** grep the target for provider caching and
+provider-native grounding — the two behaviours that vanish *silently* on a naive
+migration (a cost regression and a quality regression that only telemetry reveals).
+Search for:
+
+```
+cachedContent        # Gemini explicit cache resource
+cache_control        # Anthropic marker cache
+prompt_cache_key     # OpenAI / Grok key-hint cache
+cached_tokens | cache_read | cachedContentTokenCount   # cache usage in responses
+```
+
+**Any hit is a STOP-gate.** The route must carry the corresponding surface:
+
+- **Caching** → the customer cache handle rides `rig.run(task, { cache: { key,
+  provider } })` (or `rig.runRaw({ …, cache: { key } })`) — a one-field
+  pass-through of the resource the customer already owns. ModelRig prices the hits
+  but never manages the resource; a long job still needs the customer's TTL
+  heartbeat. Full mechanics: [Caching lifecycle](https://modelrig.dev/caching-lifecycle.html).
+- **Grounding** → `require: [grounded]` plus the route's grounding mode.
+
+If a surface cannot express what the code does yet, **report the gap and the
+quantified cost/quality delta — never migrate past it silently.** Present the
+inventory results and the decision (carry the handle, or a named, quantified
+regression). Silent is the only forbidden outcome.
+
+### Package manager (detect, don't assume)
+
+Install with the project's OWN package manager — read it from the lockfile:
+`pnpm-lock.yaml` → `pnpm add modelrig`; `yarn.lock` → `yarn add modelrig`;
+`package-lock.json` → `npm i modelrig`. Running `npm i` in a pnpm workspace
+corrupts the store — never hard-code `npm`. Node ≥ 20; provider keys stay in env
+vars.
+
+### Call-site scope (what "every LLM call" means)
+
+- **In scope:** text/JSON *generation* calls, including the secondary
+  extractor/repair follow-ups that are part of a generation flow (a JSON-extractor
+  retry on a malformed response is in scope — it is the same logical call).
+- **Out of scope (v1, state it explicitly):** embeddings, web-search tool calls,
+  and rerankers. These are not generation routes; say so rather than guessing.
+
+### ⏸ C3 — Candidate ratification · ⏸ C4 — Prove it
+
+C3 (ratify the proposed candidate list) and C4 (tests + diff + the week-one
+cache-hit-rate/cost panel comparison) are the Tier 2 gates below — the human
+merges on a green report. A zero cache-hit rate on a route that cached before
+migration is a regression; say so at C4.
+
+---
+
 ## Tier 0 — Gateway pointing (transport-only)
 
 The lightest possible change: point an existing OpenAI-compatible client at the

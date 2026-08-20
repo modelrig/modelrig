@@ -1,0 +1,96 @@
+{
+  "modelKey": "openai/gpt-5.2",
+  "class": "caching",
+  "date": "2026-08-19T04:24:16.638Z",
+  "harnessVersion": "0.0.1",
+  "fixtureHashes": {
+    "long-prefix-repeat": "28595a700e587856"
+  },
+  "fixtureFamilies": {
+    "long-prefix-repeat": "probe-suite"
+  },
+  "fixtureDifficulties": {
+    "long-prefix-repeat": "standard"
+  },
+  "raw": {
+    "long-prefix-repeat": [
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2560,
+        "tokensIn": 2787,
+        "tokensOut": 42,
+        "costUsd": 0.0068985,
+        "latencyMs": 887,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2560,
+        "tokensIn": 2787,
+        "tokensOut": 41,
+        "costUsd": 0.0028385,
+        "latencyMs": 865,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2560,
+        "tokensIn": 2787,
+        "tokensOut": 42,
+        "costUsd": 0.0028525,
+        "latencyMs": 900,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2560,
+        "tokensIn": 2787,
+        "tokensOut": 42,
+        "costUsd": 0.0028525,
+        "latencyMs": 829,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 0,
+        "tokensIn": 2787,
+        "tokensOut": 41,
+        "costUsd": 0.0068705,
+        "latencyMs": 881,
+        "failureClass": null
+      }
+    ]
+  },
+  "stats": [
+    {
+      "fixtureId": "long-prefix-repeat",
+      "samples": 5,
+      "parseRate": 1,
+      "conformRate": null,
+      "valueAccuracyMean": null,
+      "conformCi95": null,
+      "meanCostUsd": 0.0044624999999999995
+    }
+  ],
+  "totalCostUsd": 0.0223125
+}

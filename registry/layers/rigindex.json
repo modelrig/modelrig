@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-08-13T03:28:59.887Z",
+  "as_of": "2026-08-19T05:13:04.856Z",
   "source": "modelrig-probes@0.0.1+rigindex-v1 (probe-derived, single source)",
   "basket_version": "2026-Q3",
   "basket_members": [
@@ -646,9 +646,9 @@
       "tiers": 1,
       "models": {
         "anthropic/claude-fable-5": {
-          "score": 100,
+          "score": 68.74400913325036,
           "ci95": [
-            100,
+            32.67440344574027,
             100
           ],
           "tier": 1,
@@ -663,10 +663,10 @@
           "gate_reason": null
         },
         "anthropic/claude-haiku-4-5": {
-          "score": 100,
+          "score": 120.60979290702967,
           "ci95": [
             100,
-            100
+            174.94283753624381
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -680,10 +680,10 @@
           "gate_reason": null
         },
         "anthropic/claude-opus-5": {
-          "score": 100,
+          "score": 120.60979290702967,
           "ci95": [
             100,
-            100
+            174.94283753624381
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -697,10 +697,10 @@
           "gate_reason": null
         },
         "anthropic/claude-sonnet-5": {
-          "score": 100,
+          "score": 120.60979290702967,
           "ci95": [
             100,
-            100
+            174.94283753624381
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -714,10 +714,10 @@
           "gate_reason": null
         },
         "deepinfra/MiniMaxAI/MiniMax-M3": {
-          "score": 100,
+          "score": 120.60979290702967,
           "ci95": [
             100,
-            100
+            174.94283753624381
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -731,10 +731,10 @@
           "gate_reason": null
         },
         "deepinfra/Qwen/Qwen3-30B-A3B": {
-          "score": 100,
+          "score": 120.60979290702967,
           "ci95": [
             100,
-            100
+            174.94283753624381
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -748,10 +748,10 @@
           "gate_reason": null
         },
         "deepinfra/Qwen/Qwen3-Coder-480B-A35B-Instruct-Turbo": {
-          "score": 100,
+          "score": 120.60979290702967,
           "ci95": [
             100,
-            100
+            174.94283753624381
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -765,10 +765,10 @@
           "gate_reason": null
         },
         "deepinfra/google/gemma-4-31B-it": {
-          "score": 100,
+          "score": 120.60979290702967,
           "ci95": [
             100,
-            100
+            174.94283753624381
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -782,10 +782,10 @@
           "gate_reason": null
         },
         "deepinfra/meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8": {
-          "score": 100,
+          "score": 120.60979290702967,
           "ci95": [
             100,
-            100
+            174.94283753624381
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -799,10 +799,10 @@
           "gate_reason": null
         },
         "deepinfra/meta-llama/Llama-4-Scout-17B-16E-Instruct": {
-          "score": 100,
+          "score": 120.60979290702967,
           "ci95": [
             100,
-            100
+            174.94283753624381
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -816,10 +816,10 @@
           "gate_reason": null
         },
         "deepinfra/mistralai/Mistral-Small-3.2-24B-Instruct-2506": {
-          "score": 100,
+          "score": 120.60979290702967,
           "ci95": [
             100,
-            100
+            174.94283753624381
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -833,10 +833,10 @@
           "gate_reason": null
         },
         "deepinfra/moonshotai/Kimi-K2.6": {
-          "score": 88.15319764170162,
+          "score": 120.60979290702967,
           "ci95": [
-            44.07420771142781,
-            100
+            100,
+            174.94283753624381
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -850,10 +850,10 @@
           "gate_reason": null
         },
         "deepinfra/moonshotai/Kimi-K2.7-Code": {
-          "score": 100,
+          "score": 120.60979290702967,
           "ci95": [
             100,
-            100
+            174.94283753624381
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -867,10 +867,10 @@
           "gate_reason": null
         },
         "deepinfra/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B": {
-          "score": 100,
+          "score": 120.60979290702967,
           "ci95": [
             100,
-            100
+            174.94283753624381
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -884,10 +884,10 @@
           "gate_reason": null
         },
         "deepinfra/openai/gpt-oss-120b": {
-          "score": 100,
+          "score": 120.60979290702967,
           "ci95": [
             100,
-            100
+            174.94283753624381
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -901,10 +901,10 @@
           "gate_reason": null
         },
         "deepinfra/zai-org/GLM-5.2": {
-          "score": 75.90434166827448,
+          "score": 105.12225765703019,
           "ci95": [
-            41.604201703133654,
-            100
+            79.46836664906725,
+            171.06067909241102
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -918,10 +918,10 @@
           "gate_reason": null
         },
         "deepseek/deepseek-chat": {
-          "score": 100,
+          "score": 120.60979290702967,
           "ci95": [
             100,
-            100
+            174.94283753624381
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -935,10 +935,10 @@
           "gate_reason": null
         },
         "deepseek/deepseek-reasoner": {
-          "score": 100,
+          "score": 120.60979290702967,
           "ci95": [
             100,
-            100
+            174.94283753624381
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -952,10 +952,10 @@
           "gate_reason": null
         },
         "deepseek/deepseek-v4-flash": {
-          "score": 100,
+          "score": 120.60979290702967,
           "ci95": [
             100,
-            100
+            174.94283753624381
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -969,10 +969,10 @@
           "gate_reason": null
         },
         "deepseek/deepseek-v4-pro": {
-          "score": 100,
+          "score": 120.60979290702967,
           "ci95": [
             100,
-            100
+            174.94283753624381
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -986,10 +986,10 @@
           "gate_reason": null
         },
         "fireworks/glm-5p2": {
-          "score": 100,
+          "score": 120.60979290702967,
           "ci95": [
             100,
-            100
+            174.94283753624381
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1003,10 +1003,10 @@
           "gate_reason": null
         },
         "fireworks/gpt-oss-120b": {
-          "score": 100,
+          "score": 120.60979290702967,
           "ci95": [
             100,
-            100
+            174.94283753624381
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1020,10 +1020,10 @@
           "gate_reason": null
         },
         "fireworks/kimi-k3": {
-          "score": 100,
+          "score": 120.60979290702967,
           "ci95": [
             100,
-            100
+            174.94283753624381
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1037,10 +1037,10 @@
           "gate_reason": null
         },
         "gemini/gemini-2.5-flash": {
-          "score": 100,
+          "score": 120.60979290702967,
           "ci95": [
             100,
-            100
+            174.94283753624381
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1054,10 +1054,10 @@
           "gate_reason": null
         },
         "gemini/gemini-3-flash-preview": {
-          "score": 100,
+          "score": 120.60979290702967,
           "ci95": [
             100,
-            100
+            174.94283753624381
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1071,10 +1071,10 @@
           "gate_reason": null
         },
         "gemini/gemini-3.1-flash-lite": {
-          "score": 100,
+          "score": 120.60979290702967,
           "ci95": [
             100,
-            100
+            174.94283753624381
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1088,10 +1088,10 @@
           "gate_reason": null
         },
         "gemini/gemini-3.1-pro-preview": {
-          "score": 100,
+          "score": 120.60979290702967,
           "ci95": [
             100,
-            100
+            174.94283753624381
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1105,10 +1105,10 @@
           "gate_reason": null
         },
         "grok/grok-4-1-fast": {
-          "score": 99.99985185718621,
+          "score": 121.73353221407119,
           "ci95": [
-            98.48096274377515,
-            101.53475992850309
+            100,
+            178.59346049316522
           ],
           "tier": 1,
           "distinct_n": 10,
@@ -1122,10 +1122,10 @@
           "gate_reason": null
         },
         "grok/grok-4.3": {
-          "score": 99.99985185718621,
+          "score": 121.73353221407119,
           "ci95": [
-            98.48096274377515,
-            101.53475992850309
+            100,
+            178.59346049316522
           ],
           "tier": 1,
           "distinct_n": 10,
@@ -1139,10 +1139,10 @@
           "gate_reason": null
         },
         "grok/grok-4.5": {
-          "score": 99.99985185718621,
+          "score": 121.73353221407119,
           "ci95": [
-            98.48096274377515,
-            101.53475992850309
+            100,
+            178.59346049316522
           ],
           "tier": 1,
           "distinct_n": 10,
@@ -1156,10 +1156,10 @@
           "gate_reason": null
         },
         "openai/gpt-5-mini": {
-          "score": 99.99999999999999,
+          "score": 120.60979290702966,
           "ci95": [
-            99.99999999999997,
-            100.00000000000003
+            100,
+            174.94283753624381
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1173,10 +1173,10 @@
           "gate_reason": null
         },
         "openai/gpt-5.2": {
-          "score": 99.99999999999999,
+          "score": 120.60979290702966,
           "ci95": [
-            99.99999999999997,
-            100.00000000000003
+            100,
+            174.94283753624381
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1190,10 +1190,10 @@
           "gate_reason": null
         },
         "openai/gpt-5.4": {
-          "score": 99.99999999999999,
+          "score": 120.60979290702966,
           "ci95": [
-            99.99999999999997,
-            100.00000000000003
+            100,
+            174.94283753624381
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1207,10 +1207,10 @@
           "gate_reason": null
         },
         "openai/gpt-5.4-mini": {
-          "score": 99.99999999999999,
+          "score": 120.60979290702966,
           "ci95": [
-            99.99999999999997,
-            100.00000000000003
+            100,
+            174.94283753624381
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1224,10 +1224,10 @@
           "gate_reason": null
         },
         "openai/gpt-5.4-nano": {
-          "score": 99.99999999999999,
+          "score": 120.60979290702966,
           "ci95": [
-            99.99999999999997,
-            100.00000000000003
+            100,
+            174.94283753624381
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1241,10 +1241,10 @@
           "gate_reason": null
         },
         "openai/gpt-5.5": {
-          "score": 99.99999999999999,
+          "score": 120.60979290702966,
           "ci95": [
-            99.99999999999997,
-            100.00000000000003
+            100,
+            174.94283753624381
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1258,10 +1258,10 @@
           "gate_reason": null
         },
         "openai/gpt-5.5-pro": {
-          "score": 99.99999999999999,
+          "score": 120.60979290702966,
           "ci95": [
-            99.99999999999997,
-            100.00000000000003
+            100,
+            174.94283753624381
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1282,10 +1282,10 @@
       "tiers": 1,
       "models": {
         "anthropic/claude-fable-5": {
-          "score": 105.90603093604516,
+          "score": 127.8090023995246,
           "ci95": [
-            74.2114965303292,
-            274.9472102397885
+            99.99999999999999,
+            400.1486788207279
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1299,10 +1299,10 @@
           "gate_reason": null
         },
         "anthropic/claude-haiku-4-5": {
-          "score": 140.267017481847,
+          "score": 127.8090023995246,
           "ci95": [
-            100,
-            442.65616952721064
+            99.99999999999999,
+            400.1486788207279
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1316,10 +1316,10 @@
           "gate_reason": null
         },
         "anthropic/claude-opus-5": {
-          "score": 67.31684374185826,
+          "score": 61.21771426542283,
           "ci95": [
-            7.398133380735946,
-            114.54595919771761
+            6.245356376044616,
+            100.00000000000001
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1333,10 +1333,10 @@
           "gate_reason": null
         },
         "anthropic/claude-sonnet-5": {
-          "score": 36.82898377117179,
+          "score": 18.704265108041717,
           "ci95": [
-            7.398133380735946,
-            81.29038015647457
+            1.8818963557023036,
+            53.72929163211428
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1350,10 +1350,10 @@
           "gate_reason": null
         },
         "deepinfra/MiniMaxAI/MiniMax-M3": {
-          "score": 140.267017481847,
+          "score": 111.64760887987741,
           "ci95": [
-            100,
-            442.65616952721064
+            55.078898077587276,
+            400.1486788207279
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1367,10 +1367,10 @@
           "gate_reason": null
         },
         "deepinfra/Qwen/Qwen3-30B-A3B": {
-          "score": 59.204218992887704,
+          "score": 73.75986890969347,
           "ci95": [
-            20.103274240427883,
-            121.94344689360571
+            20.46943823354775,
+            179.64674757207834
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1384,10 +1384,10 @@
           "gate_reason": null
         },
         "deepinfra/Qwen/Qwen3-Coder-480B-A35B-Instruct-Turbo": {
-          "score": 61.476433928680876,
+          "score": 55.86371290187462,
           "ci95": [
-            5.083484018960883,
-            274.94721023978855
+            5.319516813877825,
+            258.9998053881308
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1401,10 +1401,10 @@
           "gate_reason": null
         },
         "deepinfra/google/gemma-4-31B-it": {
-          "score": 58.46114628077551,
+          "score": 71.14846578101022,
           "ci95": [
-            7.398133380735946,
-            114.52058501146767
+            31.30699365415405,
+            100.00000000000001
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1418,10 +1418,10 @@
           "gate_reason": null
         },
         "deepinfra/meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8": {
-          "score": 81.98469902952516,
+          "score": 111.64760887987734,
           "ci95": [
-            11.035576239689656,
-            442.65616952721064
+            35.669420874480686,
+            400.1486788207279
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1435,10 +1435,10 @@
           "gate_reason": null
         },
         "deepinfra/meta-llama/Llama-4-Scout-17B-16E-Instruct": {
-          "score": 140.267017481847,
+          "score": 97.65175409657992,
           "ci95": [
-            100,
-            442.65616952721064
+            29.62123353169046,
+            400.1486788207279
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1452,10 +1452,10 @@
           "gate_reason": null
         },
         "deepinfra/mistralai/Mistral-Small-3.2-24B-Instruct-2506": {
-          "score": 71.54911606415241,
+          "score": 65.09537155616854,
           "ci95": [
-            5.083484018960883,
-            442.65616952721064
+            5.319516813877825,
+            400.1486788207279
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1469,10 +1469,10 @@
           "gate_reason": null
         },
         "deepinfra/moonshotai/Kimi-K2.6": {
-          "score": 107.16096382455677,
+          "score": 111.64760887987734,
           "ci95": [
-            35.909310682198125,
-            442.65616952721064
+            55.18316932716882,
+            400.1486788207279
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1486,10 +1486,10 @@
           "gate_reason": null
         },
         "deepinfra/moonshotai/Kimi-K2.7-Code": {
-          "score": 140.267017481847,
+          "score": 85.42113931220906,
           "ci95": [
-            100,
-            442.65616952721064
+            29.236452830105765,
+            400.1486788207279
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1503,10 +1503,10 @@
           "gate_reason": null
         },
         "deepinfra/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B": {
-          "score": 140.267017481847,
+          "score": 127.8090023995246,
           "ci95": [
-            100,
-            442.65616952721064
+            99.99999999999999,
+            400.1486788207279
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1520,10 +1520,10 @@
           "gate_reason": null
         },
         "deepinfra/openai/gpt-oss-120b": {
-          "score": 93.76628342628486,
+          "score": 111.64760887987734,
           "ci95": [
-            21.368825634160707,
-            442.65616952721064
+            55.815722377343874,
+            400.1486788207279
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1537,10 +1537,10 @@
           "gate_reason": null
         },
         "deepinfra/zai-org/GLM-5.2": {
-          "score": 107.16096382455677,
+          "score": 111.64760887987734,
           "ci95": [
-            35.31995058264089,
-            442.65616952721064
+            55.50110994643931,
+            400.1486788207279
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1554,10 +1554,10 @@
           "gate_reason": null
         },
         "deepseek/deepseek-chat": {
-          "score": 71.54911606415241,
+          "score": 65.09537155616854,
           "ci95": [
-            5.083484018960883,
-            442.65616952721064
+            5.319516813877825,
+            400.1486788207279
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1571,10 +1571,10 @@
           "gate_reason": null
         },
         "deepseek/deepseek-reasoner": {
-          "score": 81.98469902952516,
+          "score": 65.09537155616854,
           "ci95": [
-            20.62407771801906,
-            442.65616952721064
+            5.319516813877825,
+            400.1486788207279
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1588,10 +1588,10 @@
           "gate_reason": null
         },
         "deepseek/deepseek-v4-flash": {
-          "score": 71.54911606415241,
+          "score": 74.64878059320228,
           "ci95": [
-            5.083484018960883,
-            442.65616952721064
+            20.76378306144483,
+            400.1486788207279
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1605,10 +1605,10 @@
           "gate_reason": null
         },
         "deepseek/deepseek-v4-pro": {
-          "score": 107.16096382455677,
+          "score": 96.50661674003953,
           "ci95": [
-            35.18451133884561,
-            442.65616952721064
+            41.34020263981927,
+            226.1685693110016
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1622,10 +1622,10 @@
           "gate_reason": null
         },
         "fireworks/glm-5p2": {
-          "score": 140.267017481847,
+          "score": 127.8090023995246,
           "ci95": [
-            100,
-            442.65616952721064
+            99.99999999999999,
+            400.1486788207279
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1639,10 +1639,10 @@
           "gate_reason": null
         },
         "fireworks/gpt-oss-120b": {
-          "score": 140.267017481847,
+          "score": 111.64760887987742,
           "ci95": [
-            100,
-            442.65616952721064
+            72.63323438309428,
+            400.1486788207279
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1656,10 +1656,10 @@
           "gate_reason": null
         },
         "fireworks/kimi-k3": {
-          "score": 92.6662039226303,
+          "score": 97.65175409657992,
           "ci95": [
-            30.892400286634828,
-            223.22117812835126
+            29.425318507222908,
+            400.1486788207279
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1673,10 +1673,10 @@
           "gate_reason": null
         },
         "gemini/gemini-2.5-flash": {
-          "score": 71.5491160641524,
+          "score": 65.09537155616853,
           "ci95": [
-            5.083484018960884,
-            442.65616952721064
+            5.319516813877825,
+            400.1486788207279
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1690,10 +1690,10 @@
           "gate_reason": null
         },
         "gemini/gemini-3-flash-preview": {
-          "score": 107.16096382455677,
+          "score": 97.65175409657992,
           "ci95": [
-            42.498022851595756,
-            442.65616952721064
+            40.86621631143223,
+            400.1486788207279
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1707,10 +1707,10 @@
           "gate_reason": null
         },
         "gemini/gemini-3.1-flash-lite": {
-          "score": 71.5491160641524,
+          "score": 65.09537155616853,
           "ci95": [
-            5.083484018960884,
-            442.65616952721064
+            5.319516813877825,
+            400.1486788207279
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1724,10 +1724,10 @@
           "gate_reason": null
         },
         "gemini/gemini-3.1-pro-preview": {
-          "score": 140.267017481847,
+          "score": 127.8090023995246,
           "ci95": [
-            100,
-            442.65616952721064
+            99.99999999999999,
+            400.1486788207279
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1783,10 +1783,10 @@
           "gate_reason": "insufficient data (n=5, need ≥10 distinct outcomes); insufficient fixtures (1, need ≥2)"
         },
         "openai/gpt-5-mini": {
-          "score": 140.267017481847,
+          "score": 127.8090023995246,
           "ci95": [
-            100,
-            442.65616952721064
+            99.99999999999999,
+            400.1486788207279
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1800,10 +1800,10 @@
           "gate_reason": null
         },
         "openai/gpt-5.2": {
-          "score": 140.267017481847,
+          "score": 127.8090023995246,
           "ci95": [
-            100,
-            442.65616952721064
+            99.99999999999999,
+            400.1486788207279
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1817,10 +1817,10 @@
           "gate_reason": null
         },
         "openai/gpt-5.4": {
-          "score": 140.267017481847,
+          "score": 127.8090023995246,
           "ci95": [
-            100,
-            442.65616952721064
+            99.99999999999999,
+            400.1486788207279
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1834,10 +1834,10 @@
           "gate_reason": null
         },
         "openai/gpt-5.4-mini": {
-          "score": 140.267017481847,
+          "score": 127.8090023995246,
           "ci95": [
-            100,
-            442.65616952721064
+            99.99999999999999,
+            400.1486788207279
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1851,10 +1851,10 @@
           "gate_reason": null
         },
         "openai/gpt-5.4-nano": {
-          "score": 140.267017481847,
+          "score": 127.8090023995246,
           "ci95": [
-            100,
-            442.65616952721064
+            99.99999999999999,
+            400.1486788207279
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1868,10 +1868,10 @@
           "gate_reason": null
         },
         "openai/gpt-5.5": {
-          "score": 140.267017481847,
+          "score": 127.8090023995246,
           "ci95": [
-            100,
-            442.65616952721064
+            99.99999999999999,
+            400.1486788207279
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1885,10 +1885,10 @@
           "gate_reason": null
         },
         "openai/gpt-5.5-pro": {
-          "score": 140.267017481847,
+          "score": 127.8090023995246,
           "ci95": [
-            100,
-            442.65616952721064
+            99.99999999999999,
+            400.1486788207279
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1909,10 +1909,10 @@
       "tiers": 2,
       "models": {
         "anthropic/claude-fable-5": {
-          "score": 100,
+          "score": 104.55034739146647,
           "ci95": [
             100,
-            100
+            119.97704099068143
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1926,10 +1926,10 @@
           "gate_reason": null
         },
         "anthropic/claude-haiku-4-5": {
-          "score": 100,
+          "score": 104.55034739146647,
           "ci95": [
             100,
-            100
+            119.97704099068143
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -1943,230 +1943,9 @@
           "gate_reason": null
         },
         "anthropic/claude-opus-5": {
-          "score": 100,
+          "score": 91.48482035553171,
           "ci95": [
-            100,
-            100
-          ],
-          "tier": 1,
-          "distinct_n": 15,
-          "pair_count": 2475,
-          "fixtures": 3,
-          "provenance": {
-            "probe_derived_pairs": 2475,
-            "community_pairs": 0
-          },
-          "gated": false,
-          "gate_reason": null
-        },
-        "anthropic/claude-sonnet-5": {
-          "score": 100,
-          "ci95": [
-            100,
-            100
-          ],
-          "tier": 1,
-          "distinct_n": 15,
-          "pair_count": 2475,
-          "fixtures": 3,
-          "provenance": {
-            "probe_derived_pairs": 2475,
-            "community_pairs": 0
-          },
-          "gated": false,
-          "gate_reason": null
-        },
-        "deepinfra/MiniMaxAI/MiniMax-M3": {
-          "score": 100,
-          "ci95": [
-            100,
-            100
-          ],
-          "tier": 1,
-          "distinct_n": 15,
-          "pair_count": 2475,
-          "fixtures": 3,
-          "provenance": {
-            "probe_derived_pairs": 2475,
-            "community_pairs": 0
-          },
-          "gated": false,
-          "gate_reason": null
-        },
-        "deepinfra/Qwen/Qwen3-30B-A3B": {
-          "score": 100,
-          "ci95": [
-            100,
-            100
-          ],
-          "tier": 1,
-          "distinct_n": 15,
-          "pair_count": 2475,
-          "fixtures": 3,
-          "provenance": {
-            "probe_derived_pairs": 2475,
-            "community_pairs": 0
-          },
-          "gated": false,
-          "gate_reason": null
-        },
-        "deepinfra/Qwen/Qwen3-Coder-480B-A35B-Instruct-Turbo": {
-          "score": 100,
-          "ci95": [
-            100,
-            100
-          ],
-          "tier": 1,
-          "distinct_n": 15,
-          "pair_count": 2475,
-          "fixtures": 3,
-          "provenance": {
-            "probe_derived_pairs": 2475,
-            "community_pairs": 0
-          },
-          "gated": false,
-          "gate_reason": null
-        },
-        "deepinfra/google/gemma-4-31B-it": {
-          "score": 100,
-          "ci95": [
-            100,
-            100
-          ],
-          "tier": 1,
-          "distinct_n": 15,
-          "pair_count": 2475,
-          "fixtures": 3,
-          "provenance": {
-            "probe_derived_pairs": 2475,
-            "community_pairs": 0
-          },
-          "gated": false,
-          "gate_reason": null
-        },
-        "deepinfra/meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8": {
-          "score": 100,
-          "ci95": [
-            100,
-            100
-          ],
-          "tier": 1,
-          "distinct_n": 15,
-          "pair_count": 2475,
-          "fixtures": 3,
-          "provenance": {
-            "probe_derived_pairs": 2475,
-            "community_pairs": 0
-          },
-          "gated": false,
-          "gate_reason": null
-        },
-        "deepinfra/meta-llama/Llama-4-Scout-17B-16E-Instruct": {
-          "score": 100,
-          "ci95": [
-            100,
-            100
-          ],
-          "tier": 1,
-          "distinct_n": 15,
-          "pair_count": 2475,
-          "fixtures": 3,
-          "provenance": {
-            "probe_derived_pairs": 2475,
-            "community_pairs": 0
-          },
-          "gated": false,
-          "gate_reason": null
-        },
-        "deepinfra/mistralai/Mistral-Small-3.2-24B-Instruct-2506": {
-          "score": 100,
-          "ci95": [
-            100,
-            100
-          ],
-          "tier": 1,
-          "distinct_n": 15,
-          "pair_count": 2475,
-          "fixtures": 3,
-          "provenance": {
-            "probe_derived_pairs": 2475,
-            "community_pairs": 0
-          },
-          "gated": false,
-          "gate_reason": null
-        },
-        "deepinfra/moonshotai/Kimi-K2.6": {
-          "score": 100,
-          "ci95": [
-            100,
-            100
-          ],
-          "tier": 1,
-          "distinct_n": 15,
-          "pair_count": 2475,
-          "fixtures": 3,
-          "provenance": {
-            "probe_derived_pairs": 2475,
-            "community_pairs": 0
-          },
-          "gated": false,
-          "gate_reason": null
-        },
-        "deepinfra/moonshotai/Kimi-K2.7-Code": {
-          "score": 100,
-          "ci95": [
-            100,
-            100
-          ],
-          "tier": 1,
-          "distinct_n": 15,
-          "pair_count": 2475,
-          "fixtures": 3,
-          "provenance": {
-            "probe_derived_pairs": 2475,
-            "community_pairs": 0
-          },
-          "gated": false,
-          "gate_reason": null
-        },
-        "deepinfra/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B": {
-          "score": 100,
-          "ci95": [
-            100,
-            100
-          ],
-          "tier": 1,
-          "distinct_n": 15,
-          "pair_count": 2475,
-          "fixtures": 3,
-          "provenance": {
-            "probe_derived_pairs": 2475,
-            "community_pairs": 0
-          },
-          "gated": false,
-          "gate_reason": null
-        },
-        "deepinfra/openai/gpt-oss-120b": {
-          "score": 100,
-          "ci95": [
-            100,
-            100
-          ],
-          "tier": 1,
-          "distinct_n": 15,
-          "pair_count": 2475,
-          "fixtures": 3,
-          "provenance": {
-            "probe_derived_pairs": 2475,
-            "community_pairs": 0
-          },
-          "gated": false,
-          "gate_reason": null
-        },
-        "deepinfra/zai-org/GLM-5.2": {
-          "score": 76.47612326855264,
-          "ci95": [
-            42.86802513891802,
+            69.47102499994351,
             100
           ],
           "tier": 2,
@@ -2180,11 +1959,232 @@
           "gated": false,
           "gate_reason": null
         },
-        "deepseek/deepseek-chat": {
-          "score": 100,
+        "anthropic/claude-sonnet-5": {
+          "score": 104.55034739146647,
           "ci95": [
-            99.99999999999999,
-            100
+            100,
+            119.97704099068143
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/MiniMaxAI/MiniMax-M3": {
+          "score": 104.55034739146647,
+          "ci95": [
+            100,
+            119.97704099068143
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/Qwen/Qwen3-30B-A3B": {
+          "score": 104.55034739146647,
+          "ci95": [
+            100,
+            119.97704099068143
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/Qwen/Qwen3-Coder-480B-A35B-Instruct-Turbo": {
+          "score": 104.55034739146647,
+          "ci95": [
+            100,
+            119.97704099068143
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/google/gemma-4-31B-it": {
+          "score": 104.55034739146647,
+          "ci95": [
+            100,
+            119.97704099068143
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8": {
+          "score": 104.55034739146647,
+          "ci95": [
+            100,
+            119.97704099068143
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/meta-llama/Llama-4-Scout-17B-16E-Instruct": {
+          "score": 104.55034739146647,
+          "ci95": [
+            100,
+            119.97704099068143
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/mistralai/Mistral-Small-3.2-24B-Instruct-2506": {
+          "score": 104.55034739146647,
+          "ci95": [
+            100,
+            119.97704099068143
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/moonshotai/Kimi-K2.6": {
+          "score": 104.55034739146647,
+          "ci95": [
+            100,
+            119.97704099068143
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/moonshotai/Kimi-K2.7-Code": {
+          "score": 104.55034739146647,
+          "ci95": [
+            100,
+            119.97704099068143
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B": {
+          "score": 104.55034739146647,
+          "ci95": [
+            100,
+            119.97704099068143
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/openai/gpt-oss-120b": {
+          "score": 104.55034739146647,
+          "ci95": [
+            100,
+            119.97704099068143
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepinfra/zai-org/GLM-5.2": {
+          "score": 104.55034739146647,
+          "ci95": [
+            100,
+            119.97704099068143
+          ],
+          "tier": 1,
+          "distinct_n": 15,
+          "pair_count": 2475,
+          "fixtures": 3,
+          "provenance": {
+            "probe_derived_pairs": 2475,
+            "community_pairs": 0
+          },
+          "gated": false,
+          "gate_reason": null
+        },
+        "deepseek/deepseek-chat": {
+          "score": 104.55034739146647,
+          "ci95": [
+            100,
+            119.97704099068143
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -2198,10 +2198,10 @@
           "gate_reason": null
         },
         "deepseek/deepseek-reasoner": {
-          "score": 100,
+          "score": 104.55034739146647,
           "ci95": [
-            99.99999999999999,
-            100
+            100,
+            119.97704099068143
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -2215,10 +2215,10 @@
           "gate_reason": null
         },
         "deepseek/deepseek-v4-flash": {
-          "score": 100,
+          "score": 104.55034739146647,
           "ci95": [
-            99.99999999999999,
-            100
+            100,
+            119.97704099068143
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -2232,10 +2232,10 @@
           "gate_reason": null
         },
         "deepseek/deepseek-v4-pro": {
-          "score": 100,
+          "score": 104.55034739146647,
           "ci95": [
-            99.99999999999999,
-            100
+            100,
+            119.97704099068143
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -2249,10 +2249,10 @@
           "gate_reason": null
         },
         "fireworks/glm-5p2": {
-          "score": 100,
+          "score": 104.55034739146647,
           "ci95": [
-            99.99999999999999,
-            100
+            100,
+            119.97704099068143
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -2266,10 +2266,10 @@
           "gate_reason": null
         },
         "fireworks/gpt-oss-120b": {
-          "score": 100,
+          "score": 104.55034739146647,
           "ci95": [
-            99.99999999999999,
-            100
+            100,
+            119.97704099068143
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -2283,10 +2283,10 @@
           "gate_reason": null
         },
         "fireworks/kimi-k3": {
-          "score": 100,
+          "score": 104.55034739146647,
           "ci95": [
-            99.99999999999999,
-            100
+            100,
+            119.97704099068143
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -2300,10 +2300,10 @@
           "gate_reason": null
         },
         "gemini/gemini-2.5-flash": {
-          "score": 100,
+          "score": 104.55034739146647,
           "ci95": [
-            99.99999999999999,
-            100
+            100,
+            119.97704099068143
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -2317,10 +2317,10 @@
           "gate_reason": null
         },
         "gemini/gemini-3-flash-preview": {
-          "score": 100,
+          "score": 104.55034739146647,
           "ci95": [
-            99.99999999999999,
-            100
+            100,
+            119.97704099068143
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -2334,10 +2334,10 @@
           "gate_reason": null
         },
         "gemini/gemini-3.1-flash-lite": {
-          "score": 100,
+          "score": 104.55034739146647,
           "ci95": [
-            99.99999999999999,
-            100
+            100,
+            119.97704099068143
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -2351,10 +2351,10 @@
           "gate_reason": null
         },
         "gemini/gemini-3.1-pro-preview": {
-          "score": 100,
+          "score": 104.55034739146647,
           "ci95": [
-            99.99999999999999,
-            100
+            100,
+            119.97704099068143
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -2368,10 +2368,10 @@
           "gate_reason": null
         },
         "openai/gpt-5-mini": {
-          "score": 100,
+          "score": 104.55034739146647,
           "ci95": [
-            99.99999999999999,
-            100
+            100,
+            119.97704099068143
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -2385,10 +2385,10 @@
           "gate_reason": null
         },
         "openai/gpt-5.2": {
-          "score": 100,
+          "score": 104.55034739146647,
           "ci95": [
-            99.99999999999999,
-            100
+            100,
+            119.97704099068143
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -2402,10 +2402,10 @@
           "gate_reason": null
         },
         "openai/gpt-5.4": {
-          "score": 100,
+          "score": 104.55034739146647,
           "ci95": [
-            99.99999999999999,
-            100
+            100,
+            119.97704099068143
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -2419,10 +2419,10 @@
           "gate_reason": null
         },
         "openai/gpt-5.4-mini": {
-          "score": 100,
+          "score": 104.55034739146647,
           "ci95": [
-            99.99999999999999,
-            100
+            100,
+            119.97704099068143
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -2436,10 +2436,10 @@
           "gate_reason": null
         },
         "openai/gpt-5.4-nano": {
-          "score": 100,
+          "score": 104.55034739146647,
           "ci95": [
-            99.99999999999999,
-            100
+            100,
+            119.97704099068143
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -2453,10 +2453,10 @@
           "gate_reason": null
         },
         "openai/gpt-5.5": {
-          "score": 100,
+          "score": 104.55034739146647,
           "ci95": [
-            99.99999999999999,
-            100
+            100,
+            119.97704099068143
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -2470,10 +2470,10 @@
           "gate_reason": null
         },
         "openai/gpt-5.5-pro": {
-          "score": 100,
+          "score": 104.55034739146647,
           "ci95": [
-            99.99999999999999,
-            100
+            100,
+            119.97704099068143
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -2494,7 +2494,7 @@
       "tiers": 2,
       "models": {
         "anthropic/claude-fable-5": {
-          "score": 100.00000000000001,
+          "score": 100,
           "ci95": [
             99.99999999999999,
             100.00000000000001
@@ -2511,10 +2511,10 @@
           "gate_reason": null
         },
         "anthropic/claude-haiku-4-5": {
-          "score": 8.456022242695685,
+          "score": 8.373703456934658,
           "ci95": [
-            0.8624953060424039,
-            22.804123425168687
+            0.01647831331271264,
+            33.4663461105488
           ],
           "tier": 2,
           "distinct_n": 15,
@@ -2528,7 +2528,7 @@
           "gate_reason": null
         },
         "anthropic/claude-opus-5": {
-          "score": 100.00000000000001,
+          "score": 100,
           "ci95": [
             99.99999999999999,
             100.00000000000001
@@ -2545,7 +2545,7 @@
           "gate_reason": null
         },
         "anthropic/claude-sonnet-5": {
-          "score": 100.00000000000001,
+          "score": 100,
           "ci95": [
             99.99999999999999,
             100.00000000000001
@@ -2562,7 +2562,7 @@
           "gate_reason": null
         },
         "deepinfra/MiniMaxAI/MiniMax-M3": {
-          "score": 100.00000000000001,
+          "score": 100,
           "ci95": [
             99.99999999999999,
             100.00000000000001
@@ -2579,7 +2579,7 @@
           "gate_reason": null
         },
         "deepinfra/Qwen/Qwen3-30B-A3B": {
-          "score": 100.00000000000001,
+          "score": 100,
           "ci95": [
             99.99999999999999,
             100.00000000000001
@@ -2596,9 +2596,9 @@
           "gate_reason": null
         },
         "deepinfra/Qwen/Qwen3-Coder-480B-A35B-Instruct-Turbo": {
-          "score": 55.780349118273485,
+          "score": 64.57368373543204,
           "ci95": [
-            16.879731512417802,
+            18.29701370228288,
             100.00000000000001
           ],
           "tier": 2,
@@ -2613,7 +2613,7 @@
           "gate_reason": null
         },
         "deepinfra/google/gemma-4-31B-it": {
-          "score": 100.00000000000001,
+          "score": 100,
           "ci95": [
             99.99999999999999,
             100.00000000000001
@@ -2630,10 +2630,10 @@
           "gate_reason": null
         },
         "deepinfra/meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8": {
-          "score": 3.233610843488788,
+          "score": 3.2513126232821676,
           "ci95": [
-            0.8624953060424037,
-            3.8122853455269987
+            0.01647831331271264,
+            3.610230869072069
           ],
           "tier": 2,
           "distinct_n": 15,
@@ -2647,9 +2647,9 @@
           "gate_reason": null
         },
         "deepinfra/meta-llama/Llama-4-Scout-17B-16E-Instruct": {
-          "score": 47.87279221750869,
+          "score": 47.68269230515341,
           "ci95": [
-            2.0356747452797164,
+            2.1024224712103643,
             100.00000000000001
           ],
           "tier": 2,
@@ -2664,10 +2664,10 @@
           "gate_reason": null
         },
         "deepinfra/mistralai/Mistral-Small-3.2-24B-Instruct-2506": {
-          "score": 19.367258115329914,
+          "score": 19.185770659027533,
           "ci95": [
-            1.4778399701931422,
-            100
+            1.6312270483262628,
+            99.99999999999999
           ],
           "tier": 2,
           "distinct_n": 15,
@@ -2681,10 +2681,10 @@
           "gate_reason": null
         },
         "deepinfra/moonshotai/Kimi-K2.6": {
-          "score": 100.00000000000001,
+          "score": 100,
           "ci95": [
-            99.99999999999997,
-            100.00000000000003
+            99.99999999999999,
+            100.00000000000001
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -2698,10 +2698,10 @@
           "gate_reason": null
         },
         "deepinfra/moonshotai/Kimi-K2.7-Code": {
-          "score": 100.00000000000001,
+          "score": 100,
           "ci95": [
-            99.99999999999997,
-            100.00000000000003
+            99.99999999999999,
+            100.00000000000001
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -2715,10 +2715,10 @@
           "gate_reason": null
         },
         "deepinfra/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B": {
-          "score": 100.00000000000001,
+          "score": 100,
           "ci95": [
-            99.99999999999997,
-            100.00000000000003
+            99.99999999999999,
+            100.00000000000001
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -2732,10 +2732,10 @@
           "gate_reason": null
         },
         "deepinfra/openai/gpt-oss-120b": {
-          "score": 100.00000000000001,
+          "score": 100,
           "ci95": [
-            99.99999999999997,
-            100.00000000000003
+            99.99999999999999,
+            100.00000000000001
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -2749,10 +2749,10 @@
           "gate_reason": null
         },
         "deepinfra/zai-org/GLM-5.2": {
-          "score": 100.00000000000001,
+          "score": 100,
           "ci95": [
-            99.99999999999997,
-            100.00000000000003
+            99.99999999999999,
+            100.00000000000001
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -2766,9 +2766,9 @@
           "gate_reason": null
         },
         "deepseek/deepseek-chat": {
-          "score": 47.87279221750869,
+          "score": 47.68269230515341,
           "ci95": [
-            2.0356747452797164,
+            2.1024224712103634,
             100.00000000000001
           ],
           "tier": 2,
@@ -2783,10 +2783,10 @@
           "gate_reason": null
         },
         "deepseek/deepseek-reasoner": {
-          "score": 100.00000000000001,
+          "score": 99.99999999999997,
           "ci95": [
-            99.99999999999997,
-            100.00000000000003
+            99.99999999999999,
+            100.00000000000001
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -2800,10 +2800,10 @@
           "gate_reason": null
         },
         "deepseek/deepseek-v4-flash": {
-          "score": 100.00000000000001,
+          "score": 99.99999999999997,
           "ci95": [
-            99.99999999999997,
-            100.00000000000003
+            99.99999999999999,
+            100.00000000000001
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -2817,10 +2817,10 @@
           "gate_reason": null
         },
         "deepseek/deepseek-v4-pro": {
-          "score": 100.00000000000001,
+          "score": 99.99999999999997,
           "ci95": [
-            99.99999999999997,
-            100.00000000000003
+            99.99999999999999,
+            100.00000000000001
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -2834,10 +2834,10 @@
           "gate_reason": null
         },
         "fireworks/glm-5p2": {
-          "score": 100.00000000000001,
+          "score": 99.99999999999997,
           "ci95": [
-            99.99999999999997,
-            100.00000000000003
+            99.99999999999999,
+            100.00000000000001
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -2851,10 +2851,10 @@
           "gate_reason": null
         },
         "fireworks/gpt-oss-120b": {
-          "score": 100.00000000000001,
+          "score": 99.99999999999997,
           "ci95": [
-            99.99999999999997,
-            100.00000000000003
+            99.99999999999999,
+            100.00000000000001
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -2868,10 +2868,10 @@
           "gate_reason": null
         },
         "fireworks/kimi-k3": {
-          "score": 100.00000000000001,
+          "score": 99.99999999999997,
           "ci95": [
-            99.99999999999997,
-            100.00000000000003
+            99.99999999999999,
+            100.00000000000001
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -2885,10 +2885,10 @@
           "gate_reason": null
         },
         "gemini/gemini-2.5-flash": {
-          "score": 100.00000000000001,
+          "score": 99.99999999999997,
           "ci95": [
-            99.99999999999997,
-            100.00000000000003
+            99.99999999999999,
+            100.00000000000001
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -2902,10 +2902,10 @@
           "gate_reason": null
         },
         "gemini/gemini-3-flash-preview": {
-          "score": 100.00000000000001,
+          "score": 99.99999999999997,
           "ci95": [
-            99.99999999999997,
-            100.00000000000003
+            99.99999999999999,
+            100.00000000000001
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -2919,10 +2919,10 @@
           "gate_reason": null
         },
         "gemini/gemini-3.1-flash-lite": {
-          "score": 100.00000000000001,
+          "score": 99.99999999999997,
           "ci95": [
-            99.99999999999997,
-            100.00000000000003
+            99.99999999999999,
+            100.00000000000001
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -2936,10 +2936,10 @@
           "gate_reason": null
         },
         "gemini/gemini-3.1-pro-preview": {
-          "score": 100.00000000000001,
+          "score": 99.99999999999997,
           "ci95": [
-            99.99999999999997,
-            100.00000000000003
+            99.99999999999999,
+            100.00000000000001
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -2953,10 +2953,10 @@
           "gate_reason": null
         },
         "openai/gpt-5-mini": {
-          "score": 100.00000000000001,
+          "score": 99.99999999999997,
           "ci95": [
-            99.99999999999997,
-            100.00000000000003
+            99.99999999999999,
+            100.00000000000001
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -2970,10 +2970,10 @@
           "gate_reason": null
         },
         "openai/gpt-5.2": {
-          "score": 100.00000000000001,
+          "score": 99.99999999999997,
           "ci95": [
-            99.99999999999997,
-            100.00000000000003
+            99.99999999999999,
+            100.00000000000001
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -2987,10 +2987,10 @@
           "gate_reason": null
         },
         "openai/gpt-5.4": {
-          "score": 100.00000000000001,
+          "score": 99.99999999999997,
           "ci95": [
-            99.99999999999997,
-            100.00000000000003
+            99.99999999999999,
+            100.00000000000001
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -3004,9 +3004,9 @@
           "gate_reason": null
         },
         "openai/gpt-5.4-mini": {
-          "score": 86.53615833117627,
+          "score": 74.77647889011864,
           "ci95": [
-            39.14475891837947,
+            27.559468384540832,
             100.00000000000001
           ],
           "tier": 2,
@@ -3021,10 +3021,10 @@
           "gate_reason": null
         },
         "openai/gpt-5.4-nano": {
-          "score": 23.89683376497652,
+          "score": 15.147711537848961,
           "ci95": [
-            1.5700733869190637,
-            64.07695211264954
+            0.0164783133127127,
+            47.521925139040555
           ],
           "tier": 2,
           "distinct_n": 15,
@@ -3038,10 +3038,10 @@
           "gate_reason": null
         },
         "openai/gpt-5.5": {
-          "score": 100.00000000000001,
+          "score": 99.99999999999997,
           "ci95": [
-            99.99999999999997,
-            100.00000000000003
+            99.99999999999999,
+            100.00000000000001
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -3055,10 +3055,10 @@
           "gate_reason": null
         },
         "openai/gpt-5.5-pro": {
-          "score": 100.00000000000001,
+          "score": 99.99999999999997,
           "ci95": [
-            99.99999999999997,
-            100.00000000000003
+            99.99999999999999,
+            100.00000000000001
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -3074,17 +3074,17 @@
       }
     },
     "structure.strict": {
-      "state": "all-tie",
-      "state_detail": "all measured models tie on this task type — no rank distinguishable (37 models, n=370 distinct outcomes)",
-      "tiers": 1,
+      "state": "rank",
+      "state_detail": null,
+      "tiers": 2,
       "models": {
         "anthropic/claude-fable-5": {
-          "score": 100,
+          "score": 87.48291985662865,
           "ci95": [
-            100,
+            56.85810584860726,
             100
           ],
-          "tier": 1,
+          "tier": 2,
           "distinct_n": 10,
           "pair_count": 1800,
           "fixtures": 2,
@@ -3096,10 +3096,10 @@
           "gate_reason": null
         },
         "anthropic/claude-haiku-4-5": {
-          "score": 100,
+          "score": 106.91493225923114,
           "ci95": [
             100,
-            100
+            132.61840677663594
           ],
           "tier": 1,
           "distinct_n": 10,
@@ -3113,10 +3113,10 @@
           "gate_reason": null
         },
         "anthropic/claude-opus-5": {
-          "score": 100,
+          "score": 106.91493225923114,
           "ci95": [
             100,
-            100
+            132.61840677663594
           ],
           "tier": 1,
           "distinct_n": 10,
@@ -3130,10 +3130,10 @@
           "gate_reason": null
         },
         "anthropic/claude-sonnet-5": {
-          "score": 100,
+          "score": 106.91493225923114,
           "ci95": [
             100,
-            100
+            132.61840677663594
           ],
           "tier": 1,
           "distinct_n": 10,
@@ -3147,10 +3147,10 @@
           "gate_reason": null
         },
         "deepinfra/MiniMaxAI/MiniMax-M3": {
-          "score": 100,
+          "score": 106.91493225923114,
           "ci95": [
             100,
-            100
+            132.61840677663594
           ],
           "tier": 1,
           "distinct_n": 10,
@@ -3164,10 +3164,10 @@
           "gate_reason": null
         },
         "deepinfra/Qwen/Qwen3-30B-A3B": {
-          "score": 100,
+          "score": 106.91493225923114,
           "ci95": [
             100,
-            100
+            132.61840677663594
           ],
           "tier": 1,
           "distinct_n": 10,
@@ -3181,10 +3181,10 @@
           "gate_reason": null
         },
         "deepinfra/Qwen/Qwen3-Coder-480B-A35B-Instruct-Turbo": {
-          "score": 100,
+          "score": 106.91493225923114,
           "ci95": [
             100,
-            100
+            132.61840677663594
           ],
           "tier": 1,
           "distinct_n": 10,
@@ -3198,10 +3198,10 @@
           "gate_reason": null
         },
         "deepinfra/google/gemma-4-31B-it": {
-          "score": 100,
+          "score": 106.91493225923114,
           "ci95": [
             100,
-            100
+            132.61840677663594
           ],
           "tier": 1,
           "distinct_n": 10,
@@ -3215,10 +3215,10 @@
           "gate_reason": null
         },
         "deepinfra/meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8": {
-          "score": 100,
+          "score": 106.91493225923114,
           "ci95": [
             100,
-            100
+            132.61840677663594
           ],
           "tier": 1,
           "distinct_n": 10,
@@ -3232,10 +3232,10 @@
           "gate_reason": null
         },
         "deepinfra/meta-llama/Llama-4-Scout-17B-16E-Instruct": {
-          "score": 100,
+          "score": 106.91493225923114,
           "ci95": [
             100,
-            100
+            132.61840677663594
           ],
           "tier": 1,
           "distinct_n": 10,
@@ -3249,10 +3249,10 @@
           "gate_reason": null
         },
         "deepinfra/mistralai/Mistral-Small-3.2-24B-Instruct-2506": {
-          "score": 100,
+          "score": 106.91493225923114,
           "ci95": [
             100,
-            100
+            132.61840677663594
           ],
           "tier": 1,
           "distinct_n": 10,
@@ -3266,10 +3266,10 @@
           "gate_reason": null
         },
         "deepinfra/moonshotai/Kimi-K2.6": {
-          "score": 100,
+          "score": 106.91493225923114,
           "ci95": [
             100,
-            100
+            132.61840677663594
           ],
           "tier": 1,
           "distinct_n": 10,
@@ -3283,10 +3283,10 @@
           "gate_reason": null
         },
         "deepinfra/moonshotai/Kimi-K2.7-Code": {
-          "score": 100,
+          "score": 106.91493225923114,
           "ci95": [
             100,
-            100
+            132.61840677663594
           ],
           "tier": 1,
           "distinct_n": 10,
@@ -3300,10 +3300,10 @@
           "gate_reason": null
         },
         "deepinfra/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B": {
-          "score": 100,
+          "score": 106.91493225923114,
           "ci95": [
             100,
-            100
+            132.61840677663594
           ],
           "tier": 1,
           "distinct_n": 10,
@@ -3317,10 +3317,10 @@
           "gate_reason": null
         },
         "deepinfra/openai/gpt-oss-120b": {
-          "score": 100,
+          "score": 106.91493225923114,
           "ci95": [
             100,
-            100
+            132.61840677663594
           ],
           "tier": 1,
           "distinct_n": 10,
@@ -3334,10 +3334,10 @@
           "gate_reason": null
         },
         "deepinfra/zai-org/GLM-5.2": {
-          "score": 100,
+          "score": 106.91493225923114,
           "ci95": [
             100,
-            100
+            132.61840677663594
           ],
           "tier": 1,
           "distinct_n": 10,
@@ -3351,10 +3351,10 @@
           "gate_reason": null
         },
         "deepseek/deepseek-chat": {
-          "score": 100,
+          "score": 106.91493225923114,
           "ci95": [
             100,
-            100
+            132.61840677663594
           ],
           "tier": 1,
           "distinct_n": 10,
@@ -3368,10 +3368,10 @@
           "gate_reason": null
         },
         "deepseek/deepseek-reasoner": {
-          "score": 100,
+          "score": 106.91493225923114,
           "ci95": [
             100,
-            100
+            132.61840677663594
           ],
           "tier": 1,
           "distinct_n": 10,
@@ -3385,10 +3385,10 @@
           "gate_reason": null
         },
         "deepseek/deepseek-v4-flash": {
-          "score": 100,
+          "score": 106.91493225923114,
           "ci95": [
             100,
-            100
+            132.61840677663594
           ],
           "tier": 1,
           "distinct_n": 10,
@@ -3402,10 +3402,10 @@
           "gate_reason": null
         },
         "deepseek/deepseek-v4-pro": {
-          "score": 100,
+          "score": 106.91493225923114,
           "ci95": [
             100,
-            100
+            132.61840677663594
           ],
           "tier": 1,
           "distinct_n": 10,
@@ -3419,10 +3419,10 @@
           "gate_reason": null
         },
         "fireworks/glm-5p2": {
-          "score": 100,
+          "score": 106.91493225923114,
           "ci95": [
             100,
-            100
+            132.61840677663594
           ],
           "tier": 1,
           "distinct_n": 10,
@@ -3436,10 +3436,10 @@
           "gate_reason": null
         },
         "fireworks/gpt-oss-120b": {
-          "score": 100,
+          "score": 106.91493225923114,
           "ci95": [
             100,
-            100
+            132.61840677663594
           ],
           "tier": 1,
           "distinct_n": 10,
@@ -3453,10 +3453,10 @@
           "gate_reason": null
         },
         "fireworks/kimi-k3": {
-          "score": 100,
+          "score": 106.91493225923114,
           "ci95": [
             100,
-            100
+            132.61840677663594
           ],
           "tier": 1,
           "distinct_n": 10,
@@ -3470,10 +3470,10 @@
           "gate_reason": null
         },
         "gemini/gemini-2.5-flash": {
-          "score": 100,
+          "score": 106.91493225923114,
           "ci95": [
             100,
-            100
+            132.61840677663594
           ],
           "tier": 1,
           "distinct_n": 10,
@@ -3487,10 +3487,10 @@
           "gate_reason": null
         },
         "gemini/gemini-3-flash-preview": {
-          "score": 100,
+          "score": 106.91493225923114,
           "ci95": [
             100,
-            100
+            132.61840677663594
           ],
           "tier": 1,
           "distinct_n": 10,
@@ -3504,10 +3504,10 @@
           "gate_reason": null
         },
         "gemini/gemini-3.1-flash-lite": {
-          "score": 100,
+          "score": 106.91493225923114,
           "ci95": [
             100,
-            100
+            132.61840677663594
           ],
           "tier": 1,
           "distinct_n": 10,
@@ -3521,10 +3521,10 @@
           "gate_reason": null
         },
         "gemini/gemini-3.1-pro-preview": {
-          "score": 100,
+          "score": 106.91493225923114,
           "ci95": [
             100,
-            100
+            132.61840677663594
           ],
           "tier": 1,
           "distinct_n": 10,
@@ -3538,10 +3538,10 @@
           "gate_reason": null
         },
         "grok/grok-4-1-fast": {
-          "score": 100,
+          "score": 106.91493225923114,
           "ci95": [
             100,
-            100
+            132.61840677663594
           ],
           "tier": 1,
           "distinct_n": 10,
@@ -3555,10 +3555,10 @@
           "gate_reason": null
         },
         "grok/grok-4.3": {
-          "score": 100,
+          "score": 106.91493225923114,
           "ci95": [
             100,
-            100
+            132.61840677663594
           ],
           "tier": 1,
           "distinct_n": 10,
@@ -3572,10 +3572,10 @@
           "gate_reason": null
         },
         "grok/grok-4.5": {
-          "score": 100,
+          "score": 106.91493225923114,
           "ci95": [
             100,
-            100
+            132.61840677663594
           ],
           "tier": 1,
           "distinct_n": 10,
@@ -3589,10 +3589,10 @@
           "gate_reason": null
         },
         "openai/gpt-5-mini": {
-          "score": 100,
+          "score": 106.91493225923114,
           "ci95": [
             100,
-            100
+            132.61840677663594
           ],
           "tier": 1,
           "distinct_n": 10,
@@ -3606,10 +3606,10 @@
           "gate_reason": null
         },
         "openai/gpt-5.2": {
-          "score": 100,
+          "score": 106.91493225923114,
           "ci95": [
             100,
-            100
+            132.61840677663594
           ],
           "tier": 1,
           "distinct_n": 10,
@@ -3623,10 +3623,10 @@
           "gate_reason": null
         },
         "openai/gpt-5.4": {
-          "score": 100,
+          "score": 106.91493225923114,
           "ci95": [
             100,
-            100
+            132.61840677663594
           ],
           "tier": 1,
           "distinct_n": 10,
@@ -3640,10 +3640,10 @@
           "gate_reason": null
         },
         "openai/gpt-5.4-mini": {
-          "score": 100,
+          "score": 106.91493225923114,
           "ci95": [
             100,
-            100
+            132.61840677663594
           ],
           "tier": 1,
           "distinct_n": 10,
@@ -3657,10 +3657,10 @@
           "gate_reason": null
         },
         "openai/gpt-5.4-nano": {
-          "score": 100,
+          "score": 106.91493225923114,
           "ci95": [
             100,
-            100
+            132.61840677663594
           ],
           "tier": 1,
           "distinct_n": 10,
@@ -3674,10 +3674,10 @@
           "gate_reason": null
         },
         "openai/gpt-5.5": {
-          "score": 100,
+          "score": 106.91493225923114,
           "ci95": [
             100,
-            100
+            132.61840677663594
           ],
           "tier": 1,
           "distinct_n": 10,
@@ -3691,10 +3691,10 @@
           "gate_reason": null
         },
         "openai/gpt-5.5-pro": {
-          "score": 100,
+          "score": 106.91493225923114,
           "ci95": [
             100,
-            100
+            132.61840677663594
           ],
           "tier": 1,
           "distinct_n": 10,
@@ -3715,9 +3715,9 @@
       "tiers": 1,
       "models": {
         "anthropic/claude-fable-5": {
-          "score": 56.220286131479895,
+          "score": 76.20097131788577,
           "ci95": [
-            0.24409042771229256,
+            33.781488576245465,
             100
           ],
           "tier": 1,
@@ -3732,10 +3732,10 @@
           "gate_reason": null
         },
         "anthropic/claude-haiku-4-5": {
-          "score": 133.36856372846356,
+          "score": 114.5565026496771,
           "ci95": [
             100,
-            2024.0657953562716
+            172.05234989870834
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -3749,10 +3749,10 @@
           "gate_reason": null
         },
         "anthropic/claude-opus-5": {
-          "score": 133.36856372846356,
+          "score": 114.5565026496771,
           "ci95": [
             100,
-            2024.0657953562716
+            172.05234989870834
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -3766,10 +3766,10 @@
           "gate_reason": null
         },
         "anthropic/claude-sonnet-5": {
-          "score": 133.36856372846356,
+          "score": 114.5565026496771,
           "ci95": [
             100,
-            2024.0657953562716
+            172.05234989870834
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -3783,10 +3783,10 @@
           "gate_reason": null
         },
         "deepinfra/MiniMaxAI/MiniMax-M3": {
-          "score": 133.36856372846356,
+          "score": 114.5565026496771,
           "ci95": [
             100,
-            2024.0657953562716
+            172.05234989870834
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -3800,10 +3800,10 @@
           "gate_reason": null
         },
         "deepinfra/Qwen/Qwen3-30B-A3B": {
-          "score": 133.36856372846356,
+          "score": 100.46688807630707,
           "ci95": [
-            100,
-            2024.0657953562716
+            80.07016935149935,
+            148.89741794821947
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -3817,10 +3817,10 @@
           "gate_reason": null
         },
         "deepinfra/Qwen/Qwen3-Coder-480B-A35B-Instruct-Turbo": {
-          "score": 117.08631619841212,
+          "score": 114.5565026496771,
           "ci95": [
-            85.45957058822341,
-            1327.860825805155
+            100,
+            172.05234989870834
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -3834,10 +3834,10 @@
           "gate_reason": null
         },
         "deepinfra/google/gemma-4-31B-it": {
-          "score": 133.36856372846356,
+          "score": 114.5565026496771,
           "ci95": [
             100,
-            2024.0657953562716
+            172.05234989870834
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -3851,10 +3851,10 @@
           "gate_reason": null
         },
         "deepinfra/meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8": {
-          "score": 133.36856372846356,
+          "score": 114.5565026496771,
           "ci95": [
             100,
-            2024.0657953562716
+            172.05234989870834
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -3868,10 +3868,10 @@
           "gate_reason": null
         },
         "deepinfra/meta-llama/Llama-4-Scout-17B-16E-Instruct": {
-          "score": 133.36856372846356,
+          "score": 114.5565026496771,
           "ci95": [
             100,
-            2024.0657953562716
+            172.05234989870834
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -3885,10 +3885,10 @@
           "gate_reason": null
         },
         "deepinfra/mistralai/Mistral-Small-3.2-24B-Instruct-2506": {
-          "score": 133.36856372846356,
+          "score": 114.5565026496771,
           "ci95": [
             100,
-            2024.0657953562716
+            172.05234989870834
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -3902,10 +3902,10 @@
           "gate_reason": null
         },
         "deepinfra/moonshotai/Kimi-K2.6": {
-          "score": 133.36856372846356,
+          "score": 114.5565026496771,
           "ci95": [
             100,
-            2024.0657953562716
+            172.05234989870834
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -3919,10 +3919,10 @@
           "gate_reason": null
         },
         "deepinfra/moonshotai/Kimi-K2.7-Code": {
-          "score": 133.36856372846356,
+          "score": 114.5565026496771,
           "ci95": [
             100,
-            2024.0657953562716
+            172.05234989870834
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -3936,10 +3936,10 @@
           "gate_reason": null
         },
         "deepinfra/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B": {
-          "score": 133.36856372846356,
+          "score": 114.5565026496771,
           "ci95": [
             100,
-            2024.0657953562716
+            172.05234989870834
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -3953,10 +3953,10 @@
           "gate_reason": null
         },
         "deepinfra/openai/gpt-oss-120b": {
-          "score": 133.36856372846356,
+          "score": 114.5565026496771,
           "ci95": [
             100,
-            2024.0657953562716
+            172.05234989870834
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -3970,10 +3970,10 @@
           "gate_reason": null
         },
         "deepinfra/zai-org/GLM-5.2": {
-          "score": 133.36856372846356,
+          "score": 114.5565026496771,
           "ci95": [
             100,
-            2024.0657953562716
+            172.05234989870834
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -3987,10 +3987,10 @@
           "gate_reason": null
         },
         "deepseek/deepseek-chat": {
-          "score": 133.36856372846356,
+          "score": 114.5565026496771,
           "ci95": [
             100,
-            2024.0657953562716
+            172.05234989870834
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -4004,10 +4004,10 @@
           "gate_reason": null
         },
         "deepseek/deepseek-reasoner": {
-          "score": 133.36856372846356,
+          "score": 114.5565026496771,
           "ci95": [
             100,
-            2024.0657953562716
+            172.05234989870834
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -4021,10 +4021,10 @@
           "gate_reason": null
         },
         "deepseek/deepseek-v4-flash": {
-          "score": 133.36856372846356,
+          "score": 114.5565026496771,
           "ci95": [
             100,
-            2024.0657953562716
+            172.05234989870834
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -4038,10 +4038,10 @@
           "gate_reason": null
         },
         "deepseek/deepseek-v4-pro": {
-          "score": 133.36856372846356,
+          "score": 114.5565026496771,
           "ci95": [
             100,
-            2024.0657953562716
+            172.05234989870834
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -4055,10 +4055,10 @@
           "gate_reason": null
         },
         "fireworks/glm-5p2": {
-          "score": 133.36856372846356,
+          "score": 114.5565026496771,
           "ci95": [
             100,
-            2024.0657953562716
+            172.05234989870834
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -4072,10 +4072,10 @@
           "gate_reason": null
         },
         "fireworks/gpt-oss-120b": {
-          "score": 89.92574019339033,
+          "score": 114.5565026496771,
           "ci95": [
-            55.112374029725345,
-            508.91284311740156
+            100,
+            172.05234989870834
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -4089,10 +4089,10 @@
           "gate_reason": null
         },
         "fireworks/kimi-k3": {
-          "score": 133.36856372846356,
+          "score": 114.5565026496771,
           "ci95": [
             100,
-            2024.0657953562716
+            172.05234989870834
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -4106,10 +4106,10 @@
           "gate_reason": null
         },
         "gemini/gemini-2.5-flash": {
-          "score": 133.36856372846356,
+          "score": 114.5565026496771,
           "ci95": [
             100,
-            2024.0657953562716
+            172.05234989870834
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -4123,10 +4123,10 @@
           "gate_reason": null
         },
         "gemini/gemini-3-flash-preview": {
-          "score": 133.36856372846356,
+          "score": 114.5565026496771,
           "ci95": [
             100,
-            2024.0657953562716
+            172.05234989870834
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -4140,10 +4140,10 @@
           "gate_reason": null
         },
         "gemini/gemini-3.1-flash-lite": {
-          "score": 133.36856372846356,
+          "score": 114.5565026496771,
           "ci95": [
             100,
-            2024.0657953562716
+            172.05234989870834
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -4157,10 +4157,10 @@
           "gate_reason": null
         },
         "gemini/gemini-3.1-pro-preview": {
-          "score": 133.36856372846356,
+          "score": 114.5565026496771,
           "ci95": [
             100,
-            2024.0657953562716
+            172.05234989870834
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -4174,10 +4174,10 @@
           "gate_reason": null
         },
         "openai/gpt-5-mini": {
-          "score": 133.36856372846356,
+          "score": 114.5565026496771,
           "ci95": [
             100,
-            2024.0657953562716
+            172.05234989870834
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -4191,10 +4191,10 @@
           "gate_reason": null
         },
         "openai/gpt-5.2": {
-          "score": 133.36856372846356,
+          "score": 114.5565026496771,
           "ci95": [
             100,
-            2024.0657953562716
+            172.05234989870834
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -4208,10 +4208,10 @@
           "gate_reason": null
         },
         "openai/gpt-5.4": {
-          "score": 133.36856372846356,
+          "score": 114.5565026496771,
           "ci95": [
             100,
-            2024.0657953562716
+            172.05234989870834
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -4225,10 +4225,10 @@
           "gate_reason": null
         },
         "openai/gpt-5.4-mini": {
-          "score": 133.36856372846356,
+          "score": 114.5565026496771,
           "ci95": [
             100,
-            2024.0657953562716
+            172.05234989870834
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -4242,10 +4242,10 @@
           "gate_reason": null
         },
         "openai/gpt-5.4-nano": {
-          "score": 133.36856372846356,
+          "score": 114.5565026496771,
           "ci95": [
             100,
-            2024.0657953562716
+            172.05234989870834
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -4259,10 +4259,10 @@
           "gate_reason": null
         },
         "openai/gpt-5.5": {
-          "score": 133.36856372846356,
+          "score": 114.5565026496771,
           "ci95": [
             100,
-            2024.0657953562716
+            172.05234989870834
           ],
           "tier": 1,
           "distinct_n": 15,
@@ -4276,10 +4276,10 @@
           "gate_reason": null
         },
         "openai/gpt-5.5-pro": {
-          "score": 133.36856372846356,
+          "score": 114.5565026496771,
           "ci95": [
             100,
-            2024.0657953562716
+            172.05234989870834
           ],
           "tier": 1,
           "distinct_n": 15,

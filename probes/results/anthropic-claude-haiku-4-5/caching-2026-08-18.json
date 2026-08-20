@@ -1,0 +1,96 @@
+{
+  "modelKey": "anthropic/claude-haiku-4-5",
+  "class": "caching",
+  "date": "2026-08-18T21:36:12.554Z",
+  "harnessVersion": "0.0.1",
+  "fixtureHashes": {
+    "long-prefix-repeat": "28595a700e587856"
+  },
+  "fixtureFamilies": {
+    "long-prefix-repeat": "probe-suite"
+  },
+  "fixtureDifficulties": {
+    "long-prefix-repeat": "standard"
+  },
+  "raw": {
+    "long-prefix-repeat": [
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 0,
+        "tokensIn": 3138,
+        "tokensOut": 45,
+        "costUsd": 0.006711,
+        "latencyMs": 1203,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 0,
+        "tokensIn": 3138,
+        "tokensOut": 45,
+        "costUsd": 0.0067209999999999995,
+        "latencyMs": 1014,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 0,
+        "tokensIn": 3138,
+        "tokensOut": 45,
+        "costUsd": 0.006725999999999999,
+        "latencyMs": 990,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 0,
+        "tokensIn": 3138,
+        "tokensOut": 60,
+        "costUsd": 0.006801,
+        "latencyMs": 1221,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 0,
+        "tokensIn": 3138,
+        "tokensOut": 47,
+        "costUsd": 0.006735999999999999,
+        "latencyMs": 1049,
+        "failureClass": null
+      }
+    ]
+  },
+  "stats": [
+    {
+      "fixtureId": "long-prefix-repeat",
+      "samples": 5,
+      "parseRate": 1,
+      "conformRate": null,
+      "valueAccuracyMean": null,
+      "conformCi95": null,
+      "meanCostUsd": 0.006738999999999999
+    }
+  ],
+  "totalCostUsd": 0.033694999999999996
+}

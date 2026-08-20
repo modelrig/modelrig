@@ -6,6 +6,8 @@ ModelRig sits between your code and the model providers. Your repo declares **ro
 
 Every call writes one telemetry row to a local SQLite file first — the run never blocks on the cloud. An async exporter mirrors rows to the console you are reading. Provider keys are the one thing that deliberately never leaves your machine; the exporter has no code path to them.
 
+Routing is half of it. ModelRig also records the **execution graph** of your workstream — the run, its steps, and the artifacts each step produced — versioned, hashed, and lineaged, into an inspectable store you can open: when someone asks why the pipeline did that, you pull up the run and show them. Artifact *metadata and lineage* ride the same exporter; artifact *content* moves only with per-route consent, off by default. A failing artifact can be promoted to a regression case and replayed as a bake-off — see → prove → save is the loop, and the store is where seeing happens.
+
 What is retained beyond that is your choice, per route, and there are two lanes.
 
 **Pure router** (capture off). Nothing retained. Real, supported, selectable, and the honest answer for a ZDR-strict or data-residency-bound workload.

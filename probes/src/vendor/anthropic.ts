@@ -71,7 +71,23 @@ export function createAnthropicCaller(model: string, apiKey: string): ProbeCalle
               body: JSON.stringify({
                 model,
                 max_tokens: DEFAULT_MAX_TOKENS,
-                ...(req.systemPrompt !== "" ? { system: req.systemPrompt } : {}),
+                // Anthropic prompt caching is explicit opt-in: the caching
+                // probe (cacheHint) marks the fixed system prefix with a
+                // cache_control breakpoint so the probe measures the
+                // DOCUMENTED path, not the default one (launch-runbook A1).
+                ...(req.systemPrompt !== ""
+                  ? {
+                      system: req.cacheHint
+                        ? [
+                            {
+                              type: "text",
+                              text: req.systemPrompt,
+                              cache_control: { type: "ephemeral" },
+                            },
+                          ]
+                        : req.systemPrompt,
+                    }
+                  : {}),
                 messages: [{ role: "user", content: req.userPrompt }],
                 ...(wantJson
                   ? {

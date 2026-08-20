@@ -1,0 +1,96 @@
+{
+  "modelKey": "deepinfra/Qwen/Qwen3-Coder-480B-A35B-Instruct-Turbo",
+  "class": "caching",
+  "date": "2026-08-18T23:24:40.751Z",
+  "harnessVersion": "0.0.1",
+  "fixtureHashes": {
+    "long-prefix-repeat": "28595a700e587856"
+  },
+  "fixtureFamilies": {
+    "long-prefix-repeat": "probe-suite"
+  },
+  "fixtureDifficulties": {
+    "long-prefix-repeat": "standard"
+  },
+  "raw": {
+    "long-prefix-repeat": [
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 0,
+        "tokensIn": 2795,
+        "tokensOut": 29,
+        "costUsd": 0.0017050999999999998,
+        "latencyMs": 1070,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2768,
+        "tokensIn": 2795,
+        "tokensOut": 41,
+        "costUsd": 0.0017147,
+        "latencyMs": 913,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2768,
+        "tokensIn": 2795,
+        "tokensOut": 38,
+        "costUsd": 0.0017158999999999998,
+        "latencyMs": 788,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2768,
+        "tokensIn": 2795,
+        "tokensOut": 38,
+        "costUsd": 0.0017123,
+        "latencyMs": 652,
+        "failureClass": null
+      },
+      {
+        "parseOk": true,
+        "schemaConform": null,
+        "valueAccuracy": null,
+        "grounded": null,
+        "citationCount": null,
+        "cachedTokens": 2768,
+        "tokensIn": 2795,
+        "tokensOut": 38,
+        "costUsd": 0.0017123,
+        "latencyMs": 565,
+        "failureClass": null
+      }
+    ]
+  },
+  "stats": [
+    {
+      "fixtureId": "long-prefix-repeat",
+      "samples": 5,
+      "parseRate": 1,
+      "conformRate": null,
+      "valueAccuracyMean": null,
+      "conformCi95": null,
+      "meanCostUsd": 0.00171206
+    }
+  ],
+  "totalCostUsd": 0.0085603
+}

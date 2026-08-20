@@ -65,7 +65,7 @@ prompt:
   system: prompts/pipeline.summarize.system.md   # "Summarize the filing… Return JSON."
   variables: [filingText]
 policy:
-  retries: { schema: 1, transient: 2 }
+  retries: { content_invalid: 1, network: 2 }
   timeout_ms: 120000
   tier: standard
   json: native                   # only because gpt-5.4-mini probes structured_native
@@ -122,7 +122,7 @@ prompt:
   system: prompts/pipeline.classify.system.md
   variables: [filingText]
 policy:
-  retries: { transient: 2 }
+  retries: { network: 2 }
   timeout_ms: 120000
   tier: standard
 ```
@@ -180,7 +180,7 @@ prompt:
   system: prompts/pipeline.sentiment.system.md
   variables: [excerpt]
 policy:
-  retries: { schema: 1, transient: 2 }
+  retries: { content_invalid: 1, network: 2 }
   timeout_ms: 120000
   tier: standard
   json: native
@@ -241,7 +241,7 @@ prompt:
   system: prompts/pipeline.extract_tickers.system.md
   variables: [document]
 policy:
-  retries: { schema: 1, transient: 2 }
+  retries: { content_invalid: 1, network: 2 }
   timeout_ms: 120000
   tier: standard
   json: native
@@ -306,7 +306,7 @@ prompt:
   system: prompts/pipeline.risks.system.md
   variables: [sectionText]
 policy:
-  retries: { schema: 1, transient: 2 }
+  retries: { content_invalid: 1, network: 2 }
   timeout_ms: 120000
   tier: standard
   # json: native omitted — the original asked for json_object (coached), not a
@@ -317,6 +317,72 @@ policy:
 // modelrig: migrated from fetch("https://api.openai.com/v1/chat/completions", …) — rollback: revert PR #N
 const { output } = await rig.run("pipeline.risks", { input: { sectionText }, tags: { run_id: runId } });
 ```
+
+---
+
+## Provider caching (the C2 stop-gate)
+
+Not a provider SDK shape but a **behaviour** the skill must recognize *before* it
+writes any route — because a naive migration drops it silently, and a dropped
+cache is a pure cost regression that only telemetry reveals. This is the C2
+caching-inventory stop-gate from the [playbook](https://modelrig.dev/migration-playbook.html).
+
+**Recognized by the skill** (grep, in the caching inventory): `cachedContent`
+(Gemini explicit cache), `cache_control` (Anthropic marker), `prompt_cache_key`
+(OpenAI/Grok key hint), and cache usage fields in response handling
+(`cachedContentTokenCount`, `cached_tokens`, `cache_read`). Any hit is a stop-gate:
+the route must carry the handle, or the migration proceeds with a *named,
+quantified* regression — never silently.
+
+**Before** — a Gemini call that references an explicit cache the customer created
+and heartbeats elsewhere:
+
+```ts
+const res = await genai.models.generateContent({
+  model: "gemini-2.5-pro",
+  cachedContent: "cachedContents/abc123",   // 170K-token prefix, ~98% hit
+  contents: question,
+});
+```
+
+**After** — the customer handle rides one optional field on the route call;
+`provider` is required (the handle is a Gemini-scoped resource, applied only to
+Gemini candidates — a fallback on another provider dispatches uncached). Same
+model pinned; the cache lifecycle (create, TTL heartbeat, delete) stays in the
+customer's code — ModelRig passes the handle through and prices the hits, never
+managing the resource:
+
+```yaml
+# modelrig/routes/pipeline.analyze.yaml
+route: pipeline.analyze
+version: 1
+candidates:
+  - provider: gemini
+    model: gemini-2.5-pro        # pinned — same model the cache is bound to
+require: []
+prefer: []
+prompt:
+  system: prompts/pipeline.analyze.system.md
+  variables: [question]
+policy:
+  retries: { cache_invalid: 1, network: 2 }   # a stale handle → retry uncached
+  timeout_ms: 120000
+  tier: standard
+```
+
+```ts
+// modelrig: migrated from genai...generateContent({ cachedContent }) — rollback: revert PR #N
+const { output } = await rig.run("pipeline.analyze", {
+  input: { question },
+  tags: { run_id: runId },
+  cache: { key: "cachedContents/abc123", provider: "gemini" },   // customer-owned handle
+});
+```
+
+A `cache_invalid` (e.g. the handle expired, or a fallback bound to a different
+model) drops the handle and retries that candidate uncached — a correct, full-price
+call, never a crash. The heartbeat that PREVENTS expiry stays customer-side; see
+[Caching lifecycle](https://modelrig.dev/caching-lifecycle.html).
 
 ---
 
