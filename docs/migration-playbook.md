@@ -111,14 +111,21 @@ temperature | top_p | topP | max_output_tokens | maxOutputTokens | max_tokens
   but never manages the resource; a long job still needs the customer's TTL
   heartbeat. Full mechanics: [Caching lifecycle](https://modelrig.dev/caching-lifecycle.html).
 - **Grounding** → `require: [grounded]` plus the route's grounding mode.
-- **Sampling** → **not yet expressible on a route** (as of 2026-08-20): the
-  route surface carries no `temperature`/`top_p`/`max_output_tokens`, and the
-  adapters use their own defaults — a migrated call does NOT inherit the
-  original's sampling. If the original sets them deliberately (classification
-  and extraction calls almost always do), this is a STOP-gate: report it as a
-  named behaviour change and hold that call site until the sampling surface
-  ships. (Tracked as CE-6; this paragraph is replaced by the knob when it
-  lands.)
+- **Sampling** → declare `policy.sampling` on the route:
+  ```yaml
+  policy:
+    sampling: { temperature: 0.1, top_p: 0.9, max_output_tokens: 8192 }
+  ```
+  All three fields are optional; carry over exactly what the original call set.
+  Absent, every adapter keeps its own defaults (Gemini runs at temperature 1.0),
+  so a call that relies on a specific temperature — a classifier at 0.1, say —
+  MUST declare it or it silently changes behaviour. A declared value is sent to
+  the provider **as-is** (no clamp); an out-of-range value is a load-time config
+  error (temperature 0–2, top_p (0,1], max_output_tokens ≥ 1). Note for Gemini 3:
+  Google recommends temperature 1.0 and warns sub-1.0 values can loop/degrade on
+  complex *reasoning* tasks — the loader logs an advisory for a sub-1.0 Gemini-3
+  temperature and sends the request as declared (classification/extraction are
+  typically fine).
 
 If a surface cannot express what the code does yet, **report the gap and the
 quantified cost/quality delta — never migrate past it silently.** Present the
@@ -139,9 +146,11 @@ regression). Silent is the only forbidden outcome.
 - **Routes resolve from `./modelrig/routes` relative to the process CWD.** In a
   monorepo, place `modelrig/` at the app root and run from there, or set
   `MODELRIG_ROUTES_DIR` to an absolute path.
-- **Load-checking needs one key.** `createRig` fail-closes keyless ("no
-  serveable candidate") — set any single provider key to smoke the bundle load.
-  (A keyless `modelrig validate` is tracked as a CE-6 deliverable.)
+- **Load-check with `modelrig validate` — no key required.** It structurally
+  loads `rig.yaml` and every route bundle, prints per-route OK / config error,
+  and exits nonzero on any failure — the dry authoring check to run before you
+  wire any credential. (Serving still fail-closes keyless: a live `createRig`
+  needs at least one provider key so a route has a serveable candidate.)
 
 ### Package manager (detect, don't assume)
 

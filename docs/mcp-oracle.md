@@ -1,5 +1,11 @@
 # The MCP oracle
 
+> **Unreleased.** `modelrig-oracle` is not yet published to npm — the
+> `npx modelrig-oracle` commands on this page work from the workspace build
+> only, and will work everywhere once the oracle ships its first release
+> (tracked as the oracle-release mini-mission). Nothing else on this site
+> depends on it: llms.txt carries the same probed facts as plain text.
+
 **What it is:** an MCP server that lets a coding agent ask what models can
 actually do — measured, dated, and priced by what conformance really costs —
 and then act on the answer.

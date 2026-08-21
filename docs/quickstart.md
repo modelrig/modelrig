@@ -136,6 +136,9 @@ policy:
   timeout_ms: 60000
   tier: flex                       # requested tier; served tier is recorded
   json: native                     # native strict schema | json_mode (rung 2)
+  sampling: { temperature: 0.1, max_output_tokens: 8192 }
+  #                                  ^ preserve the original call's sampling;
+  #                                    absent = the adapter's own defaults
 ```
 
 Prompt templates support `{{variable}}` substitution and capability-conditional
@@ -154,6 +157,13 @@ CRITICAL: respond with a single JSON object, no markdown fences.
 
 Variables must be declared in `prompt.variables`; referencing an undeclared
 variable fails at load time, not at run time.
+
+The `schema` file is a JSON Schema. ModelRig validates output under **JSON
+Schema 2020-12** as the primary dialect and **also accepts draft-07** (a schema
+declaring either `$schema` compiles). Validation runs non-strict with union
+types allowed, and `format` is annotation-only — it is not asserted (an
+`email`/`date-time` format is documentation, not a constraint). Author 2020-12
+unless you have a draft-07 schema already; both work.
 
 ### 3. Call it
 
@@ -218,6 +228,30 @@ or over HTTP for a non-SDK surface (see the
 [feedback protocol](feedback-protocol.md)) — and every run gets an automatic
 `run-outcome@v1` verdict, with an explicit, bounded model judge available when
 you want one (see [run verdicts](run-verdicts.md)).
+
+## Runtime requirements
+
+ModelRig assumes a **long-lived Node process with a writable disk**, and a few
+things follow from that. Check them before you deploy:
+
+- **Node ≥ 20**, and a native build toolchain at install time — it compiles
+  `better-sqlite3` (a C/C++ addon) for the local telemetry buffer. On a slim
+  container add the build essentials (`python3`, `make`, a C++ compiler).
+- **A writable disk.** Telemetry and captures go to a local SQLite file
+  (`MODELRIG_TELEMETRY_DB`, default `./.modelrig/telemetry.db`); the background
+  exporter batches from it. A read-only filesystem breaks this.
+- **Serverless (Vercel functions, AWS Lambda, Google Cloud Functions):**
+  supported, with two required adjustments. (1) Point the telemetry DB at the
+  only writable location — `MODELRIG_TELEMETRY_DB=/tmp/modelrig/telemetry.db`.
+  (2) `await rig.close()` **once per invocation** before the handler returns:
+  the function may freeze or be killed the moment you respond, and `close()` is
+  what drains the final rows (H1) — skip it and you silently lose the last
+  attempts of every invocation. Expect a native-module cold-start cost on the
+  first call after a scale-up.
+- **Edge runtimes (Vercel Edge, Cloudflare Workers) are unsupported.** They have
+  no native-addon support and no filesystem, so `better-sqlite3` cannot load at
+  all. Run ModelRig in a Node runtime; if an edge function must call a route,
+  put ModelRig behind a Node service it calls over HTTP.
 
 ## When it doesn't work
 

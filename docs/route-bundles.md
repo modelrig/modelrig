@@ -21,6 +21,27 @@ invalid bundle throws a `RouteConfigError` naming the file and every problem.
 | `repair` | object | no | **v2.** Repair rung for the default variant — see below. |
 | `variants` | list | no | **v2.** Named serving variants — see below. Absence = pure v1 semantics. |
 
+## JSON Schema dialect
+
+The `schema` file is validated with **Ajv**, configured for **JSON Schema
+2020-12** as the primary dialect with **draft-07 also accepted** — a schema
+declaring `"$schema": "…/2020-12/schema"` or `"…/draft-07/schema"` both compile
+(the draft-07 meta-schema is registered explicitly). Author 2020-12 for new
+schemas; existing draft-07 schemas keep working.
+
+Two properties of the configuration are load-bearing when you author a schema:
+
+- **Non-strict, union types allowed.** Unknown keywords do not fail compilation,
+  and `"type": ["string", "null"]` is accepted.
+- **`format` is annotation-only — it is NOT asserted.** Neither dialect enforces
+  `format` without `ajv-formats`, which is not registered, so an `email`,
+  `uri`, or `date-time` format documents intent but never rejects a value. If
+  you need a value constrained, express it with `pattern` / `enum` /
+  `minimum` / `maxLength`, not `format`.
+
+The gateway and the probe harness (`packages/modelrig-probes`) build an
+identical Ajv instance by design, so a fixture scores exactly as it serves.
+
 ## `policy`
 
 | field | type | notes |
@@ -29,6 +50,21 @@ invalid bundle throws a `RouteConfigError` naming the file and every problem.
 | `timeout_ms` | positive integer | Wall-clock deadline per attempt; breach maps to the `timeout` class. |
 | `tier` | `standard` \| `flex` \| `priority` | Requested service tier. The tier actually served is recorded separately (`servedTier`) — silent downgrades become visible in telemetry. |
 | `json` | `native` \| `json_mode` | Emission rung. `native`: candidates need native strict schema enforcement (`structured_native`); the schema goes to the provider natively. `json_mode`: candidates need either mechanism; the schema is additionally coached into the prompt with strict formatting guidance. |
+| `sampling` | object | no | Declared sampling — `{ temperature?, top_p?, max_output_tokens? }`. Preserve exactly what the original call used. **Absent = every adapter keeps its own defaults** (Gemini runs at temperature 1.0); a call that relied on a specific temperature must declare it or its behaviour silently changes. Each field is optional and sent to the provider **as declared** (no clamp); ranges are validated at load — temperature `0`–`2`, top_p `(0, 1]`, max_output_tokens integer `≥ 1` — an out-of-range value is a config error. `max_output_tokens` is the routed-lane exposure of the existing adapter cap. The route's sampling applies to the primary attempt AND its repair/extractor followups (one knob per route). |
+
+```yaml
+policy:
+  timeout_ms: 60000
+  tier: standard
+  json: native
+  sampling: { temperature: 0.1, max_output_tokens: 8192 }   # preserve the original call's sampling
+```
+
+> **Gemini 3 note.** Google recommends `temperature: 1.0` for Gemini 3 and warns
+> that sub-1.0 values can loop / degrade on complex *reasoning* tasks
+> (classification and extraction are typically fine). Declaring a sub-1.0
+> temperature on a Gemini-3 candidate loads and is sent as declared, with a
+> load-time advisory naming the model and value.
 
 ## Variants (bundle format v2 — Phase 3)
 
