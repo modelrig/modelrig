@@ -78,6 +78,16 @@ only how you *reference* the handle at call time. The full lifecycle, in order:
   the same field rides on the raw input:
   `rig.runRaw({ provider, model, …, cache: { key } })`.
 
+  **UNRELEASED (ships in the next modelrig release) — grounded + cached on the
+  raw lane.** When a `runRaw` step declares both `grounding: { mode: "native" }`
+  and a `cache.key`, ModelRig needs **no** special handling: the cached path
+  already drops `tools`, so the `googleSearch` tool must be **baked into the
+  cache resource at creation** (as above). Create the cache *with* the
+  `googleSearch` tool, pass its handle plus `grounding: { mode: "native" }`, and
+  grounding fires against the cached prefix with the cached-token ratio intact.
+  A grounded `runRaw` step **without** a `cache.key` gets the `googleSearch` tool
+  attached on the request as usual.
+
   **You do not need to empty your route's template when you pass a handle.**
   When `cache.key` is set on a Gemini dispatch, ModelRig automatically drops
   `systemInstruction` and `tools` from the request — the API requires it, and

@@ -101,6 +101,9 @@ cached_tokens | cache_read | cachedContentTokenCount   # cache usage in response
 temperature | top_p | topP | max_output_tokens | maxOutputTokens | max_tokens
                      # explicit sampling — a classifier at temperature 0.1 is a
                      # deliberate choice, not a default
+useGoogleSearch | googleSearch | grounding             # provider-native grounding
+serviceTier | service_tier                             # flex / priority service tier
+thinkingLevel | thinkingConfig | reasoning_effort      # per-step reasoning effort
 ```
 
 **Any hit is a STOP-gate.** The route must carry the corresponding surface:
@@ -110,7 +113,20 @@ temperature | top_p | topP | max_output_tokens | maxOutputTokens | max_tokens
   pass-through of the resource the customer already owns. ModelRig prices the hits
   but never manages the resource; a long job still needs the customer's TTL
   heartbeat. Full mechanics: [Caching lifecycle](https://modelrig.dev/caching-lifecycle.html).
-- **Grounding** → `require: [grounded]` plus the route's grounding mode.
+- **Grounding** → on a route, `require: [grounded]` plus the route's grounding
+  mode. **UNRELEASED (ships in the next modelrig release)** — on the Lane-B
+  `runRaw` seam, pass `grounding: { mode: "native" }` for provider-native web
+  grounding (gemini-only in v1). A grounded step that also caches must bake the
+  `googleSearch` tool into the cache resource (see the caching-lifecycle doc).
+- **Service tier** *(UNRELEASED, ships in the next modelrig release)* → on the
+  raw lane, `serviceTier: "standard" | "flex" | "priority"`; `meta.servedTier`
+  reports what actually served, and a flex shed surfaces as `capacity_shed` for
+  your own retry ladder (ModelRig does not degrade flex→standard for you).
+- **Reasoning / thinking** *(UNRELEASED, ships in the next modelrig release)* →
+  on the raw lane, `reasoning: { level: "minimal" | "low" | "medium" | "high" }`
+  (gemini-only in v1; replaces the adapter default `"high"`). Grounding and
+  reasoning declared on a provider that cannot honor them FAIL CLOSED
+  (`invariant_violation`, pre-dispatch) — never a silent drop.
 - **Sampling** → declare `policy.sampling` on the route:
   ```yaml
   policy:
