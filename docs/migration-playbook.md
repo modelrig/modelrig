@@ -114,15 +114,15 @@ thinkingLevel | thinkingConfig | reasoning_effort      # per-step reasoning effo
   but never manages the resource; a long job still needs the customer's TTL
   heartbeat. Full mechanics: [Caching lifecycle](https://modelrig.dev/caching-lifecycle.html).
 - **Grounding** → on a route, `require: [grounded]` plus the route's grounding
-  mode. **UNRELEASED (ships in the next modelrig release)** — on the Lane-B
+  mode. On the Lane-B
   `runRaw` seam, pass `grounding: { mode: "native" }` for provider-native web
   grounding (gemini-only in v1). A grounded step that also caches must bake the
   `googleSearch` tool into the cache resource (see the caching-lifecycle doc).
-- **Service tier** *(UNRELEASED, ships in the next modelrig release)* → on the
+- **Service tier** → on the
   raw lane, `serviceTier: "standard" | "flex" | "priority"`; `meta.servedTier`
   reports what actually served, and a flex shed surfaces as `capacity_shed` for
   your own retry ladder (ModelRig does not degrade flex→standard for you).
-- **Reasoning / thinking** *(UNRELEASED, ships in the next modelrig release)* →
+- **Reasoning / thinking** →
   on the raw lane, `reasoning: { level: "minimal" | "low" | "medium" | "high" }`
   (gemini-only in v1; replaces the adapter default `"high"`). Grounding and
   reasoning declared on a provider that cannot honor them FAIL CLOSED

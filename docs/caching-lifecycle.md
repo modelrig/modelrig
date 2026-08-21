@@ -78,7 +78,7 @@ only how you *reference* the handle at call time. The full lifecycle, in order:
   the same field rides on the raw input:
   `rig.runRaw({ provider, model, …, cache: { key } })`.
 
-  **UNRELEASED (ships in the next modelrig release) — grounded + cached on the
+  **Grounded + cached on the
   raw lane.** When a `runRaw` step declares both `grounding: { mode: "native" }`
   and a `cache.key`, ModelRig needs **no** special handling: the cached path
   already drops `tools`, so the `googleSearch` tool must be **baked into the
