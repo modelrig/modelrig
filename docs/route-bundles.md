@@ -11,13 +11,14 @@ invalid bundle throws a `RouteConfigError` naming the file and every problem.
 | `route` | string | yes | The task handle passed to `rig.run()`. Unique across the directory (duplicates are a load error). |
 | `version` | integer ≥ 1 | yes | Bump on ANY change to the bundle, schema, or prompt. Recorded on every telemetry row. |
 | `schema` | relative path \| null | yes | JSON Schema file for the output. `null` = unstructured route (output must still be parseable JSON). Path resolves relative to the bundle file. |
-| `candidates` | list | yes, non-empty | THE candidate set. Each entry is `{provider, model}`. Providers: `gemini`, `openai`, `deepseek` (`anthropic`, `grok` reserved). Nothing outside this list can serve the route — enforced structurally (branded `CandidateRef`) and at runtime. |
-| `require` | list | no | Hard constraints: `schema_conformant`, `grounded`, `zero_retention`, `trace_visible` (v2 — reasoning trace exposed to the caller). `grounded` is satisfied natively OR — when a search provider is configured — via the grounding-inject rung (search results injected into the prompt, citations normalized onto `RunMeta.citations`, search cost accounted). `zero_retention` is an **opt-in data-governance filter** (G-3): it routes only to zero-retention–designated endpoints, and fails closed (no designated candidate → the no-eligible-candidate error, never a silent non-ZDR dispatch). A single run can opt in without editing the bundle via `RunOptions.zeroRetention: true`. |
-| `prefer` | list | no | Advisory ordering: `cost` (ascending via the pricing snapshot; unknown cost sorts last), `latency` (no-op until probe data exists, Phase 2). |
+| `candidates` | list | yes, non-empty | THE candidate set. Each entry is `{provider, model}`. Providers (the `ProviderId` union): `gemini`, `openai`, `deepseek`, `anthropic`, `grok`, `deepinfra`, `fireworks` — all with adapters. Nothing outside this list can serve the route — enforced structurally (branded `CandidateRef`) and at runtime. |
+| `require` | list | no | Hard constraints: `schema_conformant`, `grounded`, `zero_retention`, `trace_visible` (v2 — reasoning trace exposed to the caller). `grounded` is satisfied natively OR — when a search provider is configured — via the grounding-inject rung (search results injected into the prompt, citations normalized onto `RunMeta.citations`, search cost accounted). `zero_retention` is an **opt-in data-governance filter** (G-3): it routes only to zero-retention–designated endpoints, and fails closed (no designated candidate → the no-eligible-candidate error, never a silent non-ZDR dispatch). A single run can opt in without editing the bundle via `RunOptions.zeroRetention: true`. How `require` filters and orders candidates at run time is on [Routing & reliability](routing-reliability.md#1-resolve-who-is-eligible-and-in-what-order). |
+| `prefer` | list | no | Advisory ordering: `cost` (ascending via the pricing snapshot; unknown cost sorts last), `latency` (accepted and currently a no-op — declared order stands; observed-latency sort is deferred to the observed-health work). Ordering is explained on [Routing & reliability](routing-reliability.md#1-resolve-who-is-eligible-and-in-what-order). |
 | `prompt.system` | relative path | yes | Template file (see below). |
 | `prompt.variables` | string list | yes | Every `{{var}}` referenced by the template must be declared here. |
 | `policy` | object | yes | See below. |
 | `capture` | boolean | no (default `false`) | **v2.** Local-only replay capture opt-in: every attempt's rendered variables + output text are written to the local SQLite `captures` table. Captures NEVER leave the machine — the exporter is structurally unable to read them (export-isolation test). |
+| `cache` | boolean | no (default `false`) | **v2 (WS-C).** `cache: auto` stamps the per-provider cache directive on each attempt (gemini excluded); see [Caching lifecycle](caching-lifecycle.md). This is route-level automatic caching — distinct from the customer-owned explicit handle (`RunOptions.cache`). |
 | `repair` | object | no | **v2.** Repair rung for the default variant — see below. |
 | `variants` | list | no | **v2.** Named serving variants — see below. Absence = pure v1 semantics. |
 
@@ -50,7 +51,7 @@ identical Ajv instance by design, so a fixture scores exactly as it serves.
 | `timeout_ms` | positive integer | Wall-clock deadline per attempt; breach maps to the `timeout` class. |
 | `tier` | `standard` \| `flex` \| `priority` | Requested service tier. The tier actually served is recorded separately (`servedTier`) — silent downgrades become visible in telemetry. |
 | `json` | `native` \| `json_mode` | Emission rung. `native`: candidates need native strict schema enforcement (`structured_native`); the schema goes to the provider natively. `json_mode`: candidates need either mechanism; the schema is additionally coached into the prompt with strict formatting guidance. |
-| `sampling` | object | no | Declared sampling — `{ temperature?, top_p?, max_output_tokens? }`. Preserve exactly what the original call used. **Absent = every adapter keeps its own defaults** (Gemini runs at temperature 1.0); a call that relied on a specific temperature must declare it or its behaviour silently changes. Each field is optional and sent to the provider **as declared** (no clamp); ranges are validated at load — temperature `0`–`2`, top_p `(0, 1]`, max_output_tokens integer `≥ 1` — an out-of-range value is a config error. `max_output_tokens` is the routed-lane exposure of the existing adapter cap. The route's sampling applies to the primary attempt AND its repair/extractor followups (one knob per route). |
+| `sampling` | object | no | Declared sampling — `{ temperature?, top_p?, max_output_tokens? }`. Preserve exactly what the original call used. **Absent = every adapter keeps its own defaults** (Gemini runs at temperature 1.0); a call that relied on a specific temperature must declare it or its behaviour silently changes. Each field is optional and sent to the provider **as declared** (no clamp); ranges are validated at load — temperature `0`–`2`, top_p `(0, 1]`, max_output_tokens integer `≥ 1` — an out-of-range value is a config error. The block is **strict**: an unknown or misspelled key (e.g. `temperatur`, or camelCase `maxOutputTokens`) is a config error too, so a typo can't silently drop your sampling. `max_output_tokens` is the routed-lane exposure of the existing adapter cap. The route's sampling applies to the primary attempt AND its repair/extractor followups (one knob per route). |
 
 ```yaml
 policy:
@@ -100,13 +101,15 @@ variants:
 | `json` | Rung override (`native` \| `json_mode`). |
 | `repair` | Variant-level repair rung, overrides the route-level `repair`. |
 
-## `repair` (ladder rung 4 — Phase 3)
+## `repair` (the repair rung of the candidate ladder — Phase 3)
 
 ```yaml
 repair:
   max_repairs: 2                     # 1 = retry-with-errors only; 2 adds the repair model
   repair_model: deepseek/deepseek-chat   # required when max_repairs is 2; must be a declared candidate
 ```
+
+This is the repair rung of the candidate ladder — the ladder's rungs (resolve → render → dispatch → validate → repair → fall-through) are named in full on [Routing & reliability](routing-reliability.md#3-the-repair-rung-exactly).
 
 On a schema-invalid output with repair enabled: attempt 1 re-asks the SAME
 model with the ajv error summary appended; attempt 2 hands
@@ -130,7 +133,7 @@ Capability flags are resolved from **registry facts** (the packaged
 per-flag precedence `capabilityOverrides > probed > declared` — a
 probed-false trumps a declared-true (DeepSeek's declared schema support is
 revoked because every probed sample served via json_mode coaching). Models
-absent from the registry fall back to the adapter-static baseline below:
+absent from the registry fall back to the adapter-static baseline below. This table is the registry-absent fallback for `gemini`, `openai`, and `deepseek`; a provider not shown here falls back to its own adapter's declared capability set.
 
 | capability | gemini | openai | deepseek |
 |---|---|---|---|
@@ -189,3 +192,25 @@ which is why it is the one to be most careful about.
 
 Still stuck? Open an issue at <https://github.com/modelrig/modelrig/issues> — a
 human reads them.
+
+## Raw-lane provider × knob support (`rig.runRaw`)
+
+> **Unreleased — workspace only (ships in 0.4.0):** `reasoning`
+> beyond gemini, and `responseFormat`. The openai/grok prompt-cache hints are
+> already true on the published package; the DeepInfra/Fireworks
+> `prompt_cache_key` mapping ships in 0.4.0.
+
+The Lane-B `rig.runRaw` seam forwards a set of provider knobs beyond the core
+prompt/sampling ones. Each is ADDITIVE — absent ⇒ byte-identical dispatch — and
+a knob a provider cannot honor FAILS CLOSED pre-dispatch (`RigFailureError`,
+class `invariant_violation`; no meter, no provider call, no telemetry row),
+never a silent drop. This table is the single source of truth: the runtime guard
+(`assertRawKnobsSupported`) and this matrix are both generated from the same
+`RAW_KNOB_SUPPORT` table, so what you read here is exactly what the guard
+enforces.
+
+<!-- RAW_KNOB_MATRIX -->
+
+Ask it in code instead of duplicating this table: `rawKnobSupport(provider)`
+returns the row above, and `GEMINI_THINKING_CAPABLE_MODELS` is the exported set
+the gemini reasoning gate uses (both from the package root).

@@ -50,6 +50,11 @@ lands. But *observing your runs in the console* (Tier 1's payoff) does need it.
 
 ## Before the ladder — which lane, and the two inventories
 
+**Read [Routing & reliability](routing-reliability.md) first.** It answers the
+capability questions — what falls through, what is stored per attempt, what is
+not built — so you never need to read the engine source to migrate correctly.
+
+
 The autonomy ladder (T0–T2) is *how* you migrate one call site. **The lane is
 which strategy fits the whole codebase** — decided once, up front, from the shape
 of the code. Get this wrong and you either over-engineer a naive app or try to
@@ -60,7 +65,7 @@ and present to your human.
 ### The three lanes
 
 - **Lane A — naive call sites.** Static prompts, a fixed model per call, no
-  provider abstraction. This is the greenfield case the ladder was written for:
+  provider abstraction. This is the greenfield case the autonomy ladder was written for:
   extract routes (Tier 2), replace call sites with `rig.run`. First route in under
   an hour.
 - **Lane B — an existing router / orchestrator.** The code already has a provider
@@ -68,9 +73,29 @@ and present to your human.
   (a `callProvider(provider, prompt, model)` dispatcher is the tell). **Do not
   write per-task routes for this.** Migrate ONE naive call site as a reference
   route, then integrate the router at the **`rig.runRaw` adapter seam** — replace
-  the dispatcher's body with `rig.runRaw({ provider, model, … })`. ModelRig
-  provides telemetry, fallback, and accounting; your code keeps prompt assembly and
+  the dispatcher's body with `rig.runRaw({ provider, model, apiKey, systemPrompt,
+  userPrompt, … })`. `runRaw` is BYOK — pass your provider key; ModelRig holds it
+  for the one call and never stores it. Already assemble one combined prompt string?
+  Put it ALL in `userPrompt` and leave `systemPrompt` empty. ModelRig provides
+  telemetry, fallback, and accounting; your code keeps prompt assembly and
   cache lifecycle. BYOK, zero-margin, no route externalization.
+
+  **runRaw-only construction (`routesDir: null`) — UNRELEASED (ships 0.4.0).** A
+  Lane-B deployment that only ever calls `runRaw`/`runRawStream` has no routes.
+  Construct the rig with `routesDir: null` so `createRig` skips route loading, the
+  `rig.yaml` manifest, and the serveability gate — a stray route file it never
+  calls can't down it, and the empty-temp-dir workaround is gone:
+
+  ```ts
+  const rig = createRig({ ...loadConfigFromEnv(), routesDir: null });
+  await rig.runRaw({ provider, model, apiKey, systemPrompt, userPrompt });
+  ```
+
+  `loadConfigFromEnv()` always yields a string `routesDir` (there is no env var
+  that disables routes, by design) — the opt-out is the deliberate code-level
+  override above. `rig.run` and every route-dependent surface then throws a
+  terminal `invariant_violation` naming the fix; keep a reference route (a routed
+  rig) if you also need `run`/bake-offs.
 - **Lane C — full route migration of a Lane-B system.** Externalizing a dynamic
   prompt assembler into route templates is a scoped *project* (prompt
   externalization), never an onboarding step. Recognize it, name it, and leave it
@@ -109,24 +134,46 @@ thinkingLevel | thinkingConfig | reasoning_effort      # per-step reasoning effo
 **Any hit is a STOP-gate.** The route must carry the corresponding surface:
 
 - **Caching** → the customer cache handle rides `rig.run(task, { cache: { key,
-  provider } })` (or `rig.runRaw({ …, cache: { key } })`) — a one-field
+  provider } })` (or `rig.runRaw({ …, apiKey, cache: { key } })`) — a one-field
   pass-through of the resource the customer already owns. ModelRig prices the hits
   but never manages the resource; a long job still needs the customer's TTL
   heartbeat. Full mechanics: [Caching lifecycle](https://modelrig.dev/caching-lifecycle.html).
 - **Grounding** → on a route, `require: [grounded]` plus the route's grounding
   mode. On the Lane-B
   `runRaw` seam, pass `grounding: { mode: "native" }` for provider-native web
-  grounding (gemini-only in v1). A grounded step that also caches must bake the
+  grounding — **gemini** (Google Search); **grok** is fail-closed for now (xAI retired Live Search; its Responses-API `web_search` is tracked as CE-9b) — and **grok**
+  (xAI Live Search). A grounded step that also caches must bake the
   `googleSearch` tool into the cache resource (see the caching-lifecycle doc).
 - **Service tier** → on the
   raw lane, `serviceTier: "standard" | "flex" | "priority"`; `meta.servedTier`
   reports what actually served, and a flex shed surfaces as `capacity_shed` for
-  your own retry ladder (ModelRig does not degrade flex→standard for you).
+  your own retry ladder. **§3.2 flex degrade is customer-side**: ModelRig does
+  NOT replicate the gemini direct-path infra-retry wrapper on the raw lane, so a
+  `PIPELINE_SERVICE_TIER=flex` capacity rejection is yours to retry at
+  `"standard"` — a NAMED difference for your migration record, not a silent one.
 - **Reasoning / thinking** →
-  on the raw lane, `reasoning: { level: "minimal" | "low" | "medium" | "high" }`
-  (gemini-only in v1; replaces the adapter default `"high"`). Grounding and
-  reasoning declared on a provider that cannot honor them FAIL CLOSED
-  (`invariant_violation`, pre-dispatch) — never a silent drop.
+  on the raw lane, `reasoning: { level: "minimal" | "low" | "medium" | "high" }`.
+  _Unreleased until 0.4.0:_ this generalizes beyond gemini WITHOUT a per-model
+  allowlist — openai/deepinfra/fireworks forward the level as `reasoning_effort`
+  and let the provider enforce (a rejection is classified teachably); grok
+  coarsens it (`minimal,low → low`; `medium,high → high`); gemini stays
+  thinking-model-gated. **DeepSeek reasoning is model selection, not a knob**:
+  there is no effort control — select the `deepseek-reasoner` model and DON'T
+  declare `reasoning` (it fails closed with exactly that fixHint). anthropic
+  extended thinking is unwired (fails closed).
+- **Response format** _(unreleased until 0.4.0)_ → on the raw lane,
+  `responseFormat: "json_object"` forces syntactic JSON on the OpenAI-dialect
+  providers + gemini. This is MIME-shaping, NOT schema enforcement — the raw lane
+  still never validates or repairs (F4), so `meta.validated` stays `false`;
+  anthropic fails closed. On DeepSeek the prompt must contain the word "JSON"
+  (the caller's responsibility on the raw lane).
+- **Which provider honors which knob** is the single-source
+  [provider × knob matrix](https://modelrig.dev/route-bundles.html#raw-lane-provider-knob-support-rigrunraw)
+  — the runtime guard and that table are generated from the same `RAW_KNOB_SUPPORT`.
+  A knob a provider cannot honor FAILS CLOSED (`invariant_violation`,
+  pre-dispatch) — never a silent drop. Read `rawKnobSupport(provider)` in code
+  instead of duplicating the lists; `GEMINI_THINKING_CAPABLE_MODELS` is exported
+  too (so you stop copying the §3.1 thinking-model set).
 - **Sampling** → declare `policy.sampling` on the route:
   ```yaml
   policy:
@@ -154,9 +201,12 @@ regression). Silent is the only forbidden outcome.
   per-invocation for one-shot jobs — and a one-shot caller MUST
   `await rig.close()` before exit, or telemetry rows are lost and the SDK's
   timers keep the process alive.
-- **`tags` is required**, and every tag key must be declared as a
-  `dimensions[].key` in `rig.yaml` (tag-safe `[A-Za-z0-9_]{1,64}`). An example
-  that shows `tags: { run_id }` assumes a `run_id` dimension exists.
+- **`tags` is required**; declare each tag key you rely on as a
+  `dimensions[].key` in `rig.yaml` (tag-safe `[A-Za-z0-9_]{1,64}`) so the
+  console can attribute cost by it. A `required: true` dimension missing from a
+  run's tags **warns once per process** (and under-attributes that run) — it
+  is never rejected. An example that shows `tags: { run_id }` assumes a
+  `run_id` dimension exists.
 - **`result.output` is already parsed and schema-validated** — delete the old
   call site's `JSON.parse` and fence-stripping rather than keeping both.
 - **Routes resolve from `./modelrig/routes` relative to the process CWD.** In a
@@ -190,6 +240,13 @@ C3 (ratify the proposed candidate list) and C4 (tests + diff + the week-one
 cache-hit-rate/cost panel comparison) are the Tier 2 gates below — the human
 merges on a green report. A zero cache-hit rate on a route that cached before
 migration is a regression; say so at C4.
+
+**The cache-ratio-vs-baseline metric is a REAL-run measurement, not a probe.**
+The cached-token ratio a migration must preserve comes from the pipeline running
+its actual traffic (a warm cache, real prompt prefixes) — a single-call probe
+cannot produce it and never closes this gate. At the checkpoint, mark
+cache-ratio-vs-baseline **deferred-to-first-run** and read it off the week-one
+telemetry panel; do not report it "verified" from a probe.
 
 **C3 — unprobed models are SERVABLE (ruled 2026-08-20).** Probes gate
 *claims*, not *serving*: any model an adapter can reach may be a candidate,
@@ -401,3 +458,32 @@ How the skill recognizes a call site and what the before/after looks like — fo
 OpenAI, Anthropic, the Vercel AI SDK, LangChain, and raw `fetch` — lives in the
 [recognition playbooks](https://modelrig.dev/migration-recognition.html), with
 canonical before/after examples for each.
+
+## Quick-reference gotchas
+
+The nine things a migrating agent gets wrong from memory. Each is stated in full
+in the tier above; this is the cheat sheet to re-check before proposing a diff.
+
+- **Routes resolve from the process CWD** (`./modelrig/routes`) — in a monorepo,
+  put `modelrig/` at the app root and run from there, or set `MODELRIG_ROUTES_DIR`.
+- **`await rig.close()` before the process exits**, or telemetry rows are lost and
+  the pending flush timers hang the process.
+- **`json: native` is a probe-gated CLAIM, not a preference** — an unprobed
+  candidate cannot assert it; the emulation ladder still serves structure.
+- **The `googleSearch` grounding tool must be baked into a cache resource at
+  creation** — it cannot be attached to an already-created cache handle later.
+- **Gemini defaults to `temperature` 1.0** (other adapters use their own
+  defaults) — carry an explicit classifier temperature over exactly, or it
+  silently changes.
+- **The raw lane is BYOK**: pass the provider key on the `apiKey` field of the
+  `runRaw` call; ModelRig never receives or stores it.
+- **A combined system+user prompt goes in `userPrompt`** on `runRaw`, not split
+  across separate fields.
+- **`tags` require declared dimensions**: declare each tag key you rely on as a
+  `dimensions[].key` in `rig.yaml` (tag-safe `[A-Za-z0-9_]{1,64}`). A
+  `required: true` dimension missing from a run's tags **warns once per process
+  and under-attributes that run on /costs** — the call is not rejected, so the
+  only signal is the warning.
+- **Knob support lives in the matrix, not memory**: which provider honors
+  reasoning / grounding / responseFormat comes from `rawKnobSupport()` and the
+  [raw-lane support matrix](https://modelrig.dev/route-bundles.html) — never assume.

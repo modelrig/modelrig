@@ -46,6 +46,38 @@ Anthropic, opting the route into `cache: auto`. The third — Gemini's explicit
 somebody has to manage. That somebody is you, and the rest of this page is mostly
 about that case, because it is the one that bit the first migration.
 
+## One directive, provider-appropriate meaning
+
+There is exactly **one** cache field on the customer surface —
+`rig.run(task, { input, cache: { key, provider } })` and the Lane-B
+`rig.runRaw({ …, cache: { key } })`. It is deliberately **provider-neutral**: the
+adapter maps the same `key` to whatever the named provider's caching mechanism
+actually is. There is **no** separate `promptCacheKey` field — one directive,
+appropriate meaning per provider, zero churn for gemini callers:
+
+| Provider(s) | What `cache.key` means | Retention |
+|---|---|---|
+| **Gemini** | a **resource HANDLE** — the `cachedContents/<id>` you created and own | your TTL heartbeat (this page) |
+| **OpenAI** | a **routing HINT** — `prompt_cache_key` (keeps the prefix cache warm) | `cache.ttlSeconds ≥ 86400` → `prompt_cache_retention: "24h"` |
+| **Grok** | a **routing HINT** — `prompt_cache_key` | provider-managed |
+| **DeepInfra / Fireworks** | a **routing HINT** — `prompt_cache_key` _(ships in 0.4.0)_ | provider-managed |
+
+The Gemini/OpenAI/Grok rows are true on the published package; the
+DeepInfra/Fireworks `prompt_cache_key` mapping ships in 0.4.0 (until then those
+hosts ignore the key — a documented, not silent, difference).
+
+On the HINT providers the key never names a resource you have to create or delete
+— it only helps the provider route repeated calls to a warm cache. So the
+cost-accounting and cache-key **provenance** rules are identical across all of
+them: a customer-supplied `cache.key` reads as `customer` provenance (the raw lane
+runs no prefix fingerprinting), and cache-read tokens bill at the read rate the
+same way everywhere. Only the **Gemini HANDLE** case carries a lifecycle you own —
+which is the rest of this page.
+
+> For the raw lane, which provider honors which of these (and the other knobs —
+> grounding, reasoning, responseFormat) is the
+> [provider × knob matrix](route-bundles.html#raw-lane-provider-knob-support-rigrunraw).
+
 ## Explicit-cache lifecycle (Gemini `cachedContents`) — customer-owned
 
 You already have this code if you engineered explicit caching; ModelRig changes
@@ -76,7 +108,8 @@ only how you *reference* the handle at call time. The full lifecycle, in order:
   unacceptable for your economics, pin the route: a route whose candidates are
   all the one Gemini model never falls elsewhere. On the Lane-B `runRaw` seam
   the same field rides on the raw input:
-  `rig.runRaw({ provider, model, …, cache: { key } })`.
+  `rig.runRaw({ provider, model, apiKey, …, cache: { key } })` (runRaw is BYOK —
+  pass your provider key).
 
   **Grounded + cached on the
   raw lane.** When a `runRaw` step declares both `grounding: { mode: "native" }`
@@ -139,7 +172,7 @@ just a full-price call:
   the serving model — including a same-provider fallback to a *different* Gemini
   model — starts cold, and an explicit Gemini handle bound to the old model fails
   `cache_invalid`. (This is exactly why ModelRig drops the handle on the retry.)
-  If you route across models, see the cache-aware routing docs: warmth is tracked
+  If you route across models, see [Routing & reliability](routing-reliability.md) (§9 and the boundary §10): warmth is tracked
   per candidate, and a cold switch is a known, measured cost.
 - **Template edits.** Any change to the system prompt prefix.
 - **Tool-schema changes.** For Gemini, tools are baked into the cache; a schema

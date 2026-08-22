@@ -2,7 +2,7 @@
 
 One content source (this file) renders in the console `/setup` page and on modelrig.dev — edit here, surfaces follow.
 
-ModelRig sits between your code and the model providers. Your repo declares **routes** — small YAML files naming a prompt, an output schema, and the models allowed to serve the task. Your app calls `rig.run("task.name")`; ModelRig renders the prompt, picks a model from the route's candidates using verified registry facts, enforces the schema, retries typed failures within per-class budgets, and hard-stops spending at your envelope caps.
+ModelRig sits between your code and the model providers. Your repo declares **routes** — small YAML files naming a prompt, an output schema, and the models allowed to serve the task. Your app calls `rig.run("task.name")`; ModelRig renders the prompt, picks a model from the route's candidates using verified registry facts, enforces the schema, retries typed failures within per-class budgets, and hard-stops spending at your envelope caps. How the candidate ladder actually runs — ordering, validate → repair → fall-through, and what is not built — is on [Routing & reliability](routing-reliability.md).
 
 Every call writes one telemetry row to a local SQLite file first — the run never blocks on the cloud. An async exporter mirrors rows to the console you are reading. Provider keys are the one thing that deliberately never leaves your machine; the exporter has no code path to them.
 

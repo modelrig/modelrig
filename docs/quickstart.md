@@ -212,6 +212,8 @@ key never burns backoff time. Failures that still billed tokens (refusals,
 truncations) carry their token usage, so envelopes and telemetry account the
 real spend.
 
+Each class — what it means, whether it retries, and how it backs off — is on [Routing & reliability](routing-reliability.md#5-failure-classes); how the whole candidate ladder runs (ordering, validate → repair → fall-through, and what is not built) is on that page too.
+
 ## Where the telemetry goes
 
 Every attempt (not just every run) writes one row to package-owned SQLite,
